@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CreateWorkspacePage } from './pages/create-workspace/create-workspace.page';
 import { EditWorkspacePage } from './pages/edit-workspace/edit-workspace.page';
 import { WorkspacesListPage } from './pages/workspaces-list/workspaces-list.page';
+import { ProjectsListPage } from './pages/projects-list/projects-list.page';
 
 /**
  * Dashboard routes list
@@ -34,7 +35,7 @@ const routes: Routes = [
           {
             path: '',
             pathMatch: 'full',
-            redirectTo: 'edit',
+            component: ProjectsListPage,
           },
         ],
       },

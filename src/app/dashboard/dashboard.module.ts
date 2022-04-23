@@ -6,9 +6,10 @@ import { MainModule } from '../_main/_main.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WorkspacesListPage } from './pages/workspaces-list/workspaces-list.page';
 import { EditWorkspacePage } from './pages/edit-workspace/edit-workspace.page';
+import { ProjectsListPage } from './pages/projects-list/projects-list.page';
 
 @NgModule({
   imports: [CommonModule, MainModule, ReactiveFormsModule, DashboardRoutes],
-  declarations: [CreateWorkspacePage, WorkspacesListPage, EditWorkspacePage],
+  declarations: [CreateWorkspacePage, WorkspacesListPage, EditWorkspacePage, ProjectsListPage],
 })
 export class DashboardModule {}

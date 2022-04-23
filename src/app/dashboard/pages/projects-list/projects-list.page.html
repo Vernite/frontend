@@ -1,18 +1,18 @@
 <!-- Page header -->
 <section class="flex justify-between items-center">
-  <h2 class="typo-heading-5" i18n>Workspaces</h2>
+  <h2 class="typo-heading-5" i18n>{{ (workspace$ | async)?.name }}</h2>
   <app-button variant="primary" routerLink="/workspaces/create" [icon]="faPlus" i18n>
-    New workspace
+    New project
   </app-button>
 </section>
 
 <!-- Table -->
-<table mat-table [dataSource]="(workspaces$ | async) || []">
+<table mat-table [dataSource]="(projects$ | async) || []">
 
   <!-- Name column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef i18n> Name </th>
-    <td mat-cell *matCellDef="let row" (click)="openWorkspace(row)"> {{ row.name }} </td>
+    <td mat-cell *matCellDef="let row"> {{ row.name }} </td>
   </ng-container>
 
   <!-- Statistics column -->
@@ -35,10 +35,10 @@
         <app-icon icon="matMoreVert"></app-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="editWorkspace(row)">
+        <button mat-menu-item (click)="editProject(row)">
           <span>Edit workspace</span>
         </button>
-        <button mat-menu-item class="important" (click)="deleteWorkspace(row)">
+        <button mat-menu-item class="important" (click)="deleteProject(row)">
           <span>Delete workspace</span>
         </button>
       </mat-menu>
