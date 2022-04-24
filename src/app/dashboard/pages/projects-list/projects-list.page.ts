@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WorkspaceService } from '../../services/workspace.service';
 import { map, Observable } from 'rxjs';
 import { Project } from '../../interfaces/project.interface';
@@ -17,16 +17,30 @@ export class ProjectsListPage implements OnInit {
 
   faPlus = faPlus;
 
-  constructor(private activatedRoute: ActivatedRoute, private workspaceService: WorkspaceService) {
-    const { id } = this.activatedRoute.snapshot.params;
+  private workspaceId!: number;
 
-    this.workspace$ = this.workspaceService.get(id);
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private workspaceService: WorkspaceService,
+    private router: Router,
+  ) {
+    const { workspaceId } = this.activatedRoute.snapshot.params;
+
+    this.workspaceId = workspaceId;
+
+    this.workspace$ = this.workspaceService.get(workspaceId);
     this.projects$ = this.workspace$.pipe(
       map((workspace) => workspace.projectsWithPrivileges.map((project) => project.project)),
     );
   }
 
-  public editProject(project: Project) {}
+  public editProject(project: Project) {
+    this.router.navigate(['/', this.workspaceId, project.id, 'edit']);
+  }
+
+  public openProject(project: Project) {
+    this.router.navigate(['/', this.workspaceId, project.id]);
+  }
 
   public deleteProject(project: Project) {}
 

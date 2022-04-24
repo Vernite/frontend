@@ -7,9 +7,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { WorkspacesListPage } from './pages/workspaces-list/workspaces-list.page';
 import { EditWorkspacePage } from './pages/edit-workspace/edit-workspace.page';
 import { ProjectsListPage } from './pages/projects-list/projects-list.page';
+import { CreateProjectPage } from './pages/create-project/create-project.page';
+import { EditProjectPage } from './pages/edit-project/edit-project.page';
 
 @NgModule({
   imports: [CommonModule, MainModule, ReactiveFormsModule, DashboardRoutes],
-  declarations: [CreateWorkspacePage, WorkspacesListPage, EditWorkspacePage, ProjectsListPage],
+  declarations: [
+    CreateWorkspacePage,
+    WorkspacesListPage,
+    EditWorkspacePage,
+    ProjectsListPage,
+    CreateProjectPage,
+    EditProjectPage,
+  ],
 })
 export class DashboardModule {}

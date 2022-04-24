@@ -3,6 +3,8 @@ import { CreateWorkspacePage } from './pages/create-workspace/create-workspace.p
 import { EditWorkspacePage } from './pages/edit-workspace/edit-workspace.page';
 import { WorkspacesListPage } from './pages/workspaces-list/workspaces-list.page';
 import { ProjectsListPage } from './pages/projects-list/projects-list.page';
+import { CreateProjectPage } from './pages/create-project/create-project.page';
+import { EditProjectPage } from './pages/edit-project/edit-project.page';
 
 /**
  * Dashboard routes list
@@ -27,8 +29,15 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        // Should show projects list
-        redirectTo: 'edit',
+        component: ProjectsListPage,
+      },
+      {
+        path: 'create',
+        component: CreateProjectPage,
+      },
+      {
+        path: ':projectId/edit',
+        component: EditProjectPage,
       },
       {
         path: ':projectId',

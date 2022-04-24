@@ -11,9 +11,8 @@ describe('BoardTaskComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BoardTaskComponent ]
-    })
-    .compileComponents();
+      declarations: [BoardTaskComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
