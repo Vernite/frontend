@@ -1,6 +1,5 @@
 import { AutofillMonitor } from '@angular/cdk/text-field';
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   HostBinding,
@@ -19,7 +18,7 @@ import { ControlAccessor } from '../../classes/control-accessor.class';
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })
-export class InputComponent extends ControlAccessor implements OnInit, AfterViewInit {
+export class InputComponent extends ControlAccessor implements OnInit {
   /**
    * Type of the input
    */
@@ -46,7 +45,6 @@ export class InputComponent extends ControlAccessor implements OnInit, AfterView
   @Input() hint?: string;
 
   @HostBinding('class.focused') focused = false;
-  @HostBinding('class.has-value') hasValue = false;
 
   @ViewChild('input') input!: ElementRef<HTMLInputElement>;
 
@@ -57,9 +55,9 @@ export class InputComponent extends ControlAccessor implements OnInit, AfterView
   override ngOnInit(): void {
     super.ngOnInit();
 
-    this.control.valueChanges.subscribe((val) => {
-      this.onChange(val);
-    });
+    // this.control.valueChanges.subscribe((val) => {
+    //   this.onChange(val);
+    // });
 
     setTimeout(() => {
       this.input.nativeElement.classList.add('app-input-animation');
@@ -67,11 +65,11 @@ export class InputComponent extends ControlAccessor implements OnInit, AfterView
     }, 1000);
   }
 
-  ngAfterViewInit(): void {
-    this.autofillMonitor.monitor(this.input.nativeElement).subscribe((event) => {
-      this.hasValue = true;
-    });
-  }
+  // ngAfterViewInit(): void {
+  //   this.autofillMonitor.monitor(this.input.nativeElement).subscribe((event) => {
+  //     this.hasValue = true;
+  //   });
+  // }
 
   onFocus() {
     this.focused = true;
@@ -81,13 +79,13 @@ export class InputComponent extends ControlAccessor implements OnInit, AfterView
     this.focused = false;
   }
 
-  onChange(val: string) {
-    if (val) {
-      this.hasValue = true;
-    } else {
-      this.hasValue = false;
-    }
-  }
+  // onChange(val: string) {
+  //   if (val) {
+  //     this.hasValue = true;
+  //   } else {
+  //     this.hasValue = false;
+  //   }
+  // }
 
   onInput() {
     console.log('on input');

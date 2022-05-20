@@ -111,7 +111,7 @@ $height: 55px;
   }
 }
 
-:host.has-value,
+.has-value,
 :host.focused {
   .floating-label {
     font-size: 0.75em;
