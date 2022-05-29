@@ -69,7 +69,6 @@
     "@typescript-eslint/parser": "5.11.0",
     "autoprefixer": "^10.4.4",
     "badge-maker": "^3.3.1",
-    "chai-jasmine": "^2.0.3",
     "cypress": "latest",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.5.0",
