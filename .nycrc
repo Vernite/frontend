@@ -6,5 +6,6 @@
     "cypress/**",
     "./dist/**",
     "**/*.spec.ts"
-  ]
+  ],
+  "report-dir": "./coverage/workflow-e2e/"
 }
