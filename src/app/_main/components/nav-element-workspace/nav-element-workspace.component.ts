@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
@@ -33,6 +34,7 @@ export class NavElementWorkspaceComponent implements AfterViewInit {
     private dialogService: DialogService,
     private projectService: ProjectService,
     private router: Router,
+    private http: HttpClient,
   ) {}
 
   public openWorkspace() {
@@ -97,5 +99,14 @@ export class NavElementWorkspaceComponent implements AfterViewInit {
 
   openWithVSCode(project: Project) {
     window.open(`https://github.dev/${project.gitHubIntegration}`, '_blank');
+  }
+
+  openWithLocalVSCode(project: Project) {
+    const iframeVSCode = document.createElement('iframe');
+    const iframeVSCodeInsiders = document.createElement('iframe');
+    iframeVSCode.src = `vscode://vscode.git/clone?url=https://github.com/adiantek/projekt-grk`;
+    iframeVSCodeInsiders.src = `vscode-insiders://vscode.git/clone?url=https://github.com/adiantek/projekt-grk`;
+    document.body.append(iframeVSCode);
+    document.body.append(iframeVSCodeInsiders);
   }
 }

@@ -6,16 +6,16 @@ describe('Test email validator', () => {
 
   it('should match empty string', () => {
     const control = new FormControl('');
-    expect(validator(control)).toBeNull();
+    expect(validator(control)).to.be.null;
   });
 
   it('should match marc999.mc@gmail.com', () => {
     const control = new FormControl('marc999.mc@gmail.com');
-    expect(validator(control)).toBeNull();
+    expect(validator(control)).to.be.null;
   });
 
   it('should not match ABC', () => {
     const control = new FormControl('ABC');
-    expect(validator(control)).toBeTruthy();
+    expect(validator(control)).to.exist;
   });
 });

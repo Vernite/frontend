@@ -1,15 +1,15 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainViewComponent } from './main-view.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { SidebarNavigationComponent } from '../sidebar-navigation/sidebar-navigation.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavElementComponent } from '../nav-element/nav-element.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { IconComponent } from '../icon/icon.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconComponent } from '../icon/icon.component';
+import { NavElementComponent } from '../nav-element/nav-element.component';
+import { SidebarNavigationComponent } from '../sidebar-navigation/sidebar-navigation.component';
+import { MainViewComponent } from './main-view.component';
 
 describe('MainViewComponent', () => {
   let component: MainViewComponent;
@@ -40,6 +40,6 @@ describe('MainViewComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).to.be.true;
   });
 });

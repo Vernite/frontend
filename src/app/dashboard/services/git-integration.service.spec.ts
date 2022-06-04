@@ -13,6 +13,6 @@ describe('Service: GitIntegration', () => {
   });
 
   it('should ...', inject([GitIntegrationService], (service: GitIntegrationService) => {
-    expect(service).toBeTruthy();
+    expect(service).to.be.true;
   }));
 });

@@ -100,9 +100,10 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "options": {
-            "proxyConfig": "proxy.conf.json"
+            "proxyConfig": "proxy.conf.json",
+            "extraWebpackConfig": "./cypress/coverage.webpack.js"
           },
           "configurations": {
             "production": {
@@ -127,51 +128,17 @@
             "browserTarget": "workflow:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "codeCoverage": true,
-            "main": "src/tests/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles/styles.scss"
-            ],
-            "scripts": []
-          }
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
-        "cypress-run": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "devServerTarget": "workflow:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "workflow:serve:production"
-            }
-          }
-        },
-        "cypress-open": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "watch": true,
-            "headless": false
-          }
-        },
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "workflow:serve-coverage",
+            "configFile": "cypress.e2e.config.ts",
             "watch": true,
             "headless": false
           },
@@ -186,6 +153,50 @@
           "options": {
             "browser": "chrome",
             "devServerTarget": "workflow:serve-coverage",
+            "configFile": "cypress.e2e.config.ts",
+            "headless": true,
+            "watch": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "workflow:serve-coverage:production"
+            }
+          }
+        },
+        "unit": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "workflow:serve-coverage",
+            "configFile": "cypress.unit.config.ts",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "workflow:serve-coverage:production"
+            }
+          }
+        },
+        "all": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "workflow:serve-coverage",
+            "configFile": "cypress.all.config.ts",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "workflow:serve-coverage:production"
+            }
+          }
+        },
+        "all-ci": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "browser": "chrome",
+            "devServerTarget": "workflow:serve-coverage",
+            "configFile": "cypress.all.config.ts",
             "headless": true,
             "watch": false
           },

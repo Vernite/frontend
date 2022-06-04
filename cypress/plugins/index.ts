@@ -1,8 +1,8 @@
-/**
- * @type {Cypress.PluginConfig}
- */
-import * as registerCodeCoverageTasks from '@cypress/code-coverage/task';
+import { startAngularDevServer } from '@jscutlery/cypress-angular';
 
-export default (on, config) => {
-  return registerCodeCoverageTasks(on, config);
+module.exports = (on, config) => {
+  on('dev-server:start', (options) =>
+    startAngularDevServer({ options, tsConfig: 'tsconfig.cypress.json', target: 'workflow:build' }),
+  );
+  return config;
 };

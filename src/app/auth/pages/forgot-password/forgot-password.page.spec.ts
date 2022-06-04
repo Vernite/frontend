@@ -1,17 +1,13 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
-import { ForgotPasswordPage } from './forgot-password.page';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterTestingModule } from '@angular/router/testing';
-import { ButtonComponent } from '@main/components/button/button.component';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { IconComponent } from '@main/components/icon/icon.component';
-import { MainModule } from '@main/_main.module';
 import { NgControl, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ButtonComponent } from '@main/components/button/button.component';
+import { IconComponent } from '@main/components/icon/icon.component';
+import { MainModule } from '@main/_main.module';
+import { ForgotPasswordPage } from './forgot-password.page';
 
 describe('ForgotPasswordComponent', () => {
   let component: ForgotPasswordPage;
@@ -32,6 +28,6 @@ describe('ForgotPasswordComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).to.be.true;
   });
 });

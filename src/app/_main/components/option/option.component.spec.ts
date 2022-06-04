@@ -1,10 +1,8 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
-import { OptionComponent } from './option.component';
 import { MatSelectModule } from '@angular/material/select';
+import { OptionComponent } from './option.component';
 
 describe('OptionComponent', () => {
   let component: OptionComponent;
@@ -24,6 +22,6 @@ describe('OptionComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).to.be.true;
   });
 });

@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogService } from './dialog.service';
 
@@ -18,6 +18,6 @@ describe('Service: Dialog', () => {
   });
 
   it('should ...', inject([DialogService], (service: DialogService) => {
-    expect(service).toBeTruthy();
+    expect(service).to.be.true;
   }));
 });

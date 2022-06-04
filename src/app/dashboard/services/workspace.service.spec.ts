@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { HttpClientModule } from '@angular/common/http';
-import { TestBed, async, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 import { WorkspaceService } from './workspace.service';
 
 describe('Service: Workspace', () => {
@@ -13,6 +13,6 @@ describe('Service: Workspace', () => {
   });
 
   it('should ...', inject([WorkspaceService], (service: WorkspaceService) => {
-    expect(service).toBeTruthy();
+    expect(service).to.be.true;
   }));
 });

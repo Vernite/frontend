@@ -1,14 +1,12 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
-import { BoardTaskComponent } from './board-task.component';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDialogTestingProvider } from '@tests/helpers/mat-dialog-testing-provider.helper';
-import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 import { IconComponent } from '@main/components/icon/icon.component';
+import { MatDialogTestingProvider } from '@tests/helpers/mat-dialog-testing-provider.helper';
+import { BoardTaskComponent } from './board-task.component';
 
 describe('BoardTaskComponent', () => {
   let component: BoardTaskComponent;
@@ -29,6 +27,6 @@ describe('BoardTaskComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).to.be.true;
   });
 });

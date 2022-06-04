@@ -13,6 +13,6 @@ describe('Service: Project', () => {
   });
 
   it('should ...', inject([SessionsService], (service: SessionsService) => {
-    expect(service).toBeTruthy();
+    expect(service).to.be.true;
   }));
 });

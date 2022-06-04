@@ -1,16 +1,10 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { ChangePasswordPage } from './change-password.page';
-import { RouterTestingModule } from '@angular/router/testing';
-import { ButtonComponent } from '@main/components/button/button.component';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { InputComponent } from '@main/components/input/input.component';
 import { NgControl, ReactiveFormsModule } from '@angular/forms';
-import { MainModule } from '@main/_main.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MainModule } from '@main/_main.module';
+import { ChangePasswordPage } from './change-password.page';
 
 describe('ChangePasswordPage', () => {
   let component: ChangePasswordPage;
@@ -31,6 +25,6 @@ describe('ChangePasswordPage', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).to.be.true;
   });
 });

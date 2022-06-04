@@ -8,7 +8,7 @@ describe('Enum class', () => {
       Three = 3,
     }
 
-    expect(Enum.isNumeric(TestEnum1)).toBe(true);
+    expect(Enum.isNumeric(TestEnum1)).to.be.true;
   });
 
   it('isNumeric() - should return false if enum has non-numeric values', () => {
@@ -18,7 +18,7 @@ describe('Enum class', () => {
       Three = 'three',
     }
 
-    expect(Enum.isNumeric(TestEnum2)).toBe(false);
+    expect(Enum.isNumeric(TestEnum2)).to.be.false;
   });
 
   it('keys() - should return keys of numeric enum', () => {
@@ -28,7 +28,7 @@ describe('Enum class', () => {
       Three = 3,
     }
 
-    expect(Enum.keys(TestEnum3)).toEqual(['One', 'Two', 'Three']);
+    expect(Enum.keys(TestEnum3)).eql(['One', 'Two', 'Three']);
   });
 
   it('keys() - should return keys of non-numeric enum', () => {
@@ -38,7 +38,7 @@ describe('Enum class', () => {
       Three = 'three',
     }
 
-    expect(Enum.keys(TestEnum4)).toEqual(['One', 'Two', 'Three']);
+    expect(Enum.keys(TestEnum4)).eql(['One', 'Two', 'Three']);
   });
 
   it('values() - should return values of numeric enum', () => {
@@ -48,7 +48,7 @@ describe('Enum class', () => {
       Three = 3,
     }
 
-    expect(Enum.values(TestEnum5)).toEqual([1, 2, 3]);
+    expect(Enum.values(TestEnum5)).eql([1, 2, 3]);
   });
 
   it('values() - should return values of non-numeric enum', () => {
@@ -58,7 +58,7 @@ describe('Enum class', () => {
       Three = 'three',
     }
 
-    expect(Enum.values(TestEnum6)).toEqual(['one', 'two', 'three']);
+    expect(Enum.values(TestEnum6)).eql(['one', 'two', 'three']);
   });
 
   it('entries() - should return entries of numeric enum', () => {
@@ -68,7 +68,7 @@ describe('Enum class', () => {
       Three = 3,
     }
 
-    expect(Enum.entries(TestEnum7)).toEqual([
+    expect(Enum.entries(TestEnum7)).eql([
       ['One', 1],
       ['Two', 2],
       ['Three', 3],
@@ -82,7 +82,7 @@ describe('Enum class', () => {
       Three = 'three',
     }
 
-    expect(Enum.entries(TestEnum8)).toEqual([
+    expect(Enum.entries(TestEnum8)).eql([
       ['One', 'one'],
       ['Two', 'two'],
       ['Three', 'three'],

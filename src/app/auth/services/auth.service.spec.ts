@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { HttpClientModule } from '@angular/common/http';
-import { TestBed, async, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 import { AuthService } from './auth.service';
 
 describe('Service: AuthService', () => {
@@ -13,6 +13,6 @@ describe('Service: AuthService', () => {
   });
 
   it('should ...', inject([AuthService], (service: AuthService) => {
-    expect(service).toBeTruthy();
+    expect(service).to.be.true;
   }));
 });

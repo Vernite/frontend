@@ -16,12 +16,12 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(app).to.be.true;
   });
 
   it(`should have as title 'workflow'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('workflow');
+    expect(app.title).equals('workflow');
   });
 });

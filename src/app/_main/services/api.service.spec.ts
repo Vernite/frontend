@@ -19,12 +19,12 @@ describe('Service: Api', () => {
   });
 
   it('should create', inject([ApiService], (service: ApiService) => {
-    expect(service).toBeTruthy();
+    expect(service).to.be.true;
   }));
 
   it('post() - should send post request', (done) => {
     service.post('/test', { body: 'test' }).subscribe((response) => {
-      expect(response).toEqual({ test: 'test' });
+      expect(response).equals({ test: 'test' });
       done();
     });
 
@@ -34,7 +34,7 @@ describe('Service: Api', () => {
 
   it('get() - should send get request', (done) => {
     service.get('/test').subscribe((response) => {
-      expect(response).toEqual({ test: 'test' });
+      expect(response).equals({ test: 'test' });
       done();
     });
 
@@ -44,7 +44,7 @@ describe('Service: Api', () => {
 
   it('delete() - should send delete request', (done) => {
     service.delete('/test').subscribe((response) => {
-      expect(response).toEqual({ test: 'test' });
+      expect(response).equals({ test: 'test' });
       done();
     });
 
@@ -54,7 +54,7 @@ describe('Service: Api', () => {
 
   it('put() - should send put request', (done) => {
     service.put('/test', { body: 'test' }).subscribe((response) => {
-      expect(response).toEqual({ test: 'test' });
+      expect(response).equals({ test: 'test' });
       done();
     });
 
@@ -64,7 +64,7 @@ describe('Service: Api', () => {
 
   it('patch() - should send patch request', (done) => {
     service.patch('/test', { body: 'test' }).subscribe((response) => {
-      expect(response).toEqual({ test: 'test' });
+      expect(response).equals({ test: 'test' });
       done();
     });
 

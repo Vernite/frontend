@@ -3,13 +3,10 @@
   "all": true,
   "cache": "false",
   "exclude": [
-    "./coverage/**",
-    "cypress/**",
-    "./dist/**",
     "**/*.spec.ts"
   ],
   "include": [
-    "src/**/*.ts"
+    "src/app/**/*.ts"
   ],
-  "report-dir": "./coverage/workflow-e2e/"
+  "report-dir": "./coverage/workflow/"
 }

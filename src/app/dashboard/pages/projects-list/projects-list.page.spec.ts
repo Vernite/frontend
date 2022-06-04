@@ -1,11 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
-import { ProjectsListPage } from './projects-list.page';
-import { MainModule } from 'src/app/_main/_main.module';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MainModule } from 'src/app/_main/_main.module';
+import { ProjectsListPage } from './projects-list.page';
 
 describe('ProjectsListComponent', () => {
   let component: ProjectsListPage;
@@ -25,6 +23,6 @@ describe('ProjectsListComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).to.be.true;
   });
 });

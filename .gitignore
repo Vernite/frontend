@@ -42,6 +42,8 @@ testem.log
 /coverage
 /reports
 /cypress/videos
+/cypress/screenshots
+/cypress/downloads
 
 # System files
 .DS_Store

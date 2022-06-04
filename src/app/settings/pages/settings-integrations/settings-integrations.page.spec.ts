@@ -22,6 +22,6 @@ describe('SettingsIntegrationsPage', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).to.be.true;
   });
 });

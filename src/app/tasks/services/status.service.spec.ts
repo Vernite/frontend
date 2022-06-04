@@ -15,6 +15,6 @@ describe('Service: Status', () => {
   });
 
   it('should ...', inject([StatusService], (service: StatusService) => {
-    expect(service).toBeTruthy();
+    expect(service).to.be.true;
   }));
 });

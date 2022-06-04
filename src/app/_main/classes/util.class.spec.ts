@@ -8,12 +8,12 @@ describe('Utils: regexIndexOf', () => {
     const prefix = faIcon.substring(0, splitIndex);
     const name = faIcon.substring(splitIndex);
     const actual = [prefix, name];
-    expect(actual).toEqual(expected);
+    expect(actual).eql(expected);
   });
 
   it('Should return -1 for test', () => {
     const splitIndex = Utils.regexIndexOf('test', /[A-Z]/);
-    expect(splitIndex).toBe(-1);
+    expect(splitIndex).eql(-1);
   });
 });
 
@@ -22,34 +22,34 @@ describe('Utils: snakeCase', () => {
     const snakeCase = 'snake_case';
     const expected = 'snake_case';
     const actual = Utils.snakeCase(snakeCase);
-    expect(actual).toEqual(expected);
+    expect(actual).eql(expected);
   });
 
   it('Should return snake_case for SnakeCase', () => {
     const snakeCase = 'SnakeCase';
     const expected = 'snake_case';
     const actual = Utils.snakeCase(snakeCase);
-    expect(actual).toEqual(expected);
+    expect(actual).eql(expected);
   });
 
   it('Should return snake_case for snakeCase', () => {
     const snakeCase = 'snakeCase';
     const expected = 'snake_case';
     const actual = Utils.snakeCase(snakeCase);
-    expect(actual).toEqual(expected);
+    expect(actual).equals(expected);
   });
 });
 
 describe('Utils: isLetter', () => {
   const shouldReturnTrueFor = (char: string) => {
     it(`Should return true for ${char}`, () => {
-      expect(Utils.isLetter(char)).toBeTruthy();
+      expect(Utils.isLetter(char)).to.be.true;
     });
   };
 
   const shouldReturnFalseFor = (char: string) => {
     it(`Should return false for ${char}`, () => {
-      expect(Utils.isLetter(char)).toBeFalse();
+      expect(Utils.isLetter(char)).to.be.false;
     });
   };
 
@@ -72,7 +72,7 @@ describe('Utils: has', () => {
       key2: 'value2',
     };
 
-    expect(Utils.has(obj, ['key1', 'key2'])).toBeTruthy();
+    expect(Utils.has(obj, ['key1', 'key2'])).to.be.true;
   });
 
   it('Should return false for object without all keys', () => {
@@ -80,6 +80,6 @@ describe('Utils: has', () => {
       key1: 'value1',
     };
 
-    expect(Utils.has(obj, ['key1', 'key2'])).toBeFalsy();
+    expect(Utils.has(obj, ['key1', 'key2'])).to.be.false;
   });
 });

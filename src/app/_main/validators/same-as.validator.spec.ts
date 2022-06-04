@@ -8,7 +8,7 @@ describe('Test if two values are the same', () => {
   //     repeatPassword: new FormControl('abcd1234', [sameAsValidator('password', ``)], []),
   //   });
   //   form.updateValueAndValidity();
-  //   expect(form.valid).toBeTruthy();
+  //   expect(form.valid).to.be.true;
   // });
 
   it('should throw error if passwords are different', () => {
@@ -17,6 +17,6 @@ describe('Test if two values are the same', () => {
       repeatPassword: new FormControl('abcd1234', [sameAsValidator('password', ``)], []),
     });
     form.updateValueAndValidity();
-    expect(form.valid).toBeFalse();
+    expect(form.valid).to.be.false;
   });
 });

@@ -13,6 +13,6 @@ describe('Service: RouterExtensions', () => {
   });
 
   it('should ...', inject([RouterExtensionsService], (service: RouterExtensionsService) => {
-    expect(service).toBeTruthy();
+    expect(service).to.be.true;
   }));
 });

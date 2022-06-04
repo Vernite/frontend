@@ -1,6 +1,6 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "../cypress.all.config.ts"],
   "compilerOptions": {
     "sourceMap": false,
     "resolveJsonModule": true,
