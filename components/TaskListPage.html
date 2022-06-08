@@ -1,0 +1,1781 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>workflow documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">workflow documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  TaskListPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/tasks/pages/task-list/task-list.page.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-task-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./task-list.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./task-list.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#assigneeControl" >assigneeControl</a>
+                            </li>
+                            <li>
+                                <a href="#expandedSubtasks" >expandedSubtasks</a>
+                            </li>
+                            <li>
+                                <a href="#faCheck" >faCheck</a>
+                            </li>
+                            <li>
+                                <a href="#faChevronRight" >faChevronRight</a>
+                            </li>
+                            <li>
+                                <a href="#faCodeCommit" >faCodeCommit</a>
+                            </li>
+                            <li>
+                                <a href="#faCodePullRequest" >faCodePullRequest</a>
+                            </li>
+                            <li>
+                                <a href="#faPlus" >faPlus</a>
+                            </li>
+                            <li>
+                                <a href="#isSubtasksRow" >isSubtasksRow</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#members$" >members$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#project$" >project$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#projectId" >projectId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#statusList" >statusList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#statusList$" >statusList$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#taskList$" >taskList$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changeDate" >changeDate</a>
+                            </li>
+                            <li>
+                                <a href="#createSubtask" >createSubtask</a>
+                            </li>
+                            <li>
+                                <a href="#deleteTask" >deleteTask</a>
+                            </li>
+                            <li>
+                                <a href="#editTask" >editTask</a>
+                            </li>
+                            <li>
+                                <a href="#getStatus" >getStatus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getSubtasksContainerHeight" >getSubtasksContainerHeight</a>
+                            </li>
+                            <li>
+                                <a href="#initAssigneeChanging" >initAssigneeChanging</a>
+                            </li>
+                            <li>
+                                <a href="#populateSubtasks" >populateSubtasks</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, taskService: <a href="../injectables/TaskService.html" target="_self">TaskService</a>, statusService: <a href="../injectables/StatusService.html" target="_self">StatusService</a>, projectService: <a href="../injectables/ProjectService.html" target="_self">ProjectService</a>, dialogService: <a href="../injectables/DialogService.html" target="_self">DialogService</a>, memberService: <a href="../injectables/MemberService.html" target="_self">MemberService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>taskService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TaskService.html" target="_self" >TaskService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>statusService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StatusService.html" target="_self" >StatusService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>projectService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProjectService.html" target="_self" >ProjectService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>memberService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MemberService.html" target="_self" >MemberService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeDate"></a>
+                    <span class="name">
+                        <span ><b>changeDate</b></span>
+                        <a href="#changeDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeDate(date?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>date</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSubtask"></a>
+                    <span class="name">
+                        <span ><b>createSubtask</b></span>
+                        <a href="#createSubtask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createSubtask(task: <a href="../interfaces/Task.html" target="_self">Task</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>task</td>
+                                    <td>
+                                                <code><a href="../interfaces/Task.html" target="_self" >Task</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteTask"></a>
+                    <span class="name">
+                        <span ><b>deleteTask</b></span>
+                        <a href="#deleteTask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteTask(task: <a href="../interfaces/Task.html" target="_self">Task</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>task</td>
+                                    <td>
+                                                <code><a href="../interfaces/Task.html" target="_self" >Task</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editTask"></a>
+                    <span class="name">
+                        <span ><b>editTask</b></span>
+                        <a href="#editTask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editTask(task: <a href="../interfaces/Task.html" target="_self">Task</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:124</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>task</td>
+                                    <td>
+                                                <code><a href="../interfaces/Task.html" target="_self" >Task</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStatus"></a>
+                    <span class="name">
+                        <span ><b>getStatus</b></span>
+                        <a href="#getStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getStatus(statusId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:79</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>statusId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubtasksContainerHeight"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getSubtasksContainerHeight</b></span>
+                        <a href="#getSubtasksContainerHeight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getSubtasksContainerHeight(taskId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, element: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="140"
+                            class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:140</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>taskId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>element</td>
+                                    <td>
+                                            <code>HTMLElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initAssigneeChanging"></a>
+                    <span class="name">
+                        <span ><b>initAssigneeChanging</b></span>
+                        <a href="#initAssigneeChanging"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initAssigneeChanging()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:136</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="populateSubtasks"></a>
+                    <span class="name">
+                        <span ><b>populateSubtasks</b></span>
+                        <a href="#populateSubtasks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>populateSubtasks(taskList: <a href="../interfaces/Task.html" target="_self">Task[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>taskList</td>
+                                    <td>
+                                                <code><a href="../interfaces/Task.html" target="_self" >Task[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assigneeControl"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>assigneeControl</b></span>
+                        <a href="#assigneeControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(null)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="expandedSubtasks"></a>
+                    <span class="name">
+                        <span ><b>expandedSubtasks</b></span>
+                        <a href="#expandedSubtasks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new ESet()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="faCheck"></a>
+                    <span class="name">
+                        <span ><b>faCheck</b></span>
+                        <a href="#faCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faCheck</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="faChevronRight"></a>
+                    <span class="name">
+                        <span ><b>faChevronRight</b></span>
+                        <a href="#faChevronRight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faChevronRight</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="faCodeCommit"></a>
+                    <span class="name">
+                        <span ><b>faCodeCommit</b></span>
+                        <a href="#faCodeCommit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faCodeCommit</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="faCodePullRequest"></a>
+                    <span class="name">
+                        <span ><b>faCodePullRequest</b></span>
+                        <a href="#faCodePullRequest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faCodePullRequest</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="faPlus"></a>
+                    <span class="name">
+                        <span ><b>faPlus</b></span>
+                        <a href="#faPlus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faPlus</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSubtasksRow"></a>
+                    <span class="name">
+                        <span ><b>isSubtasksRow</b></span>
+                        <a href="#isSubtasksRow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="members$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>members$</b></span>
+                        <a href="#members$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;Map&lt;number, ProjectMember&gt;&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="project$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>project$</b></span>
+                        <a href="#project$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Project.html" target="_self" >Observable&lt;Project&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="projectId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>projectId</b></span>
+                        <a href="#projectId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="statusList"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>statusList</b></span>
+                        <a href="#statusList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Status.html" target="_self" >Status[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="statusList$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>statusList$</b></span>
+                        <a href="#statusList$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Status.html" target="_self" >Observable&lt;Status[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="taskList$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>taskList$</b></span>
+                        <a href="#taskList$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Task.html" target="_self" >Observable&lt;Task[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/tasks/pages/task-list/task-list.page.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { FormControl } from &#x27;@angular/forms&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { ProjectMember } from &#x27;@dashboard/interfaces/project-member.interface&#x27;;
+import { Project } from &#x27;@dashboard/interfaces/project.interface&#x27;;
+import { MemberService } from &#x27;@dashboard/services/member.service&#x27;;
+import { ProjectService } from &#x27;@dashboard/services/project.service&#x27;;
+import {
+  faCheck,
+  faChevronRight,
+  faCodeCommit,
+  faCodePullRequest,
+  faPlus
+} from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+import { ESet } from &#x27;@main/classes/e-set.class&#x27;;
+import { DialogService } from &#x27;@main/services/dialog.service&#x27;;
+import { TaskDialog, TaskDialogVariant } from &#x27;@tasks/dialogs/task/task.dialog&#x27;;
+import { Status } from &#x27;@tasks/interfaces/status.interface&#x27;;
+import { Task } from &#x27;@tasks/interfaces/task.interface&#x27;;
+import { StatusService } from &#x27;@tasks/services/status.service&#x27;;
+import { TaskService } from &#x27;@tasks/services/task.service&#x27;;
+import * as dayjs from &#x27;dayjs&#x27;;
+import { map, Observable } from &#x27;rxjs&#x27;;
+
+@Component({
+  selector: &#x27;app-task-list&#x27;,
+  templateUrl: &#x27;./task-list.page.html&#x27;,
+  styleUrls: [&#x27;./task-list.page.scss&#x27;],
+})
+export class TaskListPage {
+  faPlus &#x3D; faPlus;
+  faChevronRight &#x3D; faChevronRight;
+  faCodeCommit &#x3D; faCodeCommit;
+  faCodePullRequest &#x3D; faCodePullRequest;
+  faCheck &#x3D; faCheck;
+
+  public projectId!: number;
+
+  public taskList$!: Observable&lt;Task[]&gt;;
+  public statusList$!: Observable&lt;Status[]&gt;;
+  public project$!: Observable&lt;Project&gt;;
+  public members$!: Observable&lt;Map&lt;number, ProjectMember&gt;&gt;;
+  public assigneeControl &#x3D; new FormControl(null);
+
+  public statusList: Status[] &#x3D; [];
+
+  isSubtasksRow &#x3D; (i: number, row: Object) &#x3D;&gt; row.hasOwnProperty(&#x27;withSubtasks&#x27;);
+  expandedSubtasks &#x3D; new ESet();
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private taskService: TaskService,
+    private statusService: StatusService,
+    private projectService: ProjectService,
+    private dialogService: DialogService,
+    private memberService: MemberService,
+  ) {
+    const { workspaceId, projectId } &#x3D; this.activatedRoute.snapshot.params;
+
+    this.projectId &#x3D; projectId;
+    this.project$ &#x3D; this.projectService.get(projectId);
+    this.members$ &#x3D; this.memberService.list(projectId).pipe(
+      map((members) &#x3D;&gt;
+        members.reduce((acc: Map&lt;number, ProjectMember&gt;, member: ProjectMember) &#x3D;&gt; {
+          acc.set(member.user.id, member);
+          return acc;
+        }, new Map&lt;number, ProjectMember&gt;()),
+      ),
+    );
+    this.taskList$ &#x3D; this.taskService
+      .list(projectId)
+      .pipe(map((tasks) &#x3D;&gt; tasks.filter((task) &#x3D;&gt; !task.parentTaskId)));
+    this.statusList$ &#x3D; this.statusService.list(projectId);
+    this.statusList$.subscribe((list) &#x3D;&gt; {
+      this.statusList &#x3D; list;
+    });
+  }
+
+  getStatus(statusId: number) {
+    return this.statusList.find((status) &#x3D;&gt; status.id &#x3D;&#x3D;&#x3D; statusId)?.name;
+  }
+
+  changeDate(date?: Date) {
+    if (!date) return &#x27;-&#x27;;
+    let sessionDate &#x3D; dayjs(date);
+    return sessionDate.format(&#x27;YYYY-MM-DD, hh:mm A&#x27;);
+  }
+
+  populateSubtasks(taskList: Task[]) {
+    const populatedTasks &#x3D; [];
+    const tasks &#x3D; taskList.filter((task) &#x3D;&gt; !task.parentTaskId);
+
+    for (const task of tasks) {
+      populatedTasks.push(task);
+
+      if (task.subTasks &amp;&amp; task.subTasks.length) {
+        populatedTasks.push({ ...task, withSubtasks: true });
+      }
+    }
+
+    return populatedTasks;
+  }
+
+  createSubtask(task: Task) {
+    this.dialogService
+      .open(TaskDialog, {
+        variant: TaskDialogVariant.CREATE,
+        projectId: this.projectId,
+        subtask: true,
+        task: {
+          parentTaskId: task.id,
+        },
+      })
+      .afterClosed()
+      .subscribe((task) &#x3D;&gt; {
+        if (!task) return;
+
+        this.taskService.create(this.projectId, task).subscribe(() &#x3D;&gt; {
+          location.reload();
+        });
+      });
+  }
+
+  editTask(task: Task) {
+    this.taskService.openEditTaskDialog(this.projectId, task).subscribe(() &#x3D;&gt; {
+      location.reload();
+    });
+  }
+
+  deleteTask(task: Task) {
+    this.taskService.deleteWithConfirmation(this.projectId, task).subscribe(() &#x3D;&gt; {
+      location.reload();
+    });
+  }
+
+  initAssigneeChanging() {
+    this.assigneeControl.valueChanges.subscribe((assignee) &#x3D;&gt; {});
+  }
+
+  public getSubtasksContainerHeight(taskId: number, element: HTMLElement) {
+    return &#x60;${Number(this.expandedSubtasks.has(taskId)) * element.scrollHeight}px&#x60;;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-view-options [project]&#x3D;&quot;(project$ | async)!&quot;&gt;&lt;/app-view-options&gt;
+
+&lt;!-- Table --&gt;
+&lt;div class&#x3D;&quot;table&quot; *ngLet&#x3D;&quot;(members$ | async) as members&quot;&gt;
+
+  &lt;!-- Header --&gt;
+  &lt;div class&#x3D;&quot;header-row&quot;&gt;
+    &lt;div class&#x3D;&quot;header-cell w-full&quot;&gt;Title&lt;/div&gt;
+    &lt;div class&#x3D;&quot;header-cell w-52&quot;&gt;Status&lt;/div&gt;
+    &lt;div class&#x3D;&quot;header-cell w-52&quot;&gt;Assignee&lt;/div&gt;
+    &lt;div class&#x3D;&quot;header-cell w-52&quot;&gt;Deadline&lt;/div&gt;
+    &lt;div class&#x3D;&quot;header-cell action&quot;&gt;
+      &lt;!-- Actions --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Body --&gt;
+  &lt;ng-container *ngFor&#x3D;&quot;let task of taskList$ | async&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot; [class.expanded]&#x3D;&quot;expandedSubtasks.has(task.id)&quot; (click)&#x3D;&quot;expandedSubtasks.toggle(task.id)&quot;&gt;
+
+      &lt;!-- Title cell --&gt;
+      &lt;div class&#x3D;&quot;cell w-full&quot;&gt;
+        &lt;div class&#x3D;&quot;task-title&quot;&gt;
+          &lt;app-icon [icon]&#x3D;&quot;faChevronRight&quot; size&#x3D;&quot;16px&quot; [class.invisible]&#x3D;&quot;!task.subTasks?.length&quot;&gt;&lt;/app-icon&gt;
+          &lt;span class&#x3D;&quot;task-id&quot;&gt;#{{ task.id }}&lt;/span&gt;
+          &lt;span&gt;{{ task.name }}&lt;/span&gt;
+          &lt;a *ngIf&#x3D;&quot;task.issue&quot; [href]&#x3D;&quot;task.issue&quot; class&#x3D;&quot;task-property&quot; target&#x3D;&quot;_blank&quot; matTooltip&#x3D;&quot;GitHub issue&quot;
+            i18n-matTooltip&gt;
+            &lt;app-icon [icon]&#x3D;&quot;faCodeCommit&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
+          &lt;/a&gt;
+          &lt;a *ngIf&#x3D;&quot;task.pull&quot; [href]&#x3D;&quot;task.pull&quot; class&#x3D;&quot;task-property&quot; target&#x3D;&quot;_blank&quot; matTooltip&#x3D;&quot;GitHub pull request&quot;
+            i18n-matTooltip&gt;
+            &lt;app-icon [icon]&#x3D;&quot;faCodePullRequest&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
+          &lt;/a&gt;
+          &lt;a *ngIf&#x3D;&quot;task.mergedPullList&quot; [href]&#x3D;&quot;task.mergedPullList[0]&quot; class&#x3D;&quot;task-property&quot; target&#x3D;&quot;_blank&quot;
+            matTooltip&#x3D;&quot;GitHub pull request&quot; i18n-matTooltip&gt;
+            &lt;app-icon [icon]&#x3D;&quot;faCodePullRequest&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
+            &lt;app-icon class&#x3D;&quot;check&quot; [icon]&#x3D;&quot;faCheck&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Status cell --&gt;
+      &lt;div class&#x3D;&quot;cell w-52 p-0&quot;&gt;
+        &lt;app-status-label [projectId]&#x3D;&quot;projectId&quot; [taskId]&#x3D;&quot;task.id&quot; [statuses]&#x3D;&quot;statusList&quot; [statusId]&#x3D;&quot;task.statusId!&quot;
+          click-stop-propagation&gt;
+        &lt;/app-status-label&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Assignee cell --&gt;
+      &lt;div class&#x3D;&quot;cell w-52&quot;&gt;
+        &lt;app-input-assignee [assignee]&#x3D;&quot;task.assigneeId &amp;&amp; members.get(task.assigneeId)&quot; [members]&#x3D;&quot;members&quot;
+          [projectId]&#x3D;&quot;projectId&quot; [taskId]&#x3D;&quot;task.id&quot; click-stop-propagation&gt;
+        &lt;/app-input-assignee&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Deadline cell --&gt;
+      &lt;div class&#x3D;&quot;cell w-52&quot;&gt;{{changeDate(task.deadline)}}&lt;/div&gt;
+
+      &lt;!-- Actions cell --&gt;
+      &lt;div class&#x3D;&quot;cell action justify-center&quot;&gt;
+        &lt;button mat-icon-button click-stop-propagation [matMenuTriggerFor]&#x3D;&quot;menu&quot; class&#x3D;&quot;flex items-center&quot;&gt;
+          &lt;app-icon icon&#x3D;&quot;matMoreVert&quot;&gt;&lt;/app-icon&gt;
+        &lt;/button&gt;
+        &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
+          &lt;button mat-menu-item (click)&#x3D;&quot;editTask(task)&quot;&gt;
+            &lt;span i18n&gt;Edit task&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button mat-menu-item (click)&#x3D;&quot;createSubtask(task)&quot;&gt;
+            &lt;span i18n&gt;Create subtask&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button mat-menu-item (click)&#x3D;&quot;deleteTask(task)&quot; class&#x3D;&quot;important&quot;&gt;
+            &lt;span i18n&gt;Delete task&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/mat-menu&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div #subtasks class&#x3D;&quot;subtasks&quot; [style.maxHeight]&#x3D;&quot;getSubtasksContainerHeight(task.id, subtasks)&quot;&gt;
+      &lt;div *ngFor&#x3D;&quot;let subtask of task.subTasks&quot; class&#x3D;&quot;row&quot;&gt;
+
+        &lt;!-- Title cell --&gt;
+        &lt;div class&#x3D;&quot;cell w-full&quot;&gt;
+          &lt;div class&#x3D;&quot;subtask-title&quot;&gt;
+            &lt;span class&#x3D;&quot;subtask-id&quot;&gt;#{{ subtask.id }}&lt;/span&gt;
+            &lt;span&gt;{{ subtask.name }}&lt;/span&gt;
+            &lt;a *ngIf&#x3D;&quot;subtask.issue&quot; [href]&#x3D;&quot;subtask.issue&quot; class&#x3D;&quot;task-property&quot; target&#x3D;&quot;_blank&quot;
+              matTooltip&#x3D;&quot;GitHub issue&quot; i18n-matTooltip&gt;
+              &lt;app-icon [icon]&#x3D;&quot;faCodeCommit&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
+            &lt;/a&gt;
+            &lt;a *ngIf&#x3D;&quot;subtask.pull&quot; [href]&#x3D;&quot;subtask.pull&quot; class&#x3D;&quot;task-property&quot; target&#x3D;&quot;_blank&quot;
+              matTooltip&#x3D;&quot;GitHub pull request&quot; i18n-matTooltip&gt;
+              &lt;app-icon [icon]&#x3D;&quot;faCodePullRequest&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
+            &lt;/a&gt;
+            &lt;a *ngIf&#x3D;&quot;subtask.mergedPullList&quot; [href]&#x3D;&quot;subtask.mergedPullList[0]&quot; class&#x3D;&quot;task-property&quot; target&#x3D;&quot;_blank&quot;
+              matTooltip&#x3D;&quot;GitHub pull request&quot; i18n-matTooltip&gt;
+              &lt;app-icon [icon]&#x3D;&quot;faCodePullRequest&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
+              &lt;app-icon class&#x3D;&quot;check&quot; [icon]&#x3D;&quot;faCheck&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Status cell --&gt;
+        &lt;div class&#x3D;&quot;cell w-52 p-0&quot;&gt;
+          &lt;app-status-label [projectId]&#x3D;&quot;projectId&quot; [taskId]&#x3D;&quot;subtask.id&quot; [statuses]&#x3D;&quot;statusList&quot;
+            [statusId]&#x3D;&quot;subtask.statusId!&quot; click-stop-propagation&gt;&lt;/app-status-label&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Assignee cell --&gt;
+        &lt;div class&#x3D;&quot;cell w-52&quot;&gt;
+          &lt;app-input-assignee [assignee]&#x3D;&quot;task.assigneeId &amp;&amp; members.get(task.assigneeId)&quot; [members]&#x3D;&quot;members&quot;
+            [projectId]&#x3D;&quot;projectId&quot; [taskId]&#x3D;&quot;subtask.id&quot; click-stop-propagation&gt;
+          &lt;/app-input-assignee&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Deadline cell --&gt;
+        &lt;div class&#x3D;&quot;cell w-52&quot;&gt;{{changeDate(subtask.deadline)}}&lt;/div&gt;
+
+        &lt;!-- Actions cell --&gt;
+        &lt;div class&#x3D;&quot;cell action justify-center&quot;&gt;
+          &lt;button mat-icon-button click-stop-propagation [matMenuTriggerFor]&#x3D;&quot;menu&quot; class&#x3D;&quot;flex items-center&quot;&gt;
+            &lt;app-icon icon&#x3D;&quot;matMoreVert&quot;&gt;&lt;/app-icon&gt;
+          &lt;/button&gt;
+          &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
+            &lt;button mat-menu-item (click)&#x3D;&quot;editTask(subtask)&quot;&gt;
+              &lt;span i18n&gt;Edit task&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button mat-menu-item (click)&#x3D;&quot;createSubtask(subtask)&quot;&gt;
+              &lt;span i18n&gt;Create subtask&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button mat-menu-item (click)&#x3D;&quot;deleteTask(subtask)&quot; class&#x3D;&quot;important&quot;&gt;
+              &lt;span i18n&gt;Delete task&lt;/span&gt;
+            &lt;/button&gt;
+          &lt;/mat-menu&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./task-list.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;../../../../styles/typography&#x27;;
+
+:host {
+  display: block;
+  padding: 2rem;
+}
+
+.table {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.table .row .cell .status {
+  @include typo-title;
+
+  display: flex;
+  width: 100%;
+  max-width: 250px;
+  height: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  margin: 0 1rem;
+  background-color: var(--color-secondary-400);
+  border-radius: var(--border-radius);
+}
+
+.task-title {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+
+  .task-id {
+    display: block;
+    margin-right: 1rem;
+    opacity: 0.5;
+  }
+
+  .task-property {
+    display: flex;
+    margin-left: 1rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+
+    &amp;:hover {
+      opacity: 1;
+    }
+
+    .check {
+      margin-left: 5px;
+      color: #2ecc71;
+    }
+  }
+
+  &gt;app-icon {
+    margin-right: 1.5rem;
+    opacity: 0.5;
+  }
+}
+
+.subtasks {
+  position: relative;
+  overflow: hidden;
+  max-height: 0;
+  padding-left: 4rem;
+  transition: max-height 0.4s ease;
+
+  .subtask-title {
+    display: flex;
+  }
+
+  .subtask-id {
+    display: block;
+    margin-right: 1rem;
+    opacity: 0.5;
+  }
+
+  .row {
+    position: relative;
+
+    &amp;::before,
+    &amp;::after {
+      position: absolute;
+      top: 0;
+      left: -2.5rem;
+      display: block;
+      content: &#x27;&#x27;;
+    }
+
+    &amp;:last-child {
+      margin-bottom: 1rem;
+    }
+
+    &amp;:not(:last-child)::before {
+      width: 2px;
+      height: calc(100% + 1rem);
+      background-color: var(--color-secondary-400);
+    }
+
+    &amp;::after {
+      width: 29px;
+      height: 29px;
+      border: 2px solid var(--color-secondary-400);
+      border-top-width: 0;
+      border-right-width: 0;
+      border-bottom-left-radius: 50%;
+    }
+  }
+}
+
+.row {
+  &amp;.expanded {
+    .task-title &gt; app-icon {
+      transform: rotate(90deg);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-view-options [project]="(project$ | async)!"></app-view-options><!-- Table --><div class="table" *ngLet="(members$ | async) as members">  <!-- Header -->  <div class="header-row">    <div class="header-cell w-full">Title</div>    <div class="header-cell w-52">Status</div>    <div class="header-cell w-52">Assignee</div>    <div class="header-cell w-52">Deadline</div>    <div class="header-cell action">      <!-- Actions -->    </div>  </div>  <!-- Body -->  <ng-container *ngFor="let task of taskList$ | async">    <div class="row" [class.expanded]="expandedSubtasks.has(task.id)" (click)="expandedSubtasks.toggle(task.id)">      <!-- Title cell -->      <div class="cell w-full">        <div class="task-title">          <app-icon [icon]="faChevronRight" size="16px" [class.invisible]="!task.subTasks?.length"></app-icon>          <span class="task-id">#{{ task.id }}</span>          <span>{{ task.name }}</span>          <a *ngIf="task.issue" [href]="task.issue" class="task-property" target="_blank" matTooltip="GitHub issue"            i18n-matTooltip>            <app-icon [icon]="faCodeCommit" size="14px"></app-icon>          </a>          <a *ngIf="task.pull" [href]="task.pull" class="task-property" target="_blank" matTooltip="GitHub pull request"            i18n-matTooltip>            <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>          </a>          <a *ngIf="task.mergedPullList" [href]="task.mergedPullList[0]" class="task-property" target="_blank"            matTooltip="GitHub pull request" i18n-matTooltip>            <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>            <app-icon class="check" [icon]="faCheck" size="14px"></app-icon>          </a>        </div>      </div>      <!-- Status cell -->      <div class="cell w-52 p-0">        <app-status-label [projectId]="projectId" [taskId]="task.id" [statuses]="statusList" [statusId]="task.statusId!"          click-stop-propagation>        </app-status-label>      </div>      <!-- Assignee cell -->      <div class="cell w-52">        <app-input-assignee [assignee]="task.assigneeId && members.get(task.assigneeId)" [members]="members"          [projectId]="projectId" [taskId]="task.id" click-stop-propagation>        </app-input-assignee>      </div>      <!-- Deadline cell -->      <div class="cell w-52">{{changeDate(task.deadline)}}</div>      <!-- Actions cell -->      <div class="cell action justify-center">        <button mat-icon-button click-stop-propagation [matMenuTriggerFor]="menu" class="flex items-center">          <app-icon icon="matMoreVert"></app-icon>        </button>        <mat-menu #menu="matMenu">          <button mat-menu-item (click)="editTask(task)">            <span i18n>Edit task</span>          </button>          <button mat-menu-item (click)="createSubtask(task)">            <span i18n>Create subtask</span>          </button>          <button mat-menu-item (click)="deleteTask(task)" class="important">            <span i18n>Delete task</span>          </button>        </mat-menu>      </div>    </div>    <div #subtasks class="subtasks" [style.maxHeight]="getSubtasksContainerHeight(task.id, subtasks)">      <div *ngFor="let subtask of task.subTasks" class="row">        <!-- Title cell -->        <div class="cell w-full">          <div class="subtask-title">            <span class="subtask-id">#{{ subtask.id }}</span>            <span>{{ subtask.name }}</span>            <a *ngIf="subtask.issue" [href]="subtask.issue" class="task-property" target="_blank"              matTooltip="GitHub issue" i18n-matTooltip>              <app-icon [icon]="faCodeCommit" size="14px"></app-icon>            </a>            <a *ngIf="subtask.pull" [href]="subtask.pull" class="task-property" target="_blank"              matTooltip="GitHub pull request" i18n-matTooltip>              <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>            </a>            <a *ngIf="subtask.mergedPullList" [href]="subtask.mergedPullList[0]" class="task-property" target="_blank"              matTooltip="GitHub pull request" i18n-matTooltip>              <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>              <app-icon class="check" [icon]="faCheck" size="14px"></app-icon>            </a>          </div>        </div>        <!-- Status cell -->        <div class="cell w-52 p-0">          <app-status-label [projectId]="projectId" [taskId]="subtask.id" [statuses]="statusList"            [statusId]="subtask.statusId!" click-stop-propagation></app-status-label>        </div>        <!-- Assignee cell -->        <div class="cell w-52">          <app-input-assignee [assignee]="task.assigneeId && members.get(task.assigneeId)" [members]="members"            [projectId]="projectId" [taskId]="subtask.id" click-stop-propagation>          </app-input-assignee>        </div>        <!-- Deadline cell -->        <div class="cell w-52">{{changeDate(subtask.deadline)}}</div>        <!-- Actions cell -->        <div class="cell action justify-center">          <button mat-icon-button click-stop-propagation [matMenuTriggerFor]="menu" class="flex items-center">            <app-icon icon="matMoreVert"></app-icon>          </button>          <mat-menu #menu="matMenu">            <button mat-menu-item (click)="editTask(subtask)">              <span i18n>Edit task</span>            </button>            <button mat-menu-item (click)="createSubtask(subtask)">              <span i18n>Create subtask</span>            </button>            <button mat-menu-item (click)="deleteTask(subtask)" class="important">              <span i18n>Delete task</span>            </button>          </mat-menu>        </div>      </div>    </div>  </ng-container></div></div>'
+    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
+    var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
+    var ACTUAL_COMPONENT = {'name': 'TaskListPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TaskListPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
