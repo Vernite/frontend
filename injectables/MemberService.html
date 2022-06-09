@@ -92,6 +92,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#map" >map</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#remove" >remove</a>
                             </li>
                         </ul>
@@ -433,6 +437,85 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="map"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>map</b></span>
+                        <a href="#map"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>map(projectId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/dashboard/services/member.service.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates members map from given project</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>projectId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>project which are members from</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Map&lt;number, ProjectMember&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Request observable, which completes when request is finished</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="remove"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
@@ -533,7 +616,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { ProjectMember } from &#x27;@dashboard/interfaces/project-member.interface&#x27;;
 import { Service } from &#x27;@main/decorators/service.decorator&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
+import { map, Observable } from &#x27;rxjs&#x27;;
 import { ApiService } from &#x27;src/app/_main/services/api.service&#x27;;
 
 @Service()
@@ -583,6 +666,22 @@ export class MemberService {
     projectList: number[],
   ): Observable&lt;{ emails: string[]; projectList: number[] }&gt; {
     return this.apiService.post(&#x60;/project/member&#x60;, { body: { emails, projectList } });
+  }
+
+  /**
+   * Creates members map from given project
+   * @param projectId project which are members from
+   * @returns Request observable, which completes when request is finished
+   */
+  public map(projectId: number): Observable&lt;Map&lt;number, ProjectMember&gt;&gt; {
+    return this.list(projectId).pipe(
+      map((members) &#x3D;&gt;
+        members.reduce((acc: Map&lt;number, ProjectMember&gt;, member: ProjectMember) &#x3D;&gt; {
+          acc.set(member.user.id, member);
+          return acc;
+        }, new Map&lt;number, ProjectMember&gt;()),
+      ),
+    );
   }
 }
 </code></pre>
