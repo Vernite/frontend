@@ -619,7 +619,7 @@ export class NavElementComponent implements AfterViewInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;section&gt;
-  &lt;div [routerLink]&#x3D;&quot;routerLink&quot;&gt;
+  &lt;div class&#x3D;&quot;element&quot; (click)&#x3D;&quot;toggleNavElement()&quot;&gt;
     &lt;fa-icon&gt;&lt;/fa-icon&gt;
     &lt;ng-content&gt;&lt;/ng-content&gt;
   &lt;/div&gt;
@@ -627,8 +627,8 @@ export class NavElementComponent implements AfterViewInit {
     &lt;div class&#x3D;&quot;open-below&quot; [class.hidden]&#x3D;&quot;(showArrow$ | async) &#x3D;&#x3D;&#x3D; false&quot; (click)&#x3D;&quot;toggleNavElement()&quot;&gt;
       &lt;app-icon [icon]&#x3D;&quot;faAngleDown&quot; size&#x3D;&quot;16px&quot; [class.active]&#x3D;&quot;active&quot;&gt;&lt;/app-icon&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;options&quot; [class.hidden]&#x3D;&quot;!showOptions&quot;&gt;
-      &lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;menu&quot; aria-label&#x3D;&quot;Menu&quot;&gt;
+    &lt;div class&#x3D;&quot;options&quot; [class.hidden]&#x3D;&quot;!showOptions&quot; [matMenuTriggerFor]&#x3D;&quot;menu&quot;&gt;
+      &lt;button mat-icon-button aria-label&#x3D;&quot;Menu&quot;&gt;
         &lt;mat-icon&gt;more_vert&lt;/mat-icon&gt;
       &lt;/button&gt;
       &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
@@ -660,23 +660,41 @@ section {
 
   display: flex;
   width: 100%;
-  height: 52px;
+  height: 46px;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 5px 14px 20px;
   color: var(--color-neutral-300);
   cursor: pointer;
   transition: color 0.2s ease-in-out;
 
+  .element {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 0 0 0 20px;
+  }
+
   .icons {
     display: flex;
+    height: 100%;
     align-items: center;
+
+    .options {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      padding: 0 5px 0 0;
+    }
 
     .open-below {
       display: flex;
+      height: 100%;
       align-items: center;
       justify-content: center;
       padding: 0 5px;
+
+      // padding: 0 5px;
 
       app-icon {
         display: flex;
@@ -743,7 +761,7 @@ section {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section>  <div [routerLink]="routerLink">    <fa-icon></fa-icon>    <ng-content></ng-content>  </div>  <div class="icons">    <div class="open-below" [class.hidden]="(showArrow$ | async) === false" (click)="toggleNavElement()">      <app-icon [icon]="faAngleDown" size="16px" [class.active]="active"></app-icon>    </div>    <div class="options" [class.hidden]="!showOptions">      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">        <mat-icon>more_vert</mat-icon>      </button>      <mat-menu #menu="matMenu">        <ng-content select=".options"></ng-content>      </mat-menu>    </div>  </div></section><div class="list" #elementList [class.active]="active">  <ng-content select=".open-below"></ng-content></div></div>'
+        var COMPONENT_TEMPLATE = '<div><section>  <div class="element" (click)="toggleNavElement()">    <fa-icon></fa-icon>    <ng-content></ng-content>  </div>  <div class="icons">    <div class="open-below" [class.hidden]="(showArrow$ | async) === false" (click)="toggleNavElement()">      <app-icon [icon]="faAngleDown" size="16px" [class.active]="active"></app-icon>    </div>    <div class="options" [class.hidden]="!showOptions" [matMenuTriggerFor]="menu">      <button mat-icon-button aria-label="Menu">        <mat-icon>more_vert</mat-icon>      </button>      <mat-menu #menu="matMenu">        <ng-content select=".options"></ng-content>      </mat-menu>    </div>  </div></section><div class="list" #elementList [class.active]="active">  <ng-content select=".open-below"></ng-content></div></div>'
     var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
     var ACTUAL_COMPONENT = {'name': 'NavElementComponent'};

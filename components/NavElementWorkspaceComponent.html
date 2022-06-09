@@ -1351,7 +1351,7 @@ export class NavElementWorkspaceComponent implements AfterViewInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;section&gt;
   &lt;div class&#x3D;&quot;workspace&quot;&gt;
-    &lt;div (click)&#x3D;&quot;routeToWorkspace()&quot;&gt;
+    &lt;div class&#x3D;&quot;element&quot; (click)&#x3D;&quot;toggleWorkspace()&quot;&gt;
       &lt;ng-content&gt;&lt;/ng-content&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;icons&quot;&gt;
@@ -1366,6 +1366,9 @@ export class NavElementWorkspaceComponent implements AfterViewInit {
           &lt;button mat-menu-item (click)&#x3D;&quot;createProject()&quot;&gt;
             &lt;span i18n&gt;Create project&lt;/span&gt;
           &lt;/button&gt;
+          &lt;button mat-menu-item (click)&#x3D;&quot;routeToWorkspace()&quot;&gt;
+            &lt;span i18n&gt;Manage projecs&lt;/span&gt;
+          &lt;/button&gt;
           &lt;button mat-menu-item (click)&#x3D;&quot;editWorkspace()&quot;&gt;
             &lt;span i18n&gt;Edit workspace&lt;/span&gt;
           &lt;/button&gt;
@@ -1379,10 +1382,10 @@ export class NavElementWorkspaceComponent implements AfterViewInit {
   &lt;div class&#x3D;&quot;project&quot; [class.active]&#x3D;&quot;activeWorkspace&quot;&gt;
     &lt;ul #elementList&gt;
       &lt;li *ngFor&#x3D;&quot;let projectWithPriv of workspace.projectsWithPrivileges&quot;&gt;
-        &lt;div (click)&#x3D;&quot;routeToProject(projectWithPriv.project)&quot;&gt;{{projectWithPriv.project.name}}&lt;/div&gt;
-        &lt;div class&#x3D;&quot;icons&quot;&gt;
+        &lt;div class&#x3D;&quot;sub-element&quot; (click)&#x3D;&quot;routeToProject(projectWithPriv.project)&quot;&gt;{{projectWithPriv.project.name}}&lt;/div&gt;
+        &lt;div class&#x3D;&quot;icons&quot; [matMenuTriggerFor]&#x3D;&quot;menu&quot;&gt;
           &lt;div class&#x3D;&quot;options&quot;&gt;
-            &lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;menu&quot; aria-label&#x3D;&quot;Menu&quot;&gt;
+            &lt;button mat-icon-button aria-label&#x3D;&quot;Menu&quot;&gt;
               &lt;mat-icon&gt;more_vert&lt;/mat-icon&gt;
             &lt;/button&gt;
             &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
@@ -1434,19 +1437,36 @@ li {
 .workspace {
   display: flex;
   width: 100%;
+  height: 46px;
   justify-content: space-between;
-  padding: 14px 5px 14px 30px;
   border-radius: var(--border-radius);
   color: var(--color-neutral-300);
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 
+  .element {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 0 0 0 30px;
+  }
+
   .icons {
     display: flex;
+    height: 100%;
     align-items: center;
+
+    .options {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      padding: 0 5px 0 0;
+    }
 
     .open-below {
       display: flex;
+      height: 100%;
       align-items: center;
       justify-content: center;
       padding: 0 5px;
@@ -1487,16 +1507,37 @@ li {
 
     li {
       display: flex;
+      width: 100%;
+      height: 46px;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 5px 14px 40px;
       border-radius: var(--border-radius);
+
+      .sub-element {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        padding: 0 0 0 40px;
+      }
+
+      .icons {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        padding: 0 5px 0 0;
+      }
 
       &amp;:hover {
         background-color: var(--color-secondary-500);
       }
     }
   }
+}
+
+button {
+  display: flex;
+  align-items: center;
 }
 
 .hidden {
@@ -1530,7 +1571,7 @@ li {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section>  <div class="workspace">    <div (click)="routeToWorkspace()">      <ng-content></ng-content>    </div>    <div class="icons">      <div class="open-below" [class.hidden]="(showArrow$ | async) === false" (click)="toggleWorkspace()">        <app-icon [icon]="faAngleDown" size="16px" [class.active]="activeWorkspace"></app-icon>      </div>      <div class="options">        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">          <mat-icon>more_vert</mat-icon>        </button>        <mat-menu #menu="matMenu">          <button mat-menu-item (click)="createProject()">            <span i18n>Create project</span>          </button>          <button mat-menu-item (click)="editWorkspace()">            <span i18n>Edit workspace</span>          </button>          <button mat-menu-item class="important" (click)="deleteWorkspace()">            <span i18n>Delete workspace</span>          </button>        </mat-menu>      </div>    </div>  </div>  <div class="project" [class.active]="activeWorkspace">    <ul #elementList>      <li *ngFor="let projectWithPriv of workspace.projectsWithPrivileges">        <div (click)="routeToProject(projectWithPriv.project)">{{projectWithPriv.project.name}}</div>        <div class="icons">          <div class="options">            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">              <mat-icon>more_vert</mat-icon>            </button>            <mat-menu #menu="matMenu">              <button mat-menu-item *ngIf="projectWithPriv.project.gitHubIntegration"                (click)="openWithVSCode(projectWithPriv.project)">                <span i18n>Open in github.dev</span>              </button>              <button mat-menu-item *ngIf="projectWithPriv.project.gitHubIntegration"                (click)="openWithLocalVSCode(projectWithPriv.project)">                <span i18n>Open in Visual Studio Code</span>              </button>              <button mat-menu-item *ngIf="projectWithPriv.project.gitHubIntegration"                (click)="openWithLocalVSCodeInsiders(projectWithPriv.project)">                <span i18n>Open in Visual Studio Code Insiders</span>              </button>              <button mat-menu-item (click)="editProject(projectWithPriv.project)">                <span i18n>Edit project</span>              </button>              <button mat-menu-item class="important" (click)="deleteProject(projectWithPriv.project)">                <span i18n>Delete project</span>              </button>            </mat-menu>          </div>        </div>      </li>    </ul>  </div>  <ng-content select=".options"></ng-content></section></div>'
+        var COMPONENT_TEMPLATE = '<div><section>  <div class="workspace">    <div class="element" (click)="toggleWorkspace()">      <ng-content></ng-content>    </div>    <div class="icons">      <div class="open-below" [class.hidden]="(showArrow$ | async) === false" (click)="toggleWorkspace()">        <app-icon [icon]="faAngleDown" size="16px" [class.active]="activeWorkspace"></app-icon>      </div>      <div class="options">        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">          <mat-icon>more_vert</mat-icon>        </button>        <mat-menu #menu="matMenu">          <button mat-menu-item (click)="createProject()">            <span i18n>Create project</span>          </button>          <button mat-menu-item (click)="routeToWorkspace()">            <span i18n>Manage projecs</span>          </button>          <button mat-menu-item (click)="editWorkspace()">            <span i18n>Edit workspace</span>          </button>          <button mat-menu-item class="important" (click)="deleteWorkspace()">            <span i18n>Delete workspace</span>          </button>        </mat-menu>      </div>    </div>  </div>  <div class="project" [class.active]="activeWorkspace">    <ul #elementList>      <li *ngFor="let projectWithPriv of workspace.projectsWithPrivileges">        <div class="sub-element" (click)="routeToProject(projectWithPriv.project)">{{projectWithPriv.project.name}}</div>        <div class="icons" [matMenuTriggerFor]="menu">          <div class="options">            <button mat-icon-button aria-label="Menu">              <mat-icon>more_vert</mat-icon>            </button>            <mat-menu #menu="matMenu">              <button mat-menu-item *ngIf="projectWithPriv.project.gitHubIntegration"                (click)="openWithVSCode(projectWithPriv.project)">                <span i18n>Open in github.dev</span>              </button>              <button mat-menu-item *ngIf="projectWithPriv.project.gitHubIntegration"                (click)="openWithLocalVSCode(projectWithPriv.project)">                <span i18n>Open in Visual Studio Code</span>              </button>              <button mat-menu-item *ngIf="projectWithPriv.project.gitHubIntegration"                (click)="openWithLocalVSCodeInsiders(projectWithPriv.project)">                <span i18n>Open in Visual Studio Code Insiders</span>              </button>              <button mat-menu-item (click)="editProject(projectWithPriv.project)">                <span i18n>Edit project</span>              </button>              <button mat-menu-item class="important" (click)="deleteProject(projectWithPriv.project)">                <span i18n>Delete project</span>              </button>            </mat-menu>          </div>        </div>      </li>    </ul>  </div>  <ng-content select=".options"></ng-content></section></div>'
     var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
     var ACTUAL_COMPONENT = {'name': 'NavElementWorkspaceComponent'};
