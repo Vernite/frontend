@@ -179,7 +179,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>add(emails: string[], projectList: number[])</code>
+                    <code>add(emails: string[], projects: number[])</code>
                 </td>
             </tr>
 
@@ -227,7 +227,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>projectList</td>
+                                    <td>projects</td>
                                     <td>
                                             <code>number[]</code>
                                     </td>
@@ -238,8 +238,6 @@
 
 
                                     <td>
-                                        <p>projects where people will be added</p>
-
                                     </td>
                                 </tr>
                             </tbody>
@@ -663,9 +661,9 @@ export class MemberService {
    */
   public add(
     emails: string[],
-    projectList: number[],
+    projects: number[],
   ): Observable&lt;{ emails: string[]; projectList: number[] }&gt; {
-    return this.apiService.post(&#x60;/project/member&#x60;, { body: { emails, projectList } });
+    return this.apiService.post(&#x60;/project/member&#x60;, { body: { emails, projects } });
   }
 
   /**

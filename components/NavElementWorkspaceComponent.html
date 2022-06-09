@@ -473,8 +473,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:78</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:82</a></div>
                 </td>
             </tr>
 
@@ -542,8 +542,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="90"
-                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:90</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:96</a></div>
                 </td>
             </tr>
 
@@ -579,8 +579,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:76</a></div>
                 </td>
             </tr>
 
@@ -648,8 +648,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:90</a></div>
                 </td>
             </tr>
 
@@ -722,8 +722,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:102</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:108</a></div>
                 </td>
             </tr>
 
@@ -791,8 +791,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="109"
-                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:109</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:115</a></div>
                 </td>
             </tr>
 
@@ -860,8 +860,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="98"
-                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:98</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/_main/components/nav-element-workspace/nav-element-workspace.component.ts:104</a></div>
                 </td>
             </tr>
 
@@ -1300,11 +1300,15 @@ export class NavElementWorkspaceComponent implements AfterViewInit {
   }
 
   createProject() {
-    this.router.navigate([&#x27;/&#x27;, this.workspace.id, &#x27;create&#x27;]);
+    this.router
+      .navigateByUrl(&#x27;/&#x27;, { skipLocationChange: true })
+      .then(() &#x3D;&gt; this.router.navigate([&#x27;/&#x27;, this.workspace.id, &#x27;create&#x27;]));
   }
 
   editProject(project: Project) {
-    this.router.navigate([&#x27;/&#x27;, this.workspace.id, project.id, &#x27;edit&#x27;]);
+    this.router
+      .navigateByUrl(&#x27;/&#x27;, { skipLocationChange: true })
+      .then(() &#x3D;&gt; this.router.navigate([&#x27;/&#x27;, this.workspace.id, project.id, &#x27;edit&#x27;]));
   }
 
   deleteProject(project: Project) {
@@ -1316,7 +1320,9 @@ export class NavElementWorkspaceComponent implements AfterViewInit {
   }
 
   editWorkspace() {
-    this.router.navigate([&#x27;/&#x27;, this.workspace.id, &#x27;edit&#x27;]);
+    this.router
+      .navigateByUrl(&#x27;/&#x27;, { skipLocationChange: true })
+      .then(() &#x3D;&gt; this.router.navigate([&#x27;/&#x27;, this.workspace.id, &#x27;edit&#x27;]));
   }
 
   deleteWorkspace() {
