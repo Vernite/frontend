@@ -339,8 +339,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="105"
-                            class="link-to-prism">src/app/dashboard/pages/edit-project/edit-project.page.ts:105</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/app/dashboard/pages/edit-project/edit-project.page.ts:116</a></div>
                 </td>
             </tr>
 
@@ -378,8 +378,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/app/dashboard/pages/edit-project/edit-project.page.ts:95</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/dashboard/pages/edit-project/edit-project.page.ts:104</a></div>
                 </td>
             </tr>
 
@@ -525,8 +525,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="114"
-                            class="link-to-prism">src/app/dashboard/pages/edit-project/edit-project.page.ts:114</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/dashboard/pages/edit-project/edit-project.page.ts:125</a></div>
                 </td>
             </tr>
 
@@ -566,8 +566,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">src/app/dashboard/pages/edit-project/edit-project.page.ts:80</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/dashboard/pages/edit-project/edit-project.page.ts:89</a></div>
                 </td>
             </tr>
 
@@ -869,8 +869,8 @@ export class EditProjectPage implements OnDestroy {
   ) {
     const { workspaceId, projectId } &#x3D; this.activatedRoute.snapshot.params;
 
-    this.workspaceId &#x3D; workspaceId;
-    this.projectId &#x3D; projectId;
+    this.workspaceId &#x3D; Number(workspaceId);
+    this.projectId &#x3D; Number(projectId);
 
     this.form.addControl(&#x27;workspaceId&#x27;, new FormControl(workspaceId));
     this.form.addControl(&#x27;id&#x27;, new FormControl(projectId));
@@ -884,8 +884,17 @@ export class EditProjectPage implements OnDestroy {
    */
   public loadProject(id: number) {
     this.project$ &#x3D; this.projectService.get(id);
-    this.getSubscription &#x3D; this.project$.subscribe((workspace) &#x3D;&gt; {
-      this.form.patchValue(workspace);
+    this.getSubscription &#x3D; this.project$.subscribe((project) &#x3D;&gt; {
+      this.form.patchValue(project);
+    });
+
+    this.workspaceList$.subscribe((workspaces) &#x3D;&gt; {
+      const workspace &#x3D; workspaces.find((workspace) &#x3D;&gt; workspace.id &#x3D;&#x3D;&#x3D; this.workspaceId);
+      if (workspace) {
+        this.form.patchValue({
+          newWorkspaceId: workspace.id,
+        });
+      }
     });
   }
 
@@ -913,7 +922,9 @@ export class EditProjectPage implements OnDestroy {
       .changeWorkspace(this.projectId, newWorkspaceId)
       .subscribe(() &#x3D;&gt; {
         this.updateSubscription &#x3D; this.projectService.update(this.form.value).subscribe(() &#x3D;&gt; {
-          this.router.navigate([&#x27;/&#x27;, newWorkspaceId]);
+          this.router.navigate([&#x27;/&#x27;, newWorkspaceId]).then(() &#x3D;&gt; {
+            location.reload();
+          });
         });
       });
   }
@@ -1010,7 +1021,7 @@ form {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><app-view-options title="Edit project: " [project]="(project$ | async)!"></app-view-options><form [formGroup]="form" (submit)="submitUpdate()">  <div>    <app-input formControlName="name" type="text" placeholder="New project" floatingLabel="Project name"      i18n-floatingLabel i18n-placeholder></app-input>  </div>  <div>    <h2 class="typo-heading-5 mb-5" i18n>Workspace:</h2>    <app-select formControlName="newWorkspaceId" floatingLabel="Workspace" i18n-floatingLabel>      <app-option *ngFor="let workspace of workspaceList$ | async" [value]="workspace.id">{{ workspace.name }}      </app-option>    </app-select>  </div>  <div class="modules">    <h2 class="typo-heading-5 mb-5" i18n>Modules</h2>  </div>  <app-integration-github [projectId]="projectId"></app-integration-github>  <div class="app-button">    <app-button variant="primary" [pending]="updateSubscription && !updateSubscription.closed" i18n>Save</app-button>  </div></form></div>'
-    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
+    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
     var ACTUAL_COMPONENT = {'name': 'EditProjectPage'};
 </script>

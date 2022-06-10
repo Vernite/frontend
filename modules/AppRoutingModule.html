@@ -75,12 +75,17 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { LoggedInUsersGuard } from &#x27;./auth/guard/logged-in-users.guard&#x27;;
+import { LandingPageComponent } from &#x27;./landing-page/landing-page/landing-page.component&#x27;;
 import { MainViewComponent } from &#x27;./_main/components/main-view/main-view.component&#x27;;
 
 const routes: Routes &#x3D; [
   {
     path: &#x27;auth&#x27;,
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;./auth/auth.module&#x27;).then((m) &#x3D;&gt; m.AuthModule)&quot;,
+  },
+  {
+    path: &#x27;landing-page&#x27;,
+    component: LandingPageComponent,
   },
   {
     path: &#x27;&#x27;,

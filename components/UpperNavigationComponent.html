@@ -70,6 +70,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -129,6 +135,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#_isButtonDisabled" >_isButtonDisabled</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#active" >active</a>
                             </li>
                             <li>
@@ -166,7 +176,14 @@
                                 <a href="#createNewTask" >createNewTask</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isButtonDisabled" >isButtonDisabled</a>
+                            </li>
+                            <li>
                                 <a href="#logout" >logout</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -194,12 +211,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(dialogService: <a href="../injectables/DialogService.html" target="_self">DialogService</a>, taskService: <a href="../injectables/TaskService.html" target="_self">TaskService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(dialogService: <a href="../injectables/DialogService.html" target="_self">DialogService</a>, taskService: <a href="../injectables/TaskService.html" target="_self">TaskService</a>, workspaceService: <a href="../injectables/WorkspaceService.html" target="_self">WorkspaceService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -233,6 +250,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/TaskService.html" target="_self" >TaskService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>workspaceService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/WorkspaceService.html" target="_self" >WorkspaceService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -304,8 +333,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:62</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:84</a></div>
                 </td>
             </tr>
 
@@ -341,8 +370,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:51</a></div>
                 </td>
             </tr>
 
@@ -352,6 +381,45 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isButtonDisabled"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>isButtonDisabled</b></span>
+                        <a href="#isButtonDisabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isButtonDisabled()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </div>
                 </td>
@@ -378,8 +446,45 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -417,8 +522,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:75</a></div>
                 </td>
             </tr>
 
@@ -456,8 +561,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:87</a></div>
                 </td>
             </tr>
 
@@ -483,6 +588,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="_isButtonDisabled"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_isButtonDisabled</b></span>
+                        <a href="#_isButtonDisabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="active"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -504,7 +635,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:48</a></div>
                         </td>
                     </tr>
 
@@ -529,7 +660,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:43</a></div>
                         </td>
                     </tr>
 
@@ -554,7 +685,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:45</a></div>
                         </td>
                     </tr>
 
@@ -579,7 +710,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:46</a></div>
                         </td>
                     </tr>
 
@@ -604,7 +735,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -639,7 +770,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/_main/components/upper-navigation/upper-navigation.component.ts:41</a></div>
                         </td>
                     </tr>
 
@@ -652,27 +783,45 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, ViewChild } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { AuthService } from &#x27;@auth/services/auth.service&#x27;;
+import { WorkspaceService } from &#x27;@dashboard/services/workspace.service&#x27;;
 import { faAngleDown, faCog, faSignOut, faUser } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 import { DialogService } from &#x27;@main/services/dialog.service&#x27;;
 import { TaskDialog, TaskDialogData, TaskDialogVariant } from &#x27;@tasks/dialogs/task/task.dialog&#x27;;
 import { TaskService } from &#x27;@tasks/services/task.service&#x27;;
-import { fromEvent, skip, take } from &#x27;rxjs&#x27;;
+import { fromEvent, map, skip, take } from &#x27;rxjs&#x27;;
 
 @Component({
   selector: &#x27;app-upper-navigation&#x27;,
   templateUrl: &#x27;./upper-navigation.component.html&#x27;,
   styleUrls: [&#x27;./upper-navigation.component.scss&#x27;],
 })
-export class UpperNavigationComponent {
+export class UpperNavigationComponent implements OnInit {
   constructor(
     private dialogService: DialogService,
     private taskService: TaskService,
+    private workspaceService: WorkspaceService,
     private authService: AuthService,
     private router: Router,
   ) {}
+
+  ngOnInit() {
+    this.workspaceService.list().pipe(
+      map((workspaces) &#x3D;&gt; {
+        if (workspaces.length &#x3D;&#x3D;&#x3D; 0) {
+          this._isButtonDisabled &#x3D; false;
+        } else if (
+          workspaces.filter((workspace) &#x3D;&gt; workspace.projectsWithPrivileges.length).length &#x3D;&#x3D;&#x3D; 0
+        ) {
+          this._isButtonDisabled &#x3D; false;
+        } else {
+          this._isButtonDisabled &#x3D; true;
+        }
+      }),
+    );
+  }
 
   @ViewChild(&#x27;openBelow&#x27;) openBelow!: ElementRef&lt;HTMLElement&gt;;
 
@@ -682,6 +831,7 @@ export class UpperNavigationComponent {
   faSignOut &#x3D; faSignOut;
 
   public active: boolean &#x3D; false;
+  public _isButtonDisabled &#x3D; true;
 
   createNewTask() {
     this.dialogService
@@ -704,6 +854,9 @@ export class UpperNavigationComponent {
     });
   }
 
+  public isButtonDisabled() {
+    return this._isButtonDisabled;
+  }
   public openProfile() {
     this.active &#x3D; true;
     fromEvent(document, &#x27;click&#x27;)
@@ -728,7 +881,8 @@ export class UpperNavigationComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-button variant&#x3D;&quot;primary&quot; (click)&#x3D;&quot;createNewTask()&quot; type&#x3D;&quot;button&quot; i18n&gt;New task&lt;/app-button&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;app-button *ngIf&#x3D;&quot;isButtonDisabled()&quot; variant&#x3D;&quot;primary&quot; (click)&#x3D;&quot;createNewTask()&quot; type&#x3D;&quot;button&quot; i18n&gt;New task
+&lt;/app-button&gt;
 &lt;div class&#x3D;&quot;search&quot;&gt;&lt;/div&gt;
 &lt;section class&#x3D;&quot;flex-end-position&quot;&gt;
   &lt;fa-icon&gt;&lt;/fa-icon&gt;
@@ -879,8 +1033,8 @@ app-button {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-button variant="primary" (click)="createNewTask()" type="button" i18n>New task</app-button><div class="search"></div><section class="flex-end-position">  <fa-icon></fa-icon>  <div class="profile">    <div class="avatar"></div>    <div class="name"></div>    <div #openBelow class="open-below" (click)="toggleProfile()" [class.active]="active">      <app-icon [icon]="faAngleDown" size="16px"></app-icon>    </div>  </div></section><div class="options" [class.active]="active">  <ul>    <li>      <a routerLink="/settings/account" routerLinkActive="active">        <app-icon [icon]="faUser" size="16px"></app-icon>        <h2 i18n>Profile</h2>      </a>    </li>    <li>      <a routerLink="/settings/localization" routerLinkActive="active">        <app-icon [icon]="faCog" size="16px"></app-icon>        <h2 i18n>Settings</h2>      </a>    </li>    <li>      <a (click)="logout()">        <app-icon [icon]="faSignOut" size="16px"></app-icon>        <h2 i18n>Log out</h2>      </a>    </li>  </ul></div></div>'
-    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
+        var COMPONENT_TEMPLATE = '<div><app-button *ngIf="isButtonDisabled()" variant="primary" (click)="createNewTask()" type="button" i18n>New task</app-button><div class="search"></div><section class="flex-end-position">  <fa-icon></fa-icon>  <div class="profile">    <div class="avatar"></div>    <div class="name"></div>    <div #openBelow class="open-below" (click)="toggleProfile()" [class.active]="active">      <app-icon [icon]="faAngleDown" size="16px"></app-icon>    </div>  </div></section><div class="options" [class.active]="active">  <ul>    <li>      <a routerLink="/settings/account" routerLinkActive="active">        <app-icon [icon]="faUser" size="16px"></app-icon>        <h2 i18n>Profile</h2>      </a>    </li>    <li>      <a routerLink="/settings/localization" routerLinkActive="active">        <app-icon [icon]="faCog" size="16px"></app-icon>        <h2 i18n>Settings</h2>      </a>    </li>    <li>      <a (click)="logout()">        <app-icon [icon]="faSignOut" size="16px"></app-icon>        <h2 i18n>Log out</h2>      </a>    </li>  </ul></div></div>'
+    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
     var ACTUAL_COMPONENT = {'name': 'UpperNavigationComponent'};
 </script>

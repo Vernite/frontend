@@ -219,6 +219,14 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -314,6 +322,14 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -409,6 +425,14 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -504,6 +528,14 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -599,6 +631,14 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -694,6 +734,14 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -857,9 +905,9 @@ export class ApiService {
    * @param options advanced options to configure request
    * @returns Request observable, which completes when request is finished
    */
-  public request(method: string, url: string, options?: RequestOptions) {
-    return this.httpClient.request(method, this.apiURL + url, {
-      responseType: &#x27;json&#x27;,
+  public request&lt;T &#x3D; any&gt;(method: string, url: string, options?: RequestOptions) {
+    return this.httpClient.request&lt;T&gt;(method, this.apiURL + url, {
+      responseType: &#x27;json&#x27; as any,
       withCredentials: true,
       ...options,
     });
@@ -871,8 +919,8 @@ export class ApiService {
    * @param options advanced options to configure request
    * @returns Request observable, which completes when request is finished
    */
-  public get(url: string, options?: RequestOptions) {
-    return this.request(&#x27;GET&#x27;, url, options);
+  public get&lt;T &#x3D; any&gt;(url: string, options?: RequestOptions) {
+    return this.request&lt;T&gt;(&#x27;GET&#x27;, url, options);
   }
 
   /**
@@ -881,8 +929,8 @@ export class ApiService {
    * @param options advanced options to configure request
    * @returns Request observable, which completes when request is finished
    */
-  public post(url: string, options?: RequestOptions) {
-    return this.request(&#x27;POST&#x27;, url, options);
+  public post&lt;T &#x3D; any&gt;(url: string, options?: RequestOptions) {
+    return this.request&lt;T&gt;(&#x27;POST&#x27;, url, options);
   }
 
   /**
@@ -891,8 +939,8 @@ export class ApiService {
    * @param options advanced options to configure request
    * @returns Request observable, which completes when request is finished
    */
-  public delete(url: string, options?: RequestOptions) {
-    return this.request(&#x27;DELETE&#x27;, url, options);
+  public delete&lt;T &#x3D; any&gt;(url: string, options?: RequestOptions) {
+    return this.request&lt;T&gt;(&#x27;DELETE&#x27;, url, options);
   }
 
   /**
@@ -901,8 +949,8 @@ export class ApiService {
    * @param options advanced options to configure request
    * @returns Request observable, which completes when request is finished
    */
-  public put(url: string, options?: RequestOptions) {
-    return this.request(&#x27;PUT&#x27;, url, options);
+  public put&lt;T &#x3D; any&gt;(url: string, options?: RequestOptions) {
+    return this.request&lt;T&gt;(&#x27;PUT&#x27;, url, options);
   }
 
   /**
@@ -911,8 +959,8 @@ export class ApiService {
    * @param options advanced options to configure request
    * @returns Request observable, which completes when request is finished
    */
-  public patch(url: string, options?: RequestOptions) {
-    return this.request(&#x27;PATCH&#x27;, url, options);
+  public patch&lt;T &#x3D; any&gt;(url: string, options?: RequestOptions) {
+    return this.request&lt;T&gt;(&#x27;PATCH&#x27;, url, options);
   }
 }
 </code></pre>

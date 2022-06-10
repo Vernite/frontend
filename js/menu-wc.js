@@ -83,15 +83,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-4bd24d7cc330f67b3cc107234de7e40fa14c5a4417f3078d1490560d17b76630f4960bd42bcc293265aa5b982c2df1b12d04250fd2eda77f9b9c7ee3bde8c3f7"' : 'data-target="#xs-components-links-module-AppModule-4bd24d7cc330f67b3cc107234de7e40fa14c5a4417f3078d1490560d17b76630f4960bd42bcc293265aa5b982c2df1b12d04250fd2eda77f9b9c7ee3bde8c3f7"' }>
+                                            'data-target="#components-links-module-AppModule-5b7afa15ab904833811d4d1614b9d8615c0922f76ba9eaaa1af026e20a3959f0cc29f64c303b7f4497338aa51069579b717b48baabb320c022494afc15cce099"' : 'data-target="#xs-components-links-module-AppModule-5b7afa15ab904833811d4d1614b9d8615c0922f76ba9eaaa1af026e20a3959f0cc29f64c303b7f4497338aa51069579b717b48baabb320c022494afc15cce099"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-4bd24d7cc330f67b3cc107234de7e40fa14c5a4417f3078d1490560d17b76630f4960bd42bcc293265aa5b982c2df1b12d04250fd2eda77f9b9c7ee3bde8c3f7"' :
-                                            'id="xs-components-links-module-AppModule-4bd24d7cc330f67b3cc107234de7e40fa14c5a4417f3078d1490560d17b76630f4960bd42bcc293265aa5b982c2df1b12d04250fd2eda77f9b9c7ee3bde8c3f7"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-5b7afa15ab904833811d4d1614b9d8615c0922f76ba9eaaa1af026e20a3959f0cc29f64c303b7f4497338aa51069579b717b48baabb320c022494afc15cce099"' :
+                                            'id="xs-components-links-module-AppModule-5b7afa15ab904833811d4d1614b9d8615c0922f76ba9eaaa1af026e20a3959f0cc29f64c303b7f4497338aa51069579b717b48baabb320c022494afc15cce099"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/LandingPageComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LandingPageComponent</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -344,6 +347,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/ControlAccessor.html" data-type="entity-link" >ControlAccessor</a>
                             </li>
                             <li class="link">
+                                <a href="components/FiltersComponent.html" data-type="entity-link" >FiltersComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/GithubIntegrationPage.html" data-type="entity-link" >GithubIntegrationPage</a>
                             </li>
                             <li class="link">
@@ -416,6 +422,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/ESet.html" data-type="entity-link" >ESet</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Filters.html" data-type="entity-link" >Filters</a>
                             </li>
                             <li class="link">
                                 <a href="classes/TestNgControl.html" data-type="entity-link" >TestNgControl</a>
@@ -510,6 +519,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ErrorValidationTree.html" data-type="entity-link" >ErrorValidationTree</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/FilterCheckbox.html" data-type="entity-link" >FilterCheckbox</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/FormGroup.html" data-type="entity-link" >FormGroup</a>
