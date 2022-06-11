@@ -427,7 +427,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Filters.html" data-type="entity-link" >Filters</a>
                             </li>
                             <li class="link">
+                                <a href="classes/Random.html" data-type="entity-link" >Random</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/TestNgControl.html" data-type="entity-link" >TestNgControl</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/UserUtils.html" data-type="entity-link" >UserUtils</a>
                             </li>
                             <li class="link">
                                 <a href="classes/Utils.html" data-type="entity-link" >Utils</a>
