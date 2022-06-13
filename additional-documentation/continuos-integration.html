@@ -52,7 +52,7 @@
 
 
 <h1 id="cicd-pipeline">CI/CD pipeline</h1>
-<p>Continuos integration was resolved using tool named <a href="https://github.com/features/actions">GitHub Actions</a>. Actions are located in <code>.github/workflows/</code> directory. At this moment there is only one pipeline to deploy application named <code>deploy.yml</code>. This action after every push to the master branch rebuild the application and deploy it to the production environment using ftp server. This action also build documentation page and runs tests. There is also included a small script to create badges to use them in <code>Readme.md</code> and documentation files. This file is named <code>badge-generator.js</code> and is located in the root directory.</p>
+<p>Continuos integration was resolved using tool named <a href="https://github.com/features/actions">GitHub Actions</a>. Actions are located in <code>.github/workflows/</code> directory. At this moment there is one pipeline to deploy application named <code>deploy.yml</code>. This action after every push to the master branch rebuild the application and deploy it to the production environment using <code>rsync protocol</code>. This action also build documentation page, publishes it and runs tests. There is also included a small script to create badges to use them in <code>Readme.md</code> and documentation files. This file is named <code>badge-generator.js</code> and is located in the root directory.</p>
 
                    </div><div class="search-results">
     <div class="has-results">
