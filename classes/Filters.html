@@ -128,8 +128,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="4"
-                            class="link-to-prism">src/app/_main/classes/filters.class.ts:4</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="5"
+                            class="link-to-prism">src/app/_main/classes/filters.class.ts:5</a></div>
                 </td>
             </tr>
 
@@ -188,6 +188,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { FilterCheckbox } from &#x27;@main/interfaces/filters.interface&#x27;;
+import { Task } from &#x27;@tasks/interfaces/task.interface&#x27;;
 
 export class Filters {
   public static ONLY_MY_TASKS(currentUserId: string): FilterCheckbox&lt;any&gt; {
@@ -199,6 +200,9 @@ export class Filters {
         0: {},
       },
       value: 0,
+      apply(tasks: Task[], option: { assigneeId?: string }) {
+        return tasks.filter((task) &#x3D;&gt; task.assigneeId &#x3D;&#x3D;&#x3D; option.assigneeId);
+      },
     };
   }
 }

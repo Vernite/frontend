@@ -395,8 +395,8 @@ in a form, if a field is email, it will give the user last used emails</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="103"
-                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:103</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:102</a></div>
                 </td>
             </tr>
 
@@ -434,8 +434,8 @@ in a form, if a field is email, it will give the user last used emails</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="155"
-                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:155</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:150</a></div>
                 </td>
             </tr>
 
@@ -473,8 +473,8 @@ in a form, if a field is email, it will give the user last used emails</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="131"
-                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:131</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:126</a></div>
                 </td>
             </tr>
 
@@ -550,8 +550,8 @@ in a form, if a field is email, it will give the user last used emails</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="138"
-                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:138</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:133</a></div>
                 </td>
             </tr>
 
@@ -626,8 +626,8 @@ in a form, if a field is email, it will give the user last used emails</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="144"
-                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:144</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="139"
+                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:139</a></div>
                 </td>
             </tr>
 
@@ -702,8 +702,8 @@ in a form, if a field is email, it will give the user last used emails</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="123"
-                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:123</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/_main/classes/control-accessor.class.ts:118</a></div>
                 </td>
             </tr>
 
@@ -1151,7 +1151,6 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
    * Check if the control is required by provided validators.
    */
   private checkIfIsRequired(): void {
-    if (!this.control) return;
     if (!(this.control as any)._rawValidators) return;
 
     for (const validator of (this.ngControl as any).control._rawValidators) {
@@ -1166,10 +1165,6 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
    * Apply the touched observable on ngControl and control fields
    */
   private initCheckForTouch(): void {
-    if (!this.control) {
-      return;
-    }
-
     (this.control as any)._markAsTouched &#x3D; this.control.markAsTouched;
     this.control.markAsTouched &#x3D; () &#x3D;&gt; {
       (this.control as any)._markAsTouched();
@@ -1254,7 +1249,7 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div></div>'
-    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
+    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
     var ACTUAL_COMPONENT = {'name': 'ControlAccessor'};
 </script>

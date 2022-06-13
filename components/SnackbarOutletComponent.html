@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  RestoreAccountPage</li>
+  SnackbarOutletComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/auth/pages/restore-account/restore-account.page.ts</code>
+    <code>src/app/_main/components/snackbar-outlet/snackbar-outlet.component.ts</code>
 </p>
 
 
@@ -89,19 +89,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-restore-account-page</code></td>
+                <td class="col-md-9"><code>app-snackbar-outlet</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./restore-account.page.scss</code></td>
+                <td class="col-md-9"><code>./snackbar-outlet.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./restore-account.page.html</code></td>
+                <td class="col-md-9"><code>./snackbar-outlet.component.html</code></td>
             </tr>
 
 
@@ -119,6 +119,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#snackbars$" >snackbars$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -129,10 +144,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#logOut" >logOut</a>
-                            </li>
-                            <li>
-                                <a href="#restore" >restore</a>
+                                <a href="#trackSnackbarTuple" >trackSnackbarTuple</a>
                             </li>
                         </ul>
                     </td>
@@ -152,12 +164,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(snackbarService: <a href="../injectables/SnackbarService.html" target="_self">SnackbarService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/auth/pages/restore-account/restore-account.page.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/_main/components/snackbar-outlet/snackbar-outlet.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -175,22 +187,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>authService</td>
+                                                        <td>snackbarService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                        <code><a href="../injectables/SnackbarService.html" target="_self" >SnackbarService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -220,24 +220,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="logOut"></a>
+                    <a name="trackSnackbarTuple"></a>
                     <span class="name">
-                        <span ><b>logOut</b></span>
-                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>trackSnackbarTuple</b></span>
+                        <a href="#trackSnackbarTuple"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>logOut()</code>
+<code>trackSnackbarTuple(_index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, undefined: <a href="../interfaces/SnackbarData.html" target="_self">[string, SnackbarData]</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/auth/pages/restore-account/restore-account.page.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/_main/components/snackbar-outlet/snackbar-outlet.component.ts:15</a></div>
                 </td>
             </tr>
 
@@ -246,48 +246,86 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                                <code><a href="../interfaces/SnackbarData.html" target="_self" >[string, SnackbarData]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="restore"></a>
+                    <a name="snackbars$"></a>
                     <span class="name">
-                        <span ><b>restore</b></span>
-                        <a href="#restore"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                        <span ><b>snackbars$</b></span>
+                        <a href="#snackbars$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-            <tr>
-                <td class="col-md-4">
-<code>restore()</code>
-                </td>
-            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.snackbarService.snackbars$</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/_main/components/snackbar-outlet/snackbar-outlet.component.ts:11</a></div>
+                        </td>
+                    </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/auth/pages/restore-account/restore-account.page.ts:17</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
         </tbody>
     </table>
 </section>
@@ -297,192 +335,50 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-import { AuthService } from &#x27;@auth/services/auth.service&#x27;;
+import { SnackbarService } from &#x27;@main/services/snackbar.service&#x27;;
+import { SnackbarData } from &#x27;../snackbar/snackbar.interface&#x27;;
 
 @Component({
-  selector: &#x27;app-restore-account-page&#x27;,
-  templateUrl: &#x27;./restore-account.page.html&#x27;,
-  styleUrls: [&#x27;./restore-account.page.scss&#x27;],
+  selector: &#x27;app-snackbar-outlet&#x27;,
+  templateUrl: &#x27;./snackbar-outlet.component.html&#x27;,
+  styleUrls: [&#x27;./snackbar-outlet.component.scss&#x27;],
 })
-export class RestoreAccountPage {
-  constructor(private authService: AuthService, private router: Router) {}
+export class SnackbarOutletComponent {
+  public snackbars$ &#x3D; this.snackbarService.snackbars$;
 
-  logOut() {
-    this.authService.logout().subscribe();
-  }
+  constructor(private snackbarService: SnackbarService) {}
 
-  restore() {
-    this.authService.recoverAccount().subscribe();
+  trackSnackbarTuple(_index: number, [uid, _]: [string, SnackbarData]) {
+    return uid;
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;main&quot;&gt;
-  &lt;section class&#x3D;&quot;box&quot;&gt;
-    &lt;section class&#x3D;&quot;form-side&quot;&gt;
-      &lt;div class&#x3D;&quot;logo&quot; routerLink&#x3D;&quot;/&quot;&gt;&lt;/div&gt;
-      &lt;form&gt;
-        &lt;div&gt;
-          &lt;h2 class&#x3D;&quot;typo-heading-5&quot; i18n&gt;Restore account&lt;/h2&gt;
-          &lt;p class&#x3D;&quot;typo-body&quot; i18n&gt;Your account has been deleted. You can restore your account within 7 days of
-            deletion.&lt;/p&gt;
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;actions&quot;&gt;
-          &lt;app-button variant&#x3D;&quot;secondary&quot; (click)&#x3D;&quot;logOut()&quot; i18n&gt;Log out&lt;/app-button&gt;
-          &lt;app-button variant&#x3D;&quot;primary&quot; (click)&#x3D;&quot;restore()&quot; i18n&gt;Restore&lt;/app-button&gt;
-        &lt;/div&gt;
-      &lt;/form&gt;
-    &lt;/section&gt;
-    &lt;section class&#x3D;&quot;image-side&quot;&gt;
-
-    &lt;/section&gt;
-  &lt;/section&gt;
-&lt;/section&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;app-snackbar *ngFor&#x3D;&quot;let entry of (snackbars$ | async)?.entries(); trackBy: trackSnackbarTuple&quot; [uid]&#x3D;&quot;entry[0]&quot;
+  [message]&#x3D;&quot;entry[1].message&quot;&gt;&lt;/app-snackbar&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./restore-account.page.scss</code>
+                    <code>./snackbar-outlet.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.logo {
-  width: calc(100% - 80px);
-  height: 64px;
-  margin-top: 20px;
-  background-image: url(&#x27;/assets/metadata/logo_with_name.svg&#x27;);
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-
-.main {
+                <pre class="line-numbers"><code class="language-scss">:host {
+  position: absolute;
+  z-index: 50;
+  top: 74px;
+  right: 0;
   display: flex;
-  width: 100%;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-neutral-800);
-
-  .box {
-    display: flex;
-    width: 100%;
-    height: 100%;
-
-    .form-side {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      background-color: var(--color-gray-800);
-
-      form {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 4rem;
-
-        h2 {
-          margin-bottom: 0.5rem;
-        }
-
-        p {
-          margin-bottom: 1.5rem;
-        }
-
-        .actions {
-          display: flex;
-          width: 100%;
-          justify-content: flex-end;
-          margin-bottom: 1rem;
-
-          &gt; *:not(:last-child) {
-            margin-right: 1rem;
-          }
-        }
-      }
-    }
-
-    .image-side {
-      background-color: var(--color-gray-700);
-    }
-  }
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 10px;
 }
 
-@screen sm {
-  .main {
-    .box {
-      width: 500px;
-      height: 770px;
-
-      .form-side {
-        width: 500px;
-      }
-
-      .image-side {
-        width: 0;
-      }
-    }
-  }
-}
-
-@screen md {
-  .main {
-    .box {
-      width: 500px;
-      height: 770px;
-
-      .form-side {
-        width: 500px;
-      }
-
-      .image-side {
-        width: 0;
-      }
-    }
-  }
-}
-
-@screen lg {
-  .main {
-    .box {
-      width: 950px;
-      height: 770px;
-
-      .form-side {
-        width: 500px;
-      }
-
-      .image-side {
-        width: 450px;
-      }
-    }
-  }
-}
-
-@screen xl {
-  .main {
-    .box {
-      width: 1240px;
-      height: 770px;
-
-      .form-side {
-        width: 520px;
-      }
-
-      .image-side {
-        width: 720px;
-      }
-    }
-  }
+app-snackbar:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 </code></pre>
     </div>
@@ -512,10 +408,10 @@ export class RestoreAccountPage {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section class="main">  <section class="box">    <section class="form-side">      <div class="logo" routerLink="/"></div>      <form>        <div>          <h2 class="typo-heading-5" i18n>Restore account</h2>          <p class="typo-body" i18n>Your account has been deleted. You can restore your account within 7 days of            deletion.</p>        </div>        <div class="actions">          <app-button variant="secondary" (click)="logOut()" i18n>Log out</app-button>          <app-button variant="primary" (click)="restore()" i18n>Restore</app-button>        </div>      </form>    </section>    <section class="image-side">    </section>  </section></section></div>'
+        var COMPONENT_TEMPLATE = '<div><app-snackbar *ngFor="let entry of (snackbars$ | async)?.entries(); trackBy: trackSnackbarTuple" [uid]="entry[0]"  [message]="entry[1].message"></app-snackbar></div>'
     var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
-    var ACTUAL_COMPONENT = {'name': 'RestoreAccountPage'};
+    var ACTUAL_COMPONENT = {'name': 'SnackbarOutletComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -561,7 +457,7 @@ export class RestoreAccountPage {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'RestoreAccountPage.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'SnackbarOutletComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  BoardTaskComponent</li>
+  SnackbarComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,12 +64,18 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/tasks/components/board-task/board-task.component.ts</code>
+    <code>src/app/_main/components/snackbar/snackbar.component.ts</code>
 </p>
 
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -89,19 +95,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-board-task</code></td>
+                <td class="col-md-9"><code>app-snackbar</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./board-task.component.scss</code></td>
+                <td class="col-md-9"><code>./snackbar.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./board-task.component.html</code></td>
+                <td class="col-md-9"><code>./snackbar.component.html</code></td>
             </tr>
 
 
@@ -128,13 +134,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#faCheck" >faCheck</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#animationName" >animationName</a>
                             </li>
                             <li>
-                                <a href="#faCodeCommit" >faCodeCommit</a>
-                            </li>
-                            <li>
-                                <a href="#faCodePullRequest" >faCodePullRequest</a>
+                                <a href="#faClose" >faClose</a>
                             </li>
                         </ul>
                     </td>
@@ -149,16 +153,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#changeDate" >changeDate</a>
+                                <a href="#close" >close</a>
                             </li>
                             <li>
-                                <a href="#createSubtask" >createSubtask</a>
+                                <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
-                                <a href="#delete" >delete</a>
-                            </li>
-                            <li>
-                                <a href="#edit" >edit</a>
+                                <a href="#setAnimationName" >setAnimationName</a>
                             </li>
                         </ul>
                     </td>
@@ -173,21 +174,52 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#members" >members</a>
+                                <a href="#color" >color</a>
                             </li>
                             <li>
-                                <a href="#projectId" >projectId</a>
+                                <a href="#duration" >duration</a>
                             </li>
                             <li>
-                                <a href="#task" >task</a>
+                                <a href="#message" >message</a>
+                            </li>
+                            <li>
+                                <a href="#uid" >uid</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#style.animation-name" >style.animation-name</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#colorStyle" >colorStyle</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
         </tbody>
     </table>
 </section>
@@ -198,12 +230,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(dialogService: <a href="../injectables/DialogService.html" target="_self">DialogService</a>, taskService: <a href="../injectables/TaskService.html" target="_self">TaskService</a>)</code>
+<code>constructor(snackbarService: <a href="../injectables/SnackbarService.html" target="_self">SnackbarService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -221,22 +253,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>dialogService</td>
+                                                        <td>snackbarService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/DialogService.html" target="_self" >DialogService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>taskService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/TaskService.html" target="_self" >TaskService</a></code>
+                                                                        <code><a href="../injectables/SnackbarService.html" target="_self" >SnackbarService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -259,24 +279,18 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="members"></a>
-                        <b>members</b>
+                        <a name="color"></a>
+                        <b>color</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>Map&lt;number | ProjectMember&gt;</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Map()</code>
+                        <i>Default value : </i><code>&#x27;gray&#x27;</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:24</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -285,19 +299,18 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="projectId"></a>
-                        <b>projectId</b>
+                        <a name="duration"></a>
+                        <b>duration</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
+                        <i>Default value : </i><code>4000</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:21</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -306,25 +319,73 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="task"></a>
-                        <b>task</b>
+                        <a name="message"></a>
+                        <b>message</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:18</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="uid"></a>
+                        <b>uid</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/Task.html" target="_self" >Task</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:15</a></div>
                             </td>
                         </tr>
             </tbody>
         </table>
 </section>
 
+    <section>
+    <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="style.animation-name"></a>
+                    <span class="name">
+                        <span ><b>style.animation-name</b></span>
+                        <a href="#style.animation-name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;open&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 
     <section>
@@ -336,24 +397,98 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="changeDate"></a>
+                    <a name="close"></a>
                     <span class="name">
-                        <span ><b>changeDate</b></span>
-                        <a href="#changeDate"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>close</b></span>
+                        <a href="#close"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>changeDate(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+<code>close()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setAnimationName"></a>
+                    <span class="name">
+                        <span ><b>setAnimationName</b></span>
+                        <a href="#setAnimationName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setAnimationName(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:53</a></div>
                 </td>
             </tr>
 
@@ -374,9 +509,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>date</td>
+                                    <td>name</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -391,122 +526,11 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                     <div class="io-description">
                         
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="createSubtask"></a>
-                    <span class="name">
-                        <span ><b>createSubtask</b></span>
-                        <a href="#createSubtask"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>createSubtask()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:43</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="delete"></a>
-                    <span class="name">
-                        <span ><b>delete</b></span>
-                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>delete()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:31</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="edit"></a>
-                    <span class="name">
-                        <span ><b>edit</b></span>
-                        <a href="#edit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>edit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:37</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
                     </div>
                 </td>
             </tr>
@@ -522,21 +546,37 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="faCheck"></a>
+                    <a name="animationName"></a>
                     <span class="name">
-                        <span ><b>faCheck</b></span>
-                        <a href="#faCheck"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                        <span ><b>animationName</b></span>
+                        <a href="#animationName"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>faCheck</code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;open&#x27;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @HostBinding(&#x27;style.animation-name&#x27;)<br />
+                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -547,46 +587,21 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="faCodeCommit"></a>
+                    <a name="faClose"></a>
                     <span class="name">
-                        <span ><b>faCodeCommit</b></span>
-                        <a href="#faCodeCommit"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>faClose</b></span>
+                        <a href="#faClose"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>faCodeCommit</code>
+                        <i>Default value : </i><code>faClose</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:25</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="faCodePullRequest"></a>
-                    <span class="name">
-                        <span ><b>faCodePullRequest</b></span>
-                        <a href="#faCodePullRequest"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>faCodePullRequest</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/tasks/components/board-task/board-task.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -595,245 +610,179 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="colorStyle"></a>
+                        <span class="name"><b>colorStyle</b><a href="#colorStyle"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>colorStyle()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/_main/components/snackbar/snackbar.component.ts:29</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
-import { ProjectMember } from &#x27;@dashboard/interfaces/project-member.interface&#x27;;
-import { faCheck, faCodeCommit, faCodePullRequest } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
-import { DialogService } from &#x27;@main/services/dialog.service&#x27;;
-import { TaskDialog, TaskDialogVariant } from &#x27;@tasks/dialogs/task/task.dialog&#x27;;
-import { TaskService } from &#x27;@tasks/services/task.service&#x27;;
-import * as dayjs from &#x27;dayjs&#x27;;
-import { Task } from &#x27;../../interfaces/task.interface&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, HostBinding, Input, OnInit } from &#x27;@angular/core&#x27;;
+import { faClose } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+import { SnackbarService } from &#x27;@main/services/snackbar.service&#x27;;
+import { SnackbarData } from &#x27;./snackbar.interface&#x27;;
 
 @Component({
-  selector: &#x27;app-board-task&#x27;,
-  templateUrl: &#x27;./board-task.component.html&#x27;,
-  styleUrls: [&#x27;./board-task.component.scss&#x27;],
+  selector: &#x27;app-snackbar&#x27;,
+  templateUrl: &#x27;./snackbar.component.html&#x27;,
+  styleUrls: [&#x27;./snackbar.component.scss&#x27;],
 })
-export class BoardTaskComponent {
-  @Input()
-  public task!: Task;
+export class SnackbarComponent implements OnInit {
+  faClose &#x3D; faClose;
 
   @Input()
-  public projectId!: number;
+  public uid!: string;
 
   @Input()
-  public members: Map&lt;number, ProjectMember&gt; &#x3D; new Map();
+  public message!: SnackbarData[&#x27;message&#x27;];
 
-  faCodeCommit &#x3D; faCodeCommit;
-  faCodePullRequest &#x3D; faCodePullRequest;
-  faCheck &#x3D; faCheck;
+  @Input()
+  public duration: SnackbarData[&#x27;duration&#x27;] &#x3D; 4000;
 
-  constructor(private dialogService: DialogService, private taskService: TaskService) {}
+  @Input()
+  public color: SnackbarData[&#x27;color&#x27;] &#x3D; &#x27;gray&#x27;;
 
-  delete() {
-    this.taskService.deleteWithConfirmation(this.projectId, this.task).subscribe(() &#x3D;&gt; {
-      location.reload();
-    });
+  @HostBinding(&#x27;style.animation-name&#x27;)
+  public animationName: string &#x3D; &#x27;open&#x27;;
+
+  public get colorStyle(): string {
+    switch (this.color) {
+      case &#x27;gray&#x27;:
+        return &#x27;var(--color-gray-500)&#x27;;
+      case &#x27;green&#x27;:
+        return &#x27;#00b300&#x27;;
+    }
   }
 
-  edit() {
-    this.taskService.openEditTaskDialog(this.projectId, this.task).subscribe(() &#x3D;&gt; {
-      location.reload();
-    });
+  constructor(private snackbarService: SnackbarService) {}
+
+  ngOnInit() {
+    setTimeout(() &#x3D;&gt; {
+      this.close();
+    }, this.duration);
   }
 
-  createSubtask() {
-    this.dialogService
-      .open(TaskDialog, {
-        variant: TaskDialogVariant.CREATE,
-        projectId: this.projectId,
-        subtask: true,
-        task: {
-          parentTaskId: this.task.id,
-        },
-      })
-      .afterClosed()
-      .subscribe((task) &#x3D;&gt; {
-        if (!task) return;
-
-        this.taskService.create(this.projectId, task).subscribe(() &#x3D;&gt; {
-          location.reload();
-        });
-      });
+  close() {
+    this.setAnimationName(&#x27;close&#x27;);
+    setTimeout(() &#x3D;&gt; {
+      this.snackbarService.close(this.uid);
+    }, 1000);
   }
 
-  changeDate(date: Date) {
-    let sessionDate &#x3D; dayjs(date);
-    return sessionDate.format(&#x27;YYYY-MM-DD, hh:mm A&#x27;);
+  setAnimationName(name: string) {
+    this.animationName &#x3D; name;
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;task&quot; class&#x3D;&quot;task&quot;&gt;
-  &lt;div class&#x3D;&quot;top-section&quot;&gt;
-    &lt;div class&#x3D;&quot;assignees&quot; *ngIf&#x3D;&quot;members&quot;&gt;
-      &lt;app-input-assignee [assignee]&#x3D;&quot;members.get(task.assigneeId || -1) || null&quot; [projectId]&#x3D;&quot;projectId&quot;
-        [taskId]&#x3D;&quot;task.id&quot; [members]&#x3D;&quot;members || []&quot;&gt;&lt;/app-input-assignee&gt;
-    &lt;/div&gt;
-    &lt;div *ngIf&#x3D;&quot;task.deadline&quot; class&#x3D;&quot;deadline&quot;&gt;
-      &lt;div class&#x3D;&quot;title&quot; i18n&gt;Due date&lt;/div&gt;
-      &lt;div class&#x3D;&quot;value&quot;&gt;{{ changeDate(task.deadline) }}&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;name&quot;&gt;
-    &lt;span class&#x3D;&quot;task-id&quot;&gt;#{{ task.id }}&lt;/span&gt;
-    &lt;span&gt;{{ task?.name }}&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;actions&quot;&gt;
-    &lt;a *ngIf&#x3D;&quot;task.issue&quot; [href]&#x3D;&quot;task.issue&quot;&gt;
-      &lt;app-icon [icon]&#x3D;&quot;faCodeCommit&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
-    &lt;/a&gt;
-    &lt;a *ngIf&#x3D;&quot;task.pull&quot; [href]&#x3D;&quot;task.pull&quot;&gt;
-      &lt;app-icon [icon]&#x3D;&quot;faCodePullRequest&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
-    &lt;/a&gt;
-    &lt;a *ngIf&#x3D;&quot;task.mergedPullList&quot; [href]&#x3D;&quot;task.mergedPullList[0]&quot;&gt;
-      &lt;app-icon [icon]&#x3D;&quot;faCodePullRequest&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
-      &lt;app-icon class&#x3D;&quot;check&quot; [icon]&#x3D;&quot;faCheck&quot; size&#x3D;&quot;14px&quot;&gt;&lt;/app-icon&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;options&quot;&gt;
-    &lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;menu&quot; class&#x3D;&quot;flex items-center&quot;&gt;
-      &lt;app-icon icon&#x3D;&quot;matMoreVert&quot;&gt;&lt;/app-icon&gt;
-    &lt;/button&gt;
-    &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
-      &lt;button mat-menu-item (click)&#x3D;&quot;edit()&quot;&gt;
-        &lt;span i18n&gt;Edit task&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button mat-menu-item (click)&#x3D;&quot;createSubtask()&quot;&gt;
-        &lt;span i18n&gt;Create subtask&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;button mat-menu-item class&#x3D;&quot;important&quot; (click)&#x3D;&quot;delete()&quot;&gt;
-        &lt;span i18n&gt;Delete task&lt;/span&gt;
-      &lt;/button&gt;
-    &lt;/mat-menu&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content&quot; [style.background-color]&#x3D;&quot;colorStyle&quot;&gt;
+  &lt;p class&#x3D;&quot;message&quot;&gt;
+    {{ message }}
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;close-button&quot; (click)&#x3D;&quot;close()&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./board-task.component.scss</code>
+                    <code>./snackbar.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@import &#x27;../../../../styles/typography&#x27;;
-
-:host {
+                <pre class="line-numbers"><code class="language-scss">:host {
   display: block;
-  cursor: move;
+  overflow: visible;
+  animation: open 1s ease-in-out forwards;
 }
 
-.task {
-  position: relative;
+.content {
   display: flex;
-  flex-direction: column;
   padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--color-board-task-background);
   border-radius: var(--border-radius);
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 
-  &amp;:hover {
-    background-color: var(--color-board-task-background-hover);
-    box-shadow: 0 0 0.5rem 0.01rem rgb(0 0 0 / 10%);
-  }
-
-  .top-section {
-    display: flex;
-
-    &gt; * {
-      width: 50%;
-    }
-
-    .assignees {
-      .assignee {
-        $size: 32px;
-
-        @include typo-heading-5;
-
-        display: flex;
-        width: #{$size};
-        height: #{$size};
-        align-items: center;
-        justify-content: center;
-        background-color: #0a95d0;
-        border-radius: calc($size / 2);
-        color: var(--color-text);
-      }
-    }
-
-    .deadline {
-      color: var(--color-text);
-
-      .title {
-        @include typo-body;
-      }
-
-      .value {
-        @include typo-title;
-      }
-    }
-  }
-
-  .name {
-    @include typo-body;
-
-    margin-top: 1rem;
+  .message {
+    margin-right: 0.75rem;
     color: var(--color-text);
-
-    .task-id {
-      margin-right: 0.5rem;
-      opacity: 0.5;
-    }
   }
 
-  .options {
-    position: absolute;
-    right: 5px;
-    color: #fff;
-  }
-
-  .commit {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    padding: 0 0.5rem;
+  .close-button {
+    position: relative;
+    width: 24px;
+    height: 24px;
     color: var(--color-text);
     cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.5s ease;
 
-    &amp;:hover {
-      opacity: 1;
+    &amp;::before,
+    &amp;::after {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: block;
+      width: 1px;
+      height: 1rem;
+      margin-top: 0.25rem;
+      background-color: var(--color-text);
+      border-radius: 50%;
+      content: &#x27;&#x27;;
+      transition: background-color 0.4s ease;
+    }
+
+    &amp;::before {
+      transform: rotate(45deg);
+    }
+
+    &amp;::after {
+      transform: rotate(-45deg);
     }
   }
+}
 
-  .actions {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 
-    &gt; * {
-      display: flex;
-      margin-left: 1rem;
-      color: var(--color-text);
-      cursor: pointer;
-      opacity: 0.5;
-      transition: opacity 0.2s ease;
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 
-      &amp;:hover {
-        opacity: 1;
-      }
+@keyframes close {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 
-      .check {
-        margin-left: 5px;
-        color: #2ecc71;
-      }
-    }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
 </code></pre>
@@ -864,10 +813,10 @@ export class BoardTaskComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="task" class="task">  <div class="top-section">    <div class="assignees" *ngIf="members">      <app-input-assignee [assignee]="members.get(task.assigneeId || -1) || null" [projectId]="projectId"        [taskId]="task.id" [members]="members || []"></app-input-assignee>    </div>    <div *ngIf="task.deadline" class="deadline">      <div class="title" i18n>Due date</div>      <div class="value">{{ changeDate(task.deadline) }}</div>    </div>  </div>  <div class="name">    <span class="task-id">#{{ task.id }}</span>    <span>{{ task?.name }}</span>  </div>  <div class="actions">    <a *ngIf="task.issue" [href]="task.issue">      <app-icon [icon]="faCodeCommit" size="14px"></app-icon>    </a>    <a *ngIf="task.pull" [href]="task.pull">      <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>    </a>    <a *ngIf="task.mergedPullList" [href]="task.mergedPullList[0]">      <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>      <app-icon class="check" [icon]="faCheck" size="14px"></app-icon>    </a>  </div>  <div class="options">    <button mat-icon-button [matMenuTriggerFor]="menu" class="flex items-center">      <app-icon icon="matMoreVert"></app-icon>    </button>    <mat-menu #menu="matMenu">      <button mat-menu-item (click)="edit()">        <span i18n>Edit task</span>      </button>      <button mat-menu-item (click)="createSubtask()">        <span i18n>Create subtask</span>      </button>      <button mat-menu-item class="important" (click)="delete()">        <span i18n>Delete task</span>      </button>    </mat-menu>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content" [style.background-color]="colorStyle">  <p class="message">    {{ message }}  </p>  <div class="close-button" (click)="close()"></div></div></div>'
     var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
-    var ACTUAL_COMPONENT = {'name': 'BoardTaskComponent'};
+    var ACTUAL_COMPONENT = {'name': 'SnackbarComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -913,7 +862,7 @@ export class BoardTaskComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'BoardTaskComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'SnackbarComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

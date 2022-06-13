@@ -380,6 +380,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/SidebarNavigationComponent.html" data-type="entity-link" >SidebarNavigationComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/SnackbarComponent.html" data-type="entity-link" >SnackbarComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/SnackbarOutletComponent.html" data-type="entity-link" >SnackbarOutletComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/TextareaComponent.html" data-type="entity-link" >TextareaComponent</a>
                             </li>
                             <li class="link">
@@ -468,6 +474,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/SessionsService.html" data-type="entity-link" >SessionsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/SnackbarService.html" data-type="entity-link" >SnackbarService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/StatusService.html" data-type="entity-link" >StatusService</a>
@@ -567,6 +576,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/SinglePersonSchedule.html" data-type="entity-link" >SinglePersonSchedule</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/SnackbarData.html" data-type="entity-link" >SnackbarData</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Status.html" data-type="entity-link" >Status</a>

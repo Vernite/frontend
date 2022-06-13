@@ -69,6 +69,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#lists" >lists</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -140,12 +155,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(apiService: <a href="../injectables/ApiService.html" target="_self">ApiService</a>, gitIntegrationService: <a href="../injectables/GitIntegrationService.html" target="_self">GitIntegrationService</a>, dialogService: <a href="../injectables/DialogService.html" target="_self">DialogService</a>, projectService: <a href="../injectables/ProjectService.html" target="_self">ProjectService</a>, memberService: <a href="../injectables/MemberService.html" target="_self">MemberService</a>)</code>
+<code>constructor(apiService: <a href="../injectables/ApiService.html" target="_self">ApiService</a>, gitIntegrationService: <a href="../injectables/GitIntegrationService.html" target="_self">GitIntegrationService</a>, dialogService: <a href="../injectables/DialogService.html" target="_self">DialogService</a>, projectService: <a href="../injectables/ProjectService.html" target="_self">ProjectService</a>, memberService: <a href="../injectables/MemberService.html" target="_self">MemberService</a>, snackbarService: <a href="../injectables/SnackbarService.html" target="_self">SnackbarService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/tasks/services/task.service.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/tasks/services/task.service.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -237,6 +252,20 @@
                                                         <td>
                                                         </td>
                                                 </tr>
+                                                <tr>
+                                                        <td>snackbarService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SnackbarService.html" target="_self" >SnackbarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -273,8 +302,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="246"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:246</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="269"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:269</a></div>
                 </td>
             </tr>
 
@@ -384,8 +413,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="259"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:259</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="282"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:282</a></div>
                 </td>
             </tr>
 
@@ -495,8 +524,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:74</a></div>
                 </td>
             </tr>
 
@@ -590,8 +619,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="96"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:96</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:119</a></div>
                 </td>
             </tr>
 
@@ -685,8 +714,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="106"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:106</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:129</a></div>
                 </td>
             </tr>
 
@@ -773,15 +802,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>list(projectId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, filters?: literal type)</code>
+                    <code>list(projectId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, filters?: <a href="../undefineds/Filter.html" target="_self">Filter[]</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:53</a></div>
                 </td>
             </tr>
 
@@ -823,7 +852,7 @@
                                 <tr>
                                     <td>filters</td>
                                     <td>
-                                            <code>literal type</code>
+                                                <code><a href="../miscellaneous/typealiases.html#Filter" target="_self" >Filter[]</a></code>
                                     </td>
 
                                     <td>
@@ -873,8 +902,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="158"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:158</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="181"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:181</a></div>
                 </td>
             </tr>
 
@@ -920,8 +949,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="181"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:181</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="204"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:204</a></div>
                 </td>
             </tr>
 
@@ -1015,8 +1044,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="132"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:132</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:155</a></div>
                 </td>
             </tr>
 
@@ -1110,8 +1139,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="208"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:208</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="231"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:231</a></div>
                 </td>
             </tr>
 
@@ -1189,8 +1218,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:98</a></div>
                 </td>
             </tr>
 
@@ -1263,6 +1292,38 @@
         </tbody>
     </table>
 </section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lists"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>lists</b></span>
+                        <a href="#lists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map&lt;Project[&#x27;id&#x27;], ReplaySubject&lt;Task[]&gt;&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/tasks/services/task.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
     </div>
 
@@ -1270,15 +1331,29 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { ProjectMember } from &#x27;@dashboard/interfaces/project-member.interface&#x27;;
+import { Project } from &#x27;@dashboard/interfaces/project.interface&#x27;;
 import { GitIntegrationService } from &#x27;@dashboard/services/git-integration.service&#x27;;
 import { MemberService } from &#x27;@dashboard/services/member.service&#x27;;
 import { ProjectService } from &#x27;@dashboard/services/project.service&#x27;;
 import { AlertDialogVariant } from &#x27;@main/dialogs/alert/alert.dialog&#x27;;
+import { Filter } from &#x27;@main/interfaces/filters.interface&#x27;;
+import { applyFilters } from &#x27;@main/operators/apply-filters.operator&#x27;;
 import { DialogService } from &#x27;@main/services/dialog.service&#x27;;
+import { SnackbarService } from &#x27;@main/services/snackbar.service&#x27;;
 import { TaskDialog, TaskDialogData, TaskDialogVariant } from &#x27;@tasks/dialogs/task/task.dialog&#x27;;
 import { Schedule } from &#x27;@tasks/interfaces/schedule.interface&#x27;;
 import * as dayjs from &#x27;dayjs&#x27;;
-import { combineLatest, EMPTY, map, Observable, of, switchMap, take, tap } from &#x27;rxjs&#x27;;
+import {
+  combineLatest,
+  EMPTY,
+  map,
+  Observable,
+  of,
+  ReplaySubject,
+  switchMap,
+  take,
+  tap,
+} from &#x27;rxjs&#x27;;
 import { ApiService } from &#x27;../../_main/services/api.service&#x27;;
 import { Task, TaskWithAdditionalData } from &#x27;../interfaces/task.interface&#x27;;
 
@@ -1286,6 +1361,8 @@ import { Task, TaskWithAdditionalData } from &#x27;../interfaces/task.interface&
   providedIn: &#x27;root&#x27;,
 })
 export class TaskService {
+  private lists &#x3D; new Map&lt;Project[&#x27;id&#x27;], ReplaySubject&lt;Task[]&gt;&gt;();
+
   /**
    * Default constructor with dependency injection.
    * @param apiService ApiService
@@ -1296,6 +1373,7 @@ export class TaskService {
     private dialogService: DialogService,
     private projectService: ProjectService,
     private memberService: MemberService,
+    private snackbarService: SnackbarService,
   ) {}
 
   /**
@@ -1303,16 +1381,19 @@ export class TaskService {
    * @param projectId Project id needed to list all tasks
    * @returns Request observable with list of tasks
    */
-  public list(projectId: number, filters?: { assigneeId: number }): Observable&lt;Task[]&gt; {
-    return this.apiService
-      .get&lt;Task[]&gt;(&#x60;/project/${projectId}/task/&#x60;)
-      .pipe(
-        map((tasks) &#x3D;&gt;
-          filters &amp;&amp; Object.keys(filters).length
-            ? tasks.filter((task) &#x3D;&gt; task.assigneeId &#x3D;&#x3D;&#x3D; filters.assigneeId)
-            : tasks,
-        ),
-      );
+  public list(projectId: number, filters?: Filter[]): Observable&lt;Task[]&gt; {
+    let subject: ReplaySubject&lt;Task[]&gt;;
+    if (this.lists.has(projectId)) {
+      subject &#x3D; this.lists.get(projectId)!;
+    } else {
+      subject &#x3D; new ReplaySubject&lt;Task[]&gt;();
+      this.lists.set(projectId, subject);
+      this.apiService.get(&#x60;/project/${projectId}/task&#x60;).subscribe((tasks) &#x3D;&gt; {
+        subject.next(tasks);
+      });
+    }
+
+    return subject.pipe(applyFilters(filters));
   }
 
   /**
@@ -1326,12 +1407,15 @@ export class TaskService {
       switchMap((newTask) &#x3D;&gt; {
         if (task.connectWithPullRequestOnGitHub) {
           return this.gitIntegrationService.connectGitHubPull(projectId, newTask.id, task.pull);
-        } else return of(null);
+        } else return of(newTask);
       }),
       switchMap((newTask) &#x3D;&gt; {
         if (task.connectWithIssueOnGitHub) {
           return this.gitIntegrationService.connectGitHubIssue(projectId, newTask.id, task.issue);
-        } else return of(null);
+        } else return of(newTask);
+      }),
+      tap(() &#x3D;&gt; {
+        this.snackbarService.show($localize&#x60;Task created successfully!&#x60;);
       }),
     );
   }
