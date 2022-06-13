@@ -868,7 +868,10 @@ export class StatusService {
     return combineLatest([this.list(projectId), this.taskService.list(projectId)]).pipe(
       map(([statuses, tasks]) &#x3D;&gt; {
         const board: [Task | string, StatusWithTasks[]][] &#x3D; [];
-        const OTHER &#x3D; [&#x27;OTHER&#x27;, statuses as StatusWithTasks[]] as [string, StatusWithTasks[]];
+        const OTHER &#x3D; [&#x27;OTHER&#x27;, statuses.map((s) &#x3D;&gt; ({ ...s, tasks: [] }))] as [
+          string,
+          StatusWithTasks[],
+        ];
 
         for (const task of tasks) {
           if (task.subTasks?.length) {
@@ -887,8 +890,6 @@ export class StatusService {
         }
 
         board.push(OTHER);
-
-        console.log(board);
         return board;
       }),
     );

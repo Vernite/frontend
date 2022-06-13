@@ -433,6 +433,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Filters.html" data-type="entity-link" >Filters</a>
                             </li>
                             <li class="link">
+                                <a href="classes/PersistentMap.html" data-type="entity-link" >PersistentMap</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/Random.html" data-type="entity-link" >Random</a>
                             </li>
                             <li class="link">
@@ -564,6 +567,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ModifyUser.html" data-type="entity-link" >ModifyUser</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/PersistentMapOptions.html" data-type="entity-link" >PersistentMapOptions</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Project.html" data-type="entity-link" >Project</a>
