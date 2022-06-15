@@ -150,7 +150,7 @@ export function ServiceValidator(errorValidationTree: ErrorValidationTree) {
               const m &#x3D; match(error);
 
               if (m) {
-                showAlert(error, &#x27;ERROR&#x27;);
+                showAlert(m, &#x27;ERROR&#x27;);
               } else {
                 subscriber.error(error);
               }
