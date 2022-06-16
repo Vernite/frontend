@@ -172,6 +172,7 @@ import { ClickStopPropagationDirective } from &#x27;./directives/click-stop-prop
 import { FocusInitialDirective } from &#x27;./directives/focus-initial.directive&#x27;;
 import { LetDirective } from &#x27;./directives/let.directive&#x27;;
 import { ErrorInterceptor } from &#x27;./interceptors/error.interceptor&#x27;;
+import { MockPage } from &#x27;./pages/mock/mock.page&#x27;;
 import { ValidationErrorPipe } from &#x27;./pipes/validation-error.pipe&#x27;;
 import { ApiService } from &#x27;./services/api.service&#x27;;
 import { DialogService } from &#x27;./services/dialog.service&#x27;;
@@ -254,6 +255,7 @@ const ngModuleConfig &#x3D; {
     FiltersComponent,
     SnackbarComponent,
     SnackbarOutletComponent,
+    MockPage,
   ],
   providers: [
     DialogService,

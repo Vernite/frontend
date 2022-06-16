@@ -74,6 +74,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { MockPage } from &#x27;@main/pages/mock/mock.page&#x27;;
 import { BoardPage } from &#x27;./pages/board/board.page&#x27;;
 import { SchedulePage } from &#x27;./pages/schedule/schedule.page&#x27;;
 import { TaskListPage } from &#x27;./pages/task-list/task-list.page&#x27;;
@@ -98,6 +99,13 @@ const routes: Routes &#x3D; [
   {
     path: &#x27;schedule&#x27;,
     component: SchedulePage,
+  },
+  {
+    path: &#x27;calendar&#x27;,
+    component: MockPage,
+    data: {
+      image: &#x27;assets/mocks/calendar.svg&#x27;,
+    },
   },
 ];
 

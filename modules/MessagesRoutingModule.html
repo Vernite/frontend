@@ -74,11 +74,21 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
+import { MockPage } from &#x27;@main/pages/mock/mock.page&#x27;;
 
 /**
  * Messages routes list
  */
-const routes: Routes &#x3D; [{}];
+const routes: Routes &#x3D; [
+  {
+    path: &#x27;&#x27;,
+    pathMatch: &#x27;full&#x27;,
+    component: MockPage,
+    data: {
+      image: &#x27;assets/mocks/messages.svg&#x27;,
+    },
+  },
+];
 
 /**
  * Messages routes module
