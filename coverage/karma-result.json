@@ -10,18 +10,18 @@
     "browsers": [
         {
             "browser": {
-                "id": "46180022",
+                "id": "494095",
                 "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/102.0.5005.115 Safari/537.36",
                 "name": "Chrome Headless 102.0.5005.115 (Linux x86_64)",
                 "state": "DISCONNECTED",
                 "lastResult": {
-                    "startTime": 1655482005131,
+                    "startTime": 1655744261005,
                     "total": 151,
                     "success": 151,
                     "failed": 0,
                     "skipped": 0,
-                    "totalTime": 4495,
-                    "netTime": 3606,
+                    "totalTime": 3035,
+                    "netTime": 2472,
                     "error": false,
                     "disconnected": false
                 },
@@ -43,7 +43,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 243,
+                    "time": 168,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -67,7 +67,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 3,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -91,7 +91,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 9,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -115,7 +115,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -139,7 +139,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -163,7 +163,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -187,7 +187,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -211,7 +211,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 2,
                     "passedExpectations": [
                         {
@@ -241,7 +241,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -265,7 +265,7 @@
                     "suite": [
                         "ESet"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -385,7 +385,7 @@
                     "suite": [
                         "Enum class"
                     ],
-                    "time": 3,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -409,7 +409,7 @@
                     "suite": [
                         "Enum class"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -433,7 +433,7 @@
                     "suite": [
                         "Enum class"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -457,7 +457,7 @@
                     "suite": [
                         "Enum class"
                     ],
-                    "time": 13,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -505,7 +505,7 @@
                     "suite": [
                         "filters class"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 3,
                     "passedExpectations": [
                         {
@@ -661,7 +661,7 @@
                     "suite": [
                         "Random class"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -685,7 +685,7 @@
                     "suite": [
                         "Utils: regexIndexOf"
                     ],
-                    "time": 1,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -781,7 +781,7 @@
                     "suite": [
                         "Utils: snakeCase"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -805,7 +805,7 @@
                     "suite": [
                         "Utils: isLetter"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -829,7 +829,7 @@
                     "suite": [
                         "Utils: isLetter"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -901,7 +901,7 @@
                     "suite": [
                         "Utils: isLetter"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -997,7 +997,7 @@
                     "suite": [
                         "Utils: isLetter"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1045,7 +1045,7 @@
                     "suite": [
                         "Utils: has"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1069,7 +1069,7 @@
                     "suite": [
                         "ButtonComponent"
                     ],
-                    "time": 212,
+                    "time": 132,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1093,7 +1093,7 @@
                     "suite": [
                         "ButtonComponent"
                     ],
-                    "time": 168,
+                    "time": 101,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1117,7 +1117,7 @@
                     "suite": [
                         "ButtonComponent"
                     ],
-                    "time": 326,
+                    "time": 288,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1141,7 +1141,7 @@
                     "suite": [
                         "CardComponent"
                     ],
-                    "time": 9,
+                    "time": 5,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1165,7 +1165,7 @@
                     "suite": [
                         "CheckboxComponent"
                     ],
-                    "time": 140,
+                    "time": 83,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1189,7 +1189,7 @@
                     "suite": [
                         "FiltersComponent"
                     ],
-                    "time": 18,
+                    "time": 14,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1213,7 +1213,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 144,
+                    "time": 89,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1237,7 +1237,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 111,
+                    "time": 69,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1261,7 +1261,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 110,
+                    "time": 77,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1285,7 +1285,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 104,
+                    "time": 78,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1309,7 +1309,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 102,
+                    "time": 60,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1333,7 +1333,7 @@
                     "suite": [
                         "InputDateTimeComponent"
                     ],
-                    "time": 16,
+                    "time": 12,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1357,7 +1357,7 @@
                     "suite": [
                         "InputComponent"
                     ],
-                    "time": 18,
+                    "time": 13,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1381,7 +1381,7 @@
                     "suite": [
                         "MainViewComponent"
                     ],
-                    "time": 104,
+                    "time": 56,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1405,7 +1405,7 @@
                     "suite": [
                         "NavElementWorkspaceComponent"
                     ],
-                    "time": 27,
+                    "time": 19,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1429,7 +1429,7 @@
                     "suite": [
                         "NavElementComponent"
                     ],
-                    "time": 14,
+                    "time": 10,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1453,7 +1453,7 @@
                     "suite": [
                         "OptionComponent"
                     ],
-                    "time": 9,
+                    "time": 8,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1477,7 +1477,7 @@
                     "suite": [
                         "SelectComponent"
                     ],
-                    "time": 44,
+                    "time": 31,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1501,7 +1501,7 @@
                     "suite": [
                         "SidebarNavigationComponent"
                     ],
-                    "time": 60,
+                    "time": 41,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1525,7 +1525,7 @@
                     "suite": [
                         "SnackbarOutletComponent"
                     ],
-                    "time": 6,
+                    "time": 4,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1549,7 +1549,7 @@
                     "suite": [
                         "SnackbarComponent"
                     ],
-                    "time": 7,
+                    "time": 5,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1573,7 +1573,7 @@
                     "suite": [
                         "TextareaComponent"
                     ],
-                    "time": 42,
+                    "time": 25,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1597,7 +1597,7 @@
                     "suite": [
                         "UpperNavigationComponent"
                     ],
-                    "time": 29,
+                    "time": 19,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1621,7 +1621,7 @@
                     "suite": [
                         "AlertComponent"
                     ],
-                    "time": 12,
+                    "time": 9,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1669,7 +1669,7 @@
                     "suite": [
                         "Directive: Let"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1693,7 +1693,7 @@
                     "suite": [
                         "MockPage"
                     ],
-                    "time": 6,
+                    "time": 3,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1717,7 +1717,7 @@
                     "suite": [
                         "Pipe: ValidationError"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1741,7 +1741,7 @@
                     "suite": [
                         "Service: Api"
                     ],
-                    "time": 3,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1789,7 +1789,7 @@
                     "suite": [
                         "Service: Api"
                     ],
-                    "time": 4,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1837,7 +1837,7 @@
                     "suite": [
                         "Service: Api"
                     ],
-                    "time": 4,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1885,7 +1885,7 @@
                     "suite": [
                         "Service: Dialog"
                     ],
-                    "time": 7,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1933,7 +1933,7 @@
                     "suite": [
                         "Service: Snackbar"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2005,7 +2005,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2053,7 +2053,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2077,7 +2077,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2101,7 +2101,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2125,7 +2125,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 5,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2149,7 +2149,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2173,7 +2173,7 @@
                     "suite": [
                         "Test length limit validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2245,7 +2245,7 @@
                     "suite": [
                         "Test password validator"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2269,7 +2269,7 @@
                     "suite": [
                         "Test password validator"
                     ],
-                    "time": 1,
+                    "time": 3,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2317,7 +2317,7 @@
                     "suite": [
                         "Test password validator"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2413,7 +2413,7 @@
                     "suite": [
                         "Test required validator"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2485,7 +2485,7 @@
                     "suite": [
                         "AppComponent"
                     ],
-                    "time": 33,
+                    "time": 19,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2509,7 +2509,7 @@
                     "suite": [
                         "AppComponent"
                     ],
-                    "time": 10,
+                    "time": 6,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2563,7 +2563,7 @@
                     "suite": [
                         "ChangePasswordPage"
                     ],
-                    "time": 36,
+                    "time": 28,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2587,7 +2587,7 @@
                     "suite": [
                         "DeleteAccountPage"
                     ],
-                    "time": 20,
+                    "time": 18,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2611,7 +2611,7 @@
                     "suite": [
                         "ForgotPasswordComponent"
                     ],
-                    "time": 35,
+                    "time": 31,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2635,7 +2635,7 @@
                     "suite": [
                         "LoginPage"
                     ],
-                    "time": 56,
+                    "time": 41,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2659,7 +2659,7 @@
                     "suite": [
                         "RegisterPage"
                     ],
-                    "time": 49,
+                    "time": 30,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2683,7 +2683,7 @@
                     "suite": [
                         "RestoreAccountPage"
                     ],
-                    "time": 22,
+                    "time": 14,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2707,7 +2707,7 @@
                     "suite": [
                         "Service: AuthService"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2755,7 +2755,7 @@
                     "suite": [
                         "IntegrationGithubComponent"
                     ],
-                    "time": 30,
+                    "time": 19,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2779,7 +2779,7 @@
                     "suite": [
                         "MemberListComponent"
                     ],
-                    "time": 25,
+                    "time": 20,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2803,7 +2803,7 @@
                     "suite": [
                         "ViewOptionsComponent"
                     ],
-                    "time": 16,
+                    "time": 14,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2827,7 +2827,7 @@
                     "suite": [
                         "AddMemberDialog"
                     ],
-                    "time": 28,
+                    "time": 16,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2851,7 +2851,7 @@
                     "suite": [
                         "CreateProjectMembersPage"
                     ],
-                    "time": 20,
+                    "time": 16,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2875,7 +2875,7 @@
                     "suite": [
                         "CreateProjectPage"
                     ],
-                    "time": 52,
+                    "time": 34,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2899,7 +2899,7 @@
                     "suite": [
                         "CreateWorkspaceComponent"
                     ],
-                    "time": 20,
+                    "time": 14,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2923,7 +2923,7 @@
                     "suite": [
                         "EditProjectMembersPage"
                     ],
-                    "time": 27,
+                    "time": 22,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2947,7 +2947,7 @@
                     "suite": [
                         "EditProjectComponent"
                     ],
-                    "time": 84,
+                    "time": 48,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2971,7 +2971,7 @@
                     "suite": [
                         "EditWorkspacePage"
                     ],
-                    "time": 28,
+                    "time": 19,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2995,7 +2995,7 @@
                     "suite": [
                         "GithubIntegrationPage"
                     ],
-                    "time": 11,
+                    "time": 9,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3019,7 +3019,7 @@
                     "suite": [
                         "ProjectsListComponent"
                     ],
-                    "time": 36,
+                    "time": 26,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3043,7 +3043,7 @@
                     "suite": [
                         "WorkspacesListPage"
                     ],
-                    "time": 31,
+                    "time": 19,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3091,7 +3091,7 @@
                     "suite": [
                         "Service: Member"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3163,7 +3163,7 @@
                     "suite": [
                         "LandingPageComponent"
                     ],
-                    "time": 7,
+                    "time": 3,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3187,7 +3187,7 @@
                     "suite": [
                         "IntegrationEntryComponent"
                     ],
-                    "time": 14,
+                    "time": 36,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3211,7 +3211,7 @@
                     "suite": [
                         "ListGroupComponent"
                     ],
-                    "time": 5,
+                    "time": 4,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3235,7 +3235,7 @@
                     "suite": [
                         "SettingsAccountComponent"
                     ],
-                    "time": 39,
+                    "time": 28,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3259,7 +3259,7 @@
                     "suite": [
                         "SettingsIntegrationsPage"
                     ],
-                    "time": 16,
+                    "time": 13,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3283,7 +3283,7 @@
                     "suite": [
                         "SettingsLocalizationPage"
                     ],
-                    "time": 44,
+                    "time": 27,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3307,7 +3307,7 @@
                     "suite": [
                         "SettingsSessionsPage"
                     ],
-                    "time": 23,
+                    "time": 17,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3331,7 +3331,7 @@
                     "suite": [
                         "SettingsComponent"
                     ],
-                    "time": 22,
+                    "time": 14,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3379,7 +3379,7 @@
                     "suite": [
                         "BoardTaskComponent"
                     ],
-                    "time": 10,
+                    "time": 8,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3403,7 +3403,7 @@
                     "suite": [
                         "InputAssigneeComponent"
                     ],
-                    "time": 136,
+                    "time": 86,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3427,7 +3427,7 @@
                     "suite": [
                         "StatusLabelComponent"
                     ],
-                    "time": 120,
+                    "time": 71,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3451,7 +3451,7 @@
                     "suite": [
                         "ViewOptionsComponent"
                     ],
-                    "time": 10,
+                    "time": 7,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3475,7 +3475,7 @@
                     "suite": [
                         "TaskDialog"
                     ],
-                    "time": 151,
+                    "time": 103,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3499,7 +3499,7 @@
                     "suite": [
                         "BoardComponent"
                     ],
-                    "time": 43,
+                    "time": 40,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3523,7 +3523,7 @@
                     "suite": [
                         "SchedulePage"
                     ],
-                    "time": 52,
+                    "time": 25,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3547,7 +3547,7 @@
                     "suite": [
                         "TaskListComponent"
                     ],
-                    "time": 36,
+                    "time": 25,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3571,7 +3571,7 @@
                     "suite": [
                         "Pipe: StatusColore"
                     ],
-                    "time": 0,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3595,7 +3595,7 @@
                     "suite": [
                         "Pipe: TaskPriorityIcone"
                     ],
-                    "time": 1,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3691,7 +3691,7 @@
                     "suite": [
                         "Service: Status"
                     ],
-                    "time": 3,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3715,7 +3715,7 @@
                     "suite": [
                         "Service: Task"
                     ],
-                    "time": 4,
+                    "time": 3,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
