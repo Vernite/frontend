@@ -148,7 +148,7 @@
                                 <a href="#workspace$" >workspace$</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Public</span>
                                 <a href="#workspaceId" >workspaceId</a>
                             </li>
                         </ul>
@@ -562,7 +562,7 @@ Otherwise, displays an error message.</p>
                 <td class="col-md-4">
                     <a name="workspaceId"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
+                            <span class="modifier">Public</span>
                         <span ><b>workspaceId</b></span>
                         <a href="#workspaceId"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -624,7 +624,7 @@ export class CreateProjectPage {
 
   public workspace$!: Observable&lt;Workspace&gt;;
 
-  private workspaceId!: number;
+  public workspaceId!: number;
 
   public memberList: string[] &#x3D; [];
 
@@ -695,13 +695,15 @@ export class CreateProjectPage {
   &lt;div class&#x3D;&quot;members&quot;&gt;
     &lt;h2 class&#x3D;&quot;typo-heading-5 mb-5&quot;&gt;Members&lt;/h2&gt;
     &lt;div class&#x3D;&quot;button&quot;&gt;
-      &lt;app-button type&#x3D;&quot;button&quot; [icon]&#x3D;&quot;faPlus&quot; variant&#x3D;&quot;primary&quot; (click)&#x3D;&quot;openAddMembersDialog()&quot;&gt;Add member&lt;/app-button&gt;
+      &lt;app-button type&#x3D;&quot;button&quot; [icon]&#x3D;&quot;faPlus&quot; variant&#x3D;&quot;primary&quot; (click)&#x3D;&quot;openAddMembersDialog()&quot;&gt;Add member
+      &lt;/app-button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;app-member-list *ngIf&#x3D;&quot;(memberList !&#x3D;&#x3D; [])&quot; type&#x3D;&#x27;create&#x27; [addedMembers]&#x3D;&quot;memberList&quot;&gt;&lt;/app-member-list&gt;
 
-  &lt;div class&#x3D;&quot;app-button&quot;&gt;
+  &lt;div class&#x3D;&quot;buttons&quot;&gt;
     &lt;app-button variant&#x3D;&quot;primary&quot; [pending]&#x3D;&quot;createSubscription &amp;&amp; !createSubscription.closed&quot; i18n&gt;Save&lt;/app-button&gt;
+    &lt;app-button variant&#x3D;&quot;secondary&quot; type&#x3D;&quot;button&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;, workspaceId]&quot; i18n&gt;Cancel&lt;/app-button&gt;
   &lt;/div&gt;
 &lt;/form&gt;
 </code></pre>
@@ -720,9 +722,14 @@ form {
   padding-left: 10px;
 }
 
-.app-button {
+.buttons {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1rem;
+
+  &amp;&gt;* {
+    display: block;
+    margin-right: 1rem;
+  }
 }
 
 .members {
@@ -773,7 +780,7 @@ form {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form [formGroup]="form" (submit)="submitCreate()">  <div class="project-name">    <h2 class="typo-heading-5 mb-5" i18n>Workspace: {{ (workspace$ | async)?.name }}</h2>    <app-input formControlName="name" type="text" placeholder="New project" floatingLabel="Project name"      i18n-floatingLabel i18n-placeholder></app-input>  </div>  <div class="members">    <h2 class="typo-heading-5 mb-5">Members</h2>    <div class="button">      <app-button type="button" [icon]="faPlus" variant="primary" (click)="openAddMembersDialog()">Add member</app-button>    </div>  </div>  <app-member-list *ngIf="(memberList !== [])" type=\'create\' [addedMembers]="memberList"></app-member-list>  <div class="app-button">    <app-button variant="primary" [pending]="createSubscription && !createSubscription.closed" i18n>Save</app-button>  </div></form></div>'
+        var COMPONENT_TEMPLATE = '<div><form [formGroup]="form" (submit)="submitCreate()">  <div class="project-name">    <h2 class="typo-heading-5 mb-5" i18n>Workspace: {{ (workspace$ | async)?.name }}</h2>    <app-input formControlName="name" type="text" placeholder="New project" floatingLabel="Project name"      i18n-floatingLabel i18n-placeholder></app-input>  </div>  <div class="members">    <h2 class="typo-heading-5 mb-5">Members</h2>    <div class="button">      <app-button type="button" [icon]="faPlus" variant="primary" (click)="openAddMembersDialog()">Add member      </app-button>    </div>  </div>  <app-member-list *ngIf="(memberList !== [])" type=\'create\' [addedMembers]="memberList"></app-member-list>  <div class="buttons">    <app-button variant="primary" [pending]="createSubscription && !createSubscription.closed" i18n>Save</app-button>    <app-button variant="secondary" type="button" [routerLink]="[\'/\', workspaceId]" i18n>Cancel</app-button>  </div></form></div>'
     var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'MockPage', 'selector': 'app-mock'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
     var ACTUAL_COMPONENT = {'name': 'CreateProjectPage'};
