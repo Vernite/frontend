@@ -91,9 +91,14 @@
                 <td class="col-md-4">
                     <a name="transform"></a>
                     <span class="name">
-                        <span ><b>transform</b></span>
+                        <span class="deprecated-name"><b>transform</b></span>
                         <a href="#transform"><span class="icon ion-ios-link"></span></a>
                     </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4 deprecated">
+                    
                 </td>
             </tr>
             <tr>
@@ -105,8 +110,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="7"
-                            class="link-to-prism">src/app/tasks/pipes/task-type-icon.pipe.ts:7</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">src/app/tasks/pipes/task-type-icon.pipe.ts:10</a></div>
                 </td>
             </tr>
 
@@ -166,6 +171,9 @@
   name: &#x27;taskTypeIcon&#x27;,
 })
 export class TaskTypeIconPipe implements PipeTransform {
+  /**
+   * @deprecated
+   */
   transform(value: any): any {
     switch (value) {
       case &#x27;TASK&#x27;:
