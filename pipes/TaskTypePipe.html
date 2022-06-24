@@ -340,7 +340,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
-import { TaskType } from &#x27;@tasks/enums/task-type.enum&#x27;;
+import { SubTaskType, TaskType } from &#x27;@tasks/enums/task-type.enum&#x27;;
 import * as Color from &#x27;color&#x27;;
 
 @Pipe({
@@ -351,11 +351,9 @@ export class TaskTypePipe implements PipeTransform {
   transform(value: any, type: &#x27;color&#x27;): Color;
 
   transform(value: any, type: &#x27;color&#x27; | &#x27;name&#x27; | &#x27;icon&#x27; &#x3D; &#x27;name&#x27;): string | Color {
-    if (typeof value &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) value &#x3D; TaskType[value];
-
-    switch (value) {
+    switch (value as TaskType | SubTaskType) {
       // Task
-      case &#x27;TASK&#x27;:
+      case TaskType.TASK:
         return {
           name: $localize&#x60;Task&#x60;,
           color: Color.rgb(52, 152, 219),
@@ -363,7 +361,7 @@ export class TaskTypePipe implements PipeTransform {
         }[type];
 
       // User story
-      case &#x27;USER_STORY&#x27;:
+      case TaskType.USER_STORY:
         return {
           name: $localize&#x60;User story&#x60;,
           color: Color.rgb(46, 204, 113),
@@ -371,7 +369,7 @@ export class TaskTypePipe implements PipeTransform {
         }[type];
 
       // Issue
-      case &#x27;ISSUE&#x27;:
+      case TaskType.ISSUE:
         return {
           name: $localize&#x60;Issue&#x60;,
           color: Color.rgb(231, 76, 60),
@@ -379,7 +377,7 @@ export class TaskTypePipe implements PipeTransform {
         }[type];
 
       // Epic
-      case &#x27;EPIC&#x27;:
+      case TaskType.EPIC:
         return {
           name: $localize&#x60;Epic&#x60;,
           color: Color.rgb(155, 89, 182),
@@ -387,7 +385,7 @@ export class TaskTypePipe implements PipeTransform {
         }[type];
 
       // Subtask
-      case &#x27;SUBTASK&#x27;:
+      case SubTaskType.SUBTASK:
         return {
           name: $localize&#x60;Subtask&#x60;,
           color: Color.rgb(88, 183, 189),
