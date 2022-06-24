@@ -70,12 +70,6 @@
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
 
 
 <section>
@@ -134,6 +128,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#dateFormats" >dateFormats</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#form" >form</a>
                             </li>
@@ -154,9 +151,6 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#changeLanguage" >changeLanguage</a>
-                            </li>
-                            <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
                                 <a href="#submit" >submit</a>
@@ -184,7 +178,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:44</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -221,45 +215,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:50</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:60</a></div>
                 </td>
             </tr>
 
@@ -295,8 +252,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:64</a></div>
                 </td>
             </tr>
 
@@ -322,6 +279,39 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="dateFormats"></a>
+                    <span class="name">
+                        <span ><b>dateFormats</b></span>
+                        <a href="#dateFormats"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    $localize&#x60;YYYY-MM-DD&#x60;,
+    $localize&#x60;DD-MM-YYYY&#x60;,
+    $localize&#x60;MM/DD/YYYY&#x60;,
+    $localize&#x60;DD.MM.YYYY&#x60;,
+  ].map((format) &#x3D;&gt; ({
+    format,
+    example: dayjs().format(format),
+  }))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="form"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -334,12 +324,13 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>new FormGroup({
     language: new FormControl(&#x27;&#x27;, requiredValidator()),
+    dateFormat: new FormControl(&#x27;&#x27;),
   })</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -399,7 +390,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/settings/pages/settings-localization/settings-localization.page.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -412,18 +403,20 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { FormControl, FormGroup } from &#x27;@angular/forms&#x27;;
 import { requiredValidator } from &#x27;@main/validators/required.validator&#x27;;
+import * as dayjs from &#x27;dayjs&#x27;;
 
 @Component({
   selector: &#x27;app-settings-localization-page&#x27;,
   templateUrl: &#x27;./settings-localization.page.html&#x27;,
   styleUrls: [&#x27;./settings-localization.page.scss&#x27;],
 })
-export class SettingsLocalizationPage implements OnInit {
+export class SettingsLocalizationPage {
   public form &#x3D; new FormGroup({
     language: new FormControl(&#x27;&#x27;, requiredValidator()),
+    dateFormat: new FormControl(&#x27;&#x27;),
   });
 
   languages &#x3D; [
@@ -457,15 +450,25 @@ export class SettingsLocalizationPage implements OnInit {
     },
   ];
 
-  constructor() {}
+  dateFormats &#x3D; [
+    $localize&#x60;YYYY-MM-DD&#x60;,
+    $localize&#x60;DD-MM-YYYY&#x60;,
+    $localize&#x60;MM/DD/YYYY&#x60;,
+    $localize&#x60;DD.MM.YYYY&#x60;,
+  ].map((format) &#x3D;&gt; ({
+    format,
+    example: dayjs().format(format),
+  }));
 
-  ngOnInit() {}
+  constructor() {}
 
   changeLanguage() {
     location.href &#x3D; &#x60;https://workflow.adiantek.ovh/${this.form.value.language}/settings/localization&#x60;;
   }
 
-  submit() {}
+  submit() {
+    this.changeLanguage();
+  }
 }
 </code></pre>
     </div>
@@ -479,13 +482,17 @@ export class SettingsLocalizationPage implements OnInit {
     &lt;app-option *ngFor&#x3D;&quot;let language of languages&quot; [value]&#x3D;&quot;language.code&quot;&gt;{{ language.name }}&lt;/app-option&gt;
   &lt;/app-select&gt;
 
+  &lt;!-- Date format --&gt;
+  &lt;app-select formControlName&#x3D;&quot;dateFormat&quot; floatingLabel&#x3D;&quot;Date format&quot; class&#x3D;&quot;full-width&quot; i18n-floatingLabel&gt;
+    &lt;app-option *ngFor&#x3D;&quot;let dateFormat of dateFormats&quot; [value]&#x3D;&quot;dateFormat.format&quot;&gt;{{ dateFormat.example }}&lt;/app-option&gt;
+  &lt;/app-select&gt;
+
   &lt;!-- Actions section --&gt;
   &lt;div class&#x3D;&quot;actions&quot;&gt;
-    &lt;app-button variant&#x3D;&quot;primary&quot; (click)&#x3D;&quot;changeLanguage()&quot; i18n&gt;Save settings&lt;/app-button&gt;
+    &lt;app-button variant&#x3D;&quot;primary&quot; i18n&gt;Save settings&lt;/app-button&gt;
   &lt;/div&gt;
 
-&lt;/form&gt;
-</code></pre>
+&lt;/form&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -531,7 +538,7 @@ export class SettingsLocalizationPage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h2 class="typo-heading-5 mb-5" i18n>Localization</h2><form [formGroup]="form" (submit)="submit()">  <!-- Language -->  <app-select formControlName="language" floatingLabel="Language" class="full-width" i18n-floatingLabel>    <app-option *ngFor="let language of languages" [value]="language.code">{{ language.name }}</app-option>  </app-select>  <!-- Actions section -->  <div class="actions">    <app-button variant="primary" (click)="changeLanguage()" i18n>Save settings</app-button>  </div></form></div>'
+        var COMPONENT_TEMPLATE = '<div><h2 class="typo-heading-5 mb-5" i18n>Localization</h2><form [formGroup]="form" (submit)="submit()">  <!-- Language -->  <app-select formControlName="language" floatingLabel="Language" class="full-width" i18n-floatingLabel>    <app-option *ngFor="let language of languages" [value]="language.code">{{ language.name }}</app-option>  </app-select>  <!-- Date format -->  <app-select formControlName="dateFormat" floatingLabel="Date format" class="full-width" i18n-floatingLabel>    <app-option *ngFor="let dateFormat of dateFormats" [value]="dateFormat.format">{{ dateFormat.example }}</app-option>  </app-select>  <!-- Actions section -->  <div class="actions">    <app-button variant="primary" i18n>Save settings</app-button>  </div></form></div>'
     var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'MockPage', 'selector': 'app-mock'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'}];
     var ACTUAL_COMPONENT = {'name': 'SettingsLocalizationPage'};
