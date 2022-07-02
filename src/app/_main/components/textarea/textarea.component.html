@@ -1,10 +1,74 @@
 <div class="form-field">
-  <label *ngIf="staticLabel" [class.required]="required">{{ staticLabel }}</label>
+  <!-- <label *ngIf="staticLabel" [class.required]="required">{{ staticLabel }}</label>
   <mat-form-field appearance="outline" [class.without-floating-label]="!floatingLabel">
     <mat-label *ngIf="floatingLabel">{{ floatingLabel }}</mat-label>
-    <textarea matInput [placeholder]="placeholder" [required]="required" [formControl]="control"
+    <textarea #input matInput [placeholder]="placeholder" [required]="required" [formControl]="control"
       [autocomplete]="autocomplete" [rows]="rows" [cols]="cols" name="test"></textarea>
     <mat-error>{{ ngControl.control?.errors | validationError }}</mat-error>
     <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
-  </mat-form-field>
+  </mat-form-field> -->
+  <section class="switch">
+    <button (click)="openEditor()" [class.active]="mode === 'editor'" type="button">Editor</button>
+    <button (click)="openPreview()" [class.active]="mode === 'preview'" type="button">Preview</button>
+  </section>
+  <div #input [class.hidden]="mode !== 'editor'"></div>
+  <div #output class="preview" [class.hidden]="mode !== 'preview'"></div>
+  <section class="tools">
+
+    <!-- Bold -->
+    <div class="tool">
+      <div class="icon" (click)="applyBold()">
+        <app-icon size="16px" [icon]="faBold"></app-icon>
+      </div>
+    </div>
+
+    <!-- Italic -->
+    <div class="tool">
+      <div class="icon" (click)="applyItalic()">
+        <app-icon size="16px" [icon]="faItalic"></app-icon>
+      </div>
+    </div>
+
+    <!-- Underline -->
+    <div class="tool">
+      <div class="icon" (click)="applyUnderline()">
+        <app-icon size="16px" [icon]="faUnderline"></app-icon>
+      </div>
+    </div>
+
+    <!-- Link -->
+    <div class="tool">
+      <div class="icon" (click)="applyLink()">
+        <app-icon size="16px" [icon]="faLink"></app-icon>
+      </div>
+    </div>
+
+    <!-- List -->
+    <div class="tool">
+      <div class="icon">
+        <app-icon size="16px" [icon]="faList"></app-icon>
+      </div>
+    </div>
+
+    <!-- List numeric -->
+    <div class="tool">
+      <div class="icon">
+        <app-icon size="16px" [icon]="faListNumeric"></app-icon>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="tool">
+      <div class="icon">
+        <app-icon size="16px" [icon]="faQuoteLeft"></app-icon>
+      </div>
+    </div>
+
+    <!-- Code block -->
+    <div class="tool">
+      <div class="icon">
+        <app-icon size="16px" [icon]="faCode"></app-icon>
+      </div>
+    </div>
+  </section>
 </div>
