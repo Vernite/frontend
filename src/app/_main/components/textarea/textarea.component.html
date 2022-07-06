@@ -44,29 +44,36 @@
     </div>
 
     <!-- List -->
-    <div class="tool">
+    <!-- <div class="tool">
       <div class="icon">
         <app-icon size="16px" [icon]="faList"></app-icon>
       </div>
-    </div>
+    </div> -->
 
     <!-- List numeric -->
-    <div class="tool">
+    <!-- <div class="tool">
       <div class="icon">
         <app-icon size="16px" [icon]="faListNumeric"></app-icon>
       </div>
-    </div>
+    </div> -->
 
     <!-- Quote -->
-    <div class="tool">
+    <!-- <div class="tool">
       <div class="icon">
         <app-icon size="16px" [icon]="faQuoteLeft"></app-icon>
+      </div>
+    </div> -->
+
+    <!-- Code -->
+    <div class="tool">
+      <div class="icon" (click)="applyCode()">
+        <app-icon size="16px" [icon]="faCode"></app-icon>
       </div>
     </div>
 
     <!-- Code block -->
     <div class="tool">
-      <div class="icon">
+      <div class="icon" (click)="applyCodeBlock()">
         <app-icon size="16px" [icon]="faCode"></app-icon>
       </div>
     </div>

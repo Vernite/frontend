@@ -17,6 +17,7 @@ import {
   faQuoteLeft,
   faUnderline,
 } from '@fortawesome/free-solid-svg-icons';
+import { MonacoExtended } from '@main/classes/monaco-extended.class';
 
 console.log(darkTheme);
 
@@ -55,6 +56,20 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
 
   public mode: 'editor' | 'preview' = 'editor';
   private editor: monaco.editor.IStandaloneCodeEditor | null = null;
+
+  private toggleEndAndStartOfEachSelection(
+    beforeSelectionText: string,
+    afterSelectionText: string = '',
+  ) {
+    const { editor } = this;
+    if (!editor) return;
+
+    return MonacoExtended.toggleEndAndStartOfEachSelection(
+      editor,
+      beforeSelectionText,
+      afterSelectionText,
+    );
+  }
 
   faCode = faCode;
   faUnderline = faUnderline;
@@ -127,169 +142,46 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
     this.mode = 'preview';
   }
 
-  insertTextAt(lineNumber: number, column: number, text: string) {
-    const { editor } = this;
-    if (!editor) return;
-
-    editor.executeEdits('', [
-      {
-        range: {
-          startLineNumber: lineNumber,
-          startColumn: column,
-          endLineNumber: lineNumber,
-          endColumn: column,
-        },
-        text,
-      },
-    ]);
-  }
-
-  removeTextAt(
-    startLineNumber: number,
-    startColumn: number,
-    endLineNumber: number,
-    endColumn: number,
-  ) {
-    const { editor } = this;
-    if (!editor) return;
-
-    editor.executeEdits('', [
-      {
-        range: {
-          startLineNumber,
-          startColumn,
-          endLineNumber,
-          endColumn,
-        },
-        text: null,
-      },
-    ]);
-  }
-
-  insertCodeAtSelection(beforeSelectionText: string, afterSelectionText?: string) {
-    const { editor } = this;
-
-    if (!editor) return;
-    const selections = editor.getSelections();
-    if (!selections) return;
-
-    for (const selection of selections) {
-      if (afterSelectionText) {
-        this.insertTextAt(selection.endLineNumber, selection.endColumn, afterSelectionText);
-      }
-      this.insertTextAt(selection.startLineNumber, selection.startColumn, beforeSelectionText);
-    }
-  }
-
-  removeCodeAtSelection(beforeSelectionText: string, afterSelectionText?: string) {
-    const { editor } = this;
-
-    if (!editor) return;
-    const selections = editor.getSelections();
-    if (!selections) return;
-
-    const lines = editor.getModel()?.getLinesContent();
-    if (!lines) return;
-
-    for (const selection of selections) {
-      const selectedStart = lines[selection.startLineNumber - 1].substring(
-        selection.startColumn - 1,
-        selection.startColumn + beforeSelectionText.length - 1,
-      );
-      if (afterSelectionText) {
-        const selectedEnd = lines[selection.endLineNumber - 1].substring(
-          selection.endColumn - afterSelectionText.length - 1,
-          selection.endColumn - 1,
-        );
-
-        if (selectedEnd === afterSelectionText && selectedStart === beforeSelectionText) {
-          this.removeTextAt(
-            selection.endLineNumber,
-            selection.endColumn,
-            selection.endLineNumber,
-            selection.endColumn - afterSelectionText.length,
-          );
-          this.removeTextAt(
-            selection.startLineNumber,
-            selection.startColumn,
-            selection.startLineNumber,
-            selection.startColumn + beforeSelectionText.length,
-          );
-          break;
-        }
-      } else if (selectedStart === afterSelectionText) {
-        this.removeTextAt(
-          selection.startLineNumber,
-          selection.startColumn,
-          selection.startLineNumber,
-          selection.startColumn + beforeSelectionText.length,
-        );
-      }
-    }
-  }
-
-  toggleCodeAtSelection(beforeSelectionText: string, afterSelectionText?: string) {
-    const { editor } = this;
-
-    if (!editor) return;
-    const selections = editor.getSelections();
-    if (!selections) return;
-
-    let mode = 'add';
-
-    const lines = editor.getModel()?.getLinesContent();
-
-    if (!lines) return;
-
-    for (const selection of selections) {
-      const selectedStart = lines[selection.startLineNumber - 1].substring(
-        selection.startColumn - 1,
-        selection.startColumn + beforeSelectionText.length - 1,
-      );
-      if (afterSelectionText) {
-        const selectedEnd = lines[selection.endLineNumber - 1].substring(
-          selection.endColumn - afterSelectionText.length - 1,
-          selection.endColumn - 1,
-        );
-
-        if (selectedEnd === afterSelectionText && selectedStart === beforeSelectionText) {
-          mode = 'delete';
-          break;
-        }
-      } else if (selectedStart === afterSelectionText) {
-        mode = 'delete';
-      }
-    }
-
-    if (mode === 'delete') {
-      this.removeCodeAtSelection(beforeSelectionText, afterSelectionText);
-    } else {
-      this.insertCodeAtSelection(beforeSelectionText, afterSelectionText);
-    }
-  }
-
   applyUnderline() {
-    this.toggleCodeAtSelection('<u>', '</u>');
+    this.toggleEndAndStartOfEachSelection('<u>', '</u>');
     this.editor?.focus();
   }
 
   applyBold() {
-    this.toggleCodeAtSelection('**', '**');
+    this.toggleEndAndStartOfEachSelection('**', '**');
     this.editor?.focus();
   }
 
   applyItalic() {
-    this.toggleCodeAtSelection('*', '*');
+    this.toggleEndAndStartOfEachSelection('*', '*');
     this.editor?.focus();
   }
 
   applyLink() {
-    this.toggleCodeAtSelection('[', '](https://google.com)');
+    this.toggleEndAndStartOfEachSelection('[', '](https://google.com)');
+    this.editor?.focus();
+  }
+
+  applyList() {
+    this.toggleEndAndStartOfEachSelection('<ul>', '</ul>');
+    this.editor?.focus();
+  }
+
+  applyListNumeric() {
+    this.editor?.focus();
+  }
+
+  applyQuote() {
     this.editor?.focus();
   }
 
   applyCode() {
-    this.toggleCodeAtSelection('```', '```');
+    this.toggleEndAndStartOfEachSelection('`', '`');
+    this.editor?.focus();
+  }
+
+  applyCodeBlock() {
+    this.toggleEndAndStartOfEachSelection('```javascript\n', '\n```');
     this.editor?.focus();
   }
 }

@@ -97,7 +97,11 @@ export class MonacoExtended {
     beforeSelectionText: string,
     afterSelectionText: string = '',
   ) {
+    const model = editor.getModel();
+    const afterSelectionTextLinesCount = (afterSelectionText.match(/\n/g) || [])?.length;
     const edits: any[] = [];
+
+    if (!model) return;
 
     for (const selection of selections) {
       if (
@@ -110,37 +114,23 @@ export class MonacoExtended {
             startColumn: selection.startColumn,
             endLineNumber:
               selection.startLineNumber + (beforeSelectionText.match(/\n/g) || [])?.length,
-            endColumn,
+            endColumn: beforeSelectionText.replace(/.*\n/g, '').length + 1,
+          },
+          text: '',
+        });
+        edits.push({
+          range: {
+            startLineNumber: selection.endLineNumber - afterSelectionTextLinesCount,
+            startColumn:
+              model.getLineContent(selection.endLineNumber - afterSelectionTextLinesCount).length -
+              (afterSelectionText.replace(/\n[^]*$/g, '').length - 1),
+            endLineNumber: selection.endLineNumber,
+            endColumn: selection.endColumn,
           },
           text: '',
         });
       }
     }
-
-    const edits = ([] as any[]).concat(
-      ...selections.map((selection) => {
-        return [
-          {
-            range: {
-              startLineNumber: selection.startLineNumber,
-              startColumn: selection.startColumn,
-              endLineNumber: selection.startLineNumber,
-              endColumn: selection.startColumn,
-            },
-            text: beforeSelectionText,
-          },
-          {
-            range: {
-              startLineNumber: selection.endLineNumber,
-              startColumn: selection.endColumn,
-              endLineNumber: selection.endLineNumber,
-              endColumn: selection.endColumn,
-            },
-            text: afterSelectionText,
-          },
-        ];
-      }),
-    );
 
     editor.executeEdits('', edits);
   }
@@ -159,54 +149,7 @@ export class MonacoExtended {
     return selectedValue?.endsWith(text);
   }
 
-  public static removeCodeAtSelection(beforeSelectionText: string, afterSelectionText?: string) {
-    const { editor } = this;
-
-    if (!editor) return;
-    const selections = editor.getSelections();
-    if (!selections) return;
-
-    const lines = editor.getModel()?.getLinesContent();
-    if (!lines) return;
-
-    for (const selection of selections) {
-      const selectedStart = lines[selection.startLineNumber - 1].substring(
-        selection.startColumn - 1,
-        selection.startColumn + beforeSelectionText.length - 1,
-      );
-      if (afterSelectionText) {
-        const selectedEnd = lines[selection.endLineNumber - 1].substring(
-          selection.endColumn - afterSelectionText.length - 1,
-          selection.endColumn - 1,
-        );
-
-        if (selectedEnd === afterSelectionText && selectedStart === beforeSelectionText) {
-          this.removeTextAt(
-            selection.endLineNumber,
-            selection.endColumn,
-            selection.endLineNumber,
-            selection.endColumn - afterSelectionText.length,
-          );
-          this.removeTextAt(
-            selection.startLineNumber,
-            selection.startColumn,
-            selection.startLineNumber,
-            selection.startColumn + beforeSelectionText.length,
-          );
-          break;
-        }
-      } else if (selectedStart === afterSelectionText) {
-        this.removeTextAt(
-          selection.startLineNumber,
-          selection.startColumn,
-          selection.startLineNumber,
-          selection.startColumn + beforeSelectionText.length,
-        );
-      }
-    }
-  }
-
-  toggleTextAtSelection(
+  public static toggleEndAndStartOfEachSelection(
     editor: MonacoEditor,
     beforeSelectionText: string,
     afterSelectionText: string = '',
@@ -223,7 +166,12 @@ export class MonacoExtended {
     const mode: 'delete' | 'add' = shouldDelete ? 'delete' : 'add';
 
     if (mode === 'delete') {
-      this.removeCodeAtSelection(beforeSelectionText, afterSelectionText);
+      MonacoExtended.removeTextBeforeAndAfterEachSelection(
+        editor,
+        selections,
+        beforeSelectionText,
+        afterSelectionText,
+      );
     } else {
       MonacoExtended.insertTextBeforeAndAfterEachSelection(
         editor,
