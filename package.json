@@ -1,6 +1,6 @@
 {
   "name": "workflow",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "scripts": {
     "postinstall": "husky install",
     "ng": "ng",
@@ -92,6 +92,7 @@
     "@types/color": "^3.0.3",
     "@types/emoji-js": "^3.5.0",
     "@types/jasmine": "^4.0.3",
+    "@types/lodash-es": "^4.17.6",
     "@types/marked": "^4.0.3",
     "@types/mocha": "^9.1.1",
     "@types/ua-parser-js": "^0.7.36",

@@ -31,7 +31,9 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
   }
 
   /**
-   * Private property to set filed as required
+   * Private property to set field as required
+   *
+   * @ignore
    */
   private _required: boolean = false;
 
@@ -44,13 +46,17 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
 
   /**
    * Observable that emits when the control is destroyed.
+   *
+   * @ignore
    */
-  private destroy$ = new Subject();
+  private destroy$: Subject<null> = new Subject();
 
   /**
    * Observable that emits when the control is touched.
+   *
+   * @ignore
    */
-  private touched$ = new Subject();
+  private touched$: Subject<boolean> = new Subject();
 
   /**
    * Get the value of the control.
@@ -78,14 +84,16 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
   ) {
     this.ngControl.valueAccessor = this;
 
-    this.initCheckForTouch();
-    this.checkIfIsRequired();
+    this._initCheckForTouch();
+    this._checkIfIsRequired();
   }
 
   /**
    * Check if the control is required by provided validators.
+   *
+   * @ignore
    */
-  private checkIfIsRequired(): void {
+  private _checkIfIsRequired(): void {
     if (!(this.control as any)._rawValidators) return;
 
     for (const validator of (this.ngControl as any).control._rawValidators) {
@@ -98,8 +106,10 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
 
   /**
    * Apply the touched observable on ngControl and control fields
+   *
+   * @ignore
    */
-  private initCheckForTouch(): void {
+  private _initCheckForTouch(): void {
     (this.control as any)._markAsTouched = this.control.markAsTouched;
     this.control.markAsTouched = () => {
       (this.control as any)._markAsTouched();
@@ -144,9 +154,7 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
     }
   }
 
-  /**
-   * A callback method that performs custom clean-up, invoked immediately before a directive, pipe, or service instance is destroyed.
-   */
+  /** @ignore */
   ngOnDestroy(): void {
     this.destroy$.next(null);
     this.destroy$.complete();
