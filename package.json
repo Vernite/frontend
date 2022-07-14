@@ -1,6 +1,6 @@
 {
   "name": "workflow",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "scripts": {
     "postinstall": "husky install",
     "ng": "ng",

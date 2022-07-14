@@ -48,7 +48,7 @@ import { LetDirective } from './directives/let.directive';
 import { ViewContainerDirective } from './directives/view-container.directive';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { MockPage } from './pages/mock/mock.page';
-import { ValidationErrorPipe } from './pipes/validation-error.pipe';
+import { ValidationErrorPipe } from './pipes/validation-error/validation-error.pipe';
 import { ApiService } from './services/api.service';
 import { DialogService } from './services/dialog.service';
 

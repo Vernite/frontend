@@ -24856,22 +24856,22 @@
             },
             {
                 "name": "initMocks",
-                "file": "src/mocks/_main.mocks.ts",
-                "ctype": "miscellaneous",
-                "subtype": "function",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "<p>Function to initialize mocking server with all routes</p>\n",
-                "args": []
-            },
-            {
-                "name": "initMocks",
                 "file": "src/mocks/_main.mocks.prod.ts",
                 "ctype": "miscellaneous",
                 "subtype": "function",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "<p>Production version of mocking initializer</p>\n<p>This file need to be in file replacements in angular.json</p>\n<div><pre class=\"line-numbers\"><code class=\"language-json\">{\n &quot;replace&quot;: &quot;src/mocks/_main.mocks.ts&quot;,\n &quot;with&quot;: &quot;src/mocks/_main.mocks.prod.ts&quot;\n}</code></pre></div>",
+                "args": []
+            },
+            {
+                "name": "initMocks",
+                "file": "src/mocks/_main.mocks.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "<p>Function to initialize mocking server with all routes</p>\n",
                 "args": []
             },
             {
@@ -26091,18 +26091,6 @@
                     ]
                 }
             ],
-            "src/mocks/_main.mocks.ts": [
-                {
-                    "name": "initMocks",
-                    "file": "src/mocks/_main.mocks.ts",
-                    "ctype": "miscellaneous",
-                    "subtype": "function",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "<p>Function to initialize mocking server with all routes</p>\n",
-                    "args": []
-                }
-            ],
             "src/mocks/_main.mocks.prod.ts": [
                 {
                     "name": "initMocks",
@@ -26112,6 +26100,18 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "<p>Production version of mocking initializer</p>\n<p>This file need to be in file replacements in angular.json</p>\n<div><pre class=\"line-numbers\"><code class=\"language-json\">{\n &quot;replace&quot;: &quot;src/mocks/_main.mocks.ts&quot;,\n &quot;with&quot;: &quot;src/mocks/_main.mocks.prod.ts&quot;\n}</code></pre></div>",
+                    "args": []
+                }
+            ],
+            "src/mocks/_main.mocks.ts": [
+                {
+                    "name": "initMocks",
+                    "file": "src/mocks/_main.mocks.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "<p>Function to initialize mocking server with all routes</p>\n",
                     "args": []
                 }
             ],
