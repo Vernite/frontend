@@ -61,9 +61,6 @@ const ngModuleConfig = {
     =             Local dependencies              =
     =============================================*/
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     RouterModule,
     ObserversModule,
   ],
@@ -71,6 +68,9 @@ const ngModuleConfig = {
     /*=============================================
       =                Dependencies                 =
       =============================================*/
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     DragDropModule,
     PlatformModule,
     OverlayModule,

@@ -1,36 +1,23 @@
-import {
-  DOCS_SELECT,
-  DOCS_PRESET_CONTROL_ACCESSOR,
-} from '../../../../stories/helpers/arg-type.helper';
-import { MainModule } from '@main/_main.module';
-import { FormControl, NgControl } from '@angular/forms';
-import { story } from './../../../../stories/helpers/story.helper';
-import { Story, moduleMetadata, Meta } from '@storybook/angular';
+import { DOCS_SELECT } from '../../../../stories/helpers/arg-type.helper';
+import { FormControl } from '@angular/forms';
 import { CheckboxComponent } from './checkbox.component';
+import { FormControlStoryPageConfig } from 'src/stories/helpers/classes/form-control-story-page-config.class';
+import { StoryTemplate } from 'src/stories/helpers/classes/story-template.class';
+import { Story } from 'src/stories/helpers/classes/story.class';
 
-export default {
+const config = new FormControlStoryPageConfig({
   title: 'Components/Checkbox',
   component: CheckboxComponent,
-  decorators: [
-    moduleMetadata({
-      imports: [MainModule],
-      providers: [NgControl],
-    }),
-  ],
+  selector: 'app-checkbox',
   argTypes: {
-    ...DOCS_PRESET_CONTROL_ACCESSOR,
     autocomplete: DOCS_SELECT,
   },
-} as Meta;
-
-const Template: Story<CheckboxComponent> = (args: CheckboxComponent) => ({
-  props: args,
 });
 
-export const $Default = story(Template.bind({}), {
-  selector: 'app-checkbox',
-  template: `<app-checkbox>Sample checkbox</app-checkbox>`,
-  props: {
-    formControl: new FormControl(),
-  },
-});
+const formControl = new FormControl();
+const content = 'Sample checkbox';
+
+const template = new StoryTemplate({ formControl, content });
+
+export default config.meta();
+export const $Default = new Story({ template, config }).story();

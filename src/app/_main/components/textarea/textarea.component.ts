@@ -6,7 +6,6 @@ import { darkTheme } from './textarea.theme';
 import { marked } from 'marked';
 import { markdownExample } from './markdown.example';
 import hljs from 'highlight.js';
-import { EmojiConvertor } from 'emoji-js';
 import {
   faBold,
   faCode,
@@ -18,6 +17,7 @@ import {
   faUnderline,
 } from '@fortawesome/free-solid-svg-icons';
 import { MonacoExtended } from '@main/classes/monaco-extended.class';
+import { Marked } from '@main/libs/marked/marked.lib';
 
 console.log(darkTheme);
 
@@ -55,6 +55,8 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
   @ViewChild('output') output!: ElementRef<HTMLElement>;
 
   public mode: 'editor' | 'preview' = 'editor';
+
+  /** @ignore */
   private editor: monaco.editor.IStandaloneCodeEditor | null = null;
 
   private toggleEndAndStartOfEachSelection(
@@ -71,16 +73,32 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
     );
   }
 
+  /** @ignore */
   faCode = faCode;
+
+  /** @ignore */
   faUnderline = faUnderline;
+
+  /** @ignore */
   faBold = faBold;
+
+  /** @ignore */
   faItalic = faItalic;
+
+  /** @ignore */
   faQuoteLeft = faQuoteLeft;
+
+  /** @ignore */
   faList = faList;
+
+  /** @ignore */
   faListNumeric = faListNumeric;
+
+  /** @ignore */
   faLink = faLink;
 
   ngOnInit(): void {
+    Marked.init();
     hljs.configure({ languages: [] });
   }
 
@@ -114,6 +132,9 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
     editor.onDidContentSizeChange(updateHeight);
     updateHeight();
     this.editor = editor;
+
+    console.log(this.editor);
+    (window as any).textarea = this;
   }
 
   openEditor() {
@@ -121,6 +142,8 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
   }
 
   openPreview() {
+    console.log(this.editor);
+
     this.output.nativeElement.innerHTML = marked.parse(this.editor?.getValue() || '');
     this.output.nativeElement
       .querySelectorAll<HTMLElement>('pre code')
@@ -128,17 +151,6 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
         hljs.highlightElement(c);
       });
 
-    let emoji = new EmojiConvertor();
-    emoji.replace_mode = 'unified';
-    emoji.allow_native = true;
-
-    this.output.nativeElement.innerHTML = emoji.replace_colons(this.output.nativeElement.innerHTML);
-
-    (window as any).twemoji.parse(this.output.nativeElement, {
-      size: '16x16',
-      // ext: '.svg',
-      base: 'https://twemoji.maxcdn.com/',
-    });
     this.mode = 'preview';
   }
 

@@ -6,10 +6,11 @@
 
 :host {
   display: block;
+  color: var(--color-text);
 }
 
 .form-field {
-  padding: 1rem 1rem 0 0;
+  padding: 1rem 0 0 0;
   border: 1px solid var(--color-input-border);
   background-color: var(--color-input-background);
   border-radius: var(--border-radius);
@@ -19,12 +20,14 @@
     margin-left: 1em;
 
     &>* {
+      opacity: 0.5;
+
       &:not(:last-child) {
         margin-right: 1em;
       }
 
       &.active {
-        opacity: 0.5;
+        opacity: 1;
       }
     }
   }

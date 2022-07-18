@@ -23,5 +23,3 @@ platformBrowserDynamic()
     (window as any)['ngRef'] = ref;
   })
   .catch((err) => console.error(err));
-
-// initMocks();

@@ -194,6 +194,33 @@
               "devServerTarget": "workflow:serve-coverage:production"
             }
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "angular-cli:build",
+            "port": 6006,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "--disablePrivate",
+              "--disableInternal",
+              "--disableLifeCycleHooks"
+            ]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "browserTarget": "angular-cli:build",
+            "compodocArgs": [
+              "-e",
+              "json",
+              "--disablePrivate",
+              "--disableInternal",
+              "--disableLifeCycleHooks"
+            ]
+          }
         }
       }
     }

@@ -1,6 +1,5 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl, ValidationErrors } from '@angular/forms';
-import { TestNgControl } from '@tests/helpers/ng-control-testing-provider.helper';
 import { Subject } from 'rxjs';
 
 /**
@@ -8,7 +7,7 @@ import { Subject } from 'rxjs';
  */
 @Component({
   template: '',
-  providers: [{ provide: NgControl, useClass: TestNgControl }],
+  // providers: [{ provide: NgControl, useClass: TestNgControl }],
 })
 // eslint-disable-next-line @angular-eslint/component-class-suffix
 export class ControlAccessor implements OnDestroy, ControlValueAccessor {
@@ -27,7 +26,7 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
   }
 
   public get name() {
-    return this.ngControl.name?.toString() || '';
+    return this.ngControl?.name?.toString() || '';
   }
 
   /**
@@ -41,7 +40,7 @@ export class ControlAccessor implements OnDestroy, ControlValueAccessor {
    * Control that is used by the form.
    */
   public get control(): FormControl {
-    return (this.ngControl.control as FormControl) || new FormControl();
+    return (this.ngControl?.control as FormControl) || new FormControl();
   }
 
   /**

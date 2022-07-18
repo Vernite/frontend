@@ -1,36 +1,24 @@
-import {
-  DOCS_SELECT,
-  DOCS_PRESET_CONTROL_ACCESSOR,
-} from '../../../../stories/helpers/arg-type.helper';
-import { MainModule } from '@main/_main.module';
-import { FormControl, NgControl } from '@angular/forms';
-import { story } from './../../../../stories/helpers/story.helper';
-import { Story, moduleMetadata, Meta } from '@storybook/angular';
+import { DOCS_SELECT, DOCS_READONLY } from '../../../../stories/helpers/arg-type.helper';
+import { FormControl } from '@angular/forms';
 import { TextareaComponent } from './textarea.component';
+import { FormControlStoryPageConfig } from 'src/stories/helpers/classes/form-control-story-page-config.class';
+import { StoryTemplate } from 'src/stories/helpers/classes/story-template.class';
+import { Story } from 'src/stories/helpers/classes/story.class';
 
-export default {
+const config = new FormControlStoryPageConfig({
   title: 'Components/Textarea',
   component: TextareaComponent,
-  decorators: [
-    moduleMetadata({
-      imports: [MainModule],
-      providers: [NgControl],
-    }),
-  ],
-  argTypes: {
-    ...DOCS_PRESET_CONTROL_ACCESSOR,
-    autocomplete: DOCS_SELECT,
-  },
-} as Meta;
-
-const Template: Story<TextareaComponent> = (args: TextareaComponent) => ({
-  props: args,
-});
-
-export const $Default = story(Template.bind({}), {
   selector: 'app-textarea',
-  template: `<app-textarea></app-textarea>`,
-  props: {
-    formControl: new FormControl(),
+  argTypes: {
+    autocomplete: DOCS_SELECT,
+    input: DOCS_READONLY,
+    output: DOCS_READONLY,
   },
 });
+
+export default config.meta();
+
+const formControl = new FormControl();
+const template = new StoryTemplate({ formControl });
+
+export const $Default = new Story({ config, template }).story();

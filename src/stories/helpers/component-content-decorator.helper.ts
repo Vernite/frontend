@@ -1,4 +1,5 @@
 import { ArgTypes, componentWrapperDecorator, Story } from '@storybook/angular';
+import { wrapWithDiv } from './functions/component-template-decorator.function';
 
 const setContent = (template: string, content: string) => {
   return template.replace(/(?<=(<[^/]*))>.?<(?=\/)/g, `>${content}<`);
@@ -23,20 +24,15 @@ export const exposeAllPossibilities = <C = any>(
     return template.replace('><', ` ${input}="${value}">${valueCapital}<`);
   };
 
-  const wrapWithWithDiv = (template: string) => {
-    const style = 'display:flex;gap:1rem;';
-    return `<div style="${style}">${template}</div>`;
-  };
-
   story.decorators = [
     componentWrapperDecorator((story) => {
       const baseTemplate = story.replace(inputRegex, '');
       const inputsArray = values.map((v) => addInputToTemplate(baseTemplate, v));
       const template = inputsArray.join('');
 
-      console.log(wrapWithWithDiv(template));
+      console.log(wrapWithDiv(template));
 
-      return wrapWithWithDiv(template);
+      return wrapWithDiv(template);
     }),
   ];
 

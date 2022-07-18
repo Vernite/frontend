@@ -1,11 +1,13 @@
 import { ControlType } from './control-type.helper';
-import { faQuestion, faPenToSquare, faTrashArrowUp } from '@fortawesome/free-solid-svg-icons';
+import {
+  faQuestion,
+  faPenToSquare,
+  faTrashArrowUp,
+  faAdd,
+} from '@fortawesome/free-solid-svg-icons';
 
-const fasQuestion = faQuestion;
-const fasPenToSquare = faPenToSquare;
-const fasTrashArrowUp = faTrashArrowUp;
-
-const icons = { fasQuestion, fasPenToSquare, fasTrashArrowUp };
+const none = null;
+const icons = { none, faQuestion, faPenToSquare, faTrashArrowUp, faAdd };
 
 export const DOCS_ICON_SELECT = {
   control: {
@@ -13,6 +15,16 @@ export const DOCS_ICON_SELECT = {
   },
   options: Object.keys(icons),
   mapping: icons,
+};
+
+export const DOCS_READONLY = {
+  control: false,
+};
+
+export const DOCS_REMOVE = {
+  table: {
+    disable: true,
+  },
 };
 
 export const DOCS_CONTROL = (controlType: ControlType) => ({
@@ -39,6 +51,7 @@ export const DOCS_SELECT = {
 };
 
 export const DOCS_PRESET_CONTROL_ACCESSOR = {
+  ngControl: DOCS_READONLY,
   required: {
     control: { type: false },
     table: { category: 'getters', type: { summary: 'boolean' } },
@@ -53,13 +66,13 @@ export const DOCS_PRESET_CONTROL_ACCESSOR = {
   },
   formControl: {
     control: { type: false },
-    table: { type: { summary: 'FormControl' } },
+    table: { category: 'inputs', type: { summary: 'FormControl' } },
     description: `Control to attach to this control accessor (\`formControlName\` can also be used instead)`,
     type: { name: 'FormControl' },
   },
   formControlName: {
     control: { type: false },
-    table: { type: { summary: 'string' } },
+    table: { category: 'inputs', type: { summary: 'string' } },
     description: `Control to attach to this control accessor - require to be nested in \`formGroup\` (\`formControl\` can also be used instead)`,
     type: { name: 'string' },
   },

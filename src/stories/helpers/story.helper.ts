@@ -1,23 +1,16 @@
-import { FormControl } from '@angular/forms';
 import { exposeAllPossibilities } from './component-content-decorator.helper';
 import { merge } from 'lodash-es';
 import { Story, componentWrapperDecorator } from '@storybook/angular';
-
-export interface StoryConfig<C> {
-  selector: string;
-  description?: string;
-  multiple?: {
-    prop: string;
-    options: any[];
-  };
-  props?: Partial<C> & { formControl?: FormControl };
-  code?: string;
-  template?: string;
-}
+import { StoryConfig } from './classes/story.class';
 
 export const story = <C = any>(story: Story<C>, config: StoryConfig<C>) => {
   if (config.multiple) {
-    exposeAllPossibilities(story, config.selector, config.multiple.prop, config.multiple.options);
+    exposeAllPossibilities(
+      story,
+      config.config.selector,
+      config.multiple.prop,
+      config.multiple.options,
+    );
   }
 
   const descriptionObject = config.description
