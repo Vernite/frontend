@@ -2,8 +2,14 @@ import * as monaco from 'monaco-editor';
 
 type MonacoEditor = monaco.editor.IStandaloneCodeEditor;
 type Selection = monaco.Selection;
-type Range = monaco.IRange;
-type EndOfLinePreference = monaco.editor.EndOfLinePreference;
+type EditOperation = monaco.editor.IIdentifiedSingleEditOperation;
+
+interface SelectionEditOperation {
+  before?: string;
+  after?: string;
+  beforeEachLine?: string;
+  afterEachLine?: string;
+}
 
 export class MonacoExtended {
   public static insertTextAt(
@@ -23,6 +29,16 @@ export class MonacoExtended {
         text,
       },
     ]);
+  }
+
+  public static executeEdits(editor: MonacoEditor, edits: EditOperation[]) {
+    for (const edit of edits) {
+      if (edit.range?.startColumn && !edit.range?.endColumn)
+        (edit.range as any).endColumn = edit.range.startColumn;
+      if (edit.range?.startLineNumber && !edit.range?.endLineNumber)
+        (edit.range as any).endLineNumber = edit.range.startLineNumber;
+    }
+    return editor.executeEdits('', edits);
   }
 
   public static removeTextAt(

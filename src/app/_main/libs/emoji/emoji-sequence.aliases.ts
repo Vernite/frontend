@@ -31,5 +31,3 @@ export const EMOJI_SEQUENCE_REGEX = new RegExp(
     ')',
   'gi',
 );
-
-console.log(EMOJI_SEQUENCE_REGEX);

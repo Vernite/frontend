@@ -1,9 +1,10 @@
+import { Monaco } from './../../libs/monaco/monaco.lib';
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ControlAccessor } from '@main/classes/control-accessor.class';
 import * as monaco from 'monaco-editor';
 // eslint-disable-next-line unused-imports/no-unused-imports
 import { darkTheme } from './textarea.theme';
-import { marked } from 'marked';
+import { marked, Renderer } from 'marked';
 import { markdownExample } from './markdown.example';
 import hljs from 'highlight.js';
 import {
@@ -54,6 +55,8 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
   @ViewChild('input') input!: ElementRef<HTMLElement>;
   @ViewChild('output') output!: ElementRef<HTMLElement>;
 
+  private renderer: Renderer = Marked.getRenderer();
+
   public mode: 'editor' | 'preview' = 'editor';
 
   /** @ignore */
@@ -99,6 +102,7 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
 
   ngOnInit(): void {
     Marked.init();
+    Monaco.init();
     hljs.configure({ languages: [] });
   }
 
@@ -142,9 +146,9 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
   }
 
   openPreview() {
-    console.log(this.editor);
+    const { renderer } = this;
 
-    this.output.nativeElement.innerHTML = marked.parse(this.editor?.getValue() || '');
+    this.output.nativeElement.innerHTML = marked.parse(this.editor?.getValue() || '', { renderer });
     this.output.nativeElement
       .querySelectorAll<HTMLElement>('pre code')
       .forEach((c: HTMLElement) => {
@@ -155,45 +159,77 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
   }
 
   applyUnderline() {
-    this.toggleEndAndStartOfEachSelection('<u>', '</u>');
+    this.editor?.executeSelectionEdits({
+      before: '<u>',
+      after: '</u>',
+    });
     this.editor?.focus();
   }
 
   applyBold() {
-    this.toggleEndAndStartOfEachSelection('**', '**');
+    this.editor?.executeSelectionEdits({
+      before: '**',
+      after: '**',
+    });
     this.editor?.focus();
   }
 
   applyItalic() {
-    this.toggleEndAndStartOfEachSelection('*', '*');
+    this.editor?.executeSelectionEdits({
+      before: '*',
+      after: '*',
+    });
     this.editor?.focus();
   }
 
   applyLink() {
-    this.toggleEndAndStartOfEachSelection('[', '](https://google.com)');
+    this.editor?.executeSelectionEdits({
+      before: '[',
+      after: '](https://google.com)',
+    });
     this.editor?.focus();
   }
 
   applyList() {
-    this.toggleEndAndStartOfEachSelection('<ul>', '</ul>');
+    this.editor?.executeSelectionEdits({
+      before: '<ul>\n',
+      after: '\n</ul>',
+      beforeEachLine: '  <li>',
+      afterEachLine: '</li>',
+    });
     this.editor?.focus();
   }
 
   applyListNumeric() {
+    this.editor?.executeSelectionEdits({
+      before: '<ol>\n',
+      after: '\n</ol>',
+      beforeEachLine: '  <li>',
+      afterEachLine: '</li>',
+    });
     this.editor?.focus();
   }
 
   applyQuote() {
+    this.editor?.executeSelectionEdits({
+      beforeEachLine: '>',
+    });
     this.editor?.focus();
   }
 
   applyCode() {
-    this.toggleEndAndStartOfEachSelection('`', '`');
+    this.editor?.executeSelectionEdits({
+      before: '`',
+      after: '`',
+    });
     this.editor?.focus();
   }
 
   applyCodeBlock() {
-    this.toggleEndAndStartOfEachSelection('```javascript\n', '\n```');
+    this.editor?.executeSelectionEdits({
+      before: '```javascript\n',
+      after: '\n```',
+    });
     this.editor?.focus();
   }
 }

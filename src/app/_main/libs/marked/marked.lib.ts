@@ -1,5 +1,6 @@
-import { marked } from 'marked';
+import { marked, Renderer } from 'marked';
 import { emoji } from './extensions/marked-emoji-extension';
+import { linkOverride } from './overrides/link.override';
 
 export class Marked {
   private static _initialized = false;
@@ -12,5 +13,13 @@ export class Marked {
     });
 
     Marked._initialized = true;
+  }
+
+  public static getRenderer() {
+    let renderer = new Renderer();
+
+    renderer = linkOverride(renderer);
+
+    return renderer;
   }
 }
