@@ -302,8 +302,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="269"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:269</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="277"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:277</a></div>
                 </td>
             </tr>
 
@@ -413,8 +413,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="282"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:282</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="290"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:290</a></div>
                 </td>
             </tr>
 
@@ -902,8 +902,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="181"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:181</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="185"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:185</a></div>
                 </td>
             </tr>
 
@@ -949,8 +949,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="204"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:204</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="212"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:212</a></div>
                 </td>
             </tr>
 
@@ -1139,8 +1139,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="231"
-                            class="link-to-prism">src/app/tasks/services/task.service.ts:231</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="239"
+                            class="link-to-prism">src/app/tasks/services/task.service.ts:239</a></div>
                 </td>
             </tr>
 
@@ -1338,7 +1338,7 @@ import { ProjectService } from &#x27;@dashboard/services/project.service&#x27;;
 import { AlertDialogVariant } from &#x27;@main/dialogs/alert/alert.dialog&#x27;;
 import { Filter } from &#x27;@main/interfaces/filters.interface&#x27;;
 import { applyFilters } from &#x27;@main/operators/apply-filters.operator&#x27;;
-import { DialogService } from &#x27;@main/services/dialog.service&#x27;;
+import { DialogOutlet, DialogService } from &#x27;@main/services/dialog.service&#x27;;
 import { SnackbarService } from &#x27;@main/services/snackbar.service&#x27;;
 import { TaskDialog, TaskDialogData, TaskDialogVariant } from &#x27;@tasks/dialogs/task/task.dialog&#x27;;
 import { Schedule } from &#x27;@tasks/interfaces/schedule.interface&#x27;;
@@ -1485,11 +1485,15 @@ export class TaskService {
    */
   public openEditTaskDialog(projectId: number, task: Task): Observable&lt;Task | null&gt; {
     return this.dialogService
-      .open(TaskDialog, {
-        variant: TaskDialogVariant.EDIT,
-        projectId,
-        task,
-      })
+      .open(
+        TaskDialog,
+        {
+          variant: TaskDialogVariant.EDIT,
+          projectId,
+          task,
+        } as TaskDialogData,
+        DialogOutlet.CONTENT_RIGHT,
+      )
       .afterClosed()
       .pipe(
         tap((data) &#x3D;&gt; {
@@ -1511,9 +1515,13 @@ export class TaskService {
    */
   public openCreateNewTaskDialog() {
     return this.dialogService
-      .open(TaskDialog, {
-        variant: TaskDialogVariant.CREATE,
-      } as TaskDialogData)
+      .open(
+        TaskDialog,
+        {
+          variant: TaskDialogVariant.CREATE,
+        } as TaskDialogData,
+        DialogOutlet.CONTENT_RIGHT,
+      )
       .afterClosed()
       .pipe(
         switchMap((task: TaskWithAdditionalData) &#x3D;&gt; {

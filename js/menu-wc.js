@@ -347,6 +347,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/ControlAccessor.html" data-type="entity-link" >ControlAccessor</a>
                             </li>
                             <li class="link">
+                                <a href="components/DialogOutletComponent.html" data-type="entity-link" >DialogOutletComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/FiltersComponent.html" data-type="entity-link" >FiltersComponent</a>
                             </li>
                             <li class="link">
@@ -416,6 +419,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <li class="link">
                                     <a href="directives/LetDirective.html" data-type="entity-link" >LetDirective</a>
                                 </li>
+                                <li class="link">
+                                    <a href="directives/ViewContainerDirective.html" data-type="entity-link" >ViewContainerDirective</a>
+                                </li>
                             </ul>
                         </li>
                     <li class="chapter">
@@ -427,6 +433,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
+                                <a href="classes/DialogRef.html" data-type="entity-link" >DialogRef</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Emoji.html" data-type="entity-link" >Emoji</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/Enum.html" data-type="entity-link" >Enum</a>
                             </li>
                             <li class="link">
@@ -436,10 +448,34 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/Filters.html" data-type="entity-link" >Filters</a>
                             </li>
                             <li class="link">
+                                <a href="classes/FormControlStoryPageConfig.html" data-type="entity-link" >FormControlStoryPageConfig</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Marked.html" data-type="entity-link" >Marked</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Monaco.html" data-type="entity-link" >Monaco</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/MonacoExtended.html" data-type="entity-link" >MonacoExtended</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/PersistentMap.html" data-type="entity-link" >PersistentMap</a>
                             </li>
                             <li class="link">
                                 <a href="classes/Random.html" data-type="entity-link" >Random</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/SelectionEditPlugin.html" data-type="entity-link" >SelectionEditPlugin</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/Story.html" data-type="entity-link" >Story</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/StoryPageConfig.html" data-type="entity-link" >StoryPageConfig</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/StoryTemplate.html" data-type="entity-link" >StoryTemplate</a>
                             </li>
                             <li class="link">
                                 <a href="classes/TestNgControl.html" data-type="entity-link" >TestNgControl</a>
@@ -539,13 +575,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/AlertDialogData.html" data-type="entity-link" >AlertDialogData</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/EmojiToken.html" data-type="entity-link" >EmojiToken</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ErrorValidationTree.html" data-type="entity-link" >ErrorValidationTree</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/FilterCheckbox.html" data-type="entity-link" >FilterCheckbox</a>
+                                <a href="interfaces/ExtendedMeta.html" data-type="entity-link" >ExtendedMeta</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/FormGroup.html" data-type="entity-link" >FormGroup</a>
+                                <a href="interfaces/FilterCheckbox.html" data-type="entity-link" >FilterCheckbox</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/GitAccount.html" data-type="entity-link" >GitAccount</a>
@@ -584,6 +623,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/RequestOptions.html" data-type="entity-link" >RequestOptions</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/SelectionEditOperation.html" data-type="entity-link" >SelectionEditOperation</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/SinglePersonSchedule.html" data-type="entity-link" >SinglePersonSchedule</a>
                             </li>
                             <li class="link">
@@ -596,6 +638,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/StatusWithTasks.html" data-type="entity-link" >StatusWithTasks</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/StoryConfig.html" data-type="entity-link" >StoryConfig</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/Task.html" data-type="entity-link" >Task</a>
                             </li>
                             <li class="link">
@@ -603,6 +648,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/TaskWithAdditionalData.html" data-type="entity-link" >TaskWithAdditionalData</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/TemplateDecoratorConfig.html" data-type="entity-link" >TemplateDecoratorConfig</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/User.html" data-type="entity-link" >User</a>

@@ -153,6 +153,7 @@ import { FontAwesomeModule } from &#x27;@fortawesome/angular-fontawesome&#x27;;
 import { ButtonComponent } from &#x27;./components/button/button.component&#x27;;
 import { CardComponent } from &#x27;./components/card/card.component&#x27;;
 import { CheckboxComponent } from &#x27;./components/checkbox/checkbox.component&#x27;;
+import { DialogOutletComponent } from &#x27;./components/dialog-outlet/dialog-outlet.component&#x27;;
 import { FiltersComponent } from &#x27;./components/filters/filters.component&#x27;;
 import { IconComponent } from &#x27;./components/icon/icon.component&#x27;;
 import { InputDateTimeComponent } from &#x27;./components/input-date-time/input-date-time.component&#x27;;
@@ -171,9 +172,10 @@ import { AlertDialog } from &#x27;./dialogs/alert/alert.dialog&#x27;;
 import { ClickStopPropagationDirective } from &#x27;./directives/click-stop-propagation.directive&#x27;;
 import { FocusInitialDirective } from &#x27;./directives/focus-initial.directive&#x27;;
 import { LetDirective } from &#x27;./directives/let.directive&#x27;;
+import { ViewContainerDirective } from &#x27;./directives/view-container.directive&#x27;;
 import { ErrorInterceptor } from &#x27;./interceptors/error.interceptor&#x27;;
 import { MockPage } from &#x27;./pages/mock/mock.page&#x27;;
-import { ValidationErrorPipe } from &#x27;./pipes/validation-error.pipe&#x27;;
+import { ValidationErrorPipe } from &#x27;./pipes/validation-error/validation-error.pipe&#x27;;
 import { ApiService } from &#x27;./services/api.service&#x27;;
 import { DialogService } from &#x27;./services/dialog.service&#x27;;
 
@@ -186,9 +188,6 @@ const ngModuleConfig &#x3D; {
     &#x3D;             Local dependencies              &#x3D;
     &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;*/
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     RouterModule,
     ObserversModule,
   ],
@@ -196,6 +195,9 @@ const ngModuleConfig &#x3D; {
     /*&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
       &#x3D;                Dependencies                 &#x3D;
       &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;*/
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     DragDropModule,
     PlatformModule,
     OverlayModule,
@@ -256,6 +258,8 @@ const ngModuleConfig &#x3D; {
     SnackbarComponent,
     SnackbarOutletComponent,
     MockPage,
+    DialogOutletComponent,
+    ViewContainerDirective,
   ],
   providers: [
     DialogService,

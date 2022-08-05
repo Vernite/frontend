@@ -64,10 +64,22 @@
                             <a href="#applyFilters" title="src/app/_main/operators/apply-filters.operator.ts" ><b>applyFilters</b>&nbsp;&nbsp;&nbsp;(src/.../apply-filters.operator.ts)</a>
                         </li>
                         <li>
-                            <a href="#catchResponse" title="src/app/_main/operators/catch-response.operator.ts" ><b>catchResponse</b>&nbsp;&nbsp;&nbsp;(src/.../catch-response.operator.ts)</a>
+                            <a href="#buildPropsString" title="src/stories/helpers/functions/component-template-decorator.function.ts" ><b>buildPropsString</b>&nbsp;&nbsp;&nbsp;(src/.../component-template-decorator.function.ts)</a>
                         </li>
                         <li>
-                            <a href="#Debug" title="src/app/_main/decorators/debug.decorator.ts" ><b>Debug</b>&nbsp;&nbsp;&nbsp;(src/.../debug.decorator.ts)</a>
+                            <a href="#buildTemplate" title="src/stories/helpers/functions/component-template-decorator.function.ts" ><b>buildTemplate</b>&nbsp;&nbsp;&nbsp;(src/.../component-template-decorator.function.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#catchResponse" title="src/app/_main/operators/catch-response.operator.ts" class="deprecated-name"><b>catchResponse</b>&nbsp;&nbsp;&nbsp;(src/.../catch-response.operator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#combinePropsString" title="src/stories/helpers/functions/component-template-decorator.function.ts" ><b>combinePropsString</b>&nbsp;&nbsp;&nbsp;(src/.../component-template-decorator.function.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#componentTemplateDecorator" title="src/stories/helpers/functions/component-template-decorator.function.ts" ><b>componentTemplateDecorator</b>&nbsp;&nbsp;&nbsp;(src/.../component-template-decorator.function.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Debug" title="src/app/_main/decorators/debug.decorator.ts" class="deprecated-name"><b>Debug</b>&nbsp;&nbsp;&nbsp;(src/.../debug.decorator.ts)</a>
                         </li>
                         <li>
                             <a href="#emailValidator" title="src/app/_main/validators/email.validator.ts" ><b>emailValidator</b>&nbsp;&nbsp;&nbsp;(src/.../email.validator.ts)</a>
@@ -79,10 +91,13 @@
                             <a href="#expectToPass" title="src/tests/helpers/validator-testing.helper.ts" ><b>expectToPass</b>&nbsp;&nbsp;&nbsp;(src/.../validator-testing.helper.ts)</a>
                         </li>
                         <li>
-                            <a href="#initMocks" title="src/mocks/_main.mocks.prod.ts" ><b>initMocks</b>&nbsp;&nbsp;&nbsp;(src/.../_main.mocks.prod.ts)</a>
+                            <a href="#extractPropsString" title="src/stories/helpers/functions/component-template-decorator.function.ts" ><b>extractPropsString</b>&nbsp;&nbsp;&nbsp;(src/.../component-template-decorator.function.ts)</a>
                         </li>
                         <li>
-                            <a href="#initMocks" title="src/mocks/_main.mocks.ts" ><b>initMocks</b>&nbsp;&nbsp;&nbsp;(src/.../_main.mocks.ts)</a>
+                            <a href="#getAllProperties" title="src/stories/helpers/functions/get-all-properties.function.ts" ><b>getAllProperties</b>&nbsp;&nbsp;&nbsp;(src/.../get-all-properties.function.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#linkOverride" title="src/app/_main/libs/marked/overrides/link.override.ts" ><b>linkOverride</b>&nbsp;&nbsp;&nbsp;(src/.../link.override.ts)</a>
                         </li>
                         <li>
                             <a href="#maxLengthValidator" title="src/app/_main/validators/max-length.validator.ts" ><b>maxLengthValidator</b>&nbsp;&nbsp;&nbsp;(src/.../max-length.validator.ts)</a>
@@ -106,10 +121,7 @@
                             <a href="#ServiceValidator" title="src/app/_main/decorators/service-validator.decorator.ts" ><b>ServiceValidator</b>&nbsp;&nbsp;&nbsp;(src/.../service-validator.decorator.ts)</a>
                         </li>
                         <li>
-                            <a href="#workspacesMock" title="src/mocks/workspaces.mocks.ts" ><b>workspacesMock</b>&nbsp;&nbsp;&nbsp;(src/.../workspaces.mocks.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#workspacesSeed" title="src/mocks/workspaces.mocks.ts" ><b>workspacesSeed</b>&nbsp;&nbsp;&nbsp;(src/.../workspaces.mocks.ts)</a>
+                            <a href="#wrapWithDiv" title="src/stories/helpers/functions/component-template-decorator.function.ts" ><b>wrapWithDiv</b>&nbsp;&nbsp;&nbsp;(src/.../component-template-decorator.function.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -172,6 +184,376 @@
             </tr>
         </tbody>
     </table>
+</section>    <h3>src/stories/helpers/functions/component-template-decorator.function.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buildPropsString"></a>
+                    <span class="name">
+                        <span ><b>buildPropsString</b></span>
+                        <a href="#buildPropsString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buildPropsString(props: <a href="../undefineds/Props.html" target="_self">Props</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>props</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Props" target="_self" >Props</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buildTemplate"></a>
+                    <span class="name">
+                        <span ><b>buildTemplate</b></span>
+                        <a href="#buildTemplate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buildTemplate(selector: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, content: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, propsString: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>selector</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>propsString</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="combinePropsString"></a>
+                    <span class="name">
+                        <span ><b>combinePropsString</b></span>
+                        <a href="#combinePropsString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>combinePropsString(...propsStrings: undefined)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>propsStrings</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="componentTemplateDecorator"></a>
+                    <span class="name">
+                        <span ><b>componentTemplateDecorator</b></span>
+                        <a href="#componentTemplateDecorator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>componentTemplateDecorator(props: <a href="../undefineds/Props.html" target="_self">Props</a>, config: <a href="../interfaces/TemplateDecoratorConfig.html" target="_self">TemplateDecoratorConfig</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>props</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#Props" target="_self" >Props</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>config</td>
+                                    <td>
+                                                <code><a href="../interfaces/TemplateDecoratorConfig.html" target="_self" >TemplateDecoratorConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="extractPropsString"></a>
+                    <span class="name">
+                        <span ><b>extractPropsString</b></span>
+                        <a href="#extractPropsString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>extractPropsString(template: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>template</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="wrapWithDiv"></a>
+                    <span class="name">
+                        <span ><b>wrapWithDiv</b></span>
+                        <a href="#wrapWithDiv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>wrapWithDiv(template: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>template</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>    <h3>src/app/_main/operators/catch-response.operator.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -180,9 +562,14 @@
                 <td class="col-md-4">
                     <a name="catchResponse"></a>
                     <span class="name">
-                        <span ><b>catchResponse</b></span>
+                        <span class="deprecated-name"><b>catchResponse</b></span>
                         <a href="#catchResponse"><span class="icon ion-ios-link"></span></a>
                     </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4 deprecated">
+                    
                 </td>
             </tr>
             <tr>
@@ -249,9 +636,14 @@
                 <td class="col-md-4">
                     <a name="Debug"></a>
                     <span class="name">
-                        <span ><b>Debug</b></span>
+                        <span class="deprecated-name"><b>Debug</b></span>
                         <a href="#Debug"><span class="icon ion-ios-link"></span></a>
                     </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4 deprecated">
+                    
                 </td>
             </tr>
             <tr>
@@ -419,22 +811,22 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>src/mocks/_main.mocks.prod.ts</h3>
+</section>    <h3>src/stories/helpers/functions/get-all-properties.function.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="initMocks"></a>
+                    <a name="getAllProperties"></a>
                     <span class="name">
-                        <span ><b>initMocks</b></span>
-                        <a href="#initMocks"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getAllProperties</b></span>
+                        <a href="#getAllProperties"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>initMocks()</code>
+<code>getAllProperties(obj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
@@ -443,33 +835,56 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Production version of mocking initializer</p>
-<p>This file need to be in file replacements in angular.json</p>
-<div><pre class="line-numbers"><code class="language-json">{
- &quot;replace&quot;: &quot;src/mocks/_main.mocks.ts&quot;,
- &quot;with&quot;: &quot;src/mocks/_main.mocks.prod.ts&quot;
-}</code></pre></div></div>
 
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>obj</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
                 </td>
             </tr>
         </tbody>
     </table>
-</section>    <h3>src/mocks/_main.mocks.ts</h3>
+</section>    <h3>src/app/_main/libs/marked/overrides/link.override.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="initMocks"></a>
+                    <a name="linkOverride"></a>
                     <span class="name">
-                        <span ><b>initMocks</b></span>
-                        <a href="#initMocks"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>linkOverride</b></span>
+                        <a href="#linkOverride"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>initMocks()</code>
+<code>linkOverride(renderer: Renderer)</code>
                 </td>
             </tr>
 
@@ -478,9 +893,36 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Function to initialize mocking server with all routes</p>
-</div>
 
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>renderer</td>
+                                    <td>
+                                            <code>Renderer</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
                 </td>
             </tr>
         </tbody>
@@ -827,134 +1269,6 @@ export class CreateWorkspacePage { ... }</code></pre></div></div>
                                     </td>
 
 
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>src/mocks/workspaces.mocks.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="workspacesMock"></a>
-                    <span class="name">
-                        <span ><b>workspacesMock</b></span>
-                        <a href="#workspacesMock"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>workspacesMock(server: Server)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Function to create mocking routes for workspaces.</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>server</td>
-                                    <td>
-                                            <code>Server</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Miragejs server</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="workspacesSeed"></a>
-                    <span class="name">
-                        <span ><b>workspacesSeed</b></span>
-                        <a href="#workspacesSeed"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>workspacesSeed(server: Server)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Function to seed data into the mocking server</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>server</td>
-                                    <td>
-                                            <code>Server</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Miragejs server</p>
-
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
