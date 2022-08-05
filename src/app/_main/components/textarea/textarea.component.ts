@@ -1,15 +1,14 @@
 import { Monaco } from './../../libs/monaco/monaco.lib';
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ControlAccessor } from '@main/classes/control-accessor.class';
-import * as monaco from 'monaco-editor';
+import { editor } from 'monaco-editor';
 // eslint-disable-next-line unused-imports/no-unused-imports
-import { darkTheme } from './textarea.theme';
 import { marked, Renderer } from 'marked';
-import { markdownExample } from './markdown.example';
 import hljs from 'highlight.js';
 import {
   faBold,
   faCode,
+  faFileCode,
   faItalic,
   faLink,
   faList,
@@ -17,10 +16,8 @@ import {
   faQuoteLeft,
   faUnderline,
 } from '@fortawesome/free-solid-svg-icons';
-import { MonacoExtended } from '@main/classes/monaco-extended.class';
 import { Marked } from '@main/libs/marked/marked.lib';
-
-console.log(darkTheme);
+import './textarea.theme';
 
 @Component({
   selector: 'app-textarea',
@@ -60,21 +57,7 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
   public mode: 'editor' | 'preview' = 'editor';
 
   /** @ignore */
-  private editor: monaco.editor.IStandaloneCodeEditor | null = null;
-
-  private toggleEndAndStartOfEachSelection(
-    beforeSelectionText: string,
-    afterSelectionText: string = '',
-  ) {
-    const { editor } = this;
-    if (!editor) return;
-
-    return MonacoExtended.toggleEndAndStartOfEachSelection(
-      editor,
-      beforeSelectionText,
-      afterSelectionText,
-    );
-  }
+  private editor: editor.IStandaloneCodeEditor | null = null;
 
   /** @ignore */
   faCode = faCode;
@@ -100,6 +83,9 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
   /** @ignore */
   faLink = faLink;
 
+  /** @ignore */
+  faFileCode = faFileCode;
+
   ngOnInit(): void {
     Marked.init();
     Monaco.init();
@@ -108,8 +94,8 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
 
   ngAfterViewInit(): void {
     const container = this.input.nativeElement;
-    const editor = monaco.editor.create(container, {
-      value: markdownExample,
+    const _editor = editor.create(container, {
+      value: this.control.value || '',
       language: 'markdown',
       scrollBeyondLastLine: false,
       wordWrap: 'on',
@@ -119,26 +105,27 @@ export class TextareaComponent extends ControlAccessor implements OnInit, AfterV
       },
       overviewRulerLanes: 0,
       theme: 'dark',
+      wordBasedSuggestions: false,
     });
     let ignoreEvent = false;
     const updateHeight = () => {
-      const contentHeight = Math.min(500, editor.getContentHeight());
+      const contentHeight = Math.min(500, _editor.getContentHeight());
       const containerWidth = Math.min(1000, container.scrollWidth);
       container.style.width = `${containerWidth}px`;
       container.style.height = `${contentHeight}px`;
       try {
         ignoreEvent = true;
-        editor.layout({ width: containerWidth, height: contentHeight });
+        _editor.layout({ width: containerWidth, height: contentHeight });
       } finally {
         ignoreEvent = false;
       }
     };
-    editor.onDidContentSizeChange(updateHeight);
+    _editor.onDidContentSizeChange(updateHeight);
+    _editor.getModel()?.onDidChangeContent(() => {
+      this.control.setValue(_editor.getValue());
+    });
     updateHeight();
-    this.editor = editor;
-
-    console.log(this.editor);
-    (window as any).textarea = this;
+    this.editor = _editor;
   }
 
   openEditor() {

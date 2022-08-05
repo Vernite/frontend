@@ -154,11 +154,15 @@ export class TaskService {
    */
   public openEditTaskDialog(projectId: number, task: Task): Observable<Task | null> {
     return this.dialogService
-      .open(TaskDialog, {
-        variant: TaskDialogVariant.EDIT,
-        projectId,
-        task,
-      })
+      .open(
+        TaskDialog,
+        {
+          variant: TaskDialogVariant.EDIT,
+          projectId,
+          task,
+        } as TaskDialogData,
+        DialogOutlet.CONTENT_RIGHT,
+      )
       .afterClosed()
       .pipe(
         tap((data) => {

@@ -48,7 +48,9 @@ export class UpperNavigationComponent implements OnInit {
   public _isButtonDisabled = true;
 
   createNewTask() {
-    this.taskService.openCreateNewTaskDialog();
+    this.taskService.openCreateNewTaskDialog().subscribe(() => {
+      location.reload();
+    });
   }
 
   logout() {

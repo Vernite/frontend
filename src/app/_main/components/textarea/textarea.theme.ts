@@ -1,6 +1,6 @@
 import * as monaco from 'monaco-editor';
 
-export const darkTheme = monaco.editor.defineTheme('dark', {
+export default monaco.editor.defineTheme('dark', {
   base: 'vs-dark',
   inherit: true,
   rules: [],
