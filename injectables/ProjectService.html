@@ -80,7 +80,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#changeWorkspace" >changeWorkspace</a>
+                                <a href="#changeWorkspace" class="deprecated-name">changeWorkspace</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -175,9 +175,14 @@
                     <a name="changeWorkspace"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
-                        <span ><b>changeWorkspace</b></span>
+                        <span class="deprecated-name"><b>changeWorkspace</b></span>
                         <a href="#changeWorkspace"><span class="icon ion-ios-link"></span></a>
                     </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4 deprecated">
+                    
                 </td>
             </tr>
             <tr>
@@ -190,8 +195,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/dashboard/services/project.service.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/dashboard/services/project.service.ts:58</a></div>
                 </td>
             </tr>
 
@@ -522,8 +527,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/app/dashboard/services/project.service.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/dashboard/services/project.service.ts:65</a></div>
                 </td>
             </tr>
 
@@ -678,6 +683,7 @@ export class ProjectService {
 
   /**
    * Changes the workspace of the project.
+   * @deprecated
    * @param projectId project to move
    * @param newWorkspaceId workspace where the project will be moved
    * @returns Request observable, which completes when request is finished
