@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>2/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.57% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/7</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.44% </span>
+                <span class="strong">11.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/9</span>
+                <span class='fraction'>1/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -135,7 +135,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -178,8 +178,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,10 +194,10 @@ export class TaskTypePipe implements PipeTransform {
   transform(value: any, type?: 'name' | 'icon'): string;
   transform(value: any, type: 'color'): Color;
 &nbsp;
-  transform(value: any, type: 'color' | 'name' | 'icon' = 'name'): string | Color {
-    switch (value as TaskType | SubTaskType) {
+<span class="fstat-no" title="function not covered" >  transform(</span>value: any, type: 'color' | 'name' | 'icon' = <span class="branch-0 cbranch-no" title="branch not covered" >'name')</span>: string | Color {
+<span class="cstat-no" title="statement not covered" >    switch (value as TaskType | SubTaskType) {</span>
       // Task
-<span class="branch-0 cbranch-no" title="branch not covered" >      case TaskType.TASK:</span>
+      case TaskType.TASK:
 <span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`Task`,
           color: Color.rgb(52, 152, 219),
@@ -205,7 +205,7 @@ export class TaskTypePipe implements PipeTransform {
         }[type];
 &nbsp;
       // User story
-<span class="branch-1 cbranch-no" title="branch not covered" >      case TaskType.USER_STORY:</span>
+      case TaskType.USER_STORY:
 <span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`User story`,
           color: Color.rgb(46, 204, 113),
@@ -213,7 +213,7 @@ export class TaskTypePipe implements PipeTransform {
         }[type];
 &nbsp;
       // Issue
-<span class="branch-2 cbranch-no" title="branch not covered" >      case TaskType.ISSUE:</span>
+      case TaskType.ISSUE:
 <span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`Issue`,
           color: Color.rgb(231, 76, 60),
@@ -221,7 +221,7 @@ export class TaskTypePipe implements PipeTransform {
         }[type];
 &nbsp;
       // Epic
-<span class="branch-3 cbranch-no" title="branch not covered" >      case TaskType.EPIC:</span>
+      case TaskType.EPIC:
 <span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`Epic`,
           color: Color.rgb(155, 89, 182),
@@ -229,7 +229,7 @@ export class TaskTypePipe implements PipeTransform {
         }[type];
 &nbsp;
       // Subtask
-<span class="branch-4 cbranch-no" title="branch not covered" >      case SubTaskType.SUBTASK:</span>
+      case SubTaskType.SUBTASK:
 <span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`Subtask`,
           color: Color.rgb(88, 183, 189),
@@ -238,8 +238,8 @@ export class TaskTypePipe implements PipeTransform {
 &nbsp;
       // Unknown
       default:
-        console.warn('Unknown task type:', value);
-        return value;
+<span class="cstat-no" title="statement not covered" >        console.warn('Unknown task type:', value);</span>
+<span class="cstat-no" title="statement not covered" >        return value;</span>
     }
   }
 }
@@ -250,7 +250,7 @@ export class TaskTypePipe implements PipeTransform {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Aug 06 2022 09:44:11 GMT+0000 (Coordinated Universal Time)
+                at Fri Aug 19 2022 15:12:45 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -196,9 +196,6 @@
                                 <a href="#cancel" >cancel</a>
                             </li>
                             <li>
-                                <a href="#clearGitHubIntegrationFields" >clearGitHubIntegrationFields</a>
-                            </li>
-                            <li>
                                 <a href="#confirm" >confirm</a>
                             </li>
                             <li>
@@ -236,7 +233,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:73</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:68</a></div>
                             </td>
                         </tr>
 
@@ -363,45 +360,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="169"
-                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:169</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="clearGitHubIntegrationFields"></a>
-                    <span class="name">
-                        <span ><b>clearGitHubIntegrationFields</b></span>
-                        <a href="#clearGitHubIntegrationFields"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>clearGitHubIntegrationFields()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="142"
-                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:142</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:141</a></div>
                 </td>
             </tr>
 
@@ -437,8 +397,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="150"
-                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:150</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:130</a></div>
                 </td>
             </tr>
 
@@ -474,8 +434,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="136"
-                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:136</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:124</a></div>
                 </td>
             </tr>
 
@@ -511,8 +471,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="84"
-                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:84</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:79</a></div>
                 </td>
             </tr>
 
@@ -548,8 +508,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="111"
-                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:111</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:108</a></div>
                 </td>
             </tr>
 
@@ -617,8 +577,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="105"
-                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:105</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:102</a></div>
                 </td>
             </tr>
 
@@ -701,7 +661,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:76</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/tasks/dialogs/task/task.dialog.ts:71</a></div>
                         </td>
                     </tr>
 
@@ -725,23 +685,18 @@
                         <i>Default value : </i><code>new FormGroup({
     id: new FormControl(null),
     parentTaskId: new FormControl(null),
-    type: new FormControl(TaskType.TASK, [requiredValidator()]),
+    type: new FormControl(this.data.subtask ? SubTaskType.SUBTASK : TaskType.TASK, [
+      requiredValidator(),
+    ]),
     name: new FormControl(&#x27;&#x27;, [requiredValidator()]),
     statusId: new FormControl(null, [requiredValidator()]),
     projectId: new FormControl(null, [requiredValidator()]),
     workspaceId: new FormControl(null, [requiredValidator()]),
     description: new FormControl(&#x27;&#x27;),
-    priority: new FormControl(this.taskPriorities[2], [requiredValidator()]),
+    priority: new FormControl(TaskPriority.MEDIUM, [requiredValidator()]),
     deadline: new FormControl(null),
     estimatedDate: new FormControl(null),
-
-    // GitHub issue integration fields
-    connectWithIssueOnGitHub: new FormControl(false),
-    issueAttachGithub: new FormControl(false),
     issue: new FormControl(null),
-
-    // Github pull requests integration fields
-    connectWithPullRequestOnGitHub: new FormControl(false),
     pull: new FormControl(null),
   })</code>
                     </td>
@@ -1090,23 +1045,18 @@ export class TaskDialog implements OnInit {
   public form &#x3D; new FormGroup({
     id: new FormControl(null),
     parentTaskId: new FormControl(null),
-    type: new FormControl(TaskType.TASK, [requiredValidator()]),
+    type: new FormControl(this.data.subtask ? SubTaskType.SUBTASK : TaskType.TASK, [
+      requiredValidator(),
+    ]),
     name: new FormControl(&#x27;&#x27;, [requiredValidator()]),
     statusId: new FormControl(null, [requiredValidator()]),
     projectId: new FormControl(null, [requiredValidator()]),
     workspaceId: new FormControl(null, [requiredValidator()]),
     description: new FormControl(&#x27;&#x27;),
-    priority: new FormControl(this.taskPriorities[2], [requiredValidator()]),
+    priority: new FormControl(TaskPriority.MEDIUM, [requiredValidator()]),
     deadline: new FormControl(null),
     estimatedDate: new FormControl(null),
-
-    // GitHub issue integration fields
-    connectWithIssueOnGitHub: new FormControl(false),
-    issueAttachGithub: new FormControl(false),
     issue: new FormControl(null),
-
-    // Github pull requests integration fields
-    connectWithPullRequestOnGitHub: new FormControl(false),
     pull: new FormControl(null),
   });
 
@@ -1124,7 +1074,9 @@ export class TaskDialog implements OnInit {
 
     const { workspaceId, projectId, task } &#x3D; this.data;
     this.form.patchValue({ workspaceId, projectId });
-    if (task) this.form.patchValue(task);
+    if (task) {
+      this.form.patchValue(task);
+    }
 
     this.workspaceList$ &#x3D; this.workspaceService.list();
 
@@ -1148,7 +1100,6 @@ export class TaskDialog implements OnInit {
 
   onProjectIdChange(projectId: number) {
     this.statusList$ &#x3D; this.statusService.list(projectId);
-    this.clearGitHubIntegrationFields();
 
     this.statusList$.subscribe((statuses) &#x3D;&gt; {
       const statusId &#x3D; statuses.find((status) &#x3D;&gt; status.begin)?.id;
@@ -1160,14 +1111,6 @@ export class TaskDialog implements OnInit {
 
     this.gitIntegrationService.hasGitHubIntegration(projectId!).subscribe((value) &#x3D;&gt; {
       this.isGitHubIntegrationAvailable &#x3D; value;
-
-      if (this.isGitHubIntegrationAvailable) {
-        this.issueList$ &#x3D; this.gitIntegrationService.gitHubIssueList(projectId);
-        this.pullList$ &#x3D; this.gitIntegrationService.gitHubPullList(projectId);
-      } else {
-        this.issueList$ &#x3D; new BehaviorSubject([]);
-        this.pullList$ &#x3D; new BehaviorSubject([]);
-      }
     });
   }
 
@@ -1177,14 +1120,6 @@ export class TaskDialog implements OnInit {
     this.data.projectId &#x3D; this.data.projectId || Number(projectId);
   }
 
-  clearGitHubIntegrationFields() {
-    this.form.patchValue({
-      issueNumberGitHub: null,
-      issueAttachGithub: false,
-      connectWithIssueOnGitHub: false,
-    });
-  }
-
   confirm() {
     const formValues &#x3D; this.form.value;
 
@@ -1192,14 +1127,6 @@ export class TaskDialog implements OnInit {
     this.form.updateValueAndValidity();
 
     if (this.form.invalid) return;
-
-    if (formValues.connectWithIssueOnGitHub &amp;&amp; !formValues.issueAttachGithub) {
-      formValues.createIssue &#x3D; true;
-    } else {
-      formValues.createIssue &#x3D; false;
-    }
-
-    console.log(formValues);
 
     this.dialogRef.close(formValues);
   }
@@ -1216,7 +1143,7 @@ export class TaskDialog implements OnInit {
 &lt;h1 mat-dialog-title *ngIf&#x3D;&quot;data.variant &#x3D;&#x3D;&#x3D; TaskDialogVariant.CREATE &amp;&amp; !data.subtask&quot; i18n&gt;Create new task&lt;/h1&gt;
 &lt;h1 mat-dialog-title *ngIf&#x3D;&quot;data.subtask&quot; i18n&gt;Create new subtask&lt;/h1&gt;
 &lt;div mat-dialog-content&gt;
-  &lt;form (submit)&#x3D;&quot;confirm()&quot; [formGroup]&#x3D;&quot;form&quot; autocomplete&#x3D;&quot;off&quot;&gt;
+  &lt;form (submit)&#x3D;&quot;confirm()&quot; [formGroup]&#x3D;&quot;form&quot; autocomplete&#x3D;&quot;off&quot; *ngIf&#x3D;&quot;statusList$&quot;&gt;
 
     &lt;!-- Workspace --&gt;
     &lt;app-select *ngIf&#x3D;&quot;!data.subtask&quot; formControlName&#x3D;&quot;workspaceId&quot; floatingLabel&#x3D;&quot;Workspace&quot; i18n-floatingLabel&gt;
@@ -1235,8 +1162,8 @@ export class TaskDialog implements OnInit {
     &lt;!-- Type field --&gt;
     &lt;app-select formControlName&#x3D;&quot;type&quot; floatingLabel&#x3D;&quot;Type&quot; i18n-floatingLabel&gt;
       &lt;app-option *ngFor&#x3D;&quot;let type of (data.subtask ? subTaskTypes : taskTypes)&quot; [value]&#x3D;&quot;type[1]&quot;
-        [icon]&#x3D;&quot;type[0] | taskTypeIcon&quot;&gt;{{ type[0] | taskType
-        }}
+        [icon]&#x3D;&quot;type[0] | taskTypeIcon&quot;&gt;
+        {{ type[1] | taskType }}
       &lt;/app-option&gt;
     &lt;/app-select&gt;
 
@@ -1271,32 +1198,12 @@ export class TaskDialog implements OnInit {
     &lt;/app-input-date-time&gt;
 
     &lt;!-- GitHub issue integration --&gt;
-    &lt;app-checkbox *ngIf&#x3D;&quot;isGitHubIntegrationAvailable&quot; formControlName&#x3D;&quot;connectWithIssueOnGitHub&quot; i18n&gt;Create or attach
-      GitHub issue simultaneously&lt;/app-checkbox&gt;
-
-    &lt;div [class.hidden]&#x3D;&quot;!form.get(&#x27;connectWithIssueOnGitHub&#x27;)?.value&quot; class&#x3D;&quot;git-issue-connection&quot;&gt;
-      &lt;app-select formControlName&#x3D;&quot;issueAttachGithub&quot;&gt;
-        &lt;app-option [value]&#x3D;&quot;false&quot; i18n&gt;Create&lt;/app-option&gt;
-        &lt;app-option [value]&#x3D;&quot;true&quot; i18n&gt;Attach&lt;/app-option&gt;
-      &lt;/app-select&gt;
-
-      &lt;app-select [class.hidden]&#x3D;&quot;!form.get(&#x27;issueAttachGithub&#x27;)?.value&quot; formControlName&#x3D;&quot;issue&quot; floatingLabel&#x3D;&quot;Issue&quot;
-        i18n-floatingLabel&gt;
-        &lt;app-option *ngFor&#x3D;&quot;let issue of issueList$ | async&quot; [value]&#x3D;&quot;issue&quot;&gt;{{issue.title}}&lt;/app-option&gt;
-      &lt;/app-select&gt;
-    &lt;/div&gt;
+    &lt;input-issue *ngIf&#x3D;&quot;isGitHubIntegrationAvailable &amp;&amp; form.get(&#x27;projectId&#x27;)?.value&quot; formControlName&#x3D;&quot;issue&quot;
+      [projectId]&#x3D;&quot;form.get(&#x27;projectId&#x27;)?.value&quot;&gt;&lt;/input-issue&gt;
 
     &lt;!-- Github pull request integration --&gt;
-    &lt;app-checkbox *ngIf&#x3D;&quot;isGitHubIntegrationAvailable&quot; formControlName&#x3D;&quot;connectWithPullRequestOnGitHub&quot; i18n&gt;
-      Connect with GitHub pull request
-    &lt;/app-checkbox&gt;
-
-    &lt;div [class.hidden]&#x3D;&quot;!form.get(&#x27;connectWithPullRequestOnGitHub&#x27;)?.value&quot; class&#x3D;&quot;git-pull-connection&quot;&gt;
-      &lt;app-select formControlName&#x3D;&quot;pull&quot; floatingLabel&#x3D;&quot;Pull request&quot; i18n-floatingLabel&gt;
-        &lt;app-option *ngFor&#x3D;&quot;let pullRequest of pullList$ | async&quot; [value]&#x3D;&quot;pullRequest&quot;&gt;{{pullRequest.title}}
-        &lt;/app-option&gt;
-      &lt;/app-select&gt;
-    &lt;/div&gt;
+    &lt;input-pull-request *ngIf&#x3D;&quot;isGitHubIntegrationAvailable &amp;&amp; form.get(&#x27;projectId&#x27;)?.value&quot; formControlName&#x3D;&quot;pull&quot;
+      [projectId]&#x3D;&quot;form.get(&#x27;projectId&#x27;)?.value&quot;&gt;&lt;/input-pull-request&gt;
 
   &lt;/form&gt;
 &lt;/div&gt;
@@ -1316,11 +1223,9 @@ export class TaskDialog implements OnInit {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">form {
   &gt;* {
+    display: block;
     width: 100%;
-  }
-
-  app-textarea {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 }
 </code></pre>
@@ -1351,8 +1256,8 @@ export class TaskDialog implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h1 mat-dialog-title *ngIf="data.variant === TaskDialogVariant.EDIT" i18n>Edit task: {{ data.task?.name }}</h1><h1 mat-dialog-title *ngIf="data.variant === TaskDialogVariant.CREATE && !data.subtask" i18n>Create new task</h1><h1 mat-dialog-title *ngIf="data.subtask" i18n>Create new subtask</h1><div mat-dialog-content>  <form (submit)="confirm()" [formGroup]="form" autocomplete="off">    <!-- Workspace -->    <app-select *ngIf="!data.subtask" formControlName="workspaceId" floatingLabel="Workspace" i18n-floatingLabel>      <app-option *ngFor="let workspace of workspaceList$ | async" [value]="workspace.id">{{ workspace.name }}      </app-option>    </app-select>    <!-- Project -->    <ng-container *ngIf="!data.subtask && form.get(\'workspaceId\')?.value">      <app-select formControlName="projectId" floatingLabel="Project" i18n-floatingLabel>        <app-option *ngFor="let project of projectList$ | async" [value]="project.id">{{project.name}}        </app-option>      </app-select>    </ng-container>    <!-- Type field -->    <app-select formControlName="type" floatingLabel="Type" i18n-floatingLabel>      <app-option *ngFor="let type of (data.subtask ? subTaskTypes : taskTypes)" [value]="type[1]"        [icon]="type[0] | taskTypeIcon">{{ type[0] | taskType        }}      </app-option>    </app-select>    <!-- Name field -->    <app-input floatingLabel="Name" placeholder="New task" formControlName="name" i18n-floatingLabel i18n-placeholder>    </app-input>    <!-- Description field -->    <app-textarea floatingLabel="Description" placeholder="Sample description..." formControlName="description"      i18n-floatingLabel i18n-placeholder [rows]="10"></app-textarea>    <!-- Status -->    <app-select formControlName="statusId" floatingLabel="Status" i18n-floatingLabel>      <app-option *ngFor="let status of statusList$ | async" [value]="status.id">{{ status.name }}      </app-option>    </app-select>    <!-- Priorities -->    <app-select formControlName="priority" floatingLabel="Priority" i18n-floatingLabel>      <app-option *ngFor="let priority of taskPriorities" [value]="priority" [icon]="priority | taskPriorityIcon">{{        priority | taskPriority }}</app-option>    </app-select>    <!-- Deadline -->    <app-input-date-time formControlName="deadline" floatingLabel="Deadline" placeholder="Choose a date"      i18n-floatingLabel i18n-placeholder>    </app-input-date-time>    <!-- Estimate time -->    <app-input-date-time formControlName="estimatedDate" floatingLabel="Estimated date" placeholder="Choose a date"      i18n-floatingLabel i18n-placeholder>    </app-input-date-time>    <!-- GitHub issue integration -->    <app-checkbox *ngIf="isGitHubIntegrationAvailable" formControlName="connectWithIssueOnGitHub" i18n>Create or attach      GitHub issue simultaneously</app-checkbox>    <div [class.hidden]="!form.get(\'connectWithIssueOnGitHub\')?.value" class="git-issue-connection">      <app-select formControlName="issueAttachGithub">        <app-option [value]="false" i18n>Create</app-option>        <app-option [value]="true" i18n>Attach</app-option>      </app-select>      <app-select [class.hidden]="!form.get(\'issueAttachGithub\')?.value" formControlName="issue" floatingLabel="Issue"        i18n-floatingLabel>        <app-option *ngFor="let issue of issueList$ | async" [value]="issue">{{issue.title}}</app-option>      </app-select>    </div>    <!-- Github pull request integration -->    <app-checkbox *ngIf="isGitHubIntegrationAvailable" formControlName="connectWithPullRequestOnGitHub" i18n>      Connect with GitHub pull request    </app-checkbox>    <div [class.hidden]="!form.get(\'connectWithPullRequestOnGitHub\')?.value" class="git-pull-connection">      <app-select formControlName="pull" floatingLabel="Pull request" i18n-floatingLabel>        <app-option *ngFor="let pullRequest of pullList$ | async" [value]="pullRequest">{{pullRequest.title}}        </app-option>      </app-select>    </div>  </form></div><div mat-dialog-actions>  <app-button mat-button (click)="cancel()" i18n>Cancel</app-button>  <app-button *ngIf="data.variant === TaskDialogVariant.CREATE" (click)="confirm()" variant="primary" i18n>Create  </app-button>  <app-button *ngIf="data.variant === TaskDialogVariant.EDIT" (click)="confirm()" variant="primary" i18n>Save changes  </app-button></div></div>'
-    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'DialogOutletComponent', 'selector': 'app-dialog-outlet'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'MockPage', 'selector': 'app-mock'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
+        var COMPONENT_TEMPLATE = '<div><h1 mat-dialog-title *ngIf="data.variant === TaskDialogVariant.EDIT" i18n>Edit task: {{ data.task?.name }}</h1><h1 mat-dialog-title *ngIf="data.variant === TaskDialogVariant.CREATE && !data.subtask" i18n>Create new task</h1><h1 mat-dialog-title *ngIf="data.subtask" i18n>Create new subtask</h1><div mat-dialog-content>  <form (submit)="confirm()" [formGroup]="form" autocomplete="off" *ngIf="statusList$">    <!-- Workspace -->    <app-select *ngIf="!data.subtask" formControlName="workspaceId" floatingLabel="Workspace" i18n-floatingLabel>      <app-option *ngFor="let workspace of workspaceList$ | async" [value]="workspace.id">{{ workspace.name }}      </app-option>    </app-select>    <!-- Project -->    <ng-container *ngIf="!data.subtask && form.get(\'workspaceId\')?.value">      <app-select formControlName="projectId" floatingLabel="Project" i18n-floatingLabel>        <app-option *ngFor="let project of projectList$ | async" [value]="project.id">{{project.name}}        </app-option>      </app-select>    </ng-container>    <!-- Type field -->    <app-select formControlName="type" floatingLabel="Type" i18n-floatingLabel>      <app-option *ngFor="let type of (data.subtask ? subTaskTypes : taskTypes)" [value]="type[1]"        [icon]="type[0] | taskTypeIcon">        {{ type[1] | taskType }}      </app-option>    </app-select>    <!-- Name field -->    <app-input floatingLabel="Name" placeholder="New task" formControlName="name" i18n-floatingLabel i18n-placeholder>    </app-input>    <!-- Description field -->    <app-textarea floatingLabel="Description" placeholder="Sample description..." formControlName="description"      i18n-floatingLabel i18n-placeholder [rows]="10"></app-textarea>    <!-- Status -->    <app-select formControlName="statusId" floatingLabel="Status" i18n-floatingLabel>      <app-option *ngFor="let status of statusList$ | async" [value]="status.id">{{ status.name }}      </app-option>    </app-select>    <!-- Priorities -->    <app-select formControlName="priority" floatingLabel="Priority" i18n-floatingLabel>      <app-option *ngFor="let priority of taskPriorities" [value]="priority" [icon]="priority | taskPriorityIcon">{{        priority | taskPriority }}</app-option>    </app-select>    <!-- Deadline -->    <app-input-date-time formControlName="deadline" floatingLabel="Deadline" placeholder="Choose a date"      i18n-floatingLabel i18n-placeholder>    </app-input-date-time>    <!-- Estimate time -->    <app-input-date-time formControlName="estimatedDate" floatingLabel="Estimated date" placeholder="Choose a date"      i18n-floatingLabel i18n-placeholder>    </app-input-date-time>    <!-- GitHub issue integration -->    <input-issue *ngIf="isGitHubIntegrationAvailable && form.get(\'projectId\')?.value" formControlName="issue"      [projectId]="form.get(\'projectId\')?.value"></input-issue>    <!-- Github pull request integration -->    <input-pull-request *ngIf="isGitHubIntegrationAvailable && form.get(\'projectId\')?.value" formControlName="pull"      [projectId]="form.get(\'projectId\')?.value"></input-pull-request>  </form></div><div mat-dialog-actions>  <app-button mat-button (click)="cancel()" i18n>Cancel</app-button>  <app-button *ngIf="data.variant === TaskDialogVariant.CREATE" (click)="confirm()" variant="primary" i18n>Create  </app-button>  <app-button *ngIf="data.variant === TaskDialogVariant.EDIT" (click)="confirm()" variant="primary" i18n>Save changes  </app-button></div></div>'
+    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'DialogOutletComponent', 'selector': 'app-dialog-outlet'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'InputIssueComponent', 'selector': 'input-issue'},{'name': 'InputPullRequestComponent', 'selector': 'input-pull-request'},{'name': 'InputTaskPropertyComponent', 'selector': 'input-task-property'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'MockPage', 'selector': 'app-mock'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'},{'name': 'ViewContainerDirective', 'selector': '[view-container]'}];
     var ACTUAL_COMPONENT = {'name': 'TaskDialog'};
 </script>

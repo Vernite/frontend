@@ -81,7 +81,6 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
     </p>
 
 
@@ -90,6 +89,10 @@
     <table class="table table-sm table-hover metadata">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
 
 
 
@@ -141,12 +144,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Optional</span>
-                                <a href="#options" >options</a>
+                                <a href="#input" >input</a>
                             </li>
                             <li>
-                                    <span class="modifier">Optional</span>
-                                <a href="#optionsMap" >optionsMap</a>
+                                <a href="#isOpen$" >isOpen$</a>
+                            </li>
+                            <li>
+                                <a href="#overlay" >overlay</a>
+                            </li>
+                            <li>
+                                <a href="#overlayMinWidth" >overlayMinWidth</a>
                             </li>
                             <li>
                                     <span class="modifier">Optional</span>
@@ -154,9 +161,6 @@
                             </li>
                             <li>
                                 <a href="#selected$" >selected$</a>
-                            </li>
-                            <li>
-                                <a href="#yet" >yet</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -175,13 +179,40 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#close" >close</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#compare" >compare</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadOptions" >loadOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#ngAfterViewInit" >ngAfterViewInit</a>
                             </li>
                             <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#open" >open</a>
                             </li>
                             <li>
-                                <a href="#updateOptions" >updateOptions</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#sameAsSelected" >sameAsSelected</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#select" >select</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setActiveOption" >setActiveOption</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toggle" >toggle</a>
                             </li>
                             <li>
                                 <a href="#registerOnChange" >registerOnChange</a>
@@ -208,6 +239,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#comparer" >comparer</a>
+                            </li>
+                            <li>
                                 <a href="#floatingLabel" >floatingLabel</a>
                             </li>
                             <li>
@@ -220,27 +254,94 @@
 
 
 
-                    <tr>
-                        <td class="col-md-4">
-                            <h6><b>Accessors</b></h6>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <ul class="index-list">
-                                <li>
-                                    <a href="#selected" >selected</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
         </tbody>
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(ngControl: <a href="https://angular.io/api/forms/NgControl" target="_blank">NgControl</a>, cdRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/_main/components/select/select.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>ngControl</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/NgControl" target="_blank" >NgControl</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
     <section>
     <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="comparer"></a>
+                        <b>comparer</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/_main/components/select/select.component.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -255,14 +356,9 @@
 
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;&#x27;</code>
-                    </td>
-                </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/_main/components/select/select.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/_main/components/select/select.component.ts:34</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -320,8 +416,170 @@ in a form, if a field is email, it will give the user last used emails</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="close"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>close</b></span>
+                        <a href="#close"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>close()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/_main/components/select/select.component.ts:77</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compare"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>compare</b></span>
+                        <a href="#compare"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>compare(a: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, b: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/app/_main/components/select/select.component.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>a</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>b</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadOptions"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>loadOptions</b></span>
+                        <a href="#loadOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadOptions()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/_main/components/select/select.component.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngAfterViewInit"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>ngAfterViewInit</b></span>
                         <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -329,52 +587,16 @@ in a form, if a field is email, it will give the user last used emails</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngAfterViewInit()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngAfterViewInit()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/_main/components/select/select.component.ts:36</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/_main/components/select/select.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/_main/components/select/select.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -394,24 +616,278 @@ in a form, if a field is email, it will give the user last used emails</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="updateOptions"></a>
+                    <a name="open"></a>
                     <span class="name">
-                        <span ><b>updateOptions</b></span>
-                        <a href="#updateOptions"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Public</span>
+                        <span ><b>open</b></span>
+                        <a href="#open"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>updateOptions()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>open()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/_main/components/select/select.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/_main/components/select/select.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sameAsSelected"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>sameAsSelected</b></span>
+                        <a href="#sameAsSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sameAsSelected(option: <a href="../components/OptionComponent.html" target="_self">OptionComponent | null</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/_main/components/select/select.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>option</td>
+                                    <td>
+                                                <code><a href="../components/OptionComponent.html" target="_self" >OptionComponent | null</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="select"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>select</b></span>
+                        <a href="#select"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>select(option: <a href="../components/OptionComponent.html" target="_self">OptionComponent | null</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/_main/components/select/select.component.ts:119</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>option</td>
+                                    <td>
+                                                <code><a href="../components/OptionComponent.html" target="_self" >OptionComponent | null</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setActiveOption"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>setActiveOption</b></span>
+                        <a href="#setActiveOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setActiveOption(option: <a href="../components/OptionComponent.html" target="_self">OptionComponent | null</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/_main/components/select/select.component.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>option</td>
+                                    <td>
+                                                <code><a href="../components/OptionComponent.html" target="_self" >OptionComponent | null</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggle"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>toggle</b></span>
+                        <a href="#toggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>toggle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/_main/components/select/select.component.ts:81</a></div>
                 </td>
             </tr>
 
@@ -687,7 +1163,7 @@ in a form, if a field is email, it will give the user last used emails</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>writeValue(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>writeValue(value: T)</code>
                 </td>
             </tr>
 
@@ -729,7 +1205,7 @@ changes from model to view are requested.</p>
                                 <tr>
                                     <td>value</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            <code>T</code>
                                     </td>
 
                                     <td>
@@ -768,23 +1244,31 @@ changes from model to view are requested.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="options"></a>
+                    <a name="input"></a>
                     <span class="name">
-                            <span class="modifier">Optional</span>
-                        <span ><b>options</b></span>
-                        <a href="#options"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>input</b></span>
+                        <a href="#input"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>any[]</code>
+                        <i>Type : </i>        <code><a href="../components/InputComponent.html" target="_self" >InputComponent</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;input&#x27;)<br />
+                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/_main/components/select/select.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/_main/components/select/select.component.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -795,28 +1279,87 @@ changes from model to view are requested.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="optionsMap"></a>
+                    <a name="isOpen$"></a>
                     <span class="name">
-                            <span class="modifier">Optional</span>
-                        <span ><b>optionsMap</b></span>
-                        <a href="#optionsMap"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>isOpen$</b></span>
+                        <a href="#isOpen$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>Map&lt;any | any&gt;</code>
+                        <i>Default value : </i><code>new BehaviorSubject&lt;boolean&gt;(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/_main/components/select/select.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="overlay"></a>
+                    <span class="name">
+                        <span ><b>overlay</b></span>
+                        <a href="#overlay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLElement&gt;</code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new Map()</code>
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;overlay&#x27;)<br />
+                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/_main/components/select/select.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/_main/components/select/select.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="overlayMinWidth"></a>
+                    <span class="name">
+                        <span ><b>overlayMinWidth</b></span>
+                        <a href="#overlayMinWidth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/_main/components/select/select.component.ts:42</a></div>
                         </td>
                     </tr>
 
@@ -852,7 +1395,7 @@ changes from model to view are requested.</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/_main/components/select/select.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/_main/components/select/select.component.ts:32</a></div>
                         </td>
                     </tr>
 
@@ -872,49 +1415,14 @@ changes from model to view are requested.</p>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                        <i>Default value : </i><code>new BehaviorSubject&lt;SelectLabel&gt;({
+    control: new FormControl(&#x27;&#x27;),
+  })</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/_main/components/select/select.component.ts:18</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="yet"></a>
-                    <span class="name">
-                        <span ><b>yet</b></span>
-                        <a href="#yet"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>false</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/_main/components/select/select.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/_main/components/select/select.component.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -937,6 +1445,15 @@ changes from model to view are requested.</p>
                     <td class="col-md-4">
                         <i>Type : </i>        <code><a href="https://angular.io/api/forms/NgControl" target="_blank" >NgControl</a></code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Optional()<br />
+                        </code>
                     </td>
                 </tr>
                         <tr>
@@ -962,112 +1479,165 @@ changes from model to view are requested.</p>
     </table>
 </section>
 
-    <section>
-    <h3 id="accessors">
-        Accessors
-    </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="selected"></a>
-                        <span class="name"><b>selected</b><a href="#selected"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>selected()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/_main/components/select/select.component.ts:20</a></div>
-                                </td>
-                            </tr>
-
-            </tbody>
-        </table>
-</section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, ContentChildren, Input, OnInit, QueryList } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ContentChildren,
+  ElementRef,
+  Input,
+  QueryList,
+  ViewChild,
+} from &#x27;@angular/core&#x27;;
+import { FormControl, NgControl } from &#x27;@angular/forms&#x27;;
+import { faChevronDown } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 import { ControlAccessor } from &#x27;@main/classes/control-accessor.class&#x27;;
-import { Subject } from &#x27;rxjs&#x27;;
+import { UntilDestroy, untilDestroyed } from &#x27;@ngneat/until-destroy&#x27;;
+import { isEqual } from &#x27;lodash-es&#x27;;
+import { BehaviorSubject, filter, fromEvent, take } from &#x27;rxjs&#x27;;
+import { InputComponent } from &#x27;../input/input.component&#x27;;
 import { OptionComponent } from &#x27;../option/option.component&#x27;;
+import { SelectLabel } from &#x27;./select-label.model&#x27;;
 
+@UntilDestroy()
 @Component({
   selector: &#x27;app-select&#x27;,
   templateUrl: &#x27;./select.component.html&#x27;,
   styleUrls: [&#x27;./select.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SelectComponent extends ControlAccessor implements AfterViewInit, OnInit {
+export class SelectComponent extends ControlAccessor implements AfterViewInit {
+  @ViewChild(&#x27;input&#x27;) input!: InputComponent;
+  @ViewChild(&#x27;overlay&#x27;) overlay!: ElementRef&lt;HTMLElement&gt;;
   @ContentChildren(OptionComponent) queryOptions?: QueryList&lt;OptionComponent&gt;;
-  options?: any[];
-  optionsMap?: Map&lt;any, any&gt; &#x3D; new Map();
-  @Input() floatingLabel: string &#x3D; &#x27;&#x27;;
-  yet: boolean &#x3D; false;
 
-  selected$: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+  @Input() floatingLabel?: string;
+  @Input() comparer?: string;
 
-  get selected() {
-    return this.optionsMap?.get(this.control.value);
+  isOpen$ &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
+  selected$ &#x3D; new BehaviorSubject&lt;SelectLabel&gt;({
+    control: new FormControl(&#x27;&#x27;),
+  });
+
+  overlayMinWidth &#x3D; 0;
+
+  /** @ignore */
+  faChevronDown &#x3D; faChevronDown;
+
+  constructor(ngControl: NgControl, private cdRef: ChangeDetectorRef) {
+    super(ngControl);
   }
 
-  ngOnInit(): void {
-    this.control.valueChanges.subscribe((value) &#x3D;&gt; {
-      this.optionsMap?.forEach((option, key) &#x3D;&gt; {
-        const selected &#x3D; key &#x3D;&#x3D;&#x3D; value;
-        option.selected &#x3D; selected;
-        if (selected) {
-          this.selected$.next(option);
-        }
-      });
-    });
-  }
-
-  ngAfterViewInit(): void {
-    this.queryOptions?.changes.subscribe((options) &#x3D;&gt; {
-      this.updateOptions();
-    });
-    this.updateOptions();
-  }
-
-  updateOptions() {
-    this.yet &#x3D; false;
-    this.options &#x3D; this.queryOptions?.map((x) &#x3D;&gt; {
-      const option &#x3D; { value: x.value, viewValue: x.viewValue, icon: x.icon };
-
-      this.optionsMap!.set(x.value, option);
-      return option;
-    });
+  public open() {
+    this.overlayMinWidth &#x3D; this.input.input.nativeElement.clientWidth;
     setTimeout(() &#x3D;&gt; {
-      this.selected$.next(this.optionsMap?.get(this.control.value));
-      this.yet &#x3D; true;
+      fromEvent(document, &#x27;click&#x27;)
+        .pipe(
+          take(1),
+          untilDestroyed(this),
+          filter((e) &#x3D;&gt; !this.overlay?.nativeElement.contains(e.target as Node)),
+        )
+        .subscribe(() &#x3D;&gt; this.close());
+      this.isOpen$.next(true);
     });
+  }
+
+  public ngAfterViewInit(): void {
+    this.loadOptions();
+
+    this.control.valueChanges.subscribe(() &#x3D;&gt; {
+      this.loadOptions();
+    });
+
+    this.queryOptions?.changes.subscribe(() &#x3D;&gt; {
+      this.loadOptions();
+    });
+  }
+
+  public close() {
+    this.isOpen$.next(false);
+  }
+
+  public toggle() {
+    if (this.isOpen$.value) {
+      return this.close();
+    }
+    return this.open();
+  }
+
+  private loadOptions() {
+    if (!this.queryOptions) return;
+
+    this.queryOptions.forEach((option, index) &#x3D;&gt; {
+      option.ref.nativeElement.addEventListener(&#x27;click&#x27;, () &#x3D;&gt; {
+        this.select(this.queryOptions?.get(index)!);
+      });
+
+      if (this.compare(option.value, this.control.value)) {
+        this.setActiveOption(option);
+      }
+    });
+
+    this.cdRef.detectChanges();
+  }
+
+  private setActiveOption(option: OptionComponent | null) {
+    const currentLabel &#x3D; this.selected$.getValue();
+    currentLabel.control.setValue(option?.viewValue || &#x27;&#x27;);
+    currentLabel.icon &#x3D; option?.icon;
+    currentLabel.optionComponent &#x3D; option || undefined;
+    this.selected$.next(currentLabel);
+  }
+
+  private sameAsSelected(option: OptionComponent | null) {
+    return (
+      this.selected$.value.optionComponent &#x3D;&#x3D;&#x3D; option ||
+      this.selected$.value.optionComponent?.value &#x3D;&#x3D;&#x3D; option?.value
+    );
+  }
+
+  public select(option: OptionComponent | null) {
+    if (this.sameAsSelected(option)) return;
+
+    this.setActiveOption(option);
+    this.control.setValue(option?.value || null);
+  }
+
+  private compare(a: any, b: any) {
+    const { comparer } &#x3D; this;
+
+    if (comparer &amp;&amp; a &amp;&amp; b &amp;&amp; (a[comparer] !&#x3D;&#x3D; undefined || b[comparer] !&#x3D;&#x3D; undefined)) {
+      return a[comparer] &#x3D;&#x3D;&#x3D; b[comparer];
+    } else {
+      return a &#x3D;&#x3D; b || isEqual(a, b);
+    }
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
-  &lt;mat-label&gt;{{ floatingLabel }}&lt;/mat-label&gt;
-  &lt;mat-select [formControl]&#x3D;&quot;control&quot; name&#x3D;&quot;test&quot; disableOptionCentering&#x3D;&quot;true&quot;&gt;
-    &lt;mat-select-trigger *ngIf&#x3D;&quot;(selected$ | async) as selectedItem&quot;&gt;
-      &lt;app-icon *ngIf&#x3D;&quot;selectedItem.icon&quot; [icon]&#x3D;&quot;selectedItem.icon&quot; size&#x3D;&quot;15.75px&quot;&gt;&lt;/app-icon&gt;
-      {{ selectedItem.viewValue }}
-    &lt;/mat-select-trigger&gt;
-    &lt;ng-container *ngIf&#x3D;&quot;yet&quot;&gt;
-      &lt;mat-option *ngFor&#x3D;&quot;let option of options&quot; [value]&#x3D;&quot;option.value&quot;&gt;
-        &lt;app-icon *ngIf&#x3D;&quot;option.icon&quot; [icon]&#x3D;&quot;option.icon&quot; size&#x3D;&quot;15.75px&quot;&gt;&lt;/app-icon&gt;
-        {{ option.viewValue }}
-      &lt;/mat-option&gt;
-    &lt;/ng-container&gt;
-  &lt;/mat-select&gt;
-&lt;/mat-form-field&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngLet&#x3D;&quot;selected$ | async as selected&quot;&gt;
+  &lt;app-input #input #trigger&#x3D;&quot;cdkOverlayOrigin&quot; (click)&#x3D;&quot;toggle()&quot; type&#x3D;&quot;text&quot; [formControl]&#x3D;&quot;selected.control&quot;
+    [readonly]&#x3D;&quot;true&quot; [floatingLabel]&#x3D;&quot;floatingLabel&quot; cdkOverlayOrigin&gt;
+    &lt;app-icon class&#x3D;&quot;prefix&quot; *ngIf&#x3D;&quot;selected.icon&quot; size&#x3D;&quot;1rem&quot; [icon]&#x3D;&quot;selected.icon&quot;&gt;&lt;/app-icon&gt;
+    &lt;app-icon class&#x3D;&quot;suffix&quot; [icon]&#x3D;&quot;faChevronDown&quot; size&#x3D;&quot;0.75rem&quot;&gt;&lt;/app-icon&gt;
+  &lt;/app-input&gt;
+
+  &lt;ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]&#x3D;&quot;trigger&quot;
+    [cdkConnectedOverlayOpen]&#x3D;&quot;(isOpen$ | async) || false&quot;
+    [cdkConnectedOverlayBackdropClass]&#x3D;&quot;&#x27;cdk-overlay-transparent-backdrop&#x27;&quot; [cdkConnectedOverlayHasBackdrop]&#x3D;&quot;true&quot;
+    [cdkConnectedOverlayMinWidth]&#x3D;&quot;overlayMinWidth + &#x27;px&#x27;&quot;&gt;
+    &lt;div class&#x3D;&quot;overlay&quot;&gt;
+      &lt;ng-content&gt;&lt;/ng-content&gt;
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/ng-container&gt;
 </code></pre>
     </div>
 
@@ -1075,7 +1645,26 @@ export class SelectComponent extends ControlAccessor implements AfterViewInit, O
                 <p class="comment">
                     <code>./select.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.overlay {
+  overflow: auto;
+  width: 100%;
+  max-height: 300px;
+  padding: 1rem;
+  padding: 0.5rem 0;
+  background-color: var(--color-secondary-600);
+  border-radius: var(--border-radius);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+:host ::ng-deep {
+
+  app-input,
+  &amp;&gt;*,
+  input {
+    cursor: pointer !important;
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1103,8 +1692,8 @@ export class SelectComponent extends ControlAccessor implements AfterViewInit, O
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-form-field appearance="outline">  <mat-label>{{ floatingLabel }}</mat-label>  <mat-select [formControl]="control" name="test" disableOptionCentering="true">    <mat-select-trigger *ngIf="(selected$ | async) as selectedItem">      <app-icon *ngIf="selectedItem.icon" [icon]="selectedItem.icon" size="15.75px"></app-icon>      {{ selectedItem.viewValue }}    </mat-select-trigger>    <ng-container *ngIf="yet">      <mat-option *ngFor="let option of options" [value]="option.value">        <app-icon *ngIf="option.icon" [icon]="option.icon" size="15.75px"></app-icon>        {{ option.viewValue }}      </mat-option>    </ng-container>  </mat-select></mat-form-field></div>'
-    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'DialogOutletComponent', 'selector': 'app-dialog-outlet'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'MockPage', 'selector': 'app-mock'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngLet="selected$ | async as selected">  <app-input #input #trigger="cdkOverlayOrigin" (click)="toggle()" type="text" [formControl]="selected.control"    [readonly]="true" [floatingLabel]="floatingLabel" cdkOverlayOrigin>    <app-icon class="prefix" *ngIf="selected.icon" size="1rem" [icon]="selected.icon"></app-icon>    <app-icon class="suffix" [icon]="faChevronDown" size="0.75rem"></app-icon>  </app-input>  <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger"    [cdkConnectedOverlayOpen]="(isOpen$ | async) || false"    [cdkConnectedOverlayBackdropClass]="\'cdk-overlay-transparent-backdrop\'" [cdkConnectedOverlayHasBackdrop]="true"    [cdkConnectedOverlayMinWidth]="overlayMinWidth + \'px\'">    <div class="overlay">      <ng-content></ng-content>    </div>  </ng-template></ng-container></div>'
+    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'DialogOutletComponent', 'selector': 'app-dialog-outlet'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'InputIssueComponent', 'selector': 'input-issue'},{'name': 'InputPullRequestComponent', 'selector': 'input-pull-request'},{'name': 'InputTaskPropertyComponent', 'selector': 'input-task-property'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'MockPage', 'selector': 'app-mock'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'},{'name': 'ViewContainerDirective', 'selector': '[view-container]'}];
     var ACTUAL_COMPONENT = {'name': 'SelectComponent'};
 </script>

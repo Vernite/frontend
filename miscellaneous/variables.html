@@ -76,6 +76,9 @@
                             <a href="#$Default" title="src/app/_main/components/input-date-time/input-date-time.stories.ts" ><b>$Default</b>&nbsp;&nbsp;&nbsp;(src/.../input-date-time.stories.ts)</a>
                         </li>
                         <li>
+                            <a href="#$Default" title="src/app/_main/components/select/select.stories.ts" ><b>$Default</b>&nbsp;&nbsp;&nbsp;(src/.../select.stories.ts)</a>
+                        </li>
+                        <li>
                             <a href="#$Default" title="src/app/_main/components/textarea/textarea.stories.ts" ><b>$Default</b>&nbsp;&nbsp;&nbsp;(src/.../textarea.stories.ts)</a>
                         </li>
                         <li>
@@ -92,6 +95,9 @@
                         </li>
                         <li>
                             <a href="#config" title="src/app/_main/components/input/input.stories.ts" ><b>config</b>&nbsp;&nbsp;&nbsp;(src/.../input.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#config" title="src/app/_main/components/select/select.stories.ts" ><b>config</b>&nbsp;&nbsp;&nbsp;(src/.../select.stories.ts)</a>
                         </li>
                         <li>
                             <a href="#config" title="src/app/_main/components/textarea/textarea.stories.ts" ><b>config</b>&nbsp;&nbsp;&nbsp;(src/.../textarea.stories.ts)</a>
@@ -154,10 +160,16 @@
                             <a href="#FloatingLabel" title="src/app/_main/components/input/input.stories.ts" ><b>FloatingLabel</b>&nbsp;&nbsp;&nbsp;(src/.../input.stories.ts)</a>
                         </li>
                         <li>
+                            <a href="#FloatingLabel" title="src/app/_main/components/select/select.stories.ts" ><b>FloatingLabel</b>&nbsp;&nbsp;&nbsp;(src/.../select.stories.ts)</a>
+                        </li>
+                        <li>
                             <a href="#formControl" title="src/app/_main/components/checkbox/checkbox.stories.ts" ><b>formControl</b>&nbsp;&nbsp;&nbsp;(src/.../checkbox.stories.ts)</a>
                         </li>
                         <li>
                             <a href="#formControl" title="src/app/_main/components/input/input.stories.ts" ><b>formControl</b>&nbsp;&nbsp;&nbsp;(src/.../input.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#formControl" title="src/app/_main/components/select/select.stories.ts" ><b>formControl</b>&nbsp;&nbsp;&nbsp;(src/.../select.stories.ts)</a>
                         </li>
                         <li>
                             <a href="#formControl" title="src/app/_main/components/textarea/textarea.stories.ts" ><b>formControl</b>&nbsp;&nbsp;&nbsp;(src/.../textarea.stories.ts)</a>
@@ -218,6 +230,9 @@
                         </li>
                         <li>
                             <a href="#template" title="src/app/_main/components/input/input.stories.ts" ><b>template</b>&nbsp;&nbsp;&nbsp;(src/.../input.stories.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#template" title="src/app/_main/components/select/select.stories.ts" ><b>template</b>&nbsp;&nbsp;&nbsp;(src/.../select.stories.ts)</a>
                         </li>
                         <li>
                             <a href="#template" title="src/app/_main/components/textarea/textarea.stories.ts" ><b>template</b>&nbsp;&nbsp;&nbsp;(src/.../textarea.stories.ts)</a>
@@ -894,6 +909,124 @@
                         <i>Default value : </i><code>(args: InputDateTimeComponent) &#x3D;&gt; ({
   props: args,
 })</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/_main/components/select/select.stories.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$Default"></a>
+                    <span class="name">
+                        <span ><b>$Default</b></span>
+                        <a href="#$Default"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Story({ template, config }).story()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControlStoryPageConfig({
+  title: &#x27;Components/Select&#x27;,
+  component: SelectComponent,
+  selector: &#x27;app-select&#x27;,
+  argTypes: {
+    autocomplete: DOCS_SELECT,
+  },
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FloatingLabel"></a>
+                    <span class="name">
+                        <span ><b>FloatingLabel</b></span>
+                        <a href="#FloatingLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Story({
+  template,
+  config,
+  props: {
+    floatingLabel: &#x27;Sample field&#x27;,
+  },
+  description: &#x60;Best way to describe field purpose is to add a \&#x60;floatingLabel\&#x60;. The floating label will
+    be shown above the field if field is in focus state or when the input contains some value.&#x60;,
+}).story()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formControl"></a>
+                    <span class="name">
+                        <span ><b>formControl</b></span>
+                        <a href="#formControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="template"></a>
+                    <span class="name">
+                        <span ><b>template</b></span>
+                        <a href="#template"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new StoryTemplate&lt;SelectComponent&gt;({ formControl })</code>
                     </td>
                 </tr>
 

@@ -215,6 +215,9 @@
                             <li>
                                 <a href="#openNewTaskDialog" >openNewTaskDialog</a>
                             </li>
+                            <li>
+                                <a href="#toggle" >toggle</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -434,8 +437,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="168"
-                            class="link-to-prism">src/app/tasks/pages/board/board.page.ts:168</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">src/app/tasks/pages/board/board.page.ts:154</a></div>
                 </td>
             </tr>
 
@@ -584,8 +587,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="164"
-                            class="link-to-prism">src/app/tasks/pages/board/board.page.ts:164</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="150"
+                            class="link-to-prism">src/app/tasks/pages/board/board.page.ts:150</a></div>
                 </td>
             </tr>
 
@@ -727,8 +730,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="148"
-                            class="link-to-prism">src/app/tasks/pages/board/board.page.ts:148</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/app/tasks/pages/board/board.page.ts:134</a></div>
                 </td>
             </tr>
 
@@ -739,6 +742,87 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggle"></a>
+                    <span class="name">
+                        <span ><b>toggle</b></span>
+                        <a href="#toggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggle(board: [, StatusWithTasks[]], element: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="158"
+                            class="link-to-prism">src/app/tasks/pages/board/board.page.ts:158</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>board</td>
+                                    <td>
+                                            <code>[, StatusWithTasks[]]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>element</td>
+                                    <td>
+                                            <code>HTMLElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -1230,20 +1314,6 @@ export class BoardPage implements OnInit, OnDestroy {
 
           onSuccess();
         });
-      // } else if (task.mergedPullList &amp;&amp; !newStatus.final) {
-      //   this.dialogService
-      //     .alert({
-      //       title: $localize&#x60;Are you sure?&#x60;,
-      //       message: $localize&#x60;If you will move this task to not finishing state, the pull request will be detached.&#x60;,
-      //       confirmText: $localize&#x60;Detach&#x60;,
-      //       cancelText: $localize&#x60;Cancel&#x60;,
-      //     })
-      //     .subscribe((result) &#x3D;&gt; {
-      //       if (!result) return;
-
-      //       onSuccess();
-      //     });
-      // }
     } else {
       onSuccess();
     }
@@ -1272,6 +1342,12 @@ export class BoardPage implements OnInit, OnDestroy {
   getColumnsContainerHeight(mapKey: string | number, element: HTMLElement) {
     return &#x60;${Number(!this.taskMap.get(mapKey)) * element.scrollHeight + 16}px&#x60;;
   }
+
+  toggle(board: [Task | string, StatusWithTasks[]], element: HTMLElement) {
+    element.style.maxHeight &#x3D; this.getColumnsContainerHeight(this.idOf(board[0]), element);
+    this.taskMap.set(this.idOf(board[0]), !this.taskMap.get(this.idOf(board[0])) || false);
+    element.style.maxHeight &#x3D; this.getColumnsContainerHeight(this.idOf(board[0]), element);
+  }
 }
 </code></pre>
     </div>
@@ -1289,8 +1365,7 @@ export class BoardPage implements OnInit, OnDestroy {
   &lt;div *ngFor&#x3D;&quot;let board of board$ | async&quot; class&#x3D;&quot;board&quot; [class.collapsed]&#x3D;&quot;taskMap.get(idOf(board[0]))&quot;
     cdkDropListGroup&gt;
     &lt;div class&#x3D;&quot;table&quot;&gt;
-      &lt;div class&#x3D;&quot;row&quot; *ngLet&#x3D;&quot;board[0] as task&quot;
-        (click)&#x3D;&quot;taskMap.set(idOf(board[0]), !taskMap.get(idOf(board[0])) || false)&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot; *ngLet&#x3D;&quot;board[0] as task&quot; (click)&#x3D;&quot;toggle(board, columns)&quot;&gt;
         &lt;div class&#x3D;&quot;cell w-full&quot;&gt;
           &lt;div *ngIf&#x3D;&quot;task !&#x3D;&#x3D; &#x27;OTHER&#x27;&quot; class&#x3D;&quot;task-title&quot;&gt;
             &lt;app-icon [icon]&#x3D;&quot;faChevronRight&quot; size&#x3D;&quot;16px&quot;&gt;&lt;/app-icon&gt;
@@ -1320,8 +1395,7 @@ export class BoardPage implements OnInit, OnDestroy {
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div #columns class&#x3D;&quot;columns&quot; [class.collapsed]&#x3D;&quot;taskMap.get(idOf(board[0]))&quot;
-      [style.maxHeight]&#x3D;&quot;getColumnsContainerHeight(idOf(board[0]), columns)&quot;&gt;
+    &lt;div #columns class&#x3D;&quot;columns&quot; [class.collapsed]&#x3D;&quot;taskMap.get(idOf(board[0]))&quot;&gt;
       &lt;div *ngFor&#x3D;&quot;let column of board[1]; index as statusIndex&quot; class&#x3D;&quot;column&quot;&gt;
         &lt;div class&#x3D;&quot;column-content&quot; [cdkDropListData]&#x3D;&quot;column.tasks&quot; (cdkDropListDropped)&#x3D;&quot;drop($event)&quot;
           [attr.data-index]&#x3D;&quot;statusIndex&quot; cdkDropList&gt;
@@ -1332,7 +1406,8 @@ export class BoardPage implements OnInit, OnDestroy {
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -1374,11 +1449,11 @@ app-status-label {
   .columns {
     display: flex;
     overflow: hidden;
-    transition: max-height .2s ease;
+    transition: max-height .4s ease;
 
-    // &amp;.collapsed {
-    //   height: 0;
-    // }
+    &amp;.collapsed {
+      max-height: 0;
+    }
   }
 
   .column {
@@ -1485,7 +1560,8 @@ app-status-label {
 
 .row {
   cursor: pointer;
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1513,8 +1589,8 @@ app-status-label {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-view-options [project]="(project$ | async)!"></app-view-options><div class="status-list-banner">  <div *ngFor="let status of statusList$ | async" class="status-banner">    {{ status.name }}  </div></div><div *ngLet="(members$ | async)! as members" class="boards">  <div *ngFor="let board of board$ | async" class="board" [class.collapsed]="taskMap.get(idOf(board[0]))"    cdkDropListGroup>    <div class="table">      <div class="row" *ngLet="board[0] as task"        (click)="taskMap.set(idOf(board[0]), !taskMap.get(idOf(board[0])) || false)">        <div class="cell w-full">          <div *ngIf="task !== \'OTHER\'" class="task-title">            <app-icon [icon]="faChevronRight" size="16px"></app-icon>            <span class="task-id">#{{ task.id }}</span>            <span>{{ task.name }}</span>            <a *ngIf="task.issue" [href]="task.issue" class="task-property" target="_blank" matTooltip="GitHub issue"              i18n-matTooltip>              <app-icon [icon]="faCodeCommit" size="14px"></app-icon>            </a>            <a *ngIf="task.pull" [href]="task.pull" class="task-property" target="_blank"              matTooltip="GitHub pull request" i18n-matTooltip>              <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>            </a>            <a *ngIf="task.mergedPullList" [href]="task.mergedPullList[0]" class="task-property" target="_blank"              matTooltip="GitHub pull request" i18n-matTooltip>              <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>              <app-icon class="check" [icon]="faCheck" size="14px"></app-icon>            </a>            <app-status-label [projectId]="projectId" [taskId]="task.id" [statuses]="statusList" variant="small"              [statusId]="task.statusId!" click-stop-propagation>            </app-status-label>          </div>          <div *ngIf="task === \'OTHER\'" class="task-title">            <app-icon [icon]="faChevronRight" size="16px"></app-icon>            <span i18n>Other tasks</span>          </div>        </div>      </div>    </div>    <div #columns class="columns" [class.collapsed]="taskMap.get(idOf(board[0]))"      [style.maxHeight]="getColumnsContainerHeight(idOf(board[0]), columns)">      <div *ngFor="let column of board[1]; index as statusIndex" class="column">        <div class="column-content" [cdkDropListData]="column.tasks" (cdkDropListDropped)="drop($event)"          [attr.data-index]="statusIndex" cdkDropList>          <app-board-task *ngFor="let task of column.tasks; index as taskIndex" class="task" [task]="task"            [projectId]="projectId" [members]="members" [attr.data-index]="taskIndex" cdkDrag>          </app-board-task>        </div>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'DialogOutletComponent', 'selector': 'app-dialog-outlet'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'MockPage', 'selector': 'app-mock'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
+        var COMPONENT_TEMPLATE = '<div><app-view-options [project]="(project$ | async)!"></app-view-options><div class="status-list-banner">  <div *ngFor="let status of statusList$ | async" class="status-banner">    {{ status.name }}  </div></div><div *ngLet="(members$ | async)! as members" class="boards">  <div *ngFor="let board of board$ | async" class="board" [class.collapsed]="taskMap.get(idOf(board[0]))"    cdkDropListGroup>    <div class="table">      <div class="row" *ngLet="board[0] as task" (click)="toggle(board, columns)">        <div class="cell w-full">          <div *ngIf="task !== \'OTHER\'" class="task-title">            <app-icon [icon]="faChevronRight" size="16px"></app-icon>            <span class="task-id">#{{ task.id }}</span>            <span>{{ task.name }}</span>            <a *ngIf="task.issue" [href]="task.issue" class="task-property" target="_blank" matTooltip="GitHub issue"              i18n-matTooltip>              <app-icon [icon]="faCodeCommit" size="14px"></app-icon>            </a>            <a *ngIf="task.pull" [href]="task.pull" class="task-property" target="_blank"              matTooltip="GitHub pull request" i18n-matTooltip>              <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>            </a>            <a *ngIf="task.mergedPullList" [href]="task.mergedPullList[0]" class="task-property" target="_blank"              matTooltip="GitHub pull request" i18n-matTooltip>              <app-icon [icon]="faCodePullRequest" size="14px"></app-icon>              <app-icon class="check" [icon]="faCheck" size="14px"></app-icon>            </a>            <app-status-label [projectId]="projectId" [taskId]="task.id" [statuses]="statusList" variant="small"              [statusId]="task.statusId!" click-stop-propagation>            </app-status-label>          </div>          <div *ngIf="task === \'OTHER\'" class="task-title">            <app-icon [icon]="faChevronRight" size="16px"></app-icon>            <span i18n>Other tasks</span>          </div>        </div>      </div>    </div>    <div #columns class="columns" [class.collapsed]="taskMap.get(idOf(board[0]))">      <div *ngFor="let column of board[1]; index as statusIndex" class="column">        <div class="column-content" [cdkDropListData]="column.tasks" (cdkDropListDropped)="drop($event)"          [attr.data-index]="statusIndex" cdkDropList>          <app-board-task *ngFor="let task of column.tasks; index as taskIndex" class="task" [task]="task"            [projectId]="projectId" [members]="members" [attr.data-index]="taskIndex" cdkDrag>          </app-board-task>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddMemberDialog', 'selector': 'app-add-member-dialog'},{'name': 'AlertDialog', 'selector': 'app-alert-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BoardPage', 'selector': 'app-board'},{'name': 'BoardTaskComponent', 'selector': 'app-board-task'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'ChangePasswordPage', 'selector': 'app-change-password'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'ControlAccessor', 'selector': ''},{'name': 'CreateProjectMembersPage', 'selector': 'app-create-project-members'},{'name': 'CreateProjectPage', 'selector': 'app-create-project'},{'name': 'CreateWorkspacePage', 'selector': 'app-create-workspace-page'},{'name': 'DeleteAccountPage', 'selector': 'app-delete-account.page'},{'name': 'DialogOutletComponent', 'selector': 'app-dialog-outlet'},{'name': 'EditProjectMembersPage', 'selector': 'app-edit-project-members'},{'name': 'EditProjectPage', 'selector': 'app-edit-project'},{'name': 'EditWorkspacePage', 'selector': 'app-edit-workspace-page'},{'name': 'FiltersComponent', 'selector': 'app-filters'},{'name': 'ForgotPasswordPage', 'selector': 'app-forgot-page'},{'name': 'GithubIntegrationPage', 'selector': 'app-github-integration-page'},{'name': 'IconComponent', 'selector': 'app-icon'},{'name': 'InputAssigneeComponent', 'selector': 'app-input-assignee'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InputDateTimeComponent', 'selector': 'app-input-date-time'},{'name': 'InputIssueComponent', 'selector': 'input-issue'},{'name': 'InputPullRequestComponent', 'selector': 'input-pull-request'},{'name': 'InputTaskPropertyComponent', 'selector': 'input-task-property'},{'name': 'IntegrationEntryComponent', 'selector': 'app-integration-entry'},{'name': 'IntegrationGithubComponent', 'selector': 'app-integration-github'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'ListGroupComponent', 'selector': 'app-list-group'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'MainViewComponent', 'selector': 'app-main-view'},{'name': 'MemberListComponent', 'selector': 'app-member-list'},{'name': 'MockPage', 'selector': 'app-mock'},{'name': 'NavElementComponent', 'selector': 'app-nav-element'},{'name': 'NavElementWorkspaceComponent', 'selector': 'app-nav-element-workspace'},{'name': 'OptionComponent', 'selector': 'app-option'},{'name': 'ProjectsListPage', 'selector': 'app-projects-list'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'RestoreAccountPage', 'selector': 'app-restore-account-page'},{'name': 'SchedulePage', 'selector': 'app-schedule-page'},{'name': 'SelectComponent', 'selector': 'app-select'},{'name': 'SettingsAccountPage', 'selector': 'app-settings-account-page'},{'name': 'SettingsIntegrationsPage', 'selector': 'app-settings-integrations'},{'name': 'SettingsLocalizationPage', 'selector': 'app-settings-localization-page'},{'name': 'SettingsPage', 'selector': 'app-settings-page'},{'name': 'SettingsSessionsPage', 'selector': 'app-settings-sessions'},{'name': 'SidebarNavigationComponent', 'selector': 'app-sidebar-navigation'},{'name': 'SnackbarComponent', 'selector': 'app-snackbar'},{'name': 'SnackbarOutletComponent', 'selector': 'app-snackbar-outlet'},{'name': 'StatusLabelComponent', 'selector': 'app-status-label'},{'name': 'TaskDialog', 'selector': 'app-task-dialog'},{'name': 'TaskListPage', 'selector': 'app-task-list'},{'name': 'TextareaComponent', 'selector': 'app-textarea'},{'name': 'UpperNavigationComponent', 'selector': 'app-upper-navigation'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'ViewOptionsComponent', 'selector': 'app-view-options'},{'name': 'WorkspacesListPage', 'selector': 'app-workspaces-list-page'}];
     var DIRECTIVES = [{'name': 'ClickStopPropagationDirective', 'selector': '[click-stop-propagation]'},{'name': 'FocusInitialDirective', 'selector': '[appFocusInitial]'},{'name': 'LetDirective', 'selector': '[ngLet]'},{'name': 'ViewContainerDirective', 'selector': '[view-container]'}];
     var ACTUAL_COMPONENT = {'name': 'BoardPage'};
 </script>

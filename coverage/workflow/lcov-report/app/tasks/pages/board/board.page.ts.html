@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.44% </span>
+                <span class="strong">42.1% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>24/54</span>
+                <span class='fraction'>24/57</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">15% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/18</span>
+                <span class='fraction'>3/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">18.75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/15</span>
+                <span class='fraction'>3/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.09% </span>
+                <span class="strong">42.59% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/51</span>
+                <span class='fraction'>23/54</span>
             </div>
         
             
@@ -226,15 +226,7 @@
 <a name='L161'></a><a href='#L161'>161</a>
 <a name='L162'></a><a href='#L162'>162</a>
 <a name='L163'></a><a href='#L163'>163</a>
-<a name='L164'></a><a href='#L164'>164</a>
-<a name='L165'></a><a href='#L165'>165</a>
-<a name='L166'></a><a href='#L166'>166</a>
-<a name='L167'></a><a href='#L167'>167</a>
-<a name='L168'></a><a href='#L168'>168</a>
-<a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a>
-<a name='L171'></a><a href='#L171'>171</a>
-<a name='L172'></a><a href='#L172'>172</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L164'></a><a href='#L164'>164</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -363,20 +355,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -402,6 +380,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -533,20 +517,6 @@ export class BoardPage implements OnInit, OnDestroy {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >          onSuccess();</span>
         });
-      // } else if (task.mergedPullList &amp;&amp; !newStatus.final) {
-      //   this.dialogService
-      //     .alert({
-      //       title: $localize`Are you sure?`,
-      //       message: $localize`If you will move this task to not finishing state, the pull request will be detached.`,
-      //       confirmText: $localize`Detach`,
-      //       cancelText: $localize`Cancel`,
-      //     })
-      //     .subscribe((result) =&gt; {
-      //       if (!result) return;
-&nbsp;
-      //       onSuccess();
-      //     });
-      // }
     } else {
 <span class="cstat-no" title="statement not covered" >      onSuccess();</span>
     }
@@ -575,6 +545,12 @@ export class BoardPage implements OnInit, OnDestroy {
 <span class="fstat-no" title="function not covered" >  getColumnsContainerHeight(</span>mapKey: string | number, element: HTMLElement) {
 <span class="cstat-no" title="statement not covered" >    return `${Number(!this.taskMap.get(mapKey)) * element.scrollHeight + 16}px`;</span>
   }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  toggle(</span>board: [Task | string, StatusWithTasks[]], element: HTMLElement) {
+<span class="cstat-no" title="statement not covered" >    element.style.maxHeight = this.getColumnsContainerHeight(this.idOf(board[0]), element);</span>
+<span class="cstat-no" title="statement not covered" >    this.taskMap.set(this.idOf(board[0]), !this.taskMap.get(this.idOf(board[0])) || false);</span>
+<span class="cstat-no" title="statement not covered" >    element.style.maxHeight = this.getColumnsContainerHeight(this.idOf(board[0]), element);</span>
+  }
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -583,7 +559,7 @@ export class BoardPage implements OnInit, OnDestroy {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Aug 06 2022 09:44:11 GMT+0000 (Coordinated Universal Time)
+                at Fri Aug 19 2022 15:12:45 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

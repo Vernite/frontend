@@ -261,13 +261,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/TasksModule.html" data-type="entity-link" >TasksModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-TasksModule-da716c7dc24da4262a0c5b425fa572cbdfa879fed8775f01c3a5434cf05568595adfeeaafc66809fefcf89f5864b18961f039fb667136ee9fc77d5d5f18f4ef3"' : 'data-target="#xs-components-links-module-TasksModule-da716c7dc24da4262a0c5b425fa572cbdfa879fed8775f01c3a5434cf05568595adfeeaafc66809fefcf89f5864b18961f039fb667136ee9fc77d5d5f18f4ef3"' }>
+                                            'data-target="#components-links-module-TasksModule-df6ae343008cd5a8eb735e624361d4a0120e1243b0debb632dcad09a04a57ef64599a3af0fe4b71963317e220d4a32cd74a4b72d7dfd6cc5ab980f20b7b58fde"' : 'data-target="#xs-components-links-module-TasksModule-df6ae343008cd5a8eb735e624361d4a0120e1243b0debb632dcad09a04a57ef64599a3af0fe4b71963317e220d4a32cd74a4b72d7dfd6cc5ab980f20b7b58fde"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-TasksModule-da716c7dc24da4262a0c5b425fa572cbdfa879fed8775f01c3a5434cf05568595adfeeaafc66809fefcf89f5864b18961f039fb667136ee9fc77d5d5f18f4ef3"' :
-                                            'id="xs-components-links-module-TasksModule-da716c7dc24da4262a0c5b425fa572cbdfa879fed8775f01c3a5434cf05568595adfeeaafc66809fefcf89f5864b18961f039fb667136ee9fc77d5d5f18f4ef3"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-TasksModule-df6ae343008cd5a8eb735e624361d4a0120e1243b0debb632dcad09a04a57ef64599a3af0fe4b71963317e220d4a32cd74a4b72d7dfd6cc5ab980f20b7b58fde"' :
+                                            'id="xs-components-links-module-TasksModule-df6ae343008cd5a8eb735e624361d4a0120e1243b0debb632dcad09a04a57ef64599a3af0fe4b71963317e220d4a32cd74a4b72d7dfd6cc5ab980f20b7b58fde"' }>
                                             <li class="link">
                                                 <a href="components/BoardPage.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >BoardPage</a>
                                             </li>
@@ -276,6 +276,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             </li>
                                             <li class="link">
                                                 <a href="components/InputAssigneeComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >InputAssigneeComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/InputIssueComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >InputIssueComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/InputPullRequestComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >InputPullRequestComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/InputTaskPropertyComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >InputTaskPropertyComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/SchedulePage.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >SchedulePage</a>
@@ -293,13 +302,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-TasksModule-da716c7dc24da4262a0c5b425fa572cbdfa879fed8775f01c3a5434cf05568595adfeeaafc66809fefcf89f5864b18961f039fb667136ee9fc77d5d5f18f4ef3"' : 'data-target="#xs-pipes-links-module-TasksModule-da716c7dc24da4262a0c5b425fa572cbdfa879fed8775f01c3a5434cf05568595adfeeaafc66809fefcf89f5864b18961f039fb667136ee9fc77d5d5f18f4ef3"' }>
+                                            'data-target="#pipes-links-module-TasksModule-df6ae343008cd5a8eb735e624361d4a0120e1243b0debb632dcad09a04a57ef64599a3af0fe4b71963317e220d4a32cd74a4b72d7dfd6cc5ab980f20b7b58fde"' : 'data-target="#xs-pipes-links-module-TasksModule-df6ae343008cd5a8eb735e624361d4a0120e1243b0debb632dcad09a04a57ef64599a3af0fe4b71963317e220d4a32cd74a4b72d7dfd6cc5ab980f20b7b58fde"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-TasksModule-da716c7dc24da4262a0c5b425fa572cbdfa879fed8775f01c3a5434cf05568595adfeeaafc66809fefcf89f5864b18961f039fb667136ee9fc77d5d5f18f4ef3"' :
-                                            'id="xs-pipes-links-module-TasksModule-da716c7dc24da4262a0c5b425fa572cbdfa879fed8775f01c3a5434cf05568595adfeeaafc66809fefcf89f5864b18961f039fb667136ee9fc77d5d5f18f4ef3"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-TasksModule-df6ae343008cd5a8eb735e624361d4a0120e1243b0debb632dcad09a04a57ef64599a3af0fe4b71963317e220d4a32cd74a4b72d7dfd6cc5ab980f20b7b58fde"' :
+                                            'id="xs-pipes-links-module-TasksModule-df6ae343008cd5a8eb735e624361d4a0120e1243b0debb632dcad09a04a57ef64599a3af0fe4b71963317e220d4a32cd74a4b72d7dfd6cc5ab980f20b7b58fde"' }>
                                             <li class="link">
                                                 <a href="pipes/StatusColorPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StatusColorPipe</a>
                                             </li>
@@ -624,6 +633,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/SelectionEditOperation.html" data-type="entity-link" >SelectionEditOperation</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/SelectLabel.html" data-type="entity-link" >SelectLabel</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/SinglePersonSchedule.html" data-type="entity-link" >SinglePersonSchedule</a>
