@@ -10,18 +10,18 @@
     "browsers": [
         {
             "browser": {
-                "id": "16408058",
-                "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/104.0.5112.79 Safari/537.36",
-                "name": "Chrome Headless 104.0.5112.79 (Linux x86_64)",
+                "id": "32991235",
+                "fullName": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/105.0.5195.102 Safari/537.36",
+                "name": "Chrome Headless 105.0.5195.102 (Linux x86_64)",
                 "state": "DISCONNECTED",
                 "lastResult": {
-                    "startTime": 1660921956953,
+                    "startTime": 1663010707517,
                     "total": 162,
                     "success": 162,
                     "failed": 0,
                     "skipped": 0,
-                    "totalTime": 6473,
-                    "netTime": 4864,
+                    "totalTime": 3814,
+                    "netTime": 3141,
                     "error": false,
                     "disconnected": false
                 },
@@ -43,7 +43,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 252,
+                    "time": 278,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -67,7 +67,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -163,7 +163,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -187,7 +187,7 @@
                     "suite": [
                         "Control Accessor"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -200,8 +200,8 @@
                     "properties": null
                 },
                 {
-                    "fullName": "Control Accessor should have required flag if has required validator",
-                    "description": "should have required flag if has required validator",
+                    "fullName": "Control Accessor should not throw error if control is not defined",
+                    "description": "should not throw error if control is not defined",
                     "id": "spec7",
                     "log": [],
                     "skipped": false,
@@ -212,36 +212,6 @@
                         "Control Accessor"
                     ],
                     "time": 1,
-                    "executedExpectationsCount": 2,
-                    "passedExpectations": [
-                        {
-                            "matcherName": "toBeTruthy",
-                            "message": "Passed.",
-                            "stack": "",
-                            "passed": true
-                        },
-                        {
-                            "matcherName": "toBeTrue",
-                            "message": "Passed.",
-                            "stack": "",
-                            "passed": true
-                        }
-                    ],
-                    "properties": null
-                },
-                {
-                    "fullName": "Control Accessor should not throw error if control is not defined",
-                    "description": "should not throw error if control is not defined",
-                    "id": "spec8",
-                    "log": [],
-                    "skipped": false,
-                    "disabled": false,
-                    "pending": false,
-                    "success": true,
-                    "suite": [
-                        "Control Accessor"
-                    ],
-                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -256,7 +226,7 @@
                 {
                     "fullName": "DialogRef should create",
                     "description": "should create",
-                    "id": "spec9",
+                    "id": "spec8",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -280,7 +250,7 @@
                 {
                     "fullName": "DialogRef afterOpened - should receive notification after dialog was opened",
                     "description": "afterOpened - should receive notification after dialog was opened",
-                    "id": "spec10",
+                    "id": "spec9",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -289,7 +259,7 @@
                     "suite": [
                         "DialogRef"
                     ],
-                    "time": 3,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -304,7 +274,7 @@
                 {
                     "fullName": "DialogRef afterClosed - should receive notification after dialog was closed",
                     "description": "afterClosed - should receive notification after dialog was closed",
-                    "id": "spec11",
+                    "id": "spec10",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -313,7 +283,7 @@
                     "suite": [
                         "DialogRef"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -328,7 +298,7 @@
                 {
                     "fullName": "DialogRef beforeClosed - should receive notification before dialog was closed",
                     "description": "beforeClosed - should receive notification before dialog was closed",
-                    "id": "spec12",
+                    "id": "spec11",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -352,7 +322,7 @@
                 {
                     "fullName": "DialogRef backdropClick - should throw error",
                     "description": "backdropClick - should throw error",
-                    "id": "spec13",
+                    "id": "spec12",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -376,7 +346,7 @@
                 {
                     "fullName": "DialogRef keydownEvents - should throw error",
                     "description": "keydownEvents - should throw error",
-                    "id": "spec14",
+                    "id": "spec13",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -400,7 +370,7 @@
                 {
                     "fullName": "DialogRef updatePosition - should throw error",
                     "description": "updatePosition - should throw error",
-                    "id": "spec15",
+                    "id": "spec14",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -424,7 +394,7 @@
                 {
                     "fullName": "DialogRef updateSize - should throw error",
                     "description": "updateSize - should throw error",
-                    "id": "spec16",
+                    "id": "spec15",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -448,7 +418,7 @@
                 {
                     "fullName": "DialogRef addPanelClass - should throw error",
                     "description": "addPanelClass - should throw error",
-                    "id": "spec17",
+                    "id": "spec16",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -472,7 +442,7 @@
                 {
                     "fullName": "DialogRef removePanelClass - should throw error",
                     "description": "removePanelClass - should throw error",
-                    "id": "spec18",
+                    "id": "spec17",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -496,7 +466,7 @@
                 {
                     "fullName": "ESet toggle - remove item if exists",
                     "description": "toggle - remove item if exists",
-                    "id": "spec19",
+                    "id": "spec18",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -520,7 +490,7 @@
                 {
                     "fullName": "ESet toggle - add item if not exists",
                     "description": "toggle - add item if not exists",
-                    "id": "spec20",
+                    "id": "spec19",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -544,7 +514,7 @@
                 {
                     "fullName": "Enum class isNumeric() - should return true if enum has numeric values",
                     "description": "isNumeric() - should return true if enum has numeric values",
-                    "id": "spec21",
+                    "id": "spec20",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -568,7 +538,7 @@
                 {
                     "fullName": "Enum class isNumeric() - should return false if enum has non-numeric values",
                     "description": "isNumeric() - should return false if enum has non-numeric values",
-                    "id": "spec22",
+                    "id": "spec21",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -592,7 +562,7 @@
                 {
                     "fullName": "Enum class keys() - should return keys of numeric enum",
                     "description": "keys() - should return keys of numeric enum",
-                    "id": "spec23",
+                    "id": "spec22",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -601,7 +571,7 @@
                     "suite": [
                         "Enum class"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -616,7 +586,7 @@
                 {
                     "fullName": "Enum class keys() - should return keys of non-numeric enum",
                     "description": "keys() - should return keys of non-numeric enum",
-                    "id": "spec24",
+                    "id": "spec23",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -640,7 +610,7 @@
                 {
                     "fullName": "Enum class values() - should return values of numeric enum",
                     "description": "values() - should return values of numeric enum",
-                    "id": "spec25",
+                    "id": "spec24",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -664,7 +634,7 @@
                 {
                     "fullName": "Enum class values() - should return values of non-numeric enum",
                     "description": "values() - should return values of non-numeric enum",
-                    "id": "spec26",
+                    "id": "spec25",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -688,7 +658,7 @@
                 {
                     "fullName": "Enum class entries() - should return entries of numeric enum",
                     "description": "entries() - should return entries of numeric enum",
-                    "id": "spec27",
+                    "id": "spec26",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -712,7 +682,7 @@
                 {
                     "fullName": "Enum class entries() - should return entries of non-numeric enum",
                     "description": "entries() - should return entries of non-numeric enum",
-                    "id": "spec28",
+                    "id": "spec27",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -736,7 +706,7 @@
                 {
                     "fullName": "filters class should contain filters",
                     "description": "should contain filters",
-                    "id": "spec29",
+                    "id": "spec28",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -745,7 +715,7 @@
                     "suite": [
                         "filters class"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 3,
                     "passedExpectations": [
                         {
@@ -772,7 +742,7 @@
                 {
                     "fullName": "filters class Should have ONLY_MY_TASKS filter",
                     "description": "Should have ONLY_MY_TASKS filter",
-                    "id": "spec30",
+                    "id": "spec29",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -838,7 +808,7 @@
                 {
                     "fullName": "Random class should return a random number between 0 and 1",
                     "description": "should return a random number between 0 and 1",
-                    "id": "spec31",
+                    "id": "spec30",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -847,7 +817,7 @@
                     "suite": [
                         "Random class"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 2,
                     "passedExpectations": [
                         {
@@ -868,7 +838,7 @@
                 {
                     "fullName": "Random class should return different numbers with different seeds",
                     "description": "should return different numbers with different seeds",
-                    "id": "spec32",
+                    "id": "spec31",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -877,7 +847,7 @@
                     "suite": [
                         "Random class"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -892,7 +862,7 @@
                 {
                     "fullName": "Random class should return the same number with the same seed",
                     "description": "should return the same number with the same seed",
-                    "id": "spec33",
+                    "id": "spec32",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -916,7 +886,7 @@
                 {
                     "fullName": "Utils: regexIndexOf Should split faIcon to ['fa', 'Icon']",
                     "description": "Should split faIcon to ['fa', 'Icon']",
-                    "id": "spec34",
+                    "id": "spec33",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -940,7 +910,7 @@
                 {
                     "fullName": "Utils: regexIndexOf Should return -1 for test",
                     "description": "Should return -1 for test",
-                    "id": "spec35",
+                    "id": "spec34",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -964,7 +934,7 @@
                 {
                     "fullName": "Utils: snakeCase Should return snake_case for snake_case",
                     "description": "Should return snake_case for snake_case",
-                    "id": "spec36",
+                    "id": "spec35",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -973,7 +943,7 @@
                     "suite": [
                         "Utils: snakeCase"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -988,7 +958,7 @@
                 {
                     "fullName": "Utils: snakeCase Should return snake_case for SnakeCase",
                     "description": "Should return snake_case for SnakeCase",
-                    "id": "spec37",
+                    "id": "spec36",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1012,7 +982,7 @@
                 {
                     "fullName": "Utils: snakeCase Should return snake_case for snakeCase",
                     "description": "Should return snake_case for snakeCase",
-                    "id": "spec38",
+                    "id": "spec37",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1021,7 +991,7 @@
                     "suite": [
                         "Utils: snakeCase"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1036,7 +1006,7 @@
                 {
                     "fullName": "Utils: isLetter Should return true for A",
                     "description": "Should return true for A",
-                    "id": "spec39",
+                    "id": "spec38",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1060,7 +1030,7 @@
                 {
                     "fullName": "Utils: isLetter Should return true for a",
                     "description": "Should return true for a",
-                    "id": "spec40",
+                    "id": "spec39",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1084,7 +1054,7 @@
                 {
                     "fullName": "Utils: isLetter Should return true for Z",
                     "description": "Should return true for Z",
-                    "id": "spec41",
+                    "id": "spec40",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1108,7 +1078,7 @@
                 {
                     "fullName": "Utils: isLetter Should return true for z",
                     "description": "Should return true for z",
-                    "id": "spec42",
+                    "id": "spec41",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1132,7 +1102,7 @@
                 {
                     "fullName": "Utils: isLetter Should return false for 1",
                     "description": "Should return false for 1",
-                    "id": "spec43",
+                    "id": "spec42",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1156,7 +1126,7 @@
                 {
                     "fullName": "Utils: isLetter Should return false for !",
                     "description": "Should return false for !",
-                    "id": "spec44",
+                    "id": "spec43",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1165,7 +1135,7 @@
                     "suite": [
                         "Utils: isLetter"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1180,7 +1150,7 @@
                 {
                     "fullName": "Utils: isLetter Should return false for @",
                     "description": "Should return false for @",
-                    "id": "spec45",
+                    "id": "spec44",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1204,7 +1174,7 @@
                 {
                     "fullName": "Utils: isLetter Should return false for _",
                     "description": "Should return false for _",
-                    "id": "spec46",
+                    "id": "spec45",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1213,7 +1183,7 @@
                     "suite": [
                         "Utils: isLetter"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1228,7 +1198,7 @@
                 {
                     "fullName": "Utils: isLetter Should return false for AB",
                     "description": "Should return false for AB",
-                    "id": "spec47",
+                    "id": "spec46",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1237,7 +1207,7 @@
                     "suite": [
                         "Utils: isLetter"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1252,7 +1222,7 @@
                 {
                     "fullName": "Utils: has Should return true for object with all keys",
                     "description": "Should return true for object with all keys",
-                    "id": "spec48",
+                    "id": "spec47",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1261,7 +1231,7 @@
                     "suite": [
                         "Utils: has"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1276,7 +1246,7 @@
                 {
                     "fullName": "Utils: has Should return false for object without all keys",
                     "description": "Should return false for object without all keys",
-                    "id": "spec49",
+                    "id": "spec48",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1285,7 +1255,7 @@
                     "suite": [
                         "Utils: has"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1300,7 +1270,7 @@
                 {
                     "fullName": "ButtonComponent should create",
                     "description": "should create",
-                    "id": "spec50",
+                    "id": "spec49",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1309,7 +1279,7 @@
                     "suite": [
                         "ButtonComponent"
                     ],
-                    "time": 251,
+                    "time": 154,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1324,7 +1294,7 @@
                 {
                     "fullName": "ButtonComponent should have passed text",
                     "description": "should have passed text",
-                    "id": "spec51",
+                    "id": "spec50",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1333,7 +1303,7 @@
                     "suite": [
                         "ButtonComponent"
                     ],
-                    "time": 203,
+                    "time": 118,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1348,7 +1318,7 @@
                 {
                     "fullName": "ButtonComponent should be able to focus",
                     "description": "should be able to focus",
-                    "id": "spec52",
+                    "id": "spec51",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1357,7 +1327,7 @@
                     "suite": [
                         "ButtonComponent"
                     ],
-                    "time": 391,
+                    "time": 299,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1372,7 +1342,7 @@
                 {
                     "fullName": "CardComponent should create",
                     "description": "should create",
-                    "id": "spec53",
+                    "id": "spec52",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1381,7 +1351,7 @@
                     "suite": [
                         "CardComponent"
                     ],
-                    "time": 6,
+                    "time": 7,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1396,7 +1366,7 @@
                 {
                     "fullName": "CheckboxComponent should create",
                     "description": "should create",
-                    "id": "spec54",
+                    "id": "spec53",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1405,7 +1375,7 @@
                     "suite": [
                         "CheckboxComponent"
                     ],
-                    "time": 168,
+                    "time": 91,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1420,7 +1390,7 @@
                 {
                     "fullName": "DialogOutletComponent should create",
                     "description": "should create",
-                    "id": "spec55",
+                    "id": "spec54",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1429,7 +1399,7 @@
                     "suite": [
                         "DialogOutletComponent"
                     ],
-                    "time": 27,
+                    "time": 10,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1444,7 +1414,7 @@
                 {
                     "fullName": "FiltersComponent should create",
                     "description": "should create",
-                    "id": "spec56",
+                    "id": "spec55",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1453,7 +1423,7 @@
                     "suite": [
                         "FiltersComponent"
                     ],
-                    "time": 11,
+                    "time": 8,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1468,7 +1438,7 @@
                 {
                     "fullName": "IconComponent should create",
                     "description": "should create",
-                    "id": "spec57",
+                    "id": "spec56",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1477,7 +1447,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 193,
+                    "time": 100,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1492,7 +1462,7 @@
                 {
                     "fullName": "IconComponent Should have defined size",
                     "description": "Should have defined size",
-                    "id": "spec58",
+                    "id": "spec57",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1501,7 +1471,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 187,
+                    "time": 87,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1516,7 +1486,7 @@
                 {
                     "fullName": "IconComponent Should return it's proper snakeCase name",
                     "description": "Should return it's proper snakeCase name",
-                    "id": "spec59",
+                    "id": "spec58",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1525,7 +1495,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 174,
+                    "time": 90,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1540,7 +1510,7 @@
                 {
                     "fullName": "IconComponent Icon getter should work [mat-icon]",
                     "description": "Icon getter should work [mat-icon]",
-                    "id": "spec60",
+                    "id": "spec59",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1549,7 +1519,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 148,
+                    "time": 76,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1564,7 +1534,7 @@
                 {
                     "fullName": "IconComponent Icon getter should work [font-awesome]",
                     "description": "Icon getter should work [font-awesome]",
-                    "id": "spec61",
+                    "id": "spec60",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1573,7 +1543,7 @@
                     "suite": [
                         "IconComponent"
                     ],
-                    "time": 127,
+                    "time": 77,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1588,7 +1558,7 @@
                 {
                     "fullName": "InputDateTimeComponent should create",
                     "description": "should create",
-                    "id": "spec62",
+                    "id": "spec61",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1597,7 +1567,7 @@
                     "suite": [
                         "InputDateTimeComponent"
                     ],
-                    "time": 171,
+                    "time": 79,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1612,7 +1582,7 @@
                 {
                     "fullName": "InputComponent should create",
                     "description": "should create",
-                    "id": "spec63",
+                    "id": "spec62",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1620,78 +1590,6 @@
                     "success": true,
                     "suite": [
                         "InputComponent"
-                    ],
-                    "time": 26,
-                    "executedExpectationsCount": 1,
-                    "passedExpectations": [
-                        {
-                            "matcherName": "toBeTruthy",
-                            "message": "Passed.",
-                            "stack": "",
-                            "passed": true
-                        }
-                    ],
-                    "properties": null
-                },
-                {
-                    "fullName": "MainViewComponent should create",
-                    "description": "should create",
-                    "id": "spec64",
-                    "log": [],
-                    "skipped": false,
-                    "disabled": false,
-                    "pending": false,
-                    "success": true,
-                    "suite": [
-                        "MainViewComponent"
-                    ],
-                    "time": 97,
-                    "executedExpectationsCount": 1,
-                    "passedExpectations": [
-                        {
-                            "matcherName": "toBeTruthy",
-                            "message": "Passed.",
-                            "stack": "",
-                            "passed": true
-                        }
-                    ],
-                    "properties": null
-                },
-                {
-                    "fullName": "NavElementWorkspaceComponent should create",
-                    "description": "should create",
-                    "id": "spec65",
-                    "log": [],
-                    "skipped": false,
-                    "disabled": false,
-                    "pending": false,
-                    "success": true,
-                    "suite": [
-                        "NavElementWorkspaceComponent"
-                    ],
-                    "time": 39,
-                    "executedExpectationsCount": 1,
-                    "passedExpectations": [
-                        {
-                            "matcherName": "toBeTruthy",
-                            "message": "Passed.",
-                            "stack": "",
-                            "passed": true
-                        }
-                    ],
-                    "properties": null
-                },
-                {
-                    "fullName": "NavElementComponent should create",
-                    "description": "should create",
-                    "id": "spec66",
-                    "log": [],
-                    "skipped": false,
-                    "disabled": false,
-                    "pending": false,
-                    "success": true,
-                    "suite": [
-                        "NavElementComponent"
                     ],
                     "time": 14,
                     "executedExpectationsCount": 1,
@@ -1706,9 +1604,81 @@
                     "properties": null
                 },
                 {
+                    "fullName": "MainViewComponent should create",
+                    "description": "should create",
+                    "id": "spec63",
+                    "log": [],
+                    "skipped": false,
+                    "disabled": false,
+                    "pending": false,
+                    "success": true,
+                    "suite": [
+                        "MainViewComponent"
+                    ],
+                    "time": 66,
+                    "executedExpectationsCount": 1,
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBeTruthy",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "properties": null
+                },
+                {
+                    "fullName": "NavElementWorkspaceComponent should create",
+                    "description": "should create",
+                    "id": "spec64",
+                    "log": [],
+                    "skipped": false,
+                    "disabled": false,
+                    "pending": false,
+                    "success": true,
+                    "suite": [
+                        "NavElementWorkspaceComponent"
+                    ],
+                    "time": 17,
+                    "executedExpectationsCount": 1,
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBeTruthy",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "properties": null
+                },
+                {
+                    "fullName": "NavElementComponent should create",
+                    "description": "should create",
+                    "id": "spec65",
+                    "log": [],
+                    "skipped": false,
+                    "disabled": false,
+                    "pending": false,
+                    "success": true,
+                    "suite": [
+                        "NavElementComponent"
+                    ],
+                    "time": 10,
+                    "executedExpectationsCount": 1,
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toBeTruthy",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "properties": null
+                },
+                {
                     "fullName": "OptionComponent should create",
                     "description": "should create",
-                    "id": "spec67",
+                    "id": "spec66",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1732,7 +1702,7 @@
                 {
                     "fullName": "SelectComponent should create",
                     "description": "should create",
-                    "id": "spec68",
+                    "id": "spec67",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1741,7 +1711,7 @@
                     "suite": [
                         "SelectComponent"
                     ],
-                    "time": 8,
+                    "time": 6,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1756,7 +1726,7 @@
                 {
                     "fullName": "SidebarNavigationComponent should create",
                     "description": "should create",
-                    "id": "spec69",
+                    "id": "spec68",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1765,7 +1735,7 @@
                     "suite": [
                         "SidebarNavigationComponent"
                     ],
-                    "time": 81,
+                    "time": 56,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1780,7 +1750,7 @@
                 {
                     "fullName": "SnackbarOutletComponent should create",
                     "description": "should create",
-                    "id": "spec70",
+                    "id": "spec69",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1789,7 +1759,7 @@
                     "suite": [
                         "SnackbarOutletComponent"
                     ],
-                    "time": 4,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1804,7 +1774,7 @@
                 {
                     "fullName": "SnackbarComponent should create",
                     "description": "should create",
-                    "id": "spec71",
+                    "id": "spec70",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1813,7 +1783,7 @@
                     "suite": [
                         "SnackbarComponent"
                     ],
-                    "time": 5,
+                    "time": 4,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1828,7 +1798,7 @@
                 {
                     "fullName": "TextareaComponent should create",
                     "description": "should create",
-                    "id": "spec72",
+                    "id": "spec71",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1837,7 +1807,7 @@
                     "suite": [
                         "TextareaComponent"
                     ],
-                    "time": 435,
+                    "time": 234,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1852,7 +1822,7 @@
                 {
                     "fullName": "UpperNavigationComponent should create",
                     "description": "should create",
-                    "id": "spec73",
+                    "id": "spec72",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1861,7 +1831,7 @@
                     "suite": [
                         "UpperNavigationComponent"
                     ],
-                    "time": 35,
+                    "time": 10,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1876,7 +1846,7 @@
                 {
                     "fullName": "AlertComponent should create",
                     "description": "should create",
-                    "id": "spec74",
+                    "id": "spec73",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1885,7 +1855,7 @@
                     "suite": [
                         "AlertComponent"
                     ],
-                    "time": 17,
+                    "time": 7,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1900,7 +1870,7 @@
                 {
                     "fullName": "Directive: ClickStopPropagation should create an instance",
                     "description": "should create an instance",
-                    "id": "spec75",
+                    "id": "spec74",
                     "log": [],
                     "skipped": false,
                     "disabled": false,
@@ -1922,6 +1892,30 @@
                     "properties": null
                 },
                 {
+                    "fullName": "Directive: ClickStopPropagation should stop propagation",
+                    "description": "should stop propagation",
+                    "id": "spec75",
+                    "log": [],
+                    "skipped": false,
+                    "disabled": false,
+                    "pending": false,
+                    "success": true,
+                    "suite": [
+                        "Directive: ClickStopPropagation"
+                    ],
+                    "time": 1,
+                    "executedExpectationsCount": 1,
+                    "passedExpectations": [
+                        {
+                            "matcherName": "toHaveBeenCalled",
+                            "message": "Passed.",
+                            "stack": "",
+                            "passed": true
+                        }
+                    ],
+                    "properties": null
+                },
+                {
                     "fullName": "Directive: Let should create an instance",
                     "description": "should create an instance",
                     "id": "spec76",
@@ -1933,7 +1927,7 @@
                     "suite": [
                         "Directive: Let"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -1957,7 +1951,7 @@
                     "suite": [
                         "MockPage"
                     ],
-                    "time": 4,
+                    "time": 3,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2029,7 +2023,7 @@
                     "suite": [
                         "Service: Api"
                     ],
-                    "time": 3,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2077,7 +2071,7 @@
                     "suite": [
                         "Service: Api"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2149,7 +2143,7 @@
                     "suite": [
                         "Service: Dialog"
                     ],
-                    "time": 4,
+                    "time": 3,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2173,7 +2167,7 @@
                     "suite": [
                         "Service: RouterExtensions"
                     ],
-                    "time": 4,
+                    "time": 2,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2197,7 +2191,7 @@
                     "suite": [
                         "Service: Snackbar"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2221,7 +2215,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2245,7 +2239,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2293,7 +2287,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2341,7 +2335,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2389,7 +2383,7 @@
                     "suite": [
                         "Test email validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2461,7 +2455,7 @@
                     "suite": [
                         "Test length limit validator"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2533,7 +2527,7 @@
                     "suite": [
                         "Test password validator"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2605,7 +2599,7 @@
                     "suite": [
                         "Test required validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2629,7 +2623,7 @@
                     "suite": [
                         "Test required validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2653,7 +2647,7 @@
                     "suite": [
                         "Test required validator"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2701,7 +2695,7 @@
                     "suite": [
                         "Test required validator"
                     ],
-                    "time": 0,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2749,7 +2743,7 @@
                     "suite": [
                         "AppComponent"
                     ],
-                    "time": 34,
+                    "time": 14,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2773,7 +2767,7 @@
                     "suite": [
                         "AppComponent"
                     ],
-                    "time": 9,
+                    "time": 6,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2797,7 +2791,7 @@
                     "suite": [
                         "AppComponent"
                     ],
-                    "time": 10,
+                    "time": 9,
                     "executedExpectationsCount": 2,
                     "passedExpectations": [
                         {
@@ -2827,7 +2821,7 @@
                     "suite": [
                         "ChangePasswordPage"
                     ],
-                    "time": 68,
+                    "time": 57,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2851,7 +2845,7 @@
                     "suite": [
                         "DeleteAccountPage"
                     ],
-                    "time": 24,
+                    "time": 15,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2875,7 +2869,7 @@
                     "suite": [
                         "ForgotPasswordComponent"
                     ],
-                    "time": 91,
+                    "time": 36,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2899,7 +2893,7 @@
                     "suite": [
                         "LoginPage"
                     ],
-                    "time": 70,
+                    "time": 55,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2923,7 +2917,7 @@
                     "suite": [
                         "RegisterPage"
                     ],
-                    "time": 102,
+                    "time": 47,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2947,7 +2941,7 @@
                     "suite": [
                         "RestoreAccountPage"
                     ],
-                    "time": 22,
+                    "time": 16,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2971,7 +2965,7 @@
                     "suite": [
                         "Service: AuthService"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -2995,7 +2989,7 @@
                     "suite": [
                         "Service: User"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3019,7 +3013,7 @@
                     "suite": [
                         "IntegrationGithubComponent"
                     ],
-                    "time": 48,
+                    "time": 18,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3043,7 +3037,7 @@
                     "suite": [
                         "MemberListComponent"
                     ],
-                    "time": 19,
+                    "time": 12,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3067,7 +3061,7 @@
                     "suite": [
                         "ViewOptionsComponent"
                     ],
-                    "time": 33,
+                    "time": 14,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3091,7 +3085,7 @@
                     "suite": [
                         "AddMemberDialog"
                     ],
-                    "time": 49,
+                    "time": 30,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3115,7 +3109,7 @@
                     "suite": [
                         "CreateProjectMembersPage"
                     ],
-                    "time": 21,
+                    "time": 15,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3139,7 +3133,7 @@
                     "suite": [
                         "CreateProjectPage"
                     ],
-                    "time": 72,
+                    "time": 40,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3163,7 +3157,7 @@
                     "suite": [
                         "CreateWorkspaceComponent"
                     ],
-                    "time": 45,
+                    "time": 31,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3187,7 +3181,7 @@
                     "suite": [
                         "EditProjectMembersPage"
                     ],
-                    "time": 32,
+                    "time": 19,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3211,7 +3205,7 @@
                     "suite": [
                         "EditProjectComponent"
                     ],
-                    "time": 88,
+                    "time": 52,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3235,7 +3229,7 @@
                     "suite": [
                         "EditWorkspacePage"
                     ],
-                    "time": 52,
+                    "time": 35,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3259,7 +3253,7 @@
                     "suite": [
                         "GithubIntegrationPage"
                     ],
-                    "time": 10,
+                    "time": 7,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3283,7 +3277,7 @@
                     "suite": [
                         "ProjectsListComponent"
                     ],
-                    "time": 43,
+                    "time": 42,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3307,7 +3301,7 @@
                     "suite": [
                         "WorkspacesListPage"
                     ],
-                    "time": 39,
+                    "time": 26,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3331,7 +3325,7 @@
                     "suite": [
                         "Service: GitIntegration"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3379,7 +3373,7 @@
                     "suite": [
                         "Service: Project"
                     ],
-                    "time": 5,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3403,7 +3397,7 @@
                     "suite": [
                         "Service: Workspace"
                     ],
-                    "time": 2,
+                    "time": 1,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3427,7 +3421,7 @@
                     "suite": [
                         "LandingPageComponent"
                     ],
-                    "time": 4,
+                    "time": 3,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3451,7 +3445,7 @@
                     "suite": [
                         "IntegrationEntryComponent"
                     ],
-                    "time": 38,
+                    "time": 8,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3475,7 +3469,7 @@
                     "suite": [
                         "ListGroupComponent"
                     ],
-                    "time": 5,
+                    "time": 4,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3499,7 +3493,7 @@
                     "suite": [
                         "SettingsAccountComponent"
                     ],
-                    "time": 76,
+                    "time": 47,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3523,7 +3517,7 @@
                     "suite": [
                         "SettingsIntegrationsPage"
                     ],
-                    "time": 14,
+                    "time": 11,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3547,7 +3541,7 @@
                     "suite": [
                         "SettingsLocalizationPage"
                     ],
-                    "time": 70,
+                    "time": 48,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3571,7 +3565,7 @@
                     "suite": [
                         "SettingsSessionsPage"
                     ],
-                    "time": 19,
+                    "time": 13,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3595,7 +3589,7 @@
                     "suite": [
                         "SettingsComponent"
                     ],
-                    "time": 44,
+                    "time": 16,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3643,7 +3637,7 @@
                     "suite": [
                         "BoardTaskComponent"
                     ],
-                    "time": 7,
+                    "time": 6,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3667,7 +3661,7 @@
                     "suite": [
                         "InputAssigneeComponent"
                     ],
-                    "time": 138,
+                    "time": 88,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3691,7 +3685,7 @@
                     "suite": [
                         "StatusLabelComponent"
                     ],
-                    "time": 138,
+                    "time": 83,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3715,7 +3709,7 @@
                     "suite": [
                         "ViewOptionsComponent"
                     ],
-                    "time": 9,
+                    "time": 6,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3739,7 +3733,7 @@
                     "suite": [
                         "TaskDialog"
                     ],
-                    "time": 18,
+                    "time": 161,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3763,7 +3757,7 @@
                     "suite": [
                         "BoardComponent"
                     ],
-                    "time": 52,
+                    "time": 28,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3787,7 +3781,7 @@
                     "suite": [
                         "SchedulePage"
                     ],
-                    "time": 53,
+                    "time": 25,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3811,7 +3805,7 @@
                     "suite": [
                         "TaskListComponent"
                     ],
-                    "time": 34,
+                    "time": 22,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3931,7 +3925,7 @@
                     "suite": [
                         "Pipe: TaskType"
                     ],
-                    "time": 1,
+                    "time": 0,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
@@ -3979,7 +3973,7 @@
                     "suite": [
                         "Service: Task"
                     ],
-                    "time": 2,
+                    "time": 3,
                     "executedExpectationsCount": 1,
                     "passedExpectations": [
                         {
