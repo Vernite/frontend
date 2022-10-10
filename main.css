@@ -3161,6 +3161,10 @@ code.hljs{padding:3px 5px}
   --color-red-600: #dc2626;
   --color-red-700: #b91c1c;
   --color-red-800: #991b1b;
+  --color-green-500: #10b981;
+  --color-green-600: #059669;
+  --color-green-700: #047857;
+  --color-green-800: #065f46;
   --color-purple-100: #f5d0fe;
   --color-purple-200: #f0abfc;
   --color-purple-300: #e879f9;
@@ -4170,6 +4174,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-5{margin-bottom:1.25rem !important}
 .mt-5{margin-top:1.25rem !important}
 .mb-10{margin-bottom:2.5rem !important}
+.mt-3{margin-top:0.75rem !important}
 .mt-4{margin-top:1rem !important}
 .mb-3{margin-bottom:0.75rem !important}
 .mr-3{margin-right:0.75rem !important}
