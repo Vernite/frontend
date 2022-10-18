@@ -3629,12 +3629,23 @@ app-input.full-width .form-field .mat-form-field {
 .mat-table.cdk-table.mat-table .mat-header-row .mat-header-cell::after {
   bottom: 0;
 }
+.mat-row,
 .mat-table.cdk-table.mat-table .mat-row {
   overflow: hidden;
 }
+.mat-row:hover > td,
 .mat-table.cdk-table.mat-table .mat-row:hover > td {
   background-color: var(--color-table-row-hover-background);
 }
+.mat-row.cdk-drag,
+.mat-table.cdk-table.mat-table .mat-row.cdk-drag {
+  cursor: move;
+}
+.mat-row.cdk-drag-placeholder,
+.mat-table.cdk-table.mat-table .mat-row.cdk-drag-placeholder {
+  visibility: hidden;
+}
+.mat-row .mat-cell,
 .mat-table.cdk-table.mat-table .mat-row .mat-cell {
   font-size: var(--text-base-font-size);
   font-weight: var(--text-base-font-weight);
@@ -3645,16 +3656,20 @@ app-input.full-width .form-field .mat-form-field {
   color: var(--color-text);
   transition: background-color 0.2s ease-in-out;
 }
+.mat-row .mat-cell:first-child,
 .mat-table.cdk-table.mat-table .mat-row .mat-cell:first-child {
   border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
+.mat-row .mat-cell:last-child,
 .mat-table.cdk-table.mat-table .mat-row .mat-cell:last-child {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
+.mat-row .mat-cell.action-cell,
 .mat-table.cdk-table.mat-table .mat-row .mat-cell.action-cell {
   width: 0;
   padding-right: 12px;
 }
+.mat-row .mat-cell.clickable-cell,
 .mat-table.cdk-table.mat-table .mat-row .mat-cell.clickable-cell {
   cursor: pointer;
 }
@@ -4179,12 +4194,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .fixed{position:fixed !important}
 .relative{position:relative !important}
 .ml-2{margin-left:0.5rem !important}
-.mb-5{margin-bottom:1.25rem !important}
-.mt-5{margin-top:1.25rem !important}
-.mb-10{margin-bottom:2.5rem !important}
-.mt-3{margin-top:0.75rem !important}
-.mt-4{margin-top:1rem !important}
 .mb-3{margin-bottom:0.75rem !important}
+.mt-3{margin-top:0.75rem !important}
+.mb-5{margin-bottom:1.25rem !important}
+.mb-10{margin-bottom:2.5rem !important}
+.mt-4{margin-top:1rem !important}
 .mr-3{margin-right:0.75rem !important}
 .mb-2{margin-bottom:0.5rem !important}
 .block{display:block !important}
@@ -4202,12 +4216,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-end{justify-content:flex-end !important}
 .justify-center{justify-content:center !important}
 .justify-between{justify-content:space-between !important}
+.p-5{padding:1.25rem !important}
 .p-0{padding:0px !important}
+.pr-5{padding-right:1.25rem !important}
 .font-normal{font-weight:400 !important}
 .font-bold{font-weight:700 !important}
 .font-extrabold{font-weight:800 !important}
 .font-black{font-weight:900 !important}
 .italic{font-style:italic !important}
+.ordinal{--tw-ordinal:ordinal !important;font-feature-settings:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction) !important;font-variant-numeric:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction) !important}
 .text-green-500{--tw-text-opacity:1 !important;color:rgb(34 197 94 / var(--tw-text-opacity)) !important}
 .opacity-50{opacity:0.5 !important}
 .outline{outline-style:solid !important}
