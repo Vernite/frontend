@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.41% </span>
+                <span class="strong">33.89% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/53</span>
+                <span class='fraction'>20/59</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">18.75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/14</span>
+                <span class='fraction'>3/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.63% </span>
+                <span class="strong">24% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/22</span>
+                <span class='fraction'>6/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.08% </span>
+                <span class="strong">33.96% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/48</span>
+                <span class='fraction'>18/53</span>
             </div>
         
             
@@ -338,7 +338,31 @@
 <a name='L273'></a><a href='#L273'>273</a>
 <a name='L274'></a><a href='#L274'>274</a>
 <a name='L275'></a><a href='#L275'>275</a>
-<a name='L276'></a><a href='#L276'>276</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -609,6 +633,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -617,15 +653,20 @@
 import { ProjectMember } from '@dashboard/interfaces/project-member.interface';
 import { Project } from '@dashboard/interfaces/project.interface';
 import { MemberService } from '@dashboard/services/member/member.service';
+import { Enum } from '@main/classes/enum.class';
+import { Service } from '@main/decorators/service/service.decorator';
 import { AlertDialogVariant } from '@main/dialogs/alert/alert.dialog';
 import { Filter } from '@main/interfaces/filters.interface';
 import { applyFilters } from '@main/operators/apply-filters.operator';
 import { DialogOutlet, DialogService } from '@main/services/dialog/dialog.service';
 import { SnackbarService } from '@main/services/snackbar/snackbar.service';
 import { TaskDialog, TaskDialogData, TaskDialogVariant } from '@tasks/dialogs/task/task.dialog';
+import { TaskType, TaskTypeHierarchy } from '@tasks/enums/task-type.enum';
 import { Schedule } from '@tasks/interfaces/schedule.interface';
 import * as dayjs from 'dayjs';
+import { isNumber } from 'lodash-es';
 import {
+  BehaviorSubject,
   combineLatest,
   EMPTY,
   map,
@@ -639,6 +680,7 @@ import {
 import { ApiService } from '../../_main/services/api/api.service';
 import { Task } from '../interfaces/task.interface';
 &nbsp;
+@Service()
 @Injectable({
   providedIn: 'root',
 })
@@ -807,11 +849,11 @@ export class TaskService {
         {
           variant: TaskDialogVariant.CREATE,
           projectId: projectId,
-          subtask: true,
+          parentTask: parentTask,
           task: {
             parentTaskId: parentTask.id,
           },
-        },
+        } as TaskDialogData,
         DialogOutlet.CONTENT_RIGHT,
       )
       .afterClosed()
@@ -887,6 +929,18 @@ export class TaskService {
       body: { statusId },
     });
   }
+&nbsp;
+  public listTaskTypes(parentTaskType?: TaskType) {
+    const parentTaskTypeNormal = isNumber(parentTaskType) ? <span class="branch-0 cbranch-no" title="branch not covered" >parentTaskType </span>: -1;
+    const desiredTaskTypes = TaskTypeHierarchy[parentTaskTypeNormal];
+    const taskTypesEntries = Enum.entries(TaskType);
+&nbsp;
+    return new BehaviorSubject(
+      desiredTaskTypes.map(
+        (taskType) =&gt; taskTypesEntries.find(([_, value]) =&gt; value === taskType)!,
+      ),
+    );
+  }
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -895,7 +949,7 @@ export class TaskService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Oct 22 2022 17:24:40 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 27 2022 13:00:12 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.2% </span>
+                <span class="strong">49.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>31/63</span>
+                <span class='fraction'>30/61</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.73% </span>
+                <span class="strong">28% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/23</span>
+                <span class='fraction'>7/25</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.54% </span>
+                <span class="strong">54.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/55</span>
+                <span class='fraction'>29/53</span>
             </div>
         
             
@@ -231,11 +231,8 @@
 <a name='L166'></a><a href='#L166'>166</a>
 <a name='L167'></a><a href='#L167'>167</a>
 <a name='L168'></a><a href='#L168'>168</a>
-<a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a>
-<a name='L171'></a><a href='#L171'>171</a>
-<a name='L172'></a><a href='#L172'>172</a>
-<a name='L173'></a><a href='#L173'>173</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L169'></a><a href='#L169'>169</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -282,7 +279,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -308,9 +304,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -320,10 +313,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -397,7 +390,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -421,7 +413,7 @@ import { RouterExtensionsService } from '@main/services/router-extensions/router
 import { FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { TaskPriority } from '@tasks/enums/task-priority.enum';
-import { SubTaskType, TaskType } from '@tasks/enums/task-type.enum';
+import { TaskType } from '@tasks/enums/task-type.enum';
 import { Status } from '@tasks/interfaces/status.interface';
 import { StatusService } from '@tasks/services/status.service';
 import { isNil } from 'lodash-es';
@@ -429,6 +421,7 @@ import { distinctUntilChanged, map, Observable, pairwise } from 'rxjs';
 import { requiredValidator } from '../../../_main/validators/required.validator';
 import { Task } from '../../interfaces/task.interface';
 import { unixTimestamp } from '../../../_main/interfaces/date.interface';
+import { TaskService } from '@tasks/services/task.service';
 &nbsp;
 export enum TaskDialogVariant {
   CREATE = 'create',
@@ -440,7 +433,7 @@ export interface TaskDialogData {
   projectId?: number;
   variant: TaskDialogVariant;
   task?: Partial&lt;Task&gt;;
-  subtask?: boolean;
+  parentTask?: Task;
 }
 &nbsp;
 @UntilDestroy()
@@ -452,8 +445,7 @@ export interface TaskDialogData {
 export class TaskDialog implements OnInit {
   TaskDialogVariant = TaskDialogVariant;
 &nbsp;
-  public taskTypes = Enum.entries(TaskType);
-  public subTaskTypes = Enum.entries(SubTaskType);
+  public taskTypes$ = this.taskService.listTaskTypes(this.data.parentTask<span class="branch-1 cbranch-no" title="branch not covered" >?.type)</span>;
   public taskPriorities = Object.values(TaskPriority);
 &nbsp;
   public statusList$!: Observable&lt;Status[]&gt;;
@@ -467,10 +459,7 @@ export class TaskDialog implements OnInit {
   public form = new FormGroup({
     id: new FormControl&lt;number | null&gt;(null),
     parentTaskId: new FormControl&lt;number | null&gt;(null),
-    type: new FormControl&lt;TaskType | SubTaskType&gt;(
-      this.data.subtask ? <span class="branch-0 cbranch-no" title="branch not covered" >SubTaskType.SUBTASK </span>: TaskType.TASK,
-      [requiredValidator()],
-    ),
+    type: new FormControl&lt;TaskType&gt;(this.taskTypes$.value[0][1], [requiredValidator()]),
     name: new FormControl&lt;string&gt;('', [requiredValidator()]),
     statusId: new FormControl&lt;number | null&gt;(null, [requiredValidator()]),
     projectId: new FormControl&lt;number | null&gt;(null, [requiredValidator()]),
@@ -492,10 +481,10 @@ export class TaskDialog implements OnInit {
     private workspaceService: WorkspaceService,
     private gitIntegrationService: GitIntegrationService,
     private routerExtensions: RouterExtensionsService,
+    private taskService: TaskService,
   ) {}
 &nbsp;
   ngOnInit() {
-    console.log('ngOnInit');
     this.loadParamsFromUrl();
 &nbsp;
     const { workspaceId, projectId, task } = this.data;
@@ -569,7 +558,6 @@ export class TaskDialog implements OnInit {
   }
 &nbsp;
 <span class="fstat-no" title="function not covered" >  confirm(</span>) {
-<span class="cstat-no" title="statement not covered" >    console.log();</span>
 <span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (validateForm(this.form)) {</span>
 <span class="cstat-no" title="statement not covered" >      this.dialogRef.close(this.form.value);</span>
     }
@@ -586,7 +574,7 @@ export class TaskDialog implements OnInit {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Oct 22 2022 17:24:40 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 27 2022 13:00:12 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

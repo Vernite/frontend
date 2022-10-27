@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -138,11 +138,7 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,13 +148,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -212,16 +204,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { isNumber } from 'lodash-es';
+&nbsp;
+/**
  * Utility enum functions for typescript
  */
 export class Enum {
@@ -230,14 +224,8 @@ export class Enum {
    * @param enumType enum to test
    * @returns true or false based on whether enum has numeric values
    */
-  public static isNumeric(enumType: any): boolean {
-    for (const key of Object.keys(enumType)) {
-      if (Number(key)) {
-        return true;
-      }
-    }
-&nbsp;
-    return false;
+  public static isNumeric(enumType: {}): enumType is { [key: string]: number } {
+    return Object.values(enumType).some((val) =&gt; isNumber(val));
   }
 &nbsp;
   /**
@@ -252,8 +240,8 @@ export class Enum {
    * Enum.keys(TestEnum) // ['One', 'Two', 'Three']
    * @returns array of enum keys
    */
-  public static keys(enumType: any): string[] {
-    return Object.keys(enumType).filter((k) =&gt; !Number(k) &amp;&amp; k != '0');
+  public static keys&lt;T&gt;(enumType: T): Array&lt;keyof T&gt; {
+    return Object.keys(enumType).filter((k) =&gt; !Number(k) &amp;&amp; k != '0') as (keyof T)[];
   }
 &nbsp;
   /**
@@ -268,14 +256,14 @@ export class Enum {
    * Enum.values(TestEnum) // [1, 2, 3]
    * @returns array of enum values
    */
-  public static values(enumType: any): any[] {
+  public static values&lt;T&gt;(enumType: T): (string | number)[] {
     if (!Enum.isNumeric(enumType)) {
       return Object.values(enumType);
     }
 &nbsp;
     return Object.values(enumType)
-      .filter((v) =&gt; Number(v) || v === '0')
-      .map((v) =&gt; Number(v));
+      .filter((v) =&gt; Number(v))
+      .map((v) =&gt; Number(v)) as any;
   }
 &nbsp;
   /**
@@ -290,14 +278,14 @@ export class Enum {
    * Enum.entries(TestEnum) // [['One', 1], ['Two', 2], ['Three', 3]]
    * @returns array of enum entries
    */
-  public static entries(enumType: any): [string, any][] {
+  public static entries&lt;T&gt;(enumType: T): [keyof T, T[keyof T]][] {
     if (!Enum.isNumeric(enumType)) {
-      return Object.entries(enumType);
+      return Object.entries(enumType) as [keyof T, T[keyof T]][];
     }
 &nbsp;
     return Object.entries(enumType)
-      .filter((e) =&gt; Number(e[1]) || e[1] === '0' || e[1] === 0)
-      .map((e) =&gt; [e[0], Number(e[1])]);
+      .filter((e) =&gt; isNumber(e[1]))
+      .map((e) =&gt; [e[0], Number(e[1])]) as any as [keyof T, T[keyof T]][];
   }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -307,7 +295,7 @@ export class Enum {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Oct 22 2022 17:24:40 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 27 2022 13:00:12 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
