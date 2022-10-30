@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>2/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/7</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">11.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/9</span>
+                <span class='fraction'>1/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -135,18 +135,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -154,7 +146,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,7 +154,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,11 +194,11 @@ export class TaskTypePipe implements PipeTransform {
   transform(value: any, type?: 'name' | 'icon'): string;
   transform(value: any, type: 'color'): Color;
 &nbsp;
-  transform(value: any, type: 'color' | 'name' | 'icon' = 'name'): string | Color {
-    switch (value as TaskType) {
+<span class="fstat-no" title="function not covered" >  transform(</span>value: any, type: 'color' | 'name' | 'icon' = <span class="branch-0 cbranch-no" title="branch not covered" >'name')</span>: string | Color {
+<span class="cstat-no" title="statement not covered" >    switch (value as TaskType) {</span>
       // Task
       case TaskType.TASK:
-        return {
+<span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`Task`,
           color: Color.rgb(52, 152, 219),
           icon: 'cuTask',
@@ -206,7 +206,7 @@ export class TaskTypePipe implements PipeTransform {
 &nbsp;
       // User story
       case TaskType.USER_STORY:
-        return {
+<span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`User story`,
           color: Color.rgb(46, 204, 113),
           icon: 'cuUserStory',
@@ -214,7 +214,7 @@ export class TaskTypePipe implements PipeTransform {
 &nbsp;
       // Issue
       case TaskType.ISSUE:
-        return {
+<span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`Issue`,
           color: Color.rgb(231, 76, 60),
           icon: 'cuIssue',
@@ -222,14 +222,14 @@ export class TaskTypePipe implements PipeTransform {
 &nbsp;
       // Epic
       case TaskType.EPIC:
-        return {
+<span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`Epic`,
           color: Color.rgb(155, 89, 182),
           icon: 'cuEpic',
         }[type];
 &nbsp;
       // Subtask
-<span class="branch-4 cbranch-no" title="branch not covered" >      case TaskType.SUBTASK:</span>
+      case TaskType.SUBTASK:
 <span class="cstat-no" title="statement not covered" >        return {</span>
           name: $localize`Subtask`,
           color: Color.rgb(88, 183, 189),
@@ -237,7 +237,7 @@ export class TaskTypePipe implements PipeTransform {
         }[type];
 &nbsp;
       // Unknown
-<span class="branch-5 cbranch-no" title="branch not covered" >      default:</span>
+      default:
 <span class="cstat-no" title="statement not covered" >        console.warn('Unknown task type:', value);</span>
 <span class="cstat-no" title="statement not covered" >        return value;</span>
     }
@@ -250,7 +250,7 @@ export class TaskTypePipe implements PipeTransform {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Oct 27 2022 13:43:11 GMT+0000 (Coordinated Universal Time)
+                at Sun Oct 30 2022 17:33:44 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
