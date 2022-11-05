@@ -3289,6 +3289,26 @@ body.preload * {
   /* stylelint-disable-next-line property-no-vendor-prefix */
   transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
 }
+::-webkit-scrollbar {
+  width: 14px;
+  height: 18px;
+}
+::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 7px;
+  -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 body {
   --border-radius: 7px;
   --color-text: var(--color-neutral-800);
@@ -3400,7 +3420,7 @@ mat-form-field.mat-form-field-appearance-outline .mat-form-field-flex .mat-form-
   content: "";
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.1s ease;
 }
 mat-form-field.mat-form-field-appearance-outline .mat-form-field-flex .mat-form-field-outline-thick > * {
   background-color: var(--color-input-background);
@@ -3678,7 +3698,7 @@ app-input.full-width .form-field .mat-form-field {
   border: none;
   background-color: var(--color-table-row-background);
   color: var(--color-text);
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
 }
 .mat-row .mat-cell:first-child,
 .mat-table.cdk-table.mat-table .mat-row .mat-cell:first-child {
@@ -3702,7 +3722,10 @@ div.mat-menu-panel {
   background-color: var(--color-menu-background);
 }
 div.mat-menu-panel button.mat-menu-item {
-  transition: background-color 0.2s;
+  transition: background-color 0.1s;
+}
+div.mat-menu-panel button.mat-menu-item span {
+  font-family: var(--font-family);
 }
 div.mat-menu-panel button.mat-menu-item mat-icon.mat-icon,
 div.mat-menu-panel button.mat-menu-item span {
@@ -3802,7 +3825,7 @@ mat-checkbox.mat-checkbox .mat-checkbox-frame {
   border-width: 1px;
   border-color: var(--color-input-border);
   background-color: var(--color-input-background);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.1s ease;
 }
 app-checkbox.ng-touched.ng-invalid .mat-checkbox-frame {
   border-color: var(--color-red-600);
@@ -3883,7 +3906,7 @@ app-checkbox.ng-touched.ng-invalid .mat-checkbox-frame {
   margin-top: 1rem;
   background-color: var(--color-table-row-background);
   border-radius: var(--border-radius);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.1s ease;
 }
 .table .row:hover {
   background-color: var(--color-table-row-hover-background);
@@ -4246,6 +4269,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-end{justify-content:flex-end !important}
 .justify-center{justify-content:center !important}
 .justify-between{justify-content:space-between !important}
+.bg-transparent{background-color:transparent !important}
+.p-3{padding:0.75rem !important}
 .p-5{padding:1.25rem !important}
 .p-0{padding:0px !important}
 .pr-5{padding-right:1.25rem !important}
