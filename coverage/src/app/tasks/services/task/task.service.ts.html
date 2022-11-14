@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.66% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/60</span>
+                <span class='fraction'>12/60</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">10.71% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/27</span>
+                <span class='fraction'>3/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.64% </span>
+                <span class="strong">20.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/53</span>
+                <span class='fraction'>11/53</span>
             </div>
         
             
@@ -389,9 +389,14 @@
 <a name='L324'></a><a href='#L324'>324</a>
 <a name='L325'></a><a href='#L325'>325</a>
 <a name='L326'></a><a href='#L326'>326</a>
-<a name='L327'></a><a href='#L327'>327</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -431,7 +436,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -481,6 +487,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -717,7 +731,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable, Injector } from '@angular/core';
 import { ProjectMember } from '@dashboard/interfaces/project-member.interface';
-import { Project } from '@dashboard/interfaces/project.interface';
 import { MemberService } from '@dashboard/services/member/member.service';
 import { Enum } from '@main/classes/enum.class';
 import { Cache } from '@main/decorators/cache/cache.decorator';
@@ -742,7 +755,6 @@ import {
   map,
   Observable,
   of,
-  ReplaySubject,
   switchMap,
   take,
   tap,
@@ -753,16 +765,17 @@ import {
   providedIn: 'root',
 })
 export class TaskService extends BaseService&lt;
-  Errors&lt;'FORM_VALIDATION_ERROR' | 'PROJECT_NOT_FOUND'&gt;
+  Errors&lt;'FORM_VALIDATION_ERROR' | 'PROJECT_NOT_FOUND' | 'PROJECT_OR_TASK_NOT_FOUND'&gt;
 &gt; {
-  private lists = new Map&lt;Project['id'], ReplaySubject&lt;Task[]&gt;&gt;();
-&nbsp;
   protected override errorCodes = {
     FORM_VALIDATION_ERROR: {
       message: $localize`Form validation error`,
     },
     PROJECT_NOT_FOUND: {
       message: $localize`Project not found`,
+    },
+    PROJECT_OR_TASK_NOT_FOUND: {
+      message: $localize`Project or task not found`,
     },
   };
 &nbsp;
@@ -807,6 +820,14 @@ export class TaskService extends BaseService&lt;
       }),
       tap(<span class="fstat-no" title="function not covered" >() =</span>&gt; {
 <span class="cstat-no" title="statement not covered" >        this.snackbarService.show($localize`Task created successfully!`);</span>
+      }),
+    );
+  }
+&nbsp;
+  public <span class="fstat-no" title="function not covered" >get(</span>projectId: number, taskId: number): Observable&lt;Task&gt; {
+<span class="cstat-no" title="statement not covered" >    return this.apiService.get&lt;Task&gt;(`/project/${projectId}/task/${taskId}`).pipe(</span>
+      this.validate({
+        404: 'PROJECT_OR_TASK_NOT_FOUND',
       }),
     );
   }
@@ -1048,7 +1069,7 @@ export class TaskService extends BaseService&lt;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Nov 05 2022 19:35:34 GMT+0000 (Coordinated Universal Time)
+                at Mon Nov 14 2022 13:19:08 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
