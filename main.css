@@ -3289,26 +3289,6 @@ body.preload * {
   /* stylelint-disable-next-line property-no-vendor-prefix */
   transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
 }
-::-webkit-scrollbar {
-  width: 14px;
-  height: 18px;
-}
-::-webkit-scrollbar-thumb {
-  height: 6px;
-  border: 4px solid rgba(0, 0, 0, 0);
-  background-clip: padding-box;
-  background-color: rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 7px;
-  -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
-}
-::-webkit-scrollbar-button {
-  display: none;
-  width: 0;
-  height: 0;
-}
-::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
 body {
   --border-radius: 7px;
   --color-text: var(--color-neutral-800);
@@ -3926,6 +3906,84 @@ app-checkbox.ng-touched.ng-invalid .mat-checkbox-frame {
 .table .row .cell.action {
   width: 100px;
 }
+.markdown-preview {
+  color: var(--color-text);
+}
+.markdown-preview h1 {
+  font-size: 2em;
+}
+.markdown-preview h2 {
+  font-size: 1.8em;
+}
+.markdown-preview h3 {
+  font-size: 1.6em;
+}
+.markdown-preview h4 {
+  font-size: 1.4em;
+}
+.markdown-preview h5 {
+  font-size: 1.2em;
+}
+.markdown-preview h6 {
+  font-size: 1em;
+}
+.markdown-preview hr {
+  margin: 1rem 0;
+  opacity: 0.5;
+}
+.markdown-preview blockquote {
+  display: inline-block;
+  padding-left: 1rem;
+  border-left: 2px solid var(--color-secondary-200);
+}
+.markdown-preview ul,
+.markdown-preview ol,
+.markdown-preview menu {
+  padding-left: 40px;
+  margin: 10px 0;
+  list-style: initial;
+}
+.markdown-preview ol {
+  list-style: decimal;
+}
+.markdown-preview a {
+  color: var(--color-purple-300);
+  text-decoration: underline;
+}
+.markdown-preview code {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--color-secondary-600);
+  border-radius: 2px;
+}
+.markdown-preview table td,
+.markdown-preview table th {
+  padding: 0.5rem;
+  border: 0.1rem solid var(--color-secondary-600);
+}
+.markdown-preview .emoji {
+  display: inline-block;
+}
+::-webkit-scrollbar {
+  width: 14px;
+  height: 18px;
+}
+::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 7px;
+  -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 /*! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com*/
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -4267,6 +4325,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-full{width:100% !important}
 .w-52{width:13rem !important}
 .w-40{width:10rem !important}
+.w-96{width:24rem !important}
 .grow{flex-grow:1 !important}
 .transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important}
 .resize{resize:both !important}
@@ -4292,7 +4351,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ordinal{--tw-ordinal:ordinal !important;font-feature-settings:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction) !important;font-variant-numeric:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction) !important}
 .text-green-500{--tw-text-opacity:1 !important;color:rgb(34 197 94 / var(--tw-text-opacity)) !important}
 .opacity-50{opacity:0.5 !important}
-.outline{outline-style:solid !important}
 .blur{--tw-blur:blur(8px) !important;filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important}
 .filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important}
 html,
