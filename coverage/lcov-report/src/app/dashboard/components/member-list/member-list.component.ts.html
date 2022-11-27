@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/12</span>
+                <span class='fraction'>6/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/7</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/8</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
@@ -92,10 +92,7 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,6 +101,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -114,22 +112,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input } from '@angular/core';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ProjectMember } from '@dashboard/interfaces/project-member.interface';
-import { MemberService } from '@dashboard/services/member/member.service';
 import { isString } from 'lodash-es';
 &nbsp;
 @Component({
@@ -141,6 +134,8 @@ export class MemberListComponent {
   @Input() projectId?: number;
   @Input() members: (ProjectMember | string)[] = [];
 &nbsp;
+  @Output() remove = new EventEmitter&lt;number | string&gt;();
+&nbsp;
   public get oldMembers(): ProjectMember[] {
     return this.members.filter(<span class="fstat-no" title="function not covered" >(m</span>) =&gt; <span class="cstat-no" title="statement not covered" >!isString(m))</span> as ProjectMember[];
   }
@@ -149,14 +144,10 @@ export class MemberListComponent {
     return this.members.filter(<span class="fstat-no" title="function not covered" >(m</span>) =&gt; <span class="cstat-no" title="statement not covered" >isString(m))</span> as string[];
   }
 &nbsp;
-  constructor(private memberService: MemberService) {}
+  constructor() {}
 &nbsp;
-<span class="fstat-no" title="function not covered" >  deleteMember(</span>id: number[]) {
-<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.projectId) <span class="cstat-no" title="statement not covered" >return;</span></span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    this.memberService.remove(this.projectId, id).subscribe(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      location.reload();</span>
-    });
+<span class="fstat-no" title="function not covered" >  deleteMember(</span>idOrName: number | string) {
+<span class="cstat-no" title="statement not covered" >    this.remove.emit(idOrName);</span>
   }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -166,7 +157,7 @@ export class MemberListComponent {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun Nov 27 2022 12:51:20 GMT+0000 (Coordinated Universal Time)
+                at Sun Nov 27 2022 15:48:25 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
