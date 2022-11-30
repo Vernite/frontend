@@ -3177,6 +3177,14 @@ code.hljs{padding:3px 5px}
   --color-purple-600: #a21caf;
   --color-purple-700: #86198f;
   --color-purple-800: #701a75;
+  --color-yellow-100: #fffbea;
+  --color-yellow-200: #fff3c4;
+  --color-yellow-300: #fced9f;
+  --color-yellow-400: #f9e16e;
+  --color-yellow-500: #f6d047;
+  --color-yellow-600: #f5c518;
+  --color-yellow-700: #f4b400;
+  --color-yellow-800: #f59f00;
 }
 /**
  * This typography specification is based on: https://spectrum.adobe.com/page/typography/
@@ -4306,6 +4314,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .static{position:static !important}
 .fixed{position:fixed !important}
 .relative{position:relative !important}
+.my-1{margin-top:0.25rem !important;margin-bottom:0.25rem !important}
 .mr-3{margin-right:0.75rem !important}
 .mt-3{margin-top:0.75rem !important}
 .ml-2{margin-left:0.5rem !important}
@@ -4327,6 +4336,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid{display:grid !important}
 .hidden{display:none !important}
 .w-full{width:100% !important}
+.w-10{width:2.5rem !important}
 .w-52{width:13rem !important}
 .w-40{width:10rem !important}
 .w-96{width:24rem !important}
@@ -4340,6 +4350,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-end{justify-content:flex-end !important}
 .justify-center{justify-content:center !important}
 .justify-between{justify-content:space-between !important}
+.gap-2{gap:0.5rem !important}
 .gap-3{gap:0.75rem !important}
 .bg-transparent{background-color:transparent !important}
 .p-3{padding:0.75rem !important}
@@ -4357,6 +4368,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ordinal{--tw-ordinal:ordinal !important;font-feature-settings:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction) !important;font-variant-numeric:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction) !important}
 .text-green-500{--tw-text-opacity:1 !important;color:rgb(34 197 94 / var(--tw-text-opacity)) !important}
 .opacity-50{opacity:0.5 !important}
+.opacity-20{opacity:0.2 !important}
 .blur{--tw-blur:blur(8px) !important;filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important}
 .filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important}
 html,
