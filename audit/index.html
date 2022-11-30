@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css" integrity="sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD" crossorigin="anonymous">
 
     <title>Yarn Audit Report</title>
-    <meta name="description" content="94 known vulnerabilities found.">
+    <meta name="description" content="106 known vulnerabilities found.">
 
     <style>
         html {
@@ -80,8 +80,8 @@
             <h1>Yarn Audit Report</h1>
 
             <h3>
-                17 unique from
-                94 known vulnerabilities |
+                18 unique from
+                106 known vulnerabilities |
                 3181 dependencies
             </h3>
         </div>
@@ -1205,6 +1205,337 @@ decoder.add(Buffer.from(&quot;world&quot;));
                     <div class="card-body">
                         <h1 class="card-title">
                             <span class="badge badge-warning">high</span>
+                            Regular Expression Denial of Service in trim
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/trim" target="_blank">trim</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 0.0.1</li>
+                                    
+                                    <li>Published: 5/10/2021, 6:44:22 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2020-7753</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;0.0.3</li>
+                                    <li>Patched: &gt;=0.0.3</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>All versions of package trim lower than 0.0.3 are vulnerable to Regular Expression Denial of Service (ReDoS) via trim().</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 0.0.3 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-7753">https://nvd.nist.gov/vuln/detail/CVE-2020-7753</a></li>
+<li><a href="https://github.com/component/trim/pull/8">https://github.com/component/trim/pull/8</a></li>
+<li><a href="https://github.com/component/trim/blob/master/index.js">https://github.com/component/trim/blob/master/index.js</a></li>
+<li><a href="https://github.com/component/trim/blob/master/index.js%23L6">https://github.com/component/trim/blob/master/index.js%23L6</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1022132">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1022132</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JS-TRIM-1017038">https://snyk.io/vuln/SNYK-JS-TRIM-1017038</a></li>
+<li><a href="https://lists.apache.org/thread.html/r10faad1ef9166d37a1a5c9142b1af7099b8ecdc5ad05c51b8ea993d9@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/r10faad1ef9166d37a1a5c9142b1af7099b8ecdc5ad05c51b8ea993d9@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread.html/r51ff3c2a4c7b8402f321eae7e624672cc2295c7bc8c12c8b871f6b0b@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/r51ff3c2a4c7b8402f321eae7e624672cc2295c7bc8c12c8b871f6b0b@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread.html/r75b8d0b88833d7d96afcdce3ead65e212572ead4e7a9f34d21040196@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/r75b8d0b88833d7d96afcdce3ead65e212572ead4e7a9f34d21040196@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread.html/rb8462df3b6484e778905c09cd49a8912e1a302659860017ebe36da03@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/rb8462df3b6484e778905c09cd49a8912e1a302659860017ebe36da03@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread.html/rcc7c2865a52b544a8e49386c6880e9b9ab29bfce1052b5569d09ee4a@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/rcc7c2865a52b544a8e49386c6880e9b9ab29bfce1052b5569d09ee4a@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://github.com/advisories/GHSA-w5p7-h5w8-2hfq">https://github.com/advisories/GHSA-w5p7-h5w8-2hfq</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-12" type="checkbox">
+                            <h3><label for="vulnerability-reasons-12">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-docs&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-parse&gt;trim</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-docs&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-mdx&gt;remark-parse&gt;trim</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/csf-tools&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-parse&gt;trim</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/csf-tools&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-mdx&gt;remark-parse&gt;trim</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-w5p7-h5w8-2hfq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            Uncontrolled Resource Consumption in trim-newlines
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/trim-newlines" target="_blank">trim-newlines</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 1.0.0</li>
+                                    
+                                    <li>Published: 6/7/2021, 10:10:39 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2021-33623</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;3.0.1</li>
+                                    <li>Patched: &gt;=3.0.1</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>@rkesters/gnuplot is an easy to use node module to draw charts using gnuplot and ps2pdf. The trim-newlines package before 3.0.1 and 4.x before 4.0.1 for Node.js has an issue related to regular expression denial-of-service (ReDoS) for the .end() method.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 3.0.1 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-33623">https://nvd.nist.gov/vuln/detail/CVE-2021-33623</a></li>
+<li><a href="https://github.com/sindresorhus/trim-newlines/commit/25246c6ce5eea1c82d448998733a6302a4350d91">https://github.com/sindresorhus/trim-newlines/commit/25246c6ce5eea1c82d448998733a6302a4350d91</a></li>
+<li><a href="https://github.com/sindresorhus/trim-newlines/releases/tag/v4.0.1">https://github.com/sindresorhus/trim-newlines/releases/tag/v4.0.1</a></li>
+<li><a href="https://www.npmjs.com/package/trim-newlines">https://www.npmjs.com/package/trim-newlines</a></li>
+<li><a href="https://security.netapp.com/advisory/ntap-20210702-0007/">https://security.netapp.com/advisory/ntap-20210702-0007/</a></li>
+<li><a href="https://github.com/advisories/GHSA-7p7h-4mm5-852v">https://github.com/advisories/GHSA-7p7h-4mm5-852v</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-13" type="checkbox">
+                            <h3><label for="vulnerability-reasons-13">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;x-default-browser&gt;default-browser-id&gt;meow&gt;trim-newlines</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-7p7h-4mm5-852v" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            Terser insecure use of regular expressions before v4.8.1 and v5.14.2 leads to ReDoS
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/terser" target="_blank">terser</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 4.8.0</li>
+                                    
+                                    <li>Published: 7/16/2022, 12:00:20 AM</li>
+                                    
+                                    <li></li>
+                                    
+                                        <li>CVE-2022-25858</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;4.8.1</li>
+                                    <li>Patched: &gt;=4.8.1</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>The package terser before 4.8.1, from 5.0.0 and before 5.14.2 are vulnerable to Regular Expression Denial of Service (ReDoS) due to insecure usage of regular expressions.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 4.8.1 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25858">https://nvd.nist.gov/vuln/detail/CVE-2022-25858</a></li>
+<li><a href="https://github.com/terser/terser/commit/a4da7349fdc92c05094f41d33d06d8cd4e90e76b">https://github.com/terser/terser/commit/a4da7349fdc92c05094f41d33d06d8cd4e90e76b</a></li>
+<li><a href="https://github.com/terser/terser/commit/d8cc5691be980d663c29cc4d5ce67e852d597012">https://github.com/terser/terser/commit/d8cc5691be980d663c29cc4d5ce67e852d597012</a></li>
+<li><a href="https://github.com/terser/terser/blob/master/lib/compress/evaluate.js%23L135">https://github.com/terser/terser/blob/master/lib/compress/evaluate.js%23L135</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2949722">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2949722</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JS-TERSER-2806366">https://snyk.io/vuln/SNYK-JS-TERSER-2806366</a></li>
+<li><a href="https://github.com/advisories/GHSA-4wf5-vphf-c2xc">https://github.com/advisories/GHSA-4wf5-vphf-c2xc</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-14" type="checkbox">
+                            <h3><label for="vulnerability-reasons-14">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-4wf5-vphf-c2xc" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 2.0.2</li>
+                                    
+                                    <li>Published: 10/14/2022, 7:00:38 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2022-37603</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.4</li>
+                                    <li>Patched: &gt;=2.0.4</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>A Regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils 2.0.0 via the url variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 2.0.4 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37603">https://nvd.nist.gov/vuln/detail/CVE-2022-37603</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/213">https://github.com/webpack/loader-utils/issues/213</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
+<li><a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488">https://github.com/advisories/GHSA-3rfm-jhwj-7488</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-15" type="checkbox">
+                            <h3><label for="vulnerability-reasons-15">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@jsdevtools/coverage-istanbul-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-devkit/build-angular&gt;resolve-url-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-devkit/build-angular&gt;resolve-url-loader&gt;adjust-sourcemap-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;resolve-url-loader&gt;adjust-sourcemap-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-secondary">moderate</span>
                             Uncaught exception in engine.io 
                         </h1>
                         <div class="row">
@@ -1356,8 +1687,8 @@ Emitted &#39;error&#39; event on Socket instance at:
 </div>
                         
                         
-                            <input id="vulnerability-reasons-12" type="checkbox">
-                            <h3><label for="vulnerability-reasons-12">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-16" type="checkbox">
+                            <h3><label for="vulnerability-reasons-16">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
@@ -1376,336 +1707,117 @@ Emitted &#39;error&#39; event on Socket instance at:
                 <div class="card mb-3">
                     <div class="card-body">
                         <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
-                            Regular Expression Denial of Service in trim
+                            <span class="badge badge-primary">low</span>
+                            decode-uri-component vulnerable to Denial of Service (DoS)
                         </h1>
                         <div class="row">
                             <div class="col-md-6">
                                 <ul>
                                     <li>Module:
-                                        <a href="https://npmjs.com/package/trim" target="_blank">trim</a>
+                                        <a href="https://npmjs.com/package/decode-uri-component" target="_blank">decode-uri-component</a>
                                     </li>
                                     
-                                        <li>Installed version: 0.0.1</li>
+                                        <li>Installed version: 0.2.0</li>
                                     
-                                    <li>Published: 5/10/2021, 6:44:22 PM</li>
+                                    <li>Published: 11/28/2022, 3:30:24 PM</li>
                                     
-                                    <li>CWE-400</li>
+                                    <li>CWE-20</li>
                                     
-                                        <li>CVE-2020-7753</li>
+                                        <li>CVE-2022-38900</li>
                                     
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul>
-                                    <li>Vulnerable: &lt;0.0.3</li>
-                                    <li>Patched: &gt;=0.0.3</li>
+                                    <li>Vulnerable: &lt;=0.2.0</li>
+                                    <li>Patched: &lt;0.0.0</li>
                                     
                                 </ul>
                             </div>
                         </div>
                         <h3>Overview</h3>
-                        <div class="card-text"><p>All versions of package trim lower than 0.0.3 are vulnerable to Regular Expression Denial of Service (ReDoS) via trim().</p>
+                        <div class="card-text"><p>decode-uri-component 0.2.0 is vulnerable to Improper Input Validation resulting in DoS.</p>
 </div>
 
                         
                             <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 0.0.3 or later</p>
+                            <div class="card-text"><p>None</p>
 </div>
                         
                         
                             <h3>References</h3>
                             <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-7753">https://nvd.nist.gov/vuln/detail/CVE-2020-7753</a></li>
-<li><a href="https://github.com/component/trim/pull/8">https://github.com/component/trim/pull/8</a></li>
-<li><a href="https://github.com/component/trim/blob/master/index.js">https://github.com/component/trim/blob/master/index.js</a></li>
-<li><a href="https://github.com/component/trim/blob/master/index.js%23L6">https://github.com/component/trim/blob/master/index.js%23L6</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1022132">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1022132</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JS-TRIM-1017038">https://snyk.io/vuln/SNYK-JS-TRIM-1017038</a></li>
-<li><a href="https://lists.apache.org/thread.html/r10faad1ef9166d37a1a5c9142b1af7099b8ecdc5ad05c51b8ea993d9@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/r10faad1ef9166d37a1a5c9142b1af7099b8ecdc5ad05c51b8ea993d9@%3Ccommits.airflow.apache.org%3E</a></li>
-<li><a href="https://lists.apache.org/thread.html/r51ff3c2a4c7b8402f321eae7e624672cc2295c7bc8c12c8b871f6b0b@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/r51ff3c2a4c7b8402f321eae7e624672cc2295c7bc8c12c8b871f6b0b@%3Ccommits.airflow.apache.org%3E</a></li>
-<li><a href="https://lists.apache.org/thread.html/r75b8d0b88833d7d96afcdce3ead65e212572ead4e7a9f34d21040196@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/r75b8d0b88833d7d96afcdce3ead65e212572ead4e7a9f34d21040196@%3Ccommits.airflow.apache.org%3E</a></li>
-<li><a href="https://lists.apache.org/thread.html/rb8462df3b6484e778905c09cd49a8912e1a302659860017ebe36da03@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/rb8462df3b6484e778905c09cd49a8912e1a302659860017ebe36da03@%3Ccommits.airflow.apache.org%3E</a></li>
-<li><a href="https://lists.apache.org/thread.html/rcc7c2865a52b544a8e49386c6880e9b9ab29bfce1052b5569d09ee4a@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/rcc7c2865a52b544a8e49386c6880e9b9ab29bfce1052b5569d09ee4a@%3Ccommits.airflow.apache.org%3E</a></li>
-<li><a href="https://github.com/advisories/GHSA-w5p7-h5w8-2hfq">https://github.com/advisories/GHSA-w5p7-h5w8-2hfq</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-38900">https://nvd.nist.gov/vuln/detail/CVE-2022-38900</a></li>
+<li><a href="https://github.com/SamVerschueren/decode-uri-component/issues/5">https://github.com/SamVerschueren/decode-uri-component/issues/5</a></li>
+<li><a href="https://github.com/sindresorhus/query-string/issues/345">https://github.com/sindresorhus/query-string/issues/345</a></li>
+<li><a href="https://github.com/advisories/GHSA-w573-4hg7-7wgq">https://github.com/advisories/GHSA-w573-4hg7-7wgq</a></li>
 </ul>
 </div>
                         
                         
-                            <input id="vulnerability-reasons-13" type="checkbox">
-                            <h3><label for="vulnerability-reasons-13">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-17" type="checkbox">
+                            <h3><label for="vulnerability-reasons-17">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/addon-docs&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-parse&gt;trim</code>
+                                        <code>@angular-devkit/build-angular&gt;stylus&gt;css&gt;source-map-resolve&gt;decode-uri-component</code>
                                     </div>
                                 
                                     <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/addon-docs&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-mdx&gt;remark-parse&gt;trim</code>
+                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;stylus&gt;css&gt;source-map-resolve&gt;decode-uri-component</code>
                                     </div>
                                 
                                     <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/csf-tools&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-parse&gt;trim</code>
+                                        <code>@storybook/angular&gt;fork-ts-checker-webpack-plugin&gt;micromatch&gt;extglob&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
                                     </div>
                                 
                                     <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/csf-tools&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-mdx&gt;remark-parse&gt;trim</code>
+                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;micromatch&gt;extglob&gt;expand-brackets&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;anymatch&gt;micromatch&gt;extglob&gt;expand-brackets&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;anymatch&gt;micromatch&gt;extglob&gt;expand-brackets&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;anymatch&gt;micromatch&gt;extglob&gt;expand-brackets&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;anymatch&gt;micromatch&gt;extglob&gt;expand-brackets&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
                                     </div>
                                 
                             </div>
                         
 
-                        <a href="https://github.com/advisories/GHSA-w5p7-h5w8-2hfq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
-                            Uncontrolled Resource Consumption in trim-newlines
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/trim-newlines" target="_blank">trim-newlines</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 1.0.0</li>
-                                    
-                                    <li>Published: 6/7/2021, 10:10:39 PM</li>
-                                    
-                                    <li>CWE-400</li>
-                                    
-                                        <li>CVE-2021-33623</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &lt;3.0.1</li>
-                                    <li>Patched: &gt;=3.0.1</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>@rkesters/gnuplot is an easy to use node module to draw charts using gnuplot and ps2pdf. The trim-newlines package before 3.0.1 and 4.x before 4.0.1 for Node.js has an issue related to regular expression denial-of-service (ReDoS) for the .end() method.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 3.0.1 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-33623">https://nvd.nist.gov/vuln/detail/CVE-2021-33623</a></li>
-<li><a href="https://github.com/sindresorhus/trim-newlines/commit/25246c6ce5eea1c82d448998733a6302a4350d91">https://github.com/sindresorhus/trim-newlines/commit/25246c6ce5eea1c82d448998733a6302a4350d91</a></li>
-<li><a href="https://github.com/sindresorhus/trim-newlines/releases/tag/v4.0.1">https://github.com/sindresorhus/trim-newlines/releases/tag/v4.0.1</a></li>
-<li><a href="https://www.npmjs.com/package/trim-newlines">https://www.npmjs.com/package/trim-newlines</a></li>
-<li><a href="https://security.netapp.com/advisory/ntap-20210702-0007/">https://security.netapp.com/advisory/ntap-20210702-0007/</a></li>
-<li><a href="https://github.com/advisories/GHSA-7p7h-4mm5-852v">https://github.com/advisories/GHSA-7p7h-4mm5-852v</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-14" type="checkbox">
-                            <h3><label for="vulnerability-reasons-14">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;x-default-browser&gt;default-browser-id&gt;meow&gt;trim-newlines</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-7p7h-4mm5-852v" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
-                            Terser insecure use of regular expressions before v4.8.1 and v5.14.2 leads to ReDoS
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/terser" target="_blank">terser</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 4.8.0</li>
-                                    
-                                    <li>Published: 7/16/2022, 12:00:20 AM</li>
-                                    
-                                    <li></li>
-                                    
-                                        <li>CVE-2022-25858</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &lt;4.8.1</li>
-                                    <li>Patched: &gt;=4.8.1</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>The package terser before 4.8.1, from 5.0.0 and before 5.14.2 are vulnerable to Regular Expression Denial of Service (ReDoS) due to insecure usage of regular expressions.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 4.8.1 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25858">https://nvd.nist.gov/vuln/detail/CVE-2022-25858</a></li>
-<li><a href="https://github.com/terser/terser/commit/a4da7349fdc92c05094f41d33d06d8cd4e90e76b">https://github.com/terser/terser/commit/a4da7349fdc92c05094f41d33d06d8cd4e90e76b</a></li>
-<li><a href="https://github.com/terser/terser/commit/d8cc5691be980d663c29cc4d5ce67e852d597012">https://github.com/terser/terser/commit/d8cc5691be980d663c29cc4d5ce67e852d597012</a></li>
-<li><a href="https://github.com/terser/terser/blob/master/lib/compress/evaluate.js%23L135">https://github.com/terser/terser/blob/master/lib/compress/evaluate.js%23L135</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2949722">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2949722</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JS-TERSER-2806366">https://snyk.io/vuln/SNYK-JS-TERSER-2806366</a></li>
-<li><a href="https://github.com/advisories/GHSA-4wf5-vphf-c2xc">https://github.com/advisories/GHSA-4wf5-vphf-c2xc</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-15" type="checkbox">
-                            <h3><label for="vulnerability-reasons-15">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-4wf5-vphf-c2xc" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
-                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 2.0.2</li>
-                                    
-                                    <li>Published: 10/14/2022, 7:00:38 PM</li>
-                                    
-                                    <li>CWE-400</li>
-                                    
-                                        <li>CVE-2022-37603</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.4</li>
-                                    <li>Patched: &gt;=2.0.4</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>A Regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils 2.0.0 via the url variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 2.0.4 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37603">https://nvd.nist.gov/vuln/detail/CVE-2022-37603</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/213">https://github.com/webpack/loader-utils/issues/213</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
-<li><a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488">https://github.com/advisories/GHSA-3rfm-jhwj-7488</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-16" type="checkbox">
-                            <h3><label for="vulnerability-reasons-16">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>@jsdevtools/coverage-istanbul-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;resolve-url-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;resolve-url-loader&gt;adjust-sourcemap-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;resolve-url-loader&gt;adjust-sourcemap-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                        <a href="https://github.com/advisories/GHSA-w573-4hg7-7wgq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
                     </div>
                 </div>
             </div>
         
         
 
-        <h6 class="col-md-12 mb-0 pb=3 text-right">Report generated at 11/28/2022, 1:04:45 PM</h6>
+        <h6 class="col-md-12 mb-0 pb=3 text-right">Report generated at 11/30/2022, 1:05:04 PM</h6>
     </div>
 </div>
 </body>
