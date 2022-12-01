@@ -4352,6 +4352,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between{justify-content:space-between !important}
 .gap-2{gap:0.5rem !important}
 .gap-3{gap:0.75rem !important}
+.rounded{border-radius:0.25rem !important}
 .bg-transparent{background-color:transparent !important}
 .p-3{padding:0.75rem !important}
 .p-5{padding:1.25rem !important}

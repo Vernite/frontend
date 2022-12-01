@@ -166,14 +166,7 @@
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -199,6 +192,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">19x</span>
@@ -220,25 +220,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -308,42 +294,34 @@ import { ControlAccessor } from '../../classes/control-accessor.class';
   styleUrls: ['./input.component.scss'],
 })
 export class InputComponent extends ControlAccessor implements AfterViewInit {
-  /**
-   * Type of the input
-   */
+  /** Type of the input */
   @Input() type: 'text' | 'number' | 'email' | 'password' = 'text';
 &nbsp;
-  /**
-   * Floating label text to display
-   */
+  /** Floating label text to display */
   @Input() floatingLabel?: string;
 &nbsp;
-  /**
-   * Static label text to display
-   */
+  /** Static label text to display */
   @Input() staticLabel?: string;
 &nbsp;
-  /**
-   * Input placeholder text
-   */
+  /** Input placeholder text */
   @Input() placeholder: string = '';
 &nbsp;
-  /**
-   * Hint to display beneath the input to provide additional information of how to use the input
-   */
+  /** Hint to display beneath the input to provide additional information of how to use the input */
   @Input() hint?: string;
 &nbsp;
-  /**
-   * Attribute to disable value edition without any visual changes
-   */
+  /** Attribute to disable value edition without any visual changes */
   @Input() readonly?: boolean;
 &nbsp;
+  /** Property to define if host should be resized if error is shown underneath */
   @Input() allowResizeByError?: boolean;
 &nbsp;
+  /** Property to display loader in input */
   @Input() pending?: boolean;
 &nbsp;
+  /** Text alignment in input */
   @Input() align: 'left' | 'center' = 'left';
 &nbsp;
+  /** focus event emitter */
   // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() focus: EventEmitter&lt;boolean&gt; = new EventEmitter&lt;boolean&gt;();
 &nbsp;
@@ -353,6 +331,7 @@ export class InputComponent extends ControlAccessor implements AfterViewInit {
   /** @ignore */
   @ViewChild('input') input!: ElementRef&lt;HTMLInputElement&gt;;
 &nbsp;
+  /** Boolean to define if value was autofilled by browser mechanisms */
   public autofilledByBrowser: boolean = false;
 &nbsp;
   constructor(
@@ -400,7 +379,7 @@ export class InputComponent extends ControlAccessor implements AfterViewInit {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Nov 30 2022 19:50:44 GMT+0000 (Coordinated Universal Time)
+                at Thu Dec 01 2022 14:10:36 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
