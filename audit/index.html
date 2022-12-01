@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css" integrity="sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD" crossorigin="anonymous">
 
     <title>Yarn Audit Report</title>
-    <meta name="description" content="106 known vulnerabilities found.">
+    <meta name="description" content="48 known vulnerabilities found.">
 
     <style>
         html {
@@ -80,9 +80,9 @@
             <h1>Yarn Audit Report</h1>
 
             <h3>
-                18 unique from
-                106 known vulnerabilities |
-                3181 dependencies
+                12 unique from
+                48 known vulnerabilities |
+                3326 dependencies
             </h3>
         </div>
     </div>
@@ -102,7 +102,7 @@
                                         <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
                                     </li>
                                     
-                                        <li>Installed version: 1.4.0</li>
+                                        <li>Installed version: 2.0.2</li>
                                     
                                     <li>Published: 10/13/2022, 12:00:28 PM</li>
                                     
@@ -114,8 +114,8 @@
                             </div>
                             <div class="col-md-6">
                                 <ul>
-                                    <li>Vulnerable: &lt;1.4.1</li>
-                                    <li>Patched: &gt;=1.4.1</li>
+                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.3</li>
+                                    <li>Patched: &gt;=2.0.3</li>
                                     
                                 </ul>
                             </div>
@@ -126,7 +126,7 @@
 
                         
                             <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 1.4.1 or later</p>
+                            <div class="card-text"><p>Upgrade to version 2.0.3 or later</p>
 </div>
                         
                         
@@ -150,11 +150,27 @@
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
+                                        <code>babel-loader&gt;loader-utils</code>
                                     </div>
                                 
                                     <div class="card-text">
-                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
+                                        <code>@angular-devkit/build-angular&gt;resolve-url-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-devkit/build-angular&gt;resolve-url-loader&gt;adjust-sourcemap-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;resolve-url-loader&gt;adjust-sourcemap-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
                                     </div>
                                 
                             </div>
@@ -242,52 +258,55 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h1 class="card-title">
-                            <span class="badge badge-danger">critical</span>
-                            ejs template injection vulnerability
+                            <span class="badge badge-warning">high</span>
+                            glob-parent before 5.1.2 vulnerable to Regular Expression Denial of Service in enclosure regex
                         </h1>
                         <div class="row">
                             <div class="col-md-6">
                                 <ul>
                                     <li>Module:
-                                        <a href="https://npmjs.com/package/ejs" target="_blank">ejs</a>
+                                        <a href="https://npmjs.com/package/glob-parent" target="_blank">glob-parent</a>
                                     </li>
                                     
-                                        <li>Installed version: 3.1.6</li>
+                                        <li>Installed version: 3.1.0</li>
                                     
-                                    <li>Published: 4/26/2022, 12:00:40 AM</li>
+                                    <li>Published: 6/7/2021, 9:56:34 PM</li>
                                     
-                                    <li>CWE-74</li>
+                                    <li>CWE-400</li>
                                     
-                                        <li>CVE-2022-29078</li>
+                                        <li>CVE-2020-28469</li>
                                     
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul>
-                                    <li>Vulnerable: &lt;3.1.7</li>
-                                    <li>Patched: &gt;=3.1.7</li>
+                                    <li>Vulnerable: &lt;5.1.2</li>
+                                    <li>Patched: &gt;=5.1.2</li>
                                     
                                 </ul>
                             </div>
                         </div>
                         <h3>Overview</h3>
-                        <div class="card-text"><p>The ejs (aka Embedded JavaScript templates) package 3.1.6 for Node.js allows server-side template injection in settings[view options][outputFunctionName]. This is parsed as an internal option, and overwrites the outputFunctionName option with an arbitrary OS command (which is executed upon template compilation).</p>
+                        <div class="card-text"><p>This affects the package glob-parent before 5.1.2. The enclosure regex used to check for strings ending in enclosure containing path separator.</p>
 </div>
 
                         
                             <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 3.1.7 or later</p>
+                            <div class="card-text"><p>Upgrade to version 5.1.2 or later</p>
 </div>
                         
                         
                             <h3>References</h3>
                             <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-29078">https://nvd.nist.gov/vuln/detail/CVE-2022-29078</a></li>
-<li><a href="https://eslam.io/posts/ejs-server-side-template-injection-rce/">https://eslam.io/posts/ejs-server-side-template-injection-rce/</a></li>
-<li><a href="https://github.com/mde/ejs/commit/15ee698583c98dadc456639d6245580d17a24baf">https://github.com/mde/ejs/commit/15ee698583c98dadc456639d6245580d17a24baf</a></li>
-<li><a href="https://github.com/mde/ejs/releases">https://github.com/mde/ejs/releases</a></li>
-<li><a href="https://security.netapp.com/advisory/ntap-20220804-0001/">https://security.netapp.com/advisory/ntap-20220804-0001/</a></li>
-<li><a href="https://github.com/advisories/GHSA-phwq-j96m-2c2q">https://github.com/advisories/GHSA-phwq-j96m-2c2q</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-28469">https://nvd.nist.gov/vuln/detail/CVE-2020-28469</a></li>
+<li><a href="https://github.com/gulpjs/glob-parent/pull/36">https://github.com/gulpjs/glob-parent/pull/36</a></li>
+<li><a href="https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9">https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9</a></li>
+<li><a href="https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2">https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905">https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905</a></li>
+<li><a href="https://www.oracle.com/security-alerts/cpujan2022.html">https://www.oracle.com/security-alerts/cpujan2022.html</a></li>
+<li><a href="https://github.com/advisories/GHSA-ww39-953v-wcq6">https://github.com/advisories/GHSA-ww39-953v-wcq6</a></li>
 </ul>
 </div>
                         
@@ -297,238 +316,29 @@
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
-                                        <code>@angular-eslint/builder&gt;@nrwl/devkit&gt;ejs</code>
+                                        <code>lcov-result-merger&gt;vinyl-fs&gt;glob-stream&gt;glob-parent</code>
                                     </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-phwq-j96m-2c2q" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-danger">critical</span>
-                            Insufficient validation when decoding a Socket.IO packet
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/socket.io-parser" target="_blank">socket.io-parser</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 4.0.4</li>
-                                    
-                                    <li>Published: 10/26/2022, 12:00:28 PM</li>
-                                    
-                                    <li>CWE-20,CWE-1287</li>
-                                    
-                                        <li>CVE-2022-2421</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &gt;=4.0.0 &lt;4.0.5</li>
-                                    <li>Patched: &gt;=4.0.5</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>Due to improper type validation in the <code>socket.io-parser</code> library (which is used by the <code>socket.io</code> and <code>socket.io-client</code> packages to encode and decode Socket.IO packets), it is possible to overwrite the _placeholder object which allows an attacker to place references to functions at arbitrary places in the resulting query object.</p>
-<p>Example:</p>
-<pre><code class="language-js">const decoder = new Decoder();
-
-decoder.on(&quot;decoded&quot;, (packet) =&gt; {
- console.log(packet.data); // prints [ &#39;hello&#39;, [Function: splice] ]
-})
-
-decoder.add(&#39;51-[&quot;hello&quot;,{&quot;_placeholder&quot;:true,&quot;num&quot;:&quot;splice&quot;}]&#39;);
-decoder.add(Buffer.from(&quot;world&quot;));
-</code></pre>
-<p>This bubbles up in the <code>socket.io</code> package:</p>
-<pre><code class="language-js">io.on(&quot;connection&quot;, (socket) =&gt; {
- socket.on(&quot;hello&quot;, (val) =&gt; {
- // here, &quot;val&quot; could be a function instead of a buffer
- });
-});
-</code></pre>
-<p>:warning: IMPORTANT NOTE :warning:</p>
-<p>You need to make sure that the payload that you received from the client is actually a <code>Buffer</code> object:</p>
-<pre><code class="language-js">io.on(&quot;connection&quot;, (socket) =&gt; {
- socket.on(&quot;hello&quot;, (val) =&gt; {
- if (!Buffer.isBuffer(val)) {
- socket.disconnect();
- return;
- }
- // ...
- });
-});
-</code></pre>
-<p><strong>If that&#39;s already the case, then you are not impacted by this issue, and there is no way an attacker could make your server crash (or escalate privileges, ...).</strong></p>
-<p>Example of values that could be sent by a malicious user:</p>
-<ul>
-<li>a number that is out of bounds</li>
-</ul>
-<p>Sample packet: <code>451-[&quot;hello&quot;,{&quot;_placeholder&quot;:true,&quot;num&quot;:10}]</code></p>
-<pre><code class="language-js">io.on(&quot;connection&quot;, (socket) =&gt; {
- socket.on(&quot;hello&quot;, (val) =&gt; {
- // val is `undefined`
- });
-});
-</code></pre>
-<ul>
-<li>a value that is not a number, like <code>undefined</code></li>
-</ul>
-<p>Sample packet: <code>451-[&quot;hello&quot;,{&quot;_placeholder&quot;:true,&quot;num&quot;:undefined}]</code></p>
-<pre><code class="language-js">io.on(&quot;connection&quot;, (socket) =&gt; {
- socket.on(&quot;hello&quot;, (val) =&gt; {
- // val is `undefined`
- });
-});
-</code></pre>
-<ul>
-<li>a string that is part of the prototype of <code>Array</code>, like &quot;push&quot;</li>
-</ul>
-<p>Sample packet: <code>451-[&quot;hello&quot;,{&quot;_placeholder&quot;:true,&quot;num&quot;:&quot;push&quot;}]</code></p>
-<pre><code class="language-js">io.on(&quot;connection&quot;, (socket) =&gt; {
- socket.on(&quot;hello&quot;, (val) =&gt; {
- // val is a reference to the &quot;push&quot; function
- });
-});
-</code></pre>
-<ul>
-<li>a string that is part of the prototype of <code>Object</code>, like &quot;hasOwnProperty&quot;</li>
-</ul>
-<p>Sample packet: <code>451-[&quot;hello&quot;,{&quot;_placeholder&quot;:true,&quot;num&quot;:&quot;hasOwnProperty&quot;}]</code></p>
-<pre><code class="language-js">io.on(&quot;connection&quot;, (socket) =&gt; {
- socket.on(&quot;hello&quot;, (val) =&gt; {
- // val is a reference to the &quot;hasOwnProperty&quot; function
- });
-});
-</code></pre>
-<p>This should be fixed by:</p>
-<ul>
-<li><a href="https://github.com/socketio/socket.io-parser/commit/b5d0cb7dc56a0601a09b056beaeeb0e43b160050">https://github.com/socketio/socket.io-parser/commit/b5d0cb7dc56a0601a09b056beaeeb0e43b160050</a>, included in <code>socket.io-parser@4.2.1</code></li>
-<li><a href="https://github.com/socketio/socket.io-parser/commit/b559f050ee02bd90bd853b9823f8de7fa94a80d4">https://github.com/socketio/socket.io-parser/commit/b559f050ee02bd90bd853b9823f8de7fa94a80d4</a>, included in <code>socket.io-parser@4.0.5</code></li>
-<li><a href="https://github.com/socketio/socket.io-parser/commit/04d23cecafe1b859fb03e0cbf6ba3b74dff56d14">https://github.com/socketio/socket.io-parser/commit/04d23cecafe1b859fb03e0cbf6ba3b74dff56d14</a>, included in <code>socket.io-parser@3.4.2</code></li>
-<li><a href="https://github.com/socketio/socket.io-parser/commit/fb21e422fc193b34347395a33e0f625bebc09983">https://github.com/socketio/socket.io-parser/commit/fb21e422fc193b34347395a33e0f625bebc09983</a>, included in <code>socket.io-parser@3.3.3</code></li>
-</ul>
-<h3 id="dependency-analysis-for-the-socketio-package">Dependency analysis for the <code>socket.io</code> package</h3>
-<table>
-<thead>
-<tr>
-<th><code>socket.io</code> version</th>
-<th><code>socket.io-parser</code> version</th>
-<th>Covered?</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>4.5.2...latest</code></td>
-<td><code>~4.2.0</code> (<a href="https://github.com/socketio/socket.io/commit/9890b036cf942f6b6ad2afeb6a8361c32cd5d528">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-<tr>
-<td><code>4.1.3...4.5.1</code></td>
-<td><code>~4.0.4</code> (<a href="https://github.com/socketio/socket.io/commit/7c44893d7878cd5bba1eff43150c3e664f88fb57">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-<tr>
-<td><code>3.0.5...4.1.2</code></td>
-<td><code>~4.0.3</code> (<a href="https://github.com/socketio/socket.io/commit/752dfe3b1e5fecda53dae899b4a39e6fed5a1a17">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-<tr>
-<td><code>3.0.0...3.0.4</code></td>
-<td><code>~4.0.1</code> (<a href="https://github.com/socketio/socket.io/commit/1af3267e3f5f7884214cf2ca4d5282d620092fb0">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-<tr>
-<td><code>2.3.0...2.5.0</code></td>
-<td><code>~3.4.0</code> (<a href="https://github.com/socketio/socket.io/commit/cf39362014f5ff13a17168b74772c43920d6e4fd">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-</tbody></table>
-<h3 id="dependency-analysis-for-the-socketio-client-package">Dependency analysis for the <code>socket.io-client</code> package</h3>
-<table>
-<thead>
-<tr>
-<th><code>socket.io-client</code> version</th>
-<th><code>socket.io-parser</code> version</th>
-<th>Covered?</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>4.5.0...latest</code></td>
-<td><code>~4.2.0</code> (<a href="https://github.com/socketio/socket.io-client/commit/b862924b7f1720979e5db2f0154906b305d420e3">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-<tr>
-<td><code>4.3.0...4.4.1</code></td>
-<td><code>~4.1.1</code> (<a href="https://github.com/socketio/socket.io-client/commit/91b948b8607166fcc79f028a6428819277214188">ref</a>)</td>
-<td>No, but the impact is very limited</td>
-</tr>
-<tr>
-<td><code>3.1.0...4.2.0</code></td>
-<td><code>~4.0.4</code> (<a href="https://github.com/socketio/socket.io-client/commit/5d9b4eb42b1f5778e6f033096694acb331b132c4">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-<tr>
-<td><code>3.0.5</code></td>
-<td><code>~4.0.3</code> (<a href="https://github.com/socketio/socket.io-client/commit/cf9fc358365cc15a41260a51dc186c881bf086ca">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-<tr>
-<td><code>3.0.0...3.0.4</code></td>
-<td><code>~4.0.1</code> (<a href="https://github.com/socketio/socket.io-client/commit/b7e07ba633ceb9c1dc94cc894c10b9bfca536c7a">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-<tr>
-<td><code>2.2.0...2.5.0</code></td>
-<td><code>~3.3.0</code> (<a href="https://github.com/socketio/socket.io-client/commit/06e9a4ca2621176c30c352b2ba8b34fa42b8d0ba">ref</a>)</td>
-<td>Yes :heavy_check_mark:</td>
-</tr>
-</tbody></table>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 4.0.5 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-2421">https://nvd.nist.gov/vuln/detail/CVE-2022-2421</a></li>
-<li><a href="https://csirt.divd.nl/cases/DIVD-2022-00045">https://csirt.divd.nl/cases/DIVD-2022-00045</a></li>
-<li><a href="https://csirt.divd.nl/cves/CVE-2022-2421">https://csirt.divd.nl/cves/CVE-2022-2421</a></li>
-<li><a href="https://github.com/socketio/socket.io-parser/commit/b559f050ee02bd90bd853b9823f8de7fa94a80d4">https://github.com/socketio/socket.io-parser/commit/b559f050ee02bd90bd853b9823f8de7fa94a80d4</a></li>
-<li><a href="https://github.com/socketio/socket.io-parser/commit/b5d0cb7dc56a0601a09b056beaeeb0e43b160050">https://github.com/socketio/socket.io-parser/commit/b5d0cb7dc56a0601a09b056beaeeb0e43b160050</a></li>
-<li><a href="https://github.com/socketio/socket.io-parser/commit/04d23cecafe1b859fb03e0cbf6ba3b74dff56d14">https://github.com/socketio/socket.io-parser/commit/04d23cecafe1b859fb03e0cbf6ba3b74dff56d14</a></li>
-<li><a href="https://github.com/socketio/socket.io-parser/commit/fb21e422fc193b34347395a33e0f625bebc09983">https://github.com/socketio/socket.io-parser/commit/fb21e422fc193b34347395a33e0f625bebc09983</a></li>
-<li><a href="https://github.com/advisories/GHSA-qm95-pgcg-qqfq">https://github.com/advisories/GHSA-qm95-pgcg-qqfq</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-3" type="checkbox">
-                            <h3><label for="vulnerability-reasons-3">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
-                                        <code>karma&gt;socket.io&gt;socket.io-parser</code>
+                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
                                     </div>
                                 
                             </div>
                         
 
-                        <a href="https://github.com/advisories/GHSA-qm95-pgcg-qqfq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                        <a href="https://github.com/advisories/GHSA-ww39-953v-wcq6" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
                     </div>
                 </div>
             </div>
@@ -537,8 +347,8 @@ decoder.add(Buffer.from(&quot;world&quot;));
                 <div class="card mb-3">
                     <div class="card-body">
                         <h1 class="card-title">
-                            <span class="badge badge-danger">critical</span>
-                            Prototype pollution in webpack loader-utils
+                            <span class="badge badge-warning">high</span>
+                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable
                         </h1>
                         <div class="row">
                             <div class="col-md-6">
@@ -549,53 +359,50 @@ decoder.add(Buffer.from(&quot;world&quot;));
                                     
                                         <li>Installed version: 2.0.2</li>
                                     
-                                    <li>Published: 10/13/2022, 12:00:28 PM</li>
+                                    <li>Published: 10/14/2022, 7:00:38 PM</li>
                                     
-                                    <li>CWE-1321</li>
+                                    <li>CWE-400</li>
                                     
-                                        <li>CVE-2022-37601</li>
+                                        <li>CVE-2022-37603</li>
                                     
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul>
-                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.3</li>
-                                    <li>Patched: &gt;=2.0.3</li>
+                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.4</li>
+                                    <li>Patched: &gt;=2.0.4</li>
                                     
                                 </ul>
                             </div>
                         </div>
                         <h3>Overview</h3>
-                        <div class="card-text"><p>Prototype pollution vulnerability in function parseQuery in parseQuery.js in webpack loader-utils prior to version 2.0.3 via the name variable in parseQuery.js.</p>
+                        <div class="card-text"><p>A Regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils 2.0.0 via the url variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
 </div>
 
                         
                             <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 2.0.3 or later</p>
+                            <div class="card-text"><p>Upgrade to version 2.0.4 or later</p>
 </div>
                         
                         
                             <h3>References</h3>
                             <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37601">https://nvd.nist.gov/vuln/detail/CVE-2022-37601</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/212">https://github.com/webpack/loader-utils/issues/212</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L11">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L11</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L47">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L47</a></li>
-<li><a href="https://github.com/webpack/loader-utils/releases/tag/v2.0.3">https://github.com/webpack/loader-utils/releases/tag/v2.0.3</a></li>
-<li><a href="https://github.com/webpack/loader-utils/pull/217">https://github.com/webpack/loader-utils/pull/217</a></li>
-<li><a href="https://github.com/webpack/loader-utils/pull/220">https://github.com/webpack/loader-utils/pull/220</a></li>
-<li><a href="https://github.com/webpack/loader-utils/releases/tag/v1.4.1">https://github.com/webpack/loader-utils/releases/tag/v1.4.1</a></li>
-<li><a href="https://github.com/advisories/GHSA-76p3-8jx3-jpfq">https://github.com/advisories/GHSA-76p3-8jx3-jpfq</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37603">https://nvd.nist.gov/vuln/detail/CVE-2022-37603</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/213">https://github.com/webpack/loader-utils/issues/213</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
+<li><a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488">https://github.com/advisories/GHSA-3rfm-jhwj-7488</a></li>
 </ul>
 </div>
                         
                         
-                            <input id="vulnerability-reasons-4" type="checkbox">
-                            <h3><label for="vulnerability-reasons-4">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-3" type="checkbox">
+                            <h3><label for="vulnerability-reasons-3">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
-                                        <code>@jsdevtools/coverage-istanbul-loader&gt;loader-utils</code>
+                                        <code>babel-loader&gt;loader-utils</code>
                                     </div>
                                 
                                     <div class="card-text">
@@ -621,7 +428,7 @@ decoder.add(Buffer.from(&quot;world&quot;));
                             </div>
                         
 
-                        <a href="https://github.com/advisories/GHSA-76p3-8jx3-jpfq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                        <a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
                     </div>
                 </div>
             </div>
@@ -681,95 +488,12 @@ decoder.add(Buffer.from(&quot;world&quot;));
 </div>
                         
                         
-                            <input id="vulnerability-reasons-5" type="checkbox">
-                            <h3><label for="vulnerability-reasons-5">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-4" type="checkbox">
+                            <h3><label for="vulnerability-reasons-4">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;terser</code>
-                                    </div>
                                 
                                     <div class="card-text">
                                         <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;terser</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-4wf5-vphf-c2xc" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
-                            Terser insecure use of regular expressions before v4.8.1 and v5.14.2 leads to ReDoS
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/terser" target="_blank">terser</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 5.14.1</li>
-                                    
-                                    <li>Published: 7/16/2022, 12:00:20 AM</li>
-                                    
-                                    <li></li>
-                                    
-                                        <li>CVE-2022-25858</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &gt;=5.0.0 &lt;5.14.2</li>
-                                    <li>Patched: &gt;=5.14.2</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>The package terser before 4.8.1, from 5.0.0 and before 5.14.2 are vulnerable to Regular Expression Denial of Service (ReDoS) due to insecure usage of regular expressions.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 5.14.2 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25858">https://nvd.nist.gov/vuln/detail/CVE-2022-25858</a></li>
-<li><a href="https://github.com/terser/terser/commit/a4da7349fdc92c05094f41d33d06d8cd4e90e76b">https://github.com/terser/terser/commit/a4da7349fdc92c05094f41d33d06d8cd4e90e76b</a></li>
-<li><a href="https://github.com/terser/terser/commit/d8cc5691be980d663c29cc4d5ce67e852d597012">https://github.com/terser/terser/commit/d8cc5691be980d663c29cc4d5ce67e852d597012</a></li>
-<li><a href="https://github.com/terser/terser/blob/master/lib/compress/evaluate.js%23L135">https://github.com/terser/terser/blob/master/lib/compress/evaluate.js%23L135</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2949722">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2949722</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JS-TERSER-2806366">https://snyk.io/vuln/SNYK-JS-TERSER-2806366</a></li>
-<li><a href="https://github.com/advisories/GHSA-4wf5-vphf-c2xc">https://github.com/advisories/GHSA-4wf5-vphf-c2xc</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-6" type="checkbox">
-                            <h3><label for="vulnerability-reasons-6">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;terser-webpack-plugin&gt;terser</code>
                                     </div>
                                 
                             </div>
@@ -833,56 +557,12 @@ decoder.add(Buffer.from(&quot;world&quot;));
 </div>
                         
                         
-                            <input id="vulnerability-reasons-7" type="checkbox">
-                            <h3><label for="vulnerability-reasons-7">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-5" type="checkbox">
+                            <h3><label for="vulnerability-reasons-5">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>nyc&gt;test-exclude&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;babel-plugin-istanbul&gt;test-exclude&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;babel-plugin-istanbul&gt;test-exclude&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/addon-docs&gt;@jest/transform&gt;babel-plugin-istanbul&gt;test-exclude&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular/cli&gt;pacote&gt;npm-registry-fetch&gt;make-fetch-happen&gt;cacache&gt;rimraf&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular/cli&gt;pacote&gt;npm-registry-fetch&gt;make-fetch-happen&gt;cacache&gt;@npmcli/move-file&gt;rimraf&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular/cli&gt;pacote&gt;@npmcli/run-script&gt;node-gyp&gt;make-fetch-happen&gt;cacache&gt;@npmcli/move-file&gt;rimraf&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;cacache&gt;move-concurrently&gt;copy-concurrently&gt;rimraf&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;cacache&gt;move-concurrently&gt;copy-concurrently&gt;rimraf&gt;glob&gt;minimatch</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;cacache&gt;move-concurrently&gt;copy-concurrently&gt;rimraf&gt;glob&gt;minimatch</code>
+                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;minimatch</code>
                                     </div>
                                 
                             </div>
@@ -947,13 +627,9 @@ decoder.add(Buffer.from(&quot;world&quot;));
 </div>
                         
                         
-                            <input id="vulnerability-reasons-8" type="checkbox">
-                            <h3><label for="vulnerability-reasons-8">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-6" type="checkbox">
+                            <h3><label for="vulnerability-reasons-6">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;loader-utils</code>
-                                    </div>
                                 
                                     <div class="card-text">
                                         <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;loader-utils</code>
@@ -963,239 +639,6 @@ decoder.add(Buffer.from(&quot;world&quot;));
                         
 
                         <a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
-                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 1.4.0</li>
-                                    
-                                    <li>Published: 10/14/2022, 7:00:38 PM</li>
-                                    
-                                    <li>CWE-400</li>
-                                    
-                                        <li>CVE-2022-37603</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &gt;=1.0.0 &lt;1.4.2</li>
-                                    <li>Patched: &gt;=1.4.2</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>A Regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils 2.0.0 via the url variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 1.4.2 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37603">https://nvd.nist.gov/vuln/detail/CVE-2022-37603</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/213">https://github.com/webpack/loader-utils/issues/213</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
-<li><a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488">https://github.com/advisories/GHSA-3rfm-jhwj-7488</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-9" type="checkbox">
-                            <h3><label for="vulnerability-reasons-9">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
-                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 1.2.3</li>
-                                    
-                                    <li>Published: 10/14/2022, 7:00:38 PM</li>
-                                    
-                                    <li>CWE-400</li>
-                                    
-                                        <li>CVE-2022-37603</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &gt;=1.0.0 &lt;1.4.2</li>
-                                    <li>Patched: &gt;=1.4.2</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>A Regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils 2.0.0 via the url variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 1.4.2 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37603">https://nvd.nist.gov/vuln/detail/CVE-2022-37603</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/213">https://github.com/webpack/loader-utils/issues/213</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
-<li><a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488">https://github.com/advisories/GHSA-3rfm-jhwj-7488</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-10" type="checkbox">
-                            <h3><label for="vulnerability-reasons-10">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>webpack-inject-plugin&gt;loader-utils</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
-                            glob-parent before 5.1.2 vulnerable to Regular Expression Denial of Service in enclosure regex
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/glob-parent" target="_blank">glob-parent</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 3.1.0</li>
-                                    
-                                    <li>Published: 6/7/2021, 9:56:34 PM</li>
-                                    
-                                    <li>CWE-400</li>
-                                    
-                                        <li>CVE-2020-28469</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &lt;5.1.2</li>
-                                    <li>Patched: &gt;=5.1.2</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>This affects the package glob-parent before 5.1.2. The enclosure regex used to check for strings ending in enclosure containing path separator.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 5.1.2 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-28469">https://nvd.nist.gov/vuln/detail/CVE-2020-28469</a></li>
-<li><a href="https://github.com/gulpjs/glob-parent/pull/36">https://github.com/gulpjs/glob-parent/pull/36</a></li>
-<li><a href="https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9">https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9</a></li>
-<li><a href="https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2">https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905">https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905</a></li>
-<li><a href="https://www.oracle.com/security-alerts/cpujan2022.html">https://www.oracle.com/security-alerts/cpujan2022.html</a></li>
-<li><a href="https://github.com/advisories/GHSA-ww39-953v-wcq6">https://github.com/advisories/GHSA-ww39-953v-wcq6</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-11" type="checkbox">
-                            <h3><label for="vulnerability-reasons-11">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>lcov-result-merger&gt;vinyl-fs&gt;glob-stream&gt;glob-parent</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-ww39-953v-wcq6" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
                     </div>
                 </div>
             </div>
@@ -1260,8 +703,8 @@ decoder.add(Buffer.from(&quot;world&quot;));
 </div>
                         
                         
-                            <input id="vulnerability-reasons-12" type="checkbox">
-                            <h3><label for="vulnerability-reasons-12">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-7" type="checkbox">
+                            <h3><label for="vulnerability-reasons-7">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
@@ -1342,8 +785,8 @@ decoder.add(Buffer.from(&quot;world&quot;));
 </div>
                         
                         
-                            <input id="vulnerability-reasons-13" type="checkbox">
-                            <h3><label for="vulnerability-reasons-13">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-8" type="checkbox">
+                            <h3><label for="vulnerability-reasons-8">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
@@ -1363,89 +806,6 @@ decoder.add(Buffer.from(&quot;world&quot;));
                     <div class="card-body">
                         <h1 class="card-title">
                             <span class="badge badge-warning">high</span>
-                            Terser insecure use of regular expressions before v4.8.1 and v5.14.2 leads to ReDoS
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/terser" target="_blank">terser</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 4.8.0</li>
-                                    
-                                    <li>Published: 7/16/2022, 12:00:20 AM</li>
-                                    
-                                    <li></li>
-                                    
-                                        <li>CVE-2022-25858</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &lt;4.8.1</li>
-                                    <li>Patched: &gt;=4.8.1</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>The package terser before 4.8.1, from 5.0.0 and before 5.14.2 are vulnerable to Regular Expression Denial of Service (ReDoS) due to insecure usage of regular expressions.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 4.8.1 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-25858">https://nvd.nist.gov/vuln/detail/CVE-2022-25858</a></li>
-<li><a href="https://github.com/terser/terser/commit/a4da7349fdc92c05094f41d33d06d8cd4e90e76b">https://github.com/terser/terser/commit/a4da7349fdc92c05094f41d33d06d8cd4e90e76b</a></li>
-<li><a href="https://github.com/terser/terser/commit/d8cc5691be980d663c29cc4d5ce67e852d597012">https://github.com/terser/terser/commit/d8cc5691be980d663c29cc4d5ce67e852d597012</a></li>
-<li><a href="https://github.com/terser/terser/blob/master/lib/compress/evaluate.js%23L135">https://github.com/terser/terser/blob/master/lib/compress/evaluate.js%23L135</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2949722">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-2949722</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JS-TERSER-2806366">https://snyk.io/vuln/SNYK-JS-TERSER-2806366</a></li>
-<li><a href="https://github.com/advisories/GHSA-4wf5-vphf-c2xc">https://github.com/advisories/GHSA-4wf5-vphf-c2xc</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-14" type="checkbox">
-                            <h3><label for="vulnerability-reasons-14">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;terser-webpack-plugin&gt;terser</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-4wf5-vphf-c2xc" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
                             loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable
                         </h1>
                         <div class="row">
@@ -1455,7 +815,7 @@ decoder.add(Buffer.from(&quot;world&quot;));
                                         <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
                                     </li>
                                     
-                                        <li>Installed version: 2.0.2</li>
+                                        <li>Installed version: 1.2.3</li>
                                     
                                     <li>Published: 10/14/2022, 7:00:38 PM</li>
                                     
@@ -1467,8 +827,8 @@ decoder.add(Buffer.from(&quot;world&quot;));
                             </div>
                             <div class="col-md-6">
                                 <ul>
-                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.4</li>
-                                    <li>Patched: &gt;=2.0.4</li>
+                                    <li>Vulnerable: &gt;=1.0.0 &lt;1.4.2</li>
+                                    <li>Patched: &gt;=1.4.2</li>
                                     
                                 </ul>
                             </div>
@@ -1479,7 +839,7 @@ decoder.add(Buffer.from(&quot;world&quot;));
 
                         
                             <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 2.0.4 or later</p>
+                            <div class="card-text"><p>Upgrade to version 1.4.2 or later</p>
 </div>
                         
                         
@@ -1495,32 +855,12 @@ decoder.add(Buffer.from(&quot;world&quot;));
 </div>
                         
                         
-                            <input id="vulnerability-reasons-15" type="checkbox">
-                            <h3><label for="vulnerability-reasons-15">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-9" type="checkbox">
+                            <h3><label for="vulnerability-reasons-9">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
-                                        <code>@jsdevtools/coverage-istanbul-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;resolve-url-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;resolve-url-loader&gt;adjust-sourcemap-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;resolve-url-loader&gt;adjust-sourcemap-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                        <code>webpack-inject-plugin&gt;loader-utils</code>
                                     </div>
                                 
                             </div>
@@ -1687,8 +1027,8 @@ Emitted &#39;error&#39; event on Socket instance at:
 </div>
                         
                         
-                            <input id="vulnerability-reasons-16" type="checkbox">
-                            <h3><label for="vulnerability-reasons-16">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-10" type="checkbox">
+                            <h3><label for="vulnerability-reasons-10">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
@@ -1755,8 +1095,8 @@ Emitted &#39;error&#39; event on Socket instance at:
 </div>
                         
                         
-                            <input id="vulnerability-reasons-17" type="checkbox">
-                            <h3><label for="vulnerability-reasons-17">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-11" type="checkbox">
+                            <h3><label for="vulnerability-reasons-11">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
@@ -1817,7 +1157,7 @@ Emitted &#39;error&#39; event on Socket instance at:
         
         
 
-        <h6 class="col-md-12 mb-0 pb=3 text-right">Report generated at 12/1/2022, 2:13:45 PM</h6>
+        <h6 class="col-md-12 mb-0 pb=3 text-right">Report generated at 12/1/2022, 9:14:50 PM</h6>
     </div>
 </div>
 </body>
