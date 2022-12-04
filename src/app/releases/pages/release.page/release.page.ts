@@ -57,7 +57,7 @@ export class ReleasePage implements OnInit {
   }
 
   publishRelease(release: Release) {
-    this.releaseService.publish(this.projectId, release).subscribe(() => {
+    this.releaseService.openPublishReleaseDialog(this.projectId, release).subscribe(() => {
       location.reload();
     });
   }

@@ -93,7 +93,7 @@ export class ReleasesListPage implements OnInit {
   }
 
   publishRelease(projectId: number, release: Release) {
-    this.releaseService.publish(this.projectId, release).subscribe(() => {
+    this.releaseService.openPublishReleaseDialog(this.projectId, release).subscribe(() => {
       location.reload();
     });
   }

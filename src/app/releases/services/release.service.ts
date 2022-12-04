@@ -88,8 +88,26 @@ export class ReleaseService extends BaseService<
       );
   }
 
-  public publish(projectId: number, release: Release): Observable<Release> {
-    return of(release);
+  public publish(
+    projectId: number,
+    release: Release,
+    publishGitService: boolean,
+    branch: string,
+  ): Observable<Release> {
+    return this.apiService
+      .put(`/project/${projectId}/release/${release.id}/publish`, {
+        params: {
+          ...(publishGitService ? { publishGitService } : {}),
+          ...(branch ? { branch } : {}),
+        },
+      })
+      .pipe(
+        this.validate({
+          400: 'FORM_VALIDATION_ERROR',
+          404: 'PROJECT_OR_RELEASE_NOT_FOUND',
+          409: 'CONFLICT',
+        }),
+      );
   }
 
   public delete(projectId: number, releaseId: number): Observable<null> {
@@ -161,5 +179,24 @@ export class ReleaseService extends BaseService<
           }
         }),
       );
+  }
+
+  public openPublishReleaseDialog(projectId: number, release: Release): Observable<Release> {
+    return of(release);
+    //   return this.dialogService
+    //     .open(ReleaseDialog, {
+    //       projectId: projectId,
+    //       release: release,
+    //     } as ReleaseDialogData)
+    //     .afterClosed()
+    //     .pipe(
+    //       switchMap(({ release, publishGitService, branch }) => {
+    //         if (release) {
+    //           return this.publish(projectId, release, publishGitService, branch);
+    //         } else {
+    //           return EMPTY;
+    //         }
+    //       }),
+    //     );
   }
 }
