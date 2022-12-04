@@ -5,7 +5,7 @@ import { ControlAccessor } from '@main/classes/control-accessor.class';
 import { Filter } from '@main/interfaces/filters.interface';
 
 @Component({
-  selector: 'app-filters',
+  selector: 'filters',
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.scss'],
 })
@@ -35,7 +35,7 @@ export class FiltersComponent extends ControlAccessor {
     return control;
   }
 
-  public saveFilters() {
+  public save() {
     if (!this.form) return;
 
     let formValue: Filter[] = [];
@@ -47,5 +47,9 @@ export class FiltersComponent extends ControlAccessor {
     }
 
     this.control.setValue(formValue);
+  }
+
+  reset() {
+    this.form?.reset();
   }
 }

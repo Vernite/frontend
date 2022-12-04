@@ -1,6 +1,9 @@
-import { DataFilter, DataFilterType } from '@main/interfaces/filters.interface';
+import { ProjectMember } from '@dashboard/interfaces/project-member.interface';
+import { DataFilter, DataFilterType, DataFilterWithView } from '@main/interfaces/filters.interface';
 import { TaskType } from '@tasks/enums/task-type.enum';
 import { Task } from '@tasks/interfaces/task.interface';
+import { Observable } from 'rxjs';
+import { InputAssigneeComponent } from '../components/input-assignee/input-assignee.component';
 
 export class TaskFilters {
   public static SPRINT_ID(sprintId: number): DataFilter<Task, number> {
@@ -10,13 +13,12 @@ export class TaskFilters {
       field: 'sprintId',
       value: sprintId,
       apply(list) {
-        // TODO: Implement
-        return list;
+        return list.filter((task) => task.sprintId === sprintId);
       },
     };
   }
 
-  public static ASSIGNEE_ID(assigneeId: number): DataFilter<Task, number> {
+  public static ASSIGNEE_ID(assigneeId: number): DataFilterWithView<Task, number> {
     return {
       identifier: 'ASSIGNEE_ID',
       type: DataFilterType.BACKEND,
@@ -24,6 +26,14 @@ export class TaskFilters {
       value: assigneeId,
       apply(list) {
         return list.filter((task) => task.assigneeId === assigneeId);
+      },
+      view(members: Observable<ProjectMember[]>) {
+        return {
+          component: InputAssigneeComponent,
+          props: {
+            members,
+          },
+        };
       },
     };
   }
