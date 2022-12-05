@@ -36,7 +36,10 @@
   <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isFiltersOpen"
     [cdkConnectedOverlayMinWidth]="mainSection.scrollWidth">
     <div #overlay class="filters-overlay">
-      <filters [formControl]="filtersControl"></filters>
+
+      <input-assignee [formControl]="filters.ASSIGNEE_ID.control" [members]="(projectMembers$ | async) || []">
+      </input-assignee>
+
     </div>
   </ng-template>
 </section>
