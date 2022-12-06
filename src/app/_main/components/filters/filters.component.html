@@ -1,12 +1,7 @@
 <div class="filters">
-  <ng-container *ngFor="let filter of filters; index as i">
-    <ng-container [ngSwitch]="filter.type">
-      <div class="filter" *ngSwitchCase="'checkbox'">
-        <app-checkbox [formControl]="getControl(i)">{{ filter.label }}</app-checkbox>
-      </div>
-      <p *ngSwitchDefault>Unknown filter type: {{ filter.type }}</p>
-    </ng-container>
-  </ng-container>
+  <div class="controls">
+    <ng-content></ng-content>
+  </div>
 
   <div class="flex gap-3">
     <app-button variant="secondary" (click)="reset()" i18n>Reset filters</app-button>

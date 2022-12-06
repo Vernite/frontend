@@ -1,9 +1,25 @@
 <app-select [formControl]="control" floatingLabel="Assignee" i18n-floatingLabel>
-  <div class="prefix">
+  <div class="prefix" *ngIf="control.value && control.value !== 'all'">
     <div class="avatar" [style.background-color]="control.value | memberColor | color:'rgb'">
       {{ memberById(control.value) ? memberById(control.value)?.user?.name?.[0] : '' }}
     </div>
   </div>
+  <app-option *ngIf="showAllOption" [value]="'all'" view="All" i18n-view>
+    <div class="avatar-wrapper">
+      <div class="avatar">-</div>
+    </div>
+    <div class="details">
+      <span i18n>All</span>
+    </div>
+  </app-option>
+  <app-option *ngIf="showUnassignedOption" [value]="null" view="Unassigned" i18n-view>
+    <div class="avatar-wrapper">
+      <div class="avatar">-</div>
+    </div>
+    <div class="details">
+      <span i18n>Unassigned</span>
+    </div>
+  </app-option>
   <app-option *ngFor="let member of members" [value]="member.user.id"
     [view]="member.user.name + ' ' + member.user.surname">
     <div class="avatar-wrapper">

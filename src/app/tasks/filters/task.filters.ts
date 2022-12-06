@@ -1,11 +1,10 @@
-import { ProjectMember } from '@dashboard/interfaces/project-member.interface';
-import { DataFilter, DataFilterType, DataFilterWithView } from '@main/interfaces/filters.interface';
+import { DataFilter, DataFilterType } from '@main/interfaces/filters.interface';
 import { TaskType } from '@tasks/enums/task-type.enum';
 import { Task } from '@tasks/interfaces/task.interface';
-import { Observable } from 'rxjs';
-import { InputAssigneeComponent } from '../components/input-assignee/input-assignee.component';
 
+/** Tasks filters class, used to filter results from API */
 export class TaskFilters {
+  /** Filter tasks by id of the sprint */
   public static SPRINT_ID(sprintId: number): DataFilter<Task, number> {
     return {
       identifier: 'SPRINT_ID',
@@ -18,38 +17,40 @@ export class TaskFilters {
     };
   }
 
-  public static ASSIGNEE_ID(assigneeId: number): DataFilterWithView<Task, number> {
+  /** Filter tasks by assignee id */
+  public static ASSIGNEE_ID(
+    assigneeId: number | null | 'all',
+  ): DataFilter<Task, number | null | undefined> {
     return {
       identifier: 'ASSIGNEE_ID',
       type: DataFilterType.BACKEND,
       field: 'assigneeId',
-      value: assigneeId,
+      value: assigneeId === 'all' ? undefined : assigneeId,
       apply(list) {
         return list.filter((task) => task.assigneeId === assigneeId);
-      },
-      view(members: Observable<ProjectMember[]>) {
-        return {
-          component: InputAssigneeComponent,
-          props: {
-            members,
-          },
-        };
       },
     };
   }
 
-  public static STATUS_IDS(statusIds: number[]): DataFilter<Task, number[]> {
+  /** Filter tasks by id of the status */
+  public static STATUS_IDS(
+    statusIds: number[] | 'all' | null,
+  ): DataFilter<Task, number[] | undefined> {
     return {
       identifier: 'STATUS_IDS',
       type: DataFilterType.BACKEND,
       field: 'statusId',
-      value: statusIds,
+      value: ['all', null].includes(statusIds as any) ? undefined : (statusIds as number[]),
       apply(list) {
-        return list.filter((task) => statusIds.includes(task.statusId));
+        if (Array.isArray(statusIds)) {
+          return list.filter((task) => statusIds.includes(task.statusId));
+        }
+        return list;
       },
     };
   }
 
+  /** Filter tasks by type */
   public static TYPES(types: TaskType[]): DataFilter<Task, TaskType[]> {
     return {
       identifier: 'TYPES',
@@ -62,6 +63,7 @@ export class TaskFilters {
     };
   }
 
+  /** Filter tasks by parent task id */
   public static PARENT_TASK_ID(parentTaskId: number): DataFilter<Task, number> {
     return {
       identifier: 'PARENT_TASK_ID',
@@ -74,6 +76,7 @@ export class TaskFilters {
     };
   }
 
+  /** Filter tasks by backlog */
   public static BACKLOG(): DataFilter<Task, boolean> {
     return {
       identifier: 'BACKLOG',

@@ -12,6 +12,8 @@ import { MemberService } from '@dashboard/services/member/member.service';
 import { StatusService } from '@tasks/services/status/status.service';
 import { Status } from '../../../tasks/interfaces/status.interface';
 import { TaskFilters } from '../../../tasks/filters/task.filters';
+import { FilterControls } from '@main/components/filters/filter-entry.type';
+import { FilterChannel } from '@main/components/filters/filter-channel.model';
 
 /** Project tabs component to allow navigate over the project */
 @Component({
@@ -42,24 +44,26 @@ export class ViewOptionsComponent implements OnInit {
 
   filtersControl = new FormControl();
 
+  /** @ignore */
+  FilterChannel = FilterChannel;
+
   public filtersPositionPairs: ConnectedPosition[] = [
     {
       originX: 'end',
-      originY: 'center',
-      overlayX: 'start',
-      overlayY: 'center',
-      offsetX: 15,
+      originY: 'bottom',
+      overlayX: 'end',
+      overlayY: 'top',
     },
   ];
 
   public filters = {
     ASSIGNEE_ID: {
-      type: TaskFilters.ASSIGNEE_ID,
-      control: new FormControl<number>(),
+      dataFilter: TaskFilters.ASSIGNEE_ID,
+      control: new FormControl<number | null | 'all'>('all'),
     },
     STATUS_IDS: {
-      type: TaskFilters.STATUS_IDS,
-      control: new FormControl<number[]>(),
+      dataFilter: TaskFilters.STATUS_IDS,
+      control: new FormControl<number[]>(undefined),
     },
   };
 
@@ -78,11 +82,5 @@ export class ViewOptionsComponent implements OnInit {
       this.projectMembers$ = this.memberService.list(this.projectId);
       this.statusList$ = this.statusService.list(this.projectId);
     });
-  }
-
-  applyFilters() {
-    const filtersData = Object.values(this.filters).map((filter) =>
-      filter.type(filter.control.value as any),
-    );
   }
 }

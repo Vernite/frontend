@@ -56,7 +56,7 @@ export enum DataFilterControlType {
   DATE = 'date',
 }
 
-export interface DataFilter<T, V> {
+export interface DataFilter<T, V = any> {
   identifier: string;
   type: DataFilterType;
   field: string;
