@@ -72,6 +72,6 @@ import { MemberColorPipe } from './pipes/member-color/member-color.pipe';
     InputAssigneeComponent,
     MemberColorPipe,
   ],
-  exports: [TaskTypePipe, InputAssigneeComponent],
+  exports: [TaskTypePipe, InputAssigneeComponent, TaskListComponent],
 })
 export class TasksModule {}
