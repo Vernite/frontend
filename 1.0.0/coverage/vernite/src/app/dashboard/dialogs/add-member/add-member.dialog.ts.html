@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.15% </span>
+                <span class="strong">41.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/13</span>
+                <span class='fraction'>5/12</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/11</span>
+                <span class='fraction'>4/10</span>
             </div>
         
             
@@ -111,7 +111,26 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,25 +153,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -163,25 +187,36 @@
 import { FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Workspace } from '@dashboard/interfaces/workspace.interface';
-import { RouterExtensionsService } from '@main/services/router-extensions/router-extensions.service';
 import { Status } from '@tasks/interfaces/status.interface';
 import { Observable } from 'rxjs';
 import { requiredValidator } from '../../../_main/validators/required.validator';
 &nbsp;
+/**
+ * Add member dialog data
+ */
 export interface AddMemberDialogData {
+  /** Workspace id */
   workspaceId: number;
+  /** Project id */
   projectId?: number;
 }
 &nbsp;
+/**
+ * Add member dialog component
+ */
 @Component({
   selector: 'app-add-member-dialog',
   templateUrl: './add-member.dialog.html',
   styleUrls: ['./add-member.dialog.scss'],
 })
 export class AddMemberDialog {
+  /** Project status list */
   public statusList$!: Observable&lt;Status[]&gt;;
+&nbsp;
+  /** Workspace list */
   public workspaceList$!: Observable&lt;Workspace[]&gt;;
 &nbsp;
+  /** Add member dialog form */
   public form = new FormGroup({
     email: new FormControl('', [requiredValidator()]),
   });
@@ -189,9 +224,9 @@ export class AddMemberDialog {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: AddMemberDialogData,
     private dialogRef: MatDialogRef&lt;AddMemberDialog&gt;,
-    private routerExtensions: RouterExtensionsService,
   ) {}
 &nbsp;
+  /** Save dialog */
 <span class="fstat-no" title="function not covered" >  addMembers(</span>) {
     const formValues = <span class="cstat-no" title="statement not covered" >this.form.value;</span>
 &nbsp;
@@ -203,6 +238,7 @@ export class AddMemberDialog {
 <span class="cstat-no" title="statement not covered" >    this.dialogRef.close([formValues.email]);</span>
   }
 &nbsp;
+  /** Cancel dialog */
 <span class="fstat-no" title="function not covered" >  cancel(</span>) {
 <span class="cstat-no" title="statement not covered" >    this.dialogRef.close();</span>
   }
@@ -214,7 +250,7 @@ export class AddMemberDialog {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Dec 20 2022 12:21:03 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 05 2023 00:14:22 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

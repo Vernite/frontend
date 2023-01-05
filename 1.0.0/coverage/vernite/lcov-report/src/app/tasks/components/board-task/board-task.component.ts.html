@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">46.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/16</span>
+                <span class='fraction'>7/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,7 +111,19 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,11 +145,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -146,8 +164,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,43 +182,53 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input } from '@angular/core';
 import { ProjectMember } from '@dashboard/interfaces/project-member.interface';
 import { faCheck, faCodeCommit, faCodePullRequest } from '@fortawesome/free-solid-svg-icons';
-import { DialogService } from '@main/services/dialog/dialog.service';
 import { TaskService } from '@tasks/services/task/task.service';
 import { Task } from '../../interfaces/task.interface';
 &nbsp;
+/**
+ * Component to display task in board
+ */
 @Component({
   selector: 'app-board-task',
   templateUrl: './board-task.component.html',
   styleUrls: ['./board-task.component.scss'],
 })
 export class BoardTaskComponent {
-  @Input()
-  public task!: Task;
+  /** Task to display */
+  @Input() public task!: Task;
 &nbsp;
-  @Input()
-  public projectId!: number;
+  /** Id of the project */
+  @Input() public projectId!: number;
 &nbsp;
-  @Input()
-  public members: Map&lt;number, ProjectMember&gt; = new Map();
+  /** List of project members */
+  @Input() public members: Map&lt;number, ProjectMember&gt; = new Map();
 &nbsp;
+  /** @ignore */
   faCodeCommit = faCodeCommit;
+&nbsp;
+  /** @ignore */
   faCodePullRequest = faCodePullRequest;
+&nbsp;
+  /** @ignore */
   faCheck = faCheck;
 &nbsp;
-  constructor(private dialogService: DialogService, private taskService: TaskService) {}
+  constructor(private taskService: TaskService) {}
 &nbsp;
+  /** Open delete task dialog */
 <span class="fstat-no" title="function not covered" >  delete(</span>) {
 <span class="cstat-no" title="statement not covered" >    this.taskService.deleteWithConfirmation(this.projectId, this.task).subscribe(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      location.reload();</span>
     });
   }
 &nbsp;
+  /** Open edit task dialog */
 <span class="fstat-no" title="function not covered" >  edit(</span>) {
 <span class="cstat-no" title="statement not covered" >    this.taskService.openEditTaskDialog(this.projectId, this.task).subscribe(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      location.reload();</span>
     });
   }
 &nbsp;
+  /** Open create subtask dialog */
 <span class="fstat-no" title="function not covered" >  createSubtask(</span>) {
 <span class="cstat-no" title="statement not covered" >    this.taskService.openCreateSubtaskDialog(this.projectId, this.task).subscribe(<span class="fstat-no" title="function not covered" >(t</span>ask) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (!task) <span class="cstat-no" title="statement not covered" >return;</span></span>
@@ -214,7 +244,7 @@ export class BoardTaskComponent {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Dec 20 2022 12:21:03 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 05 2023 00:14:22 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

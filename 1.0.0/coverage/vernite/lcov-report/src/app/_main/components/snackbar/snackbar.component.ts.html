@@ -126,7 +126,17 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,14 +148,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,7 +155,17 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -179,9 +191,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -195,29 +209,34 @@ import { SnackbarService } from '@main/services/snackbar/snackbar.service';
 import { uniqueId } from 'lodash-es';
 import { SnackbarData } from './snackbar.interface';
 &nbsp;
+/**
+ * Snackbar component
+ */
 @Component({
   selector: 'app-snackbar',
   templateUrl: './snackbar.component.html',
   styleUrls: ['./snackbar.component.scss'],
 })
 export class SnackbarComponent implements OnInit {
+  /** @ignore */
   faClose = faClose;
 &nbsp;
-  @Input()
-  public uid: string = uniqueId();
+  /** Snackbar uid */
+  @Input() public uid: string = uniqueId();
 &nbsp;
-  @Input()
-  public message!: SnackbarData['message'];
+  /** Snackbar message */
+  @Input() public message!: SnackbarData['message'];
 &nbsp;
-  @Input()
-  public duration: SnackbarData['duration'] = 4000;
+  /** Snackbar duration */
+  @Input() public duration: SnackbarData['duration'] = 4000;
 &nbsp;
-  @Input()
-  public color: SnackbarData['color'] = 'gray';
+  /** Snackbar color */
+  @Input() public color: SnackbarData['color'] = 'gray';
 &nbsp;
-  @HostBinding('style.animation-name')
-  public animationName: string = 'open';
+  /** Animation name */
+  @HostBinding('style.animation-name') public animationName: string = 'open';
 &nbsp;
+  /** Convert color name to css color */
   public get colorStyle(): string {
     switch (this.color) {
       case 'gray':
@@ -241,6 +260,7 @@ export class SnackbarComponent implements OnInit {
     }, this.duration);
   }
 &nbsp;
+  /** Close snackbar */
 <span class="fstat-no" title="function not covered" >  close(</span>) {
 <span class="cstat-no" title="statement not covered" >    this.setAnimationName('close');</span>
 <span class="cstat-no" title="statement not covered" >    setTimeout(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
@@ -248,6 +268,7 @@ export class SnackbarComponent implements OnInit {
     }, 1000);
   }
 &nbsp;
+  /** Set animation name */
 <span class="fstat-no" title="function not covered" >  setAnimationName(</span>name: string) {
 <span class="cstat-no" title="statement not covered" >    this.animationName = name;</span>
   }
@@ -259,7 +280,7 @@ export class SnackbarComponent implements OnInit {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Dec 20 2022 12:21:03 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 05 2023 00:14:22 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>

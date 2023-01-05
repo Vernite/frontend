@@ -2940,8 +2940,7 @@ code.hljs{padding:3px 5px}
   overflow: hidden;
   padding: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
 }
 .monaco-editor.hc-black {
   -ms-high-contrast-adjust: none;

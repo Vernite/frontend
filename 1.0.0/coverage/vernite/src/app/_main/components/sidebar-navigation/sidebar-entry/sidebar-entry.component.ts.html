@@ -100,7 +100,24 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -109,14 +126,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -124,6 +133,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,6 +159,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -140,28 +168,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, ElementRef, HostBinding, Input, ViewChild } from '@angular/core';
 import { faEllipsisV, IconDefinition, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 &nbsp;
+/**
+ * Sidebar entry component
+ */
 @Component({
   selector: 'sidebar-entry',
   templateUrl: './sidebar-entry.component.html',
   styleUrls: ['./sidebar-entry.component.scss'],
 })
 export class SidebarEntryComponent {
+  /** Show options flag */
   @Input() <span class="cstat-no" title="statement not covered" >showOptions: boolean = false;</span>
+  /** Sidebar entry icon */
   @Input() icon?: IconDefinition | string;
+  /** Sidebar entry text icon */
   @Input() <span class="cstat-no" title="statement not covered" >textIcon: boolean = false;</span>
+  /** Sidebar entry image icon */
   @Input() <span class="cstat-no" title="statement not covered" >imageIcon?: string = undefined;</span>
+  /** Sidebar entry expandable state */
   @HostBinding('class.expandable') @Input() <span class="cstat-no" title="statement not covered" >expandable = false;</span>
+  /** Sidebar entry collapsed state */
   @HostBinding('class.collapsed') @Input() <span class="cstat-no" title="statement not covered" >collapsed: boolean = false;</span>
+  /** Sidebar entry title */
   @ViewChild('title') title?: ElementRef&lt;HTMLElement&gt;;
 &nbsp;
+  /** text getter */
 <span class="fstat-no" title="function not covered" >  get t</span>ext() {
 <span class="cstat-no" title="statement not covered" >    return this.title?.nativeElement.innerText || '';</span>
   }
 &nbsp;
+  /** short text getter (first two letters) */
 <span class="fstat-no" title="function not covered" >  get s</span>hortText() {
 <span class="cstat-no" title="statement not covered" >    return this.text.substring(0, 2);</span>
   }
 &nbsp;
+  /** expanded state */
   public <span class="cstat-no" title="statement not covered" >expanded = false;</span>
 &nbsp;
   /** @ignore */
@@ -170,6 +211,7 @@ export class SidebarEntryComponent {
   /** @ignore */
 <span class="cstat-no" title="statement not covered" >  faChevronRight = faChevronRight;</span>
 &nbsp;
+  /** toggle expanded state */
 <span class="fstat-no" title="function not covered" >  toggle(</span>) {
 <span class="cstat-no" title="statement not covered" >    this.expanded = !this.expanded;</span>
   }
@@ -181,7 +223,7 @@ export class SidebarEntryComponent {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Dec 20 2022 12:21:03 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 05 2023 00:14:22 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>
