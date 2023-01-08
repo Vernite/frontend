@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.48% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/33</span>
+                <span class='fraction'>18/36</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.07% </span>
+                <span class="strong">21.42% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/13</span>
+                <span class='fraction'>3/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.87% </span>
+                <span class="strong">48.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/32</span>
+                <span class='fraction'>17/35</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -186,7 +186,20 @@
 <a name='L121'></a><a href='#L121'>121</a>
 <a name='L122'></a><a href='#L122'>122</a>
 <a name='L123'></a><a href='#L123'>123</a>
-<a name='L124'></a><a href='#L124'>124</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -227,9 +240,13 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -309,13 +326,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '@auth/interfaces/user.interface';
 import { AuthService } from '@auth/services/auth/auth.service';
 import { UserService } from '@auth/services/user/user.service';
 import { WorkspaceService } from '@dashboard/services/workspace/workspace.service';
-import { faAngleDown, faCog, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faCog, faSignOut, faUser, faBug } from '@fortawesome/free-solid-svg-icons';
+import { ReportService } from '@main/services/reports/report.service';
 import { TaskService } from '@tasks/services/task/task.service';
 import { finalize, fromEvent, map, skip, take, Observable } from 'rxjs';
 &nbsp;
@@ -343,6 +368,9 @@ export class UpperNavigationComponent implements OnInit {
   /** @ignore */
   faSignOut = faSignOut;
 &nbsp;
+  /** @ignore */
+  faBug = faBug;
+&nbsp;
   /** is open below active */
   public active: boolean = false;
 &nbsp;
@@ -357,6 +385,7 @@ export class UpperNavigationComponent implements OnInit {
     private workspaceService: WorkspaceService,
     private authService: AuthService,
     private userService: UserService,
+    private reportService: ReportService,
     private router: Router,
   ) {}
 &nbsp;
@@ -403,7 +432,7 @@ export class UpperNavigationComponent implements OnInit {
   }
 &nbsp;
   /**
-   * Open profile
+   * Open profile options
    */
   public <span class="fstat-no" title="function not covered" >openProfile(</span>) {
 <span class="cstat-no" title="statement not covered" >    this.active = true;</span>
@@ -415,14 +444,14 @@ export class UpperNavigationComponent implements OnInit {
   }
 &nbsp;
   /**
-   * Close profile
+   * Close profile options
    */
   public <span class="fstat-no" title="function not covered" >closeProfile(</span>) {
 <span class="cstat-no" title="statement not covered" >    this.active = false;</span>
   }
 &nbsp;
   /**
-   * Toggle profile
+   * Toggle profile options
    */
   public <span class="fstat-no" title="function not covered" >toggleProfile(</span>) {
 <span class="cstat-no" title="statement not covered" >    if (!this.active) {</span>
@@ -430,6 +459,13 @@ export class UpperNavigationComponent implements OnInit {
     } else {
 <span class="cstat-no" title="statement not covered" >      this.closeProfile();</span>
     }
+  }
+&nbsp;
+  /**
+   * Open bug report dialog
+   */
+  public <span class="fstat-no" title="function not covered" >reportBug(</span>) {
+<span class="cstat-no" title="statement not covered" >    this.reportService.openBugReportDialog().subscribe();</span>
   }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -439,7 +475,7 @@ export class UpperNavigationComponent implements OnInit {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Jan 05 2023 20:36:45 GMT+0000 (Coordinated Universal Time)
+                at Sun Jan 08 2023 00:21:26 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
