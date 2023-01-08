@@ -19,14 +19,15 @@
 //   height: 0;
 // }
 
-// ::-webkit-scrollbar-corner {
-//   background-color: transparent;
-// }
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 
 
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 /* Track */
@@ -36,13 +37,20 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  min-height: 40px;
   border: 2px solid rgba(0, 0, 0, 0);
   background: #888;
   background-clip: padding-box;
   background-color: rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.025);
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  min-width: 40px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  min-height: 40px;
 }
 
 /* Handle on hover */
