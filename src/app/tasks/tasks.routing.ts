@@ -30,6 +30,7 @@ const routes: Routes = [
         path: '',
         pathMatch: 'full',
         canActivate: [ActiveSprintExistGuard],
+        children: [],
       },
       {
         path: ':sprintId',
