@@ -44,13 +44,13 @@
       </div>
       <div class="flex">
         <div class="text-base w-40 mt-2">
-          <span class="text-base font-bold" i18n>Active Sprint</span>:
+          <span class="text-base font-bold" i18n>Active sprint</span>:
         </div>
         <span class="text-base ml-5 mt-2">{{(activeSprint$ | async)?.name || '-' }}</span>
       </div>
       <div class="flex">
         <div class="text-base w-40 mt-2">
-          <span class="text-base font-bold" i18n>Archived Sprints</span>:
+          <span class="text-base font-bold" i18n>Archived sprints</span>:
         </div>
         <span class="text-base ml-5 mt-2">
           <ng-container *ngFor="let archivedSprint of archivedSprints$ | async; index as i">
@@ -87,8 +87,10 @@
         <div class="flex flex-col ml-5">
           <span class="text-base mt-2" *ngIf="assignee$ | async as assignee">{{ assignee.user.name }}&nbsp;{{
             assignee.user.surname }}</span>
+          <span class="text-base mt-2" *ngIf="(assignee$ | async) === null">-</span>
           <span class="text-base mt-2" *ngIf="createdBy$ | async as createdBy">{{ createdBy.user.name }}&nbsp;{{
             createdBy.user.surname }}</span>
+          <span class="text-base mt-2" *ngIf="(createdBy$ | async) === null">-</span>
         </div>
       </div>
 
@@ -105,7 +107,7 @@
         </div>
         <div class="flex flex-col ml-5">
           <span class="text-base mt-2">{{ task.createdAt | dateByPreferences | async }}</span>
-          <span class="text-base mt-2">{{ '-' }}</span>
+          <span class="text-base mt-2">{{ task.lastUpdated | dateByPreferences | async }}</span>
         </div>
       </div>
 

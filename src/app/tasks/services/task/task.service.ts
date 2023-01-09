@@ -168,11 +168,14 @@ export class TaskService extends BaseService<
    * @param task Task to delete
    * @returns Observable with true if task was deleted, EMPTY otherwise (when user cancels the dialog)
    */
-  public deleteWithConfirmation(projectId: number, task: Task): Observable<boolean | null> {
+  public deleteWithConfirmation(
+    projectId: number,
+    task: { id: number; name: string },
+  ): Observable<boolean | null> {
     return this.dialogService
       .confirm({
         title: $localize`Delete task "${task.name}"`,
-        message: $localize`Are you sure you want to delete this task "${task.name}"?`,
+        message: $localize`Are you sure you want to delete task "${task.name}"? this action is irreversible.`,
         confirmText: $localize`Delete`,
         cancelText: $localize`Cancel`,
         variant: AlertDialogVariant.IMPORTANT,
@@ -344,7 +347,6 @@ export class TaskService extends BaseService<
    * @returns observable with list of task types
    */
   public listTaskTypes(parentTaskType?: TaskType) {
-    console.log('parentTaskType', parentTaskType);
     const parentTaskTypeNormal = isNumber(parentTaskType) ? parentTaskType : -1;
     const desiredTaskTypes = TaskTypeHierarchy[parentTaskTypeNormal];
     const taskTypesEntries = Enum.entries(TaskType);

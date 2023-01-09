@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BacklogPage } from './pages/backlog/backlog.page';
 import { SprintPage } from './pages/sprint/sprint.page';
 import { TaskPage } from './pages/task/task.page';
+import { ProjectAboutPage } from './pages/project-about/project-about.page';
+import { ActiveSprintExistGuard } from './guards/active-sprint-exist.guard';
 
 /**
  * Tasks routes list
@@ -14,6 +16,10 @@ const routes: Routes = [
     redirectTo: 'sprint',
   },
   {
+    path: 'about',
+    component: ProjectAboutPage,
+  },
+  {
     path: 'backlog',
     component: BacklogPage,
   },
@@ -23,7 +29,8 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: SprintPage,
+        canActivate: [ActiveSprintExistGuard],
+        children: [],
       },
       {
         path: ':sprintId',

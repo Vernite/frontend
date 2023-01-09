@@ -1,11 +1,13 @@
 import { Injectable, Injector } from '@angular/core';
 import { Service } from '@main/decorators/service/service.decorator';
 import dayjs from 'dayjs';
-import { tap, Observable } from 'rxjs';
+import { tap, Observable, switchMap, catchError, map, of } from 'rxjs';
 import { ApiService } from '@main/services/api/api.service';
 import { BaseService } from '@main/services/base/base.service';
 import { Errors } from '@main/interfaces/http-error.interface';
 import { User } from '../../interfaces/user.interface';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { ProtoService } from '@main/services/proto/proto.service';
 
 /**
  * Authentication service
@@ -21,7 +23,12 @@ export class AuthService extends BaseService<Errors<'INVALID_TOKEN'>> {
     },
   };
 
-  constructor(private injector: Injector, private apiService: ApiService) {
+  constructor(
+    private injector: Injector,
+    private apiService: ApiService,
+    private recaptchaV3Service: ReCaptchaV3Service,
+    private protoService: ProtoService,
+  ) {
     super(injector);
   }
 
@@ -36,18 +43,20 @@ export class AuthService extends BaseService<Errors<'INVALID_TOKEN'>> {
     name,
     surname,
     username,
-    captcha,
   }: {
     email: string;
     password: string;
     name: string;
     surname: string;
     username: string;
-    captcha: string;
   }) {
-    return this.apiService.post(`/auth/register`, {
-      body: { email, password, name, surname, username, captcha },
-    });
+    return this.recaptchaV3Service.execute('register').pipe(
+      switchMap((captcha) =>
+        this.apiService.post(`/auth/register`, {
+          body: { email, password, name, surname, username, captcha },
+        }),
+      ),
+    );
   }
 
   /**
@@ -59,16 +68,22 @@ export class AuthService extends BaseService<Errors<'INVALID_TOKEN'>> {
     email,
     password,
     remember,
-    captcha,
   }: {
     email: string;
     password: string;
     remember: boolean;
-    captcha: string;
   }): Observable<User> {
-    return this.apiService
-      .post(`/auth/login`, { body: { email, password, remember, captcha } })
-      .pipe(tap(() => localStorage.setItem('lastLoginTry', dayjs().valueOf().toString())));
+    return this.recaptchaV3Service.execute('login').pipe(
+      switchMap((captcha) =>
+        this.apiService.post(`/auth/login`, { body: { email, password, remember, captcha } }),
+      ),
+      tap(() => {
+        localStorage.setItem('logged', 'true');
+        localStorage.setItem('lastLoginTry', dayjs().valueOf().toString());
+
+        this.protoService.connect();
+      }),
+    );
   }
 
   /**
@@ -77,11 +92,10 @@ export class AuthService extends BaseService<Errors<'INVALID_TOKEN'>> {
    */
   public logout() {
     this.clearCache();
-    this.store.clear();
+    this.protoService.disconnect();
+
     return this.apiService.post(`/auth/logout`).pipe(
       tap(() => {
-        this.clearCache();
-        this.store.clear();
         document.cookie = '';
       }),
     );
@@ -137,10 +151,18 @@ export class AuthService extends BaseService<Errors<'INVALID_TOKEN'>> {
   }
 
   /**
-   * If user is logged in
+   * When user is logged in API, but not logged in frontend - use this function
+   */
+  public syncSessionFromBackend() {
+    localStorage.setItem('logged', 'true');
+    this.protoService.connect();
+  }
+
+  /**
+   * If user is logged in (check only frontend local storage)
    * @returns true if user is logged in
    */
-  public isLoggedIn() {
+  public isLocallyLoggedIn(): boolean {
     if (localStorage.getItem('logged')) {
       return true;
     } else {
@@ -149,9 +171,21 @@ export class AuthService extends BaseService<Errors<'INVALID_TOKEN'>> {
   }
 
   /**
+   * If user is logged in
+   * @returns true if user is logged in
+   */
+  public isLoggedIn(): Observable<boolean> {
+    return this.apiService.get(`/auth/me`).pipe(
+      map(() => true),
+      catchError(() => of(false)),
+    );
+  }
+
+  /**
    * Clear cache
    */
   public clearCache() {
+    this.store.clear();
     localStorage.removeItem('logged');
   }
 
@@ -159,7 +193,7 @@ export class AuthService extends BaseService<Errors<'INVALID_TOKEN'>> {
    * Get last login time
    * @returns last login time
    */
-  public getLastLoginTime() {
+  public getLastLoginTryTime() {
     return dayjs(Number(localStorage.getItem('lastLoginTry') || 0));
   }
 }

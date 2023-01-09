@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { Router } from '@angular/router';
-import { UserService } from '@auth/services/user/user.service';
-import { catchError, EMPTY, of, Subscription, switchMap, take } from 'rxjs';
+import { catchError, EMPTY, of, Subscription, switchMap } from 'rxjs';
 import { requiredValidator } from 'src/app/_main/validators/required.validator';
 import { AuthService } from '@auth/services/auth/auth.service';
 import { Loader } from '../../../_main/classes/loader/loader.class';
 import { startLoader, stopLoader } from '../../../_main/operators/loader.operator';
-import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 /**
  * Login page component
@@ -18,12 +16,7 @@ import { ReCaptchaV3Service } from 'ng-recaptcha';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  constructor(
-    private authService: AuthService,
-    private userService: UserService,
-    private router: Router,
-    private recaptchaV3Service: ReCaptchaV3Service,
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   /**
    * Login subscription
@@ -48,7 +41,9 @@ export class LoginPage implements OnInit {
   });
 
   ngOnInit() {
-    this.userService.getMyself().subscribe(() => {
+    this.authService.isLoggedIn().subscribe((isLoggedIn: boolean) => {
+      if (!isLoggedIn) return;
+
       localStorage.setItem('logged', 'true');
       this.router.navigate(['/']);
     });
@@ -69,8 +64,7 @@ export class LoginPage implements OnInit {
       of(null)
         .pipe(
           startLoader(this.loader),
-          switchMap(() => this.recaptchaV3Service.execute('login').pipe(take(1))),
-          switchMap((captcha: string) => this.authService.login({ ...this.form.value, captcha })),
+          switchMap(() => this.authService.login(this.form.value)),
           stopLoader(this.loader),
           catchError((e) => {
             this.handleError(e);
@@ -81,7 +75,6 @@ export class LoginPage implements OnInit {
           if (response.deleted) {
             this.router.navigate(['/auth/restore-account']);
           } else {
-            localStorage.setItem('logged', 'true');
             this.router.navigate(['/']);
           }
         });

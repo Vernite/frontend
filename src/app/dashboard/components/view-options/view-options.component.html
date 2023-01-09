@@ -3,33 +3,24 @@
     <div class="flex items-center">
       <div *ngIf="project?.logo" class="logo" [style.background-image]="'url(' + project.logo?.url + ')'"></div>
       <h2 class="text-xl font-bold">{{project.name}}</h2>
-      <a *ngIf="project.gitHubIntegration" href="https://github.com/{{ project.gitHubIntegration }}" target="blank">
+      <a *ngIf="project.gitHubIntegration" href="https://github.com/{{ project.gitHubIntegration }}" target="blank"
+        class="ml-3">
         <app-icon [icon]="faGithub"></app-icon>
       </a>
     </div>
     <tabs class="ml-3">
+      <tab [routerLink]="['/', 'projects', projectId, 'about']" routerLinkActive="active" i18n>About</tab>
       <tab [routerLink]="['/', 'projects', projectId, 'sprint']" [queryParams]="{ view: 'list' }"
-        routerLinkActive="active" i18n>
-        Sprint
-      </tab>
+        routerLinkActive="active" i18n>Sprint</tab>
       <tab [routerLink]="['/', 'projects', projectId, 'backlog']" [queryParams]="{ view: 'list' }"
-        routerLinkActive="active" i18n>
-        Backlog
-      </tab>
-      <tab [routerLink]="['/', 'projects', projectId, 'calendar']" routerLinkActive="active" i18n>
-        Calendar
-      </tab>
-      <tab [routerLink]="['/', 'projects', projectId, 'releases']" routerLinkActive="active" i18n>
-        Releases
-      </tab>
+        routerLinkActive="active" i18n>Backlog</tab>
+      <tab [routerLink]="['/', 'projects', projectId, 'calendar']" routerLinkActive="active" i18n>Calendar</tab>
+      <tab [routerLink]="['/', 'projects', projectId, 'releases']" routerLinkActive="active" i18n>Releases</tab>
     </tabs>
   </div>
   <div class="options">
-    <app-button variant="transparent" [icon]="faFilter" (click)="isFiltersOpen = !isFiltersOpen" i18n>Filters
-    </app-button>
-    <app-button variant="transparent" [icon]="faPenToSquare" [routerLink]="['/', 'projects', projectId, 'edit']" i18n>
-      Edit
-    </app-button>
+    <app-button variant="transparent" [icon]="faFilter" (click)="isFiltersOpen = !isFiltersOpen" i18n>Filters</app-button>
+    <app-button variant="transparent" [icon]="faPenToSquare" [routerLink]="['/', 'projects', projectId, 'edit']" i18n>Edit</app-button>
   </div>
 
   <!-- Filters overlay -->

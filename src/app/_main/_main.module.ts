@@ -2,6 +2,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ObserversModule } from '@angular/cdk/observers';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PlatformModule } from '@angular/cdk/platform';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { ScrollingModule as ExperimentalScrollingModule } from '@angular/cdk-experimental/scrolling';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Injector, NgModule } from '@angular/core';
@@ -77,6 +79,8 @@ import { SidebarGroupComponent } from './components/sidebar-navigation/sidebar-g
 import { ReversePipe } from './pipes/reverse/reverse.pipe';
 import { CollapsableDirective } from './directives/collapsable/collapsable.directive';
 import { ResizeModule } from './modules/resize/resize.module';
+import { ReportBugDialog } from './dialogs/report-bug/report-bug.dialog';
+import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 
 /**
  * Main module configuration object
@@ -88,6 +92,7 @@ const ngModuleConfig = {
     =============================================*/
     CommonModule,
     RouterModule,
+    MonacoEditorModule.forRoot(),
   ],
   importExports: [
     /*=============================================
@@ -100,6 +105,8 @@ const ngModuleConfig = {
     PlatformModule,
     OverlayModule,
     ObserversModule,
+    ScrollingModule,
+    ExperimentalScrollingModule,
 
     /*=============================================
       =              Material modules               =
@@ -186,6 +193,7 @@ const ngModuleConfig = {
     ReversePipe,
     ColorPipe,
     CollapsableDirective,
+    ReportBugDialog,
   ],
   providers: [
     /*=============================================
