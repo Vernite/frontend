@@ -4432,8 +4432,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .invisible{visibility:hidden !important}
 .static{position:static !important}
 .fixed{position:fixed !important}
+.absolute{position:absolute !important}
 .relative{position:relative !important}
 .sticky{position:sticky !important}
+.isolate{isolation:isolate !important}
 .my-1{margin-top:0.25rem !important;margin-bottom:0.25rem !important}
 .mr-3{margin-right:0.75rem !important}
 .mt-3{margin-top:0.75rem !important}
@@ -4456,6 +4458,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex{display:flex !important}
 .table{display:table !important}
 .grid{display:grid !important}
+.contents{display:contents !important}
 .hidden{display:none !important}
 .h-full{height:100% !important}
 .w-full{width:100% !important}
