@@ -5,7 +5,7 @@ import { Cache } from '@main/decorators/cache/cache.decorator';
 import { ErrorCodes, Errors } from '@main/interfaces/http-error.interface';
 import { ApiService } from '@main/services/api/api.service';
 import { BaseService } from '@main/services/base/base.service';
-import { Observable, map } from 'rxjs';
+import { Observable, map, switchMap, tap } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import { unixTimestamp } from '../../../_main/interfaces/date.interface';
 import { Service } from '../../../_main/decorators/service/service.decorator';
@@ -197,7 +197,7 @@ export class UserService extends BaseService<Errors<any>> {
    * @returns updated user
    */
   public update(user: Partial<User>): Observable<User> {
-    return this.apiService.put(`/auth/edit`, { body: user });
+    return this.apiService.put(`/auth/edit`, { body: user }).pipe(tap(() => this.loadLocale()));
   }
 
   /**
@@ -280,12 +280,14 @@ export class UserService extends BaseService<Errors<any>> {
       });
       dayjs.locale(locale);
 
-      console.log('Locale updated', locale, {
-        weekStart: user.firstDayOfWeek,
-      });
+      localStorage.setItem(
+        'locale',
+        JSON.stringify({
+          weekStart: user.firstDayOfWeek,
+        }),
+      );
 
-      console.log(dayjs.locale());
-      console.log('First day of week', dayjs.localeData().firstDayOfWeek());
+      localStorage.setItem('userLocale', locale);
     });
   }
 }
