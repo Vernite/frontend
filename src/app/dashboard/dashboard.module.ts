@@ -14,6 +14,8 @@ import { DashboardRoutingModule } from './dashboard.routing';
 import { AddMemberDialog } from './dialogs/add-member/add-member.dialog';
 import { StatusDialog } from './dialogs/status/status.dialog';
 import { IntegrationModulesModule } from './modules/integration-modules/integration-modules.module';
+import { WidgetContentComponent } from './modules/widgets/widget-content/widget-content.component';
+import { WidgetHeaderComponent } from './modules/widgets/widget-header/widget-header.component';
 import { CreateProjectPage } from './pages/create-project/create-project.page';
 import { CreateWorkspacePage } from './pages/create-workspace/create-workspace.page';
 import { EditProjectPage } from './pages/edit-project/edit-project.page';
@@ -49,6 +51,8 @@ import { GitIntegrationService } from './services/git-integration/git-integratio
     AddMemberDialog,
     IntegrationModulesGridComponent,
     StatusDialog,
+    WidgetContentComponent,
+    WidgetHeaderComponent,
   ],
   providers: [GitIntegrationService],
 })
