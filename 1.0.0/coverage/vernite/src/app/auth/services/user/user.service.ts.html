@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.7% </span>
+                <span class="strong">27.08% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/41</span>
+                <span class='fraction'>13/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.76% </span>
+                <span class="strong">11.11% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/17</span>
+                <span class='fraction'>2/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.21% </span>
+                <span class="strong">29.54% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/38</span>
+                <span class='fraction'>13/44</span>
             </div>
         
             
@@ -356,7 +356,21 @@
 <a name='L291'></a><a href='#L291'>291</a>
 <a name='L292'></a><a href='#L292'>292</a>
 <a name='L293'></a><a href='#L293'>293</a>
-<a name='L294'></a><a href='#L294'>294</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -524,6 +538,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -621,6 +642,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -820,8 +848,15 @@ export class UserService extends BaseService&lt;Errors&lt;any&gt;&gt; {
    * @returns default user preferences
    */
   public <span class="fstat-no" title="function not covered" >getUserDefaultPreferences(</span>) {
+    const navigatorLanguage = <span class="cstat-no" title="statement not covered" >this.isLanguageValid(navigator.language)</span>
+      ? navigator.language
+      : 'en-US';
+    const urlLanguage = <span class="cstat-no" title="statement not covered" >this.isLanguageValid(this.routerExtensionsService.getLanguageFromUrl())</span>
+      ? this.routerExtensionsService.getLanguageFromUrl()
+      : 'en-US';
+&nbsp;
 <span class="cstat-no" title="statement not covered" >    return {</span>
-      language: navigator.language || this.routerExtensionsService.getLanguageFromUrl(),
+      language: navigatorLanguage || urlLanguage || 'en-US',
       dateFormat: 'DD.MM.YYYY',
       timeFormat: 'HH:mm',
       firstDayOfWeek: 1,
@@ -908,12 +943,19 @@ export class UserService extends BaseService&lt;Errors&lt;any&gt;&gt; {
       .pipe(this.validate({}));
   }
 &nbsp;
+  private <span class="fstat-no" title="function not covered" >isLanguageValid(</span>lang: string | null) {
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (!lang) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+<span class="cstat-no" title="statement not covered" >    return ['pl-PL', 'en-GB', 'it-IT', 'es-ES', 'de-DE', 'uk-UA'].includes(lang);</span>
+  }
+&nbsp;
   public <span class="fstat-no" title="function not covered" >loadLocale(</span>): void {
 <span class="cstat-no" title="statement not covered" >    this.getMyself().subscribe(<span class="fstat-no" title="function not covered" >(u</span>ser: User) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (</span>
-        this.routerExtensionsService.getLanguageFromUrl() &amp;&amp;
-        user.language !== this.routerExtensionsService.getLanguageFromUrl()
-      ) {
+      const urlLanguage = <span class="cstat-no" title="statement not covered" >this.isLanguageValid(this.routerExtensionsService.getLanguageFromUrl())</span>
+        ? this.routerExtensionsService.getLanguageFromUrl()
+        : null;
+      const userLanguage = <span class="cstat-no" title="statement not covered" >this.isLanguageValid(user.language) ? user.language : null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (urlLanguage &amp;&amp; userLanguage &amp;&amp; userLanguage !== urlLanguage) {</span>
 <span class="cstat-no" title="statement not covered" >        this.routerExtensionsService.reloadWithLanguage(user.language);</span>
 <span class="cstat-no" title="statement not covered" >        return;</span>
       }
@@ -949,7 +991,7 @@ export class UserService extends BaseService&lt;Errors&lt;any&gt;&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Tue Jan 10 2023 13:30:53 GMT+0000 (Coordinated Universal Time)
+                at Tue Jan 10 2023 18:04:27 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
