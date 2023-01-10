@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">11.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/36</span>
+                <span class='fraction'>4/35</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.25% </span>
+                <span class="strong">9.37% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/32</span>
+                <span class='fraction'>3/32</span>
             </div>
         
             
@@ -264,7 +264,12 @@
 <a name='L199'></a><a href='#L199'>199</a>
 <a name='L200'></a><a href='#L200'>200</a>
 <a name='L201'></a><a href='#L201'>201</a>
-<a name='L202'></a><a href='#L202'>202</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -290,6 +295,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -344,7 +350,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -407,6 +412,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -478,6 +486,7 @@ import {
 import { SprintStatus } from '@tasks/enums/sprint-status.enum';
 import { DataFilter } from '@main/interfaces/filters.interface';
 import { AlertDialogVariant } from '@main/dialogs/alert/alert.dialog';
+import { Cache } from '@main/decorators/cache/cache.decorator';
 &nbsp;
 @Injectable({
   providedIn: 'root',
@@ -490,6 +499,7 @@ export class SprintService {
    * @param projectId Project id needed to create status
    * @returns Request observable with list of statuses
    */
+  @Cache()
   public <span class="fstat-no" title="function not covered" >list(</span>
     projectId: number,
     filters?: DataFilter&lt;Sprint, any&gt;[] | DataFilter&lt;Sprint, any&gt;,
@@ -533,7 +543,7 @@ export class SprintService {
    * @param projectId Project id needed to create status
    * @returns Request observable
    */
-  public <span class="fstat-no" title="function not covered" >delete(</span>projectId: number, sprint: Sprint): Observable&lt;null&gt; {
+  public <span class="fstat-no" title="function not covered" >delete(</span>projectId: number, sprint: { id: number }): Observable&lt;null&gt; {
 <span class="cstat-no" title="statement not covered" >    return this.apiService.delete(`/project/${projectId}/sprint/${sprint.id}`);</span>
   }
 &nbsp;
@@ -544,7 +554,6 @@ export class SprintService {
    * @returns Observable with updated sprint, EMPTY otherwise (when user cancels the dialog)
    */
   public <span class="fstat-no" title="function not covered" >openEditSprintDialog(</span>projectId: number, sprint: Sprint): Observable&lt;Sprint | null&gt; {
-<span class="cstat-no" title="statement not covered" >    console.log(projectId);</span>
 <span class="cstat-no" title="statement not covered" >    return this.dialogService</span>
       .open(
         SprintDialog,
@@ -573,7 +582,7 @@ export class SprintService {
 <span class="cstat-no" title="statement not covered" >    return this.dialogService</span>
       .confirm({
         title: $localize`Revert active sprint "${sprint.name}"`,
-        message: $localize`Are you sure you want to revert this sprint "${sprint.name}"?`,
+        message: $localize`Are you sure you want to revert sprint "${sprint.name}"?`,
         confirmText: $localize`Revert`,
         cancelText: $localize`Cancel`,
         variant: AlertDialogVariant.DEFAULT,
@@ -595,7 +604,7 @@ export class SprintService {
 <span class="cstat-no" title="statement not covered" >    return this.dialogService</span>
       .confirm({
         title: $localize`Close sprint "${sprint.name}"`,
-        message: $localize`Are you sure you want to close this sprint "${sprint.name}"?`,
+        message: $localize`Are you sure you want to close sprint "${sprint.name}"?`,
         confirmText: $localize`Close`,
         cancelText: $localize`Cancel`,
         variant: AlertDialogVariant.IMPORTANT,
@@ -613,11 +622,14 @@ export class SprintService {
       );
   }
 &nbsp;
-  public <span class="fstat-no" title="function not covered" >deleteWithConfirmation(</span>projectId: number, sprint: Sprint): Observable&lt;boolean | null&gt; {
+  public <span class="fstat-no" title="function not covered" >deleteWithConfirmation(</span>
+    projectId: number,
+    sprint: { id: number; name: string },
+  ): Observable&lt;boolean | null&gt; {
 <span class="cstat-no" title="statement not covered" >    return this.dialogService</span>
       .confirm({
         title: $localize`Delete sprint "${sprint.name}"`,
-        message: $localize`Are you sure you want to delete this sprint "${sprint.name}"?`,
+        message: $localize`Are you sure you want to delete sprint "${sprint.name}"? This action is irreversible.`,
         confirmText: $localize`Delete`,
         cancelText: $localize`Cancel`,
         variant: AlertDialogVariant.IMPORTANT,
@@ -673,7 +685,7 @@ export class SprintService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Jan 05 2023 00:14:22 GMT+0000 (Coordinated Universal Time)
+                at Tue Jan 10 2023 12:56:40 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
