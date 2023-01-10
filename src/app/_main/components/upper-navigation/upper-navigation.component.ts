@@ -4,17 +4,12 @@ import { User } from '@auth/interfaces/user.interface';
 import { AuthService } from '@auth/services/auth/auth.service';
 import { UserService } from '@auth/services/user/user.service';
 import { WorkspaceService } from '@dashboard/services/workspace/workspace.service';
-import {
-  faAngleDown,
-  faCog,
-  faSignOut,
-  faUser,
-  faBug,
-  faQuestion,
-} from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faCog, faSignOut, faUser, faBug } from '@fortawesome/free-solid-svg-icons';
 import { ReportService } from '@main/services/reports/report.service';
 import { TaskService } from '@tasks/services/task/task.service';
 import { finalize, fromEvent, map, skip, take, Observable } from 'rxjs';
+import { ManualService } from '../../services/manual/manual.service';
+import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 
 /**
  * Upper navigation component
@@ -44,7 +39,7 @@ export class UpperNavigationComponent implements OnInit {
   faBug = faBug;
 
   /** @ignore */
-  faQuestion = faQuestion;
+  faCircleQuestion = faCircleQuestion;
 
   /** is open below active */
   public active: boolean = false;
@@ -62,6 +57,7 @@ export class UpperNavigationComponent implements OnInit {
     private userService: UserService,
     private reportService: ReportService,
     private router: Router,
+    private manualService: ManualService,
   ) {}
 
   ngOnInit() {
@@ -146,5 +142,7 @@ export class UpperNavigationComponent implements OnInit {
   /**
    * Open manual guide tab
    */
-  public openManualGuide() {}
+  public openManualGuide() {
+    this.manualService.open();
+  }
 }
