@@ -4435,6 +4435,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .absolute{position:absolute !important}
 .relative{position:relative !important}
 .isolate{isolation:isolate !important}
+.z-20{z-index:20 !important}
+.z-10{z-index:10 !important}
 .my-1{margin-top:0.25rem !important;margin-bottom:0.25rem !important}
 .mr-3{margin-right:0.75rem !important}
 .mt-3{margin-top:0.75rem !important}
