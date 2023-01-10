@@ -6,6 +6,7 @@
     <div class="actions">
       <div class="notification"></div>
       <app-button class="bug-reporter" variant="transparent" matTooltip="Bug report" [icon]="faBug" (click)="reportBug()" i18n-matTooltip></app-button>
+      <app-button class="manual-guide" variant="transparent" matTooltip="Manual guide" [icon]="faQuestion" (click)="openManualGuide()" i18n-matTooltip></app-button>
     </div>
     <div class="myself" *ngIf="myself$ | async as myself">
       <div class="avatar"></div>
