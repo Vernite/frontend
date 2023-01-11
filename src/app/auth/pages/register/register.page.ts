@@ -58,7 +58,7 @@ export class RegisterPage {
     repeatPassword: new FormControl('', [
       requiredValidator(),
       passwordValidator(),
-      sameAsValidator('password', $localize`Given passwords are not the same `),
+      sameAsValidator('password', $localize`Given passwords are not the same`),
     ]),
     name: new FormControl('', [requiredValidator()]),
     surname: new FormControl('', [requiredValidator()]),
@@ -119,7 +119,7 @@ export class RegisterPage {
           }),
         )
         .subscribe(() => {
-          this.router.navigate(['/register/in-progress']);
+          this.router.navigate(['/auth/register/in-progress']);
         });
     }
   }
