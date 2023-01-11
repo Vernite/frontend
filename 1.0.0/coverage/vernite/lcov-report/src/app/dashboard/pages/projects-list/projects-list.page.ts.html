@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65% </span>
+                <span class="strong">68.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/20</span>
+                <span class='fraction'>15/22</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">30% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>3/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.42% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/19</span>
+                <span class='fraction'>15/21</span>
             </div>
         
             
@@ -159,10 +159,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -178,15 +178,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,10 +193,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,16 +200,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component } from '@angular/core';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WorkspaceService } from '../../services/workspace/workspace.service';
-import { map, Observable } from 'rxjs';
+import { map, Observable, EMPTY } from 'rxjs';
 import { Project } from '../../interfaces/project.interface';
 import { Workspace } from '../../interfaces/workspace.interface';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -231,12 +231,12 @@ import { withLoader, startLoader, stopLoader } from '../../../_main/operators/lo
   templateUrl: './projects-list.page.html',
   styleUrls: ['./projects-list.page.scss'],
 })
-export class ProjectsListPage {
+export class ProjectsListPage implements OnInit {
   /** Workspace object */
-  workspace$: Observable&lt;Workspace&gt;;
+  workspace$: Observable&lt;Workspace&gt; = EMPTY;
 &nbsp;
   /** List of projects */
-  projects$: Observable&lt;Project[]&gt;;
+  projects$: Observable&lt;Project[]&gt; = EMPTY;
 &nbsp;
   /** @ignore */
   faPlus = faPlus;
@@ -251,19 +251,19 @@ export class ProjectsListPage {
     private projectService: ProjectService,
     private dialogService: DialogService,
     private router: Router,
-  ) {
-    const { workspaceId } = this.activatedRoute.snapshot.params;
+  ) {}
 &nbsp;
-    this.workspaceId = workspaceId;
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(({ workspaceId }) =&gt; {
+      this.workspaceId = workspaceId;
 &nbsp;
-    this.loader.markAsPending();
-&nbsp;
-    this.workspace$ = this.workspaceService.get(workspaceId);
-    this.projects$ = this.workspace$.pipe(
-      startLoader(this.loader),
-      map(<span class="fstat-no" title="function not covered" >(w</span>orkspace) =&gt; <span class="cstat-no" title="statement not covered" >workspace.projectsWithPrivileges.map(<span class="fstat-no" title="function not covered" >(p</span>roject) =&gt; <span class="cstat-no" title="statement not covered" >project.project)</span>)</span>,
-      stopLoader(this.loader),
-    );
+      this.loader.markAsPending();
+      this.workspace$ = this.workspaceService.get(workspaceId);
+      this.projects$ = this.workspace$.pipe(
+        map(<span class="fstat-no" title="function not covered" >(w</span>orkspace) =&gt; <span class="cstat-no" title="statement not covered" >workspace.projectsWithPrivileges.map(<span class="fstat-no" title="function not covered" >(p</span>roject) =&gt; <span class="cstat-no" title="statement not covered" >project.project)</span>)</span>,
+        withLoader(this.loader),
+      );
+    });
   }
 &nbsp;
   /** Navigate to project edit page */
@@ -292,7 +292,7 @@ export class ProjectsListPage {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Jan 11 2023 09:25:45 GMT+0000 (Coordinated Universal Time)
+                at Wed Jan 11 2023 10:55:31 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
