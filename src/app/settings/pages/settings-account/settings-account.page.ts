@@ -4,6 +4,8 @@ import { AuthService } from '@auth/services/auth/auth.service';
 import { UserService } from '@auth/services/user/user.service';
 import { requiredValidator } from '@main/validators/required.validator';
 import { SnackbarService } from '@main/services/snackbar/snackbar.service';
+import { Router } from '@angular/router';
+import { notEmptyValidator } from '@main/validators/not-empty.validator';
 
 /**
  * Settings account page component
@@ -18,13 +20,14 @@ export class SettingsAccountPage implements OnInit {
     private userService: UserService,
     private authService: AuthService,
     private snackbarService: SnackbarService,
+    private router: Router,
   ) {}
 
   /** Form to edit account data */
   public form = new FormGroup({
     email: new FormControl('', requiredValidator()),
-    name: new FormControl('', requiredValidator()),
-    surname: new FormControl('', requiredValidator()),
+    name: new FormControl('', [requiredValidator(), notEmptyValidator()]),
+    surname: new FormControl('', [requiredValidator(), notEmptyValidator()]),
     username: new FormControl('', requiredValidator()),
   });
 
@@ -48,15 +51,11 @@ export class SettingsAccountPage implements OnInit {
   }
 
   /**
-   * Reset password
+   * Change password
    * @TODO Add confirmation dialog
    */
-  resetPassword() {
-    const email = this.form.get('email').value;
-
-    this.authService.resetPassword({ email }).subscribe(() => {
-      this.authService.logout().subscribe();
-    });
+  changePassword() {
+    this.authService.openChangePasswordDialog().subscribe();
   }
 
   /**
@@ -64,8 +63,8 @@ export class SettingsAccountPage implements OnInit {
    * @TODO Add confirmation dialog
    */
   deleteAccountMailCheck() {
-    this.authService.deleteAccount().subscribe(() => {
-      this.authService.logout().subscribe();
+    this.authService.deleteAccountWithConfirmation().subscribe(() => {
+      this.router.navigate(['/']);
     });
   }
 }

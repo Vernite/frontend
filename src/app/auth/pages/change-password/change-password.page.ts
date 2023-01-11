@@ -31,16 +31,12 @@ export class ChangePasswordPage implements OnInit {
    * Form group for setting new password.
    */
   public form = new FormGroup({
-    password: new FormControl('', [requiredValidator(), passwordValidator()], []),
-    repeatPassword: new FormControl(
-      '',
-      [
-        requiredValidator(),
-        passwordValidator(),
-        sameAsValidator('password', $localize`Given passwords are not the same `),
-      ],
-      [],
-    ),
+    password: new FormControl('', [requiredValidator(), passwordValidator()]),
+    repeatPassword: new FormControl('', [
+      requiredValidator(),
+      passwordValidator(),
+      sameAsValidator('password', $localize`Given passwords are not the same `),
+    ]),
   });
 
   constructor(
@@ -65,7 +61,7 @@ export class ChangePasswordPage implements OnInit {
 
     if (this.form.valid && this.token) {
       this.resetSubscription = this.authService
-        .setNewPassword(this.token, this.form.value.password)
+        .setNewPasswordFromToken(this.token, this.form.value.password)
         .subscribe(() => {
           this.router.navigate(['/auth/login']);
         });

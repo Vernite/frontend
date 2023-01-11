@@ -10,6 +10,7 @@ import { AuthService } from '@auth/services/auth/auth.service';
 import { Loader } from '../../../_main/classes/loader/loader.class';
 import { startLoader, stopLoader } from '../../../_main/operators/loader.operator';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { booleanValidator } from '@main/validators/boolean.validator';
 
 /**
  * Register stages
@@ -58,12 +59,12 @@ export class RegisterPage {
     repeatPassword: new FormControl('', [
       requiredValidator(),
       passwordValidator(),
-      sameAsValidator('password', $localize`Given passwords are not the same `),
+      sameAsValidator('password', $localize`Given passwords are not the same`),
     ]),
     name: new FormControl('', [requiredValidator()]),
     surname: new FormControl('', [requiredValidator()]),
     username: new FormControl('', [requiredValidator()]),
-    agreements: new FormControl('', [requiredValidator()]),
+    agreements: new FormControl('', [requiredValidator(), booleanValidator()]),
   });
 
   /**

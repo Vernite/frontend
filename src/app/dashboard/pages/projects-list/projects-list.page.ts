@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WorkspaceService } from '../../services/workspace/workspace.service';
-import { map, Observable } from 'rxjs';
+import { map, Observable, EMPTY } from 'rxjs';
 import { Project } from '../../interfaces/project.interface';
 import { Workspace } from '../../interfaces/workspace.interface';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { DialogService } from '@main/services/dialog/dialog.service';
 import { ProjectService } from '../../services/project/project.service';
+import { Loader } from '../../../_main/classes/loader/loader.class';
+import { withLoader, startLoader, stopLoader } from '../../../_main/operators/loader.operator';
 
 /**
  * Projects list page component
@@ -16,15 +18,19 @@ import { ProjectService } from '../../services/project/project.service';
   templateUrl: './projects-list.page.html',
   styleUrls: ['./projects-list.page.scss'],
 })
-export class ProjectsListPage {
+export class ProjectsListPage implements OnInit {
   /** Workspace object */
-  workspace$: Observable<Workspace>;
+  workspace$: Observable<Workspace> = EMPTY;
 
   /** List of projects */
-  projects$: Observable<Project[]>;
+  projects$: Observable<Project[]> = EMPTY;
 
   /** @ignore */
   faPlus = faPlus;
+
+  loader = new Loader();
+
+  workspaceId!: number;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -32,13 +38,19 @@ export class ProjectsListPage {
     private projectService: ProjectService,
     private dialogService: DialogService,
     private router: Router,
-  ) {
-    const { workspaceId } = this.activatedRoute.snapshot.params;
+  ) {}
 
-    this.workspace$ = this.workspaceService.get(workspaceId);
-    this.projects$ = this.workspace$.pipe(
-      map((workspace) => workspace.projectsWithPrivileges.map((project) => project.project)),
-    );
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(({ workspaceId }) => {
+      this.workspaceId = workspaceId;
+
+      this.loader.markAsPending();
+      this.workspace$ = this.workspaceService.get(workspaceId);
+      this.projects$ = this.workspace$.pipe(
+        map((workspace) => workspace.projectsWithPrivileges.map((project) => project.project)),
+        withLoader(this.loader),
+      );
+    });
   }
 
   /** Navigate to project edit page */
