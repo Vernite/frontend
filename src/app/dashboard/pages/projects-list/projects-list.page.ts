@@ -7,6 +7,7 @@ import { Workspace } from '../../interfaces/workspace.interface';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { DialogService } from '@main/services/dialog/dialog.service';
 import { ProjectService } from '../../services/project/project.service';
+import { Loader } from '../../../_main/classes/loader/loader.class';
 
 /**
  * Projects list page component
@@ -26,6 +27,10 @@ export class ProjectsListPage {
   /** @ignore */
   faPlus = faPlus;
 
+  loader = new Loader();
+
+  workspaceId!: number;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private workspaceService: WorkspaceService,
@@ -34,6 +39,8 @@ export class ProjectsListPage {
     private router: Router,
   ) {
     const { workspaceId } = this.activatedRoute.snapshot.params;
+
+    this.workspaceId = workspaceId;
 
     this.workspace$ = this.workspaceService.get(workspaceId);
     this.projects$ = this.workspace$.pipe(
