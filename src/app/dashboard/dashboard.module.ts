@@ -14,8 +14,8 @@ import { DashboardRoutingModule } from './dashboard.routing';
 import { AddMemberDialog } from './dialogs/add-member/add-member.dialog';
 import { StatusDialog } from './dialogs/status/status.dialog';
 import { IntegrationModulesModule } from './modules/integration-modules/integration-modules.module';
-import { WidgetContentComponent } from './modules/widgets/widget-content/widget-content.component';
-import { WidgetHeaderComponent } from './modules/widgets/widget-header/widget-header.component';
+import { WidgetContentComponent } from './modules/widgets/components/widget-content/widget-content.component';
+import { WidgetHeaderComponent } from './modules/widgets/components/widget-header/widget-header.component';
 import { CreateProjectPage } from './pages/create-project/create-project.page';
 import { CreateWorkspacePage } from './pages/create-workspace/create-workspace.page';
 import { EditProjectPage } from './pages/edit-project/edit-project.page';
@@ -24,6 +24,10 @@ import { ProjectPage } from './pages/project/project.page';
 import { ProjectsListPage } from './pages/projects-list/projects-list.page';
 import { WorkspacesListPage } from './pages/workspaces-list/workspaces-list.page';
 import { GitIntegrationService } from './services/git-integration/git-integration.service';
+import { WidgetTasksComponent } from './modules/widgets/components/widget-tasks/widget-tasks.component';
+import { DashboardPage } from './pages/dashboard/dashboard.page';
+import { WidgetAuditLogComponent } from './modules/widgets/components/widget-audit-log/widget-audit-log.component';
+import { AuditLogModule } from '../_main/modules/audit-log/audit-log.module';
 
 @NgModule({
   imports: [
@@ -33,6 +37,7 @@ import { GitIntegrationService } from './services/git-integration/git-integratio
     DashboardRoutingModule,
     IntegrationModulesModule,
     TasksModule,
+    AuditLogModule,
   ],
   declarations: [
     CreateWorkspacePage,
@@ -53,6 +58,9 @@ import { GitIntegrationService } from './services/git-integration/git-integratio
     StatusDialog,
     WidgetContentComponent,
     WidgetHeaderComponent,
+    WidgetTasksComponent,
+    WidgetAuditLogComponent,
+    DashboardPage,
   ],
   providers: [GitIntegrationService],
 })
