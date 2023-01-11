@@ -395,96 +395,6 @@ if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
                     <div class="card-body">
                         <h1 class="card-title">
                             <span class="badge badge-warning">high</span>
-                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 2.0.2</li>
-                                    
-                                    <li>Published: 10/14/2022, 7:00:38 PM</li>
-                                    
-                                    <li>CWE-400</li>
-                                    
-                                        <li>CVE-2022-37603</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.4</li>
-                                    <li>Patched: &gt;=2.0.4</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>A Regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils 2.0.0 via the url variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 2.0.4 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37603">https://nvd.nist.gov/vuln/detail/CVE-2022-37603</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/213">https://github.com/webpack/loader-utils/issues/213</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
-<li><a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488">https://github.com/advisories/GHSA-3rfm-jhwj-7488</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-3" type="checkbox">
-                            <h3><label for="vulnerability-reasons-3">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
                             Prototype Pollution in JSON5 via Parse Method
                         </h1>
                         <div class="row">
@@ -584,8 +494,8 @@ if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
 </div>
                         
                         
-                            <input id="vulnerability-reasons-4" type="checkbox">
-                            <h3><label for="vulnerability-reasons-4">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-3" type="checkbox">
+                            <h3><label for="vulnerability-reasons-3">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
@@ -708,8 +618,8 @@ if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
 </div>
                         
                         
-                            <input id="vulnerability-reasons-5" type="checkbox">
-                            <h3><label for="vulnerability-reasons-5">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-4" type="checkbox">
+                            <h3><label for="vulnerability-reasons-4">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
@@ -757,92 +667,7 @@ if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
                     <div class="card-body">
                         <h1 class="card-title">
                             <span class="badge badge-warning">high</span>
-                            glob-parent before 5.1.2 vulnerable to Regular Expression Denial of Service in enclosure regex
-                        </h1>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Module:
-                                        <a href="https://npmjs.com/package/glob-parent" target="_blank">glob-parent</a>
-                                    </li>
-                                    
-                                        <li>Installed version: 3.1.0</li>
-                                    
-                                    <li>Published: 6/7/2021, 9:56:34 PM</li>
-                                    
-                                    <li>CWE-400</li>
-                                    
-                                        <li>CVE-2020-28469</li>
-                                    
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Vulnerable: &lt;5.1.2</li>
-                                    <li>Patched: &gt;=5.1.2</li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <h3>Overview</h3>
-                        <div class="card-text"><p>This affects the package glob-parent before 5.1.2. The enclosure regex used to check for strings ending in enclosure containing path separator.</p>
-</div>
-
-                        
-                            <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 5.1.2 or later</p>
-</div>
-                        
-                        
-                            <h3>References</h3>
-                            <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-28469">https://nvd.nist.gov/vuln/detail/CVE-2020-28469</a></li>
-<li><a href="https://github.com/gulpjs/glob-parent/pull/36">https://github.com/gulpjs/glob-parent/pull/36</a></li>
-<li><a href="https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9">https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9</a></li>
-<li><a href="https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2">https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092</a></li>
-<li><a href="https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905">https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905</a></li>
-<li><a href="https://www.oracle.com/security-alerts/cpujan2022.html">https://www.oracle.com/security-alerts/cpujan2022.html</a></li>
-<li><a href="https://github.com/advisories/GHSA-ww39-953v-wcq6">https://github.com/advisories/GHSA-ww39-953v-wcq6</a></li>
-</ul>
-</div>
-                        
-                        
-                            <input id="vulnerability-reasons-6" type="checkbox">
-                            <h3><label for="vulnerability-reasons-6">Reasons this module exists</label></h3>
-                            <div class="mb-3 collapsible-wrapper">
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
-                                    </div>
-                                
-                                    <div class="card-text">
-                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
-                                    </div>
-                                
-                            </div>
-                        
-
-                        <a href="https://github.com/advisories/GHSA-ww39-953v-wcq6" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            <span class="badge badge-warning">high</span>
-                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable
+                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS)
                         </h1>
                         <div class="row">
                             <div class="col-md-6">
@@ -851,58 +676,79 @@ if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
                                         <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
                                     </li>
                                     
-                                        <li>Installed version: 1.2.3</li>
+                                        <li>Installed version: 2.0.2</li>
                                     
-                                    <li>Published: 10/14/2022, 7:00:38 PM</li>
+                                    <li>Published: 10/12/2022, 12:00:27 PM</li>
                                     
                                     <li>CWE-400</li>
                                     
-                                        <li>CVE-2022-37603</li>
+                                        <li>CVE-2022-37599</li>
                                     
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul>
-                                    <li>Vulnerable: &gt;=1.0.0 &lt;1.4.2</li>
-                                    <li>Patched: &gt;=1.4.2</li>
+                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.4</li>
+                                    <li>Patched: &gt;=2.0.4</li>
                                     
                                 </ul>
                             </div>
                         </div>
                         <h3>Overview</h3>
-                        <div class="card-text"><p>A Regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils 2.0.0 via the url variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
+                        <div class="card-text"><p>A regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils via the resourcePath variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
 </div>
 
                         
                             <h3>Remediation</h3>
-                            <div class="card-text"><p>Upgrade to version 1.4.2 or later</p>
+                            <div class="card-text"><p>Upgrade to version 2.0.4 or later</p>
 </div>
                         
                         
                             <h3>References</h3>
                             <div class="card-text"><ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37603">https://nvd.nist.gov/vuln/detail/CVE-2022-37603</a></li>
-<li><a href="https://github.com/webpack/loader-utils/issues/213">https://github.com/webpack/loader-utils/issues/213</a></li>
-<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L107</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37599">https://nvd.nist.gov/vuln/detail/CVE-2022-37599</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/211">https://github.com/webpack/loader-utils/issues/211</a></li>
 <li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L83">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L83</a></li>
 <li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
-<li><a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488">https://github.com/advisories/GHSA-3rfm-jhwj-7488</a></li>
+<li><a href="https://github.com/webpack/loader-utils/commit/36dc86617930a5cf18af51cf3f53d0ee284d2824">https://github.com/webpack/loader-utils/commit/36dc86617930a5cf18af51cf3f53d0ee284d2824</a></li>
+<li><a href="https://github.com/advisories/GHSA-hhq3-ff78-jv3g">https://github.com/advisories/GHSA-hhq3-ff78-jv3g</a></li>
 </ul>
 </div>
                         
                         
-                            <input id="vulnerability-reasons-7" type="checkbox">
-                            <h3><label for="vulnerability-reasons-7">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-5" type="checkbox">
+                            <h3><label for="vulnerability-reasons-5">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
-                                        <code>webpack-inject-plugin&gt;loader-utils</code>
+                                        <code>babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
                                     </div>
                                 
                             </div>
                         
 
-                        <a href="https://github.com/advisories/GHSA-3rfm-jhwj-7488" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                        <a href="https://github.com/advisories/GHSA-hhq3-ff78-jv3g" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
                     </div>
                 </div>
             </div>
@@ -962,8 +808,8 @@ if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
 </div>
                         
                         
-                            <input id="vulnerability-reasons-8" type="checkbox">
-                            <h3><label for="vulnerability-reasons-8">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-6" type="checkbox">
+                            <h3><label for="vulnerability-reasons-6">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
@@ -1038,8 +884,8 @@ if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
 </div>
                         
                         
-                            <input id="vulnerability-reasons-9" type="checkbox">
-                            <h3><label for="vulnerability-reasons-9">Reasons this module exists</label></h3>
+                            <input id="vulnerability-reasons-7" type="checkbox">
+                            <h3><label for="vulnerability-reasons-7">Reasons this module exists</label></h3>
                             <div class="mb-3 collapsible-wrapper">
                                 
                                     <div class="card-text">
@@ -1062,6 +908,162 @@ if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
                         
 
                         <a href="https://github.com/advisories/GHSA-w5p7-h5w8-2hfq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS)
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 1.2.3</li>
+                                    
+                                    <li>Published: 10/12/2022, 12:00:27 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2022-37599</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &gt;=1.0.0 &lt;1.4.2</li>
+                                    <li>Patched: &gt;=1.4.2</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>A regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils via the resourcePath variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 1.4.2 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37599">https://nvd.nist.gov/vuln/detail/CVE-2022-37599</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/211">https://github.com/webpack/loader-utils/issues/211</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L83">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L83</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
+<li><a href="https://github.com/webpack/loader-utils/commit/36dc86617930a5cf18af51cf3f53d0ee284d2824">https://github.com/webpack/loader-utils/commit/36dc86617930a5cf18af51cf3f53d0ee284d2824</a></li>
+<li><a href="https://github.com/advisories/GHSA-hhq3-ff78-jv3g">https://github.com/advisories/GHSA-hhq3-ff78-jv3g</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-8" type="checkbox">
+                            <h3><label for="vulnerability-reasons-8">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>webpack-inject-plugin&gt;loader-utils</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-hhq3-ff78-jv3g" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            glob-parent before 5.1.2 vulnerable to Regular Expression Denial of Service in enclosure regex
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/glob-parent" target="_blank">glob-parent</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 3.1.0</li>
+                                    
+                                    <li>Published: 6/7/2021, 9:56:34 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2020-28469</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;5.1.2</li>
+                                    <li>Patched: &gt;=5.1.2</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>This affects the package glob-parent before 5.1.2. The enclosure regex used to check for strings ending in enclosure containing path separator.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 5.1.2 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-28469">https://nvd.nist.gov/vuln/detail/CVE-2020-28469</a></li>
+<li><a href="https://github.com/gulpjs/glob-parent/pull/36">https://github.com/gulpjs/glob-parent/pull/36</a></li>
+<li><a href="https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9">https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9</a></li>
+<li><a href="https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2">https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905">https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905</a></li>
+<li><a href="https://www.oracle.com/security-alerts/cpujan2022.html">https://www.oracle.com/security-alerts/cpujan2022.html</a></li>
+<li><a href="https://github.com/advisories/GHSA-ww39-953v-wcq6">https://github.com/advisories/GHSA-ww39-953v-wcq6</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-9" type="checkbox">
+                            <h3><label for="vulnerability-reasons-9">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-ww39-953v-wcq6" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
                     </div>
                 </div>
             </div>
@@ -1253,7 +1255,7 @@ if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
         
         
 
-        <h6 class="col-md-12 mb-0 pb=3 text-right">Report generated at 1/11/2023, 1:10:07 AM</h6>
+        <h6 class="col-md-12 mb-0 pb=3 text-right">Report generated at 1/11/2023, 9:24:31 AM</h6>
     </div>
 </div>
 </body>
