@@ -1,0 +1,1 @@
+export class LinePart{constructor(endIndex,type,metadata,containsRTL){this.endIndex=endIndex,this.type=type,this.metadata=metadata,this.containsRTL=containsRTL,this._linePartBrand=void 0}isWhitespace(){return!!(1&this.metadata)}isPseudoAfter(){return!!(4&this.metadata)}}

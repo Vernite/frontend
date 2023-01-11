@@ -1,0 +1,1 @@
+import{hasDriveLetter}from"./extpath.js";import{isWindows}from"./platform.js";export function normalizeDriveLetter(path,isWindowsOS=isWindows){return hasDriveLetter(path,isWindowsOS)?path.charAt(0).toUpperCase()+path.slice(1):path}let normalizedUserHomeCached=Object.create(null);
