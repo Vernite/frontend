@@ -8,6 +8,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { DialogService } from '@main/services/dialog/dialog.service';
 import { ProjectService } from '../../services/project/project.service';
 import { Loader } from '../../../_main/classes/loader/loader.class';
+import { withLoader, startLoader, stopLoader } from '../../../_main/operators/loader.operator';
 
 /**
  * Projects list page component
@@ -42,9 +43,13 @@ export class ProjectsListPage {
 
     this.workspaceId = workspaceId;
 
+    this.loader.markAsPending();
+
     this.workspace$ = this.workspaceService.get(workspaceId);
     this.projects$ = this.workspace$.pipe(
+      startLoader(this.loader),
       map((workspace) => workspace.projectsWithPrivileges.map((project) => project.project)),
+      stopLoader(this.loader),
     );
   }
 
