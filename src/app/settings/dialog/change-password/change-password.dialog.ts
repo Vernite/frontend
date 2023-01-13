@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { requiredValidator } from '@main/validators/required.validator';
 import { FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { validateForm } from '@main/classes/form.class';
@@ -20,7 +20,7 @@ import { maxLengthValidator } from '@main/validators/max-length.validator';
   templateUrl: './change-password.dialog.html',
   styleUrls: ['./change-password.dialog.scss'],
 })
-export class ChangePasswordDialog implements OnInit {
+export class ChangePasswordDialog {
   /**
    * Login error
    */
@@ -56,8 +56,6 @@ export class ChangePasswordDialog implements OnInit {
     private authService: AuthService,
     private snackbarService: SnackbarService,
   ) {}
-
-  ngOnInit() {}
 
   /**
    * Cancel dialog
