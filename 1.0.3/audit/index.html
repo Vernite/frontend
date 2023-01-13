@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css" integrity="sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD" crossorigin="anonymous">
+
+    <title>Yarn Audit Report</title>
+    <meta name="description" content="74 known vulnerabilities found.">
+
+    <style>
+        html {
+            font-size: 20px;
+        }
+
+        label {
+            position: relative;
+
+            display: block;
+            padding-left: 30px;
+
+            cursor: pointer;
+        }
+
+        label:before {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+
+            width: 0;
+            height: 0;
+
+            border-left: 8px solid black;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-top: -8px;
+
+            content: "";
+        }
+
+        input[type=checkbox] {
+            visibility: hidden;
+        }
+
+        input[type=checkbox]:checked ~ h3 label:before {
+            border-left: 8px solid transparent;
+            border-top: 8px solid black;
+            border-right: 8px solid transparent;
+
+            margin-left: -4px;
+            margin-top: -4px
+        }
+
+        .collapsible-wrapper {
+            max-height: 0;
+            padding-left: 30px;
+            overflow-y: auto;
+
+            transition: max-height 0.15s ease;
+        }
+
+        input[type=checkbox]:checked ~ h3 ~ .collapsible-wrapper {
+            max-height: 500px;
+        }
+
+        /* Disable button and badge transitions */
+        .badge,
+        .btn {
+            transition: none !important;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md text-center">
+            <h1>Yarn Audit Report</h1>
+
+            <h3>
+                11 unique from
+                74 known vulnerabilities |
+                3334 dependencies
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-danger">critical</span>
+                            Prototype pollution in webpack loader-utils
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 2.0.2</li>
+                                    
+                                    <li>Published: 10/13/2022, 12:00:28 PM</li>
+                                    
+                                    <li>CWE-1321</li>
+                                    
+                                        <li>CVE-2022-37601</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.3</li>
+                                    <li>Patched: &gt;=2.0.3</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>Prototype pollution vulnerability in function parseQuery in parseQuery.js in webpack loader-utils prior to version 2.0.3 via the name variable in parseQuery.js.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 2.0.3 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37601">https://nvd.nist.gov/vuln/detail/CVE-2022-37601</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/212">https://github.com/webpack/loader-utils/issues/212</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L11">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L11</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L47">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L47</a></li>
+<li><a href="https://github.com/webpack/loader-utils/releases/tag/v2.0.3">https://github.com/webpack/loader-utils/releases/tag/v2.0.3</a></li>
+<li><a href="https://github.com/webpack/loader-utils/pull/217">https://github.com/webpack/loader-utils/pull/217</a></li>
+<li><a href="https://github.com/webpack/loader-utils/pull/220">https://github.com/webpack/loader-utils/pull/220</a></li>
+<li><a href="https://github.com/webpack/loader-utils/releases/tag/v1.4.1">https://github.com/webpack/loader-utils/releases/tag/v1.4.1</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/212#issuecomment-1319192884">https://github.com/webpack/loader-utils/issues/212#issuecomment-1319192884</a></li>
+<li><a href="https://github.com/xmldom/xmldom/issues/436#issuecomment-1319412826">https://github.com/xmldom/xmldom/issues/436#issuecomment-1319412826</a></li>
+<li><a href="https://dl.acm.org/doi/abs/10.1145/3488932.3497769">https://dl.acm.org/doi/abs/10.1145/3488932.3497769</a></li>
+<li><a href="https://dl.acm.org/doi/pdf/10.1145/3488932.3497769">https://dl.acm.org/doi/pdf/10.1145/3488932.3497769</a></li>
+<li><a href="https://lists.debian.org/debian-lts-announce/2022/12/msg00044.html">https://lists.debian.org/debian-lts-announce/2022/12/msg00044.html</a></li>
+<li><a href="http://users.encs.concordia.ca/~mmannan/publications/JS-vulnerability-aisaccs2022.pdf">http://users.encs.concordia.ca/~mmannan/publications/JS-vulnerability-aisaccs2022.pdf</a></li>
+<li><a href="https://github.com/advisories/GHSA-76p3-8jx3-jpfq">https://github.com/advisories/GHSA-76p3-8jx3-jpfq</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-0" type="checkbox">
+                            <h3><label for="vulnerability-reasons-0">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-76p3-8jx3-jpfq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-danger">critical</span>
+                            Prototype pollution in webpack loader-utils
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 1.2.3</li>
+                                    
+                                    <li>Published: 10/13/2022, 12:00:28 PM</li>
+                                    
+                                    <li>CWE-1321</li>
+                                    
+                                        <li>CVE-2022-37601</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;1.4.1</li>
+                                    <li>Patched: &gt;=1.4.1</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>Prototype pollution vulnerability in function parseQuery in parseQuery.js in webpack loader-utils prior to version 2.0.3 via the name variable in parseQuery.js.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 1.4.1 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37601">https://nvd.nist.gov/vuln/detail/CVE-2022-37601</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/212">https://github.com/webpack/loader-utils/issues/212</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L11">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L11</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L47">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/parseQuery.js#L47</a></li>
+<li><a href="https://github.com/webpack/loader-utils/releases/tag/v2.0.3">https://github.com/webpack/loader-utils/releases/tag/v2.0.3</a></li>
+<li><a href="https://github.com/webpack/loader-utils/pull/217">https://github.com/webpack/loader-utils/pull/217</a></li>
+<li><a href="https://github.com/webpack/loader-utils/pull/220">https://github.com/webpack/loader-utils/pull/220</a></li>
+<li><a href="https://github.com/webpack/loader-utils/releases/tag/v1.4.1">https://github.com/webpack/loader-utils/releases/tag/v1.4.1</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/212#issuecomment-1319192884">https://github.com/webpack/loader-utils/issues/212#issuecomment-1319192884</a></li>
+<li><a href="https://github.com/xmldom/xmldom/issues/436#issuecomment-1319412826">https://github.com/xmldom/xmldom/issues/436#issuecomment-1319412826</a></li>
+<li><a href="https://dl.acm.org/doi/abs/10.1145/3488932.3497769">https://dl.acm.org/doi/abs/10.1145/3488932.3497769</a></li>
+<li><a href="https://dl.acm.org/doi/pdf/10.1145/3488932.3497769">https://dl.acm.org/doi/pdf/10.1145/3488932.3497769</a></li>
+<li><a href="https://lists.debian.org/debian-lts-announce/2022/12/msg00044.html">https://lists.debian.org/debian-lts-announce/2022/12/msg00044.html</a></li>
+<li><a href="http://users.encs.concordia.ca/~mmannan/publications/JS-vulnerability-aisaccs2022.pdf">http://users.encs.concordia.ca/~mmannan/publications/JS-vulnerability-aisaccs2022.pdf</a></li>
+<li><a href="https://github.com/advisories/GHSA-76p3-8jx3-jpfq">https://github.com/advisories/GHSA-76p3-8jx3-jpfq</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-1" type="checkbox">
+                            <h3><label for="vulnerability-reasons-1">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>webpack-inject-plugin&gt;loader-utils</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-76p3-8jx3-jpfq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            Prototype Pollution in JSON5 via Parse Method
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/json5" target="_blank">json5</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 1.0.1</li>
+                                    
+                                    <li>Published: 12/29/2022, 1:51:03 AM</li>
+                                    
+                                    <li>CWE-1321</li>
+                                    
+                                        <li>CVE-2022-46175</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;1.0.2</li>
+                                    <li>Patched: &gt;=1.0.2</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>The <code>parse</code> method of the JSON5 library before and including version <code>2.2.1</code> does not restrict parsing of keys named <code>__proto__</code>, allowing specially crafted strings to pollute the prototype of the resulting object.</p>
+<p>This vulnerability pollutes the prototype of the object returned by <code>JSON5.parse</code> and not the global Object prototype, which is the commonly understood definition of Prototype Pollution. However, polluting the prototype of a single object can have significant security impact for an application if the object is later used in trusted operations.</p>
+<h2 id="impact">Impact</h2>
+<p>This vulnerability could allow an attacker to set arbitrary and unexpected keys on the object returned from <code>JSON5.parse</code>. The actual impact will depend on how applications utilize the returned object and how they filter unwanted keys, but could include denial of service, cross-site scripting, elevation of privilege, and in extreme cases, remote code execution.</p>
+<h2 id="mitigation">Mitigation</h2>
+<p>This vulnerability is patched in json5 v2.2.2 and later. A patch has also been backported for json5 v1 in versions v1.0.2 and later.</p>
+<h2 id="details">Details</h2>
+<p>Suppose a developer wants to allow users and admins to perform some risky operation, but they want to restrict what non-admins can do. To accomplish this, they accept a JSON blob from the user, parse it using <code>JSON5.parse</code>, confirm that the provided data does not set some sensitive keys, and then performs the risky operation using the validated data:</p>
+<pre><code class="language-js">const JSON5 = require(&#39;json5&#39;);
+
+const doSomethingDangerous = (props) =&gt; {
+  if (props.isAdmin) {
+    console.log(&#39;Doing dangerous thing as admin.&#39;);
+  } else {
+    console.log(&#39;Doing dangerous thing as user.&#39;);
+  }
+};
+
+const secCheckKeysSet = (obj, searchKeys) =&gt; {
+  let searchKeyFound = false;
+  Object.keys(obj).forEach((key) =&gt; {
+    if (searchKeys.indexOf(key) &gt; -1) {
+      searchKeyFound = true;
+    }
+  });
+  return searchKeyFound;
+};
+
+const props = JSON5.parse(&#39;{&quot;foo&quot;: &quot;bar&quot;}&#39;);
+if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
+  doSomethingDangerous(props); // &quot;Doing dangerous thing as user.&quot;
+} else {
+  throw new Error(&#39;Forbidden...&#39;);
+}
+</code></pre>
+<p>If the user attempts to set the <code>isAdmin</code> key, their request will be rejected:</p>
+<pre><code class="language-js">const props = JSON5.parse(&#39;{&quot;foo&quot;: &quot;bar&quot;, &quot;isAdmin&quot;: true}&#39;);
+if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
+  doSomethingDangerous(props);
+} else {
+  throw new Error(&#39;Forbidden...&#39;); // Error: Forbidden...
+}
+</code></pre>
+<p>However, users can instead set the <code>__proto__</code> key to <code>{&quot;isAdmin&quot;: true}</code>. <code>JSON5</code> will parse this key and will set the <code>isAdmin</code> key on the prototype of the returned object, allowing the user to bypass the security check and run their request as an admin:</p>
+<pre><code class="language-js">const props = JSON5.parse(&#39;{&quot;foo&quot;: &quot;bar&quot;, &quot;__proto__&quot;: {&quot;isAdmin&quot;: true}}&#39;);
+if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
+  doSomethingDangerous(props); // &quot;Doing dangerous thing as admin.&quot;
+} else {
+  throw new Error(&#39;Forbidden...&#39;);
+}
+</code></pre>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 1.0.2 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://github.com/json5/json5/security/advisories/GHSA-9c47-m6qq-7p4h">https://github.com/json5/json5/security/advisories/GHSA-9c47-m6qq-7p4h</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-46175">https://nvd.nist.gov/vuln/detail/CVE-2022-46175</a></li>
+<li><a href="https://github.com/json5/json5/issues/199">https://github.com/json5/json5/issues/199</a></li>
+<li><a href="https://github.com/json5/json5/issues/295">https://github.com/json5/json5/issues/295</a></li>
+<li><a href="https://github.com/json5/json5/pull/298">https://github.com/json5/json5/pull/298</a></li>
+<li><a href="https://github.com/advisories/GHSA-9c47-m6qq-7p4h">https://github.com/advisories/GHSA-9c47-m6qq-7p4h</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-2" type="checkbox">
+                            <h3><label for="vulnerability-reasons-2">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@angular-builders/custom-webpack&gt;tsconfig-paths&gt;json5</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;tsconfig-paths-webpack-plugin&gt;tsconfig-paths&gt;json5</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-9c47-m6qq-7p4h" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS)
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 2.0.2</li>
+                                    
+                                    <li>Published: 10/12/2022, 12:00:27 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2022-37599</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.0.4</li>
+                                    <li>Patched: &gt;=2.0.4</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>A regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils via the resourcePath variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 2.0.4 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37599">https://nvd.nist.gov/vuln/detail/CVE-2022-37599</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/211">https://github.com/webpack/loader-utils/issues/211</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L83">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L83</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
+<li><a href="https://github.com/webpack/loader-utils/commit/36dc86617930a5cf18af51cf3f53d0ee284d2824">https://github.com/webpack/loader-utils/commit/36dc86617930a5cf18af51cf3f53d0ee284d2824</a></li>
+<li><a href="https://github.com/advisories/GHSA-hhq3-ff78-jv3g">https://github.com/advisories/GHSA-hhq3-ff78-jv3g</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-3" type="checkbox">
+                            <h3><label for="vulnerability-reasons-3">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-hhq3-ff78-jv3g" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            Prototype Pollution in JSON5 via Parse Method
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/json5" target="_blank">json5</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 2.2.1</li>
+                                    
+                                    <li>Published: 12/29/2022, 1:51:03 AM</li>
+                                    
+                                    <li>CWE-1321</li>
+                                    
+                                        <li>CVE-2022-46175</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.2.2</li>
+                                    <li>Patched: &gt;=2.2.2</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>The <code>parse</code> method of the JSON5 library before and including version <code>2.2.1</code> does not restrict parsing of keys named <code>__proto__</code>, allowing specially crafted strings to pollute the prototype of the resulting object.</p>
+<p>This vulnerability pollutes the prototype of the object returned by <code>JSON5.parse</code> and not the global Object prototype, which is the commonly understood definition of Prototype Pollution. However, polluting the prototype of a single object can have significant security impact for an application if the object is later used in trusted operations.</p>
+<h2 id="impact">Impact</h2>
+<p>This vulnerability could allow an attacker to set arbitrary and unexpected keys on the object returned from <code>JSON5.parse</code>. The actual impact will depend on how applications utilize the returned object and how they filter unwanted keys, but could include denial of service, cross-site scripting, elevation of privilege, and in extreme cases, remote code execution.</p>
+<h2 id="mitigation">Mitigation</h2>
+<p>This vulnerability is patched in json5 v2.2.2 and later. A patch has also been backported for json5 v1 in versions v1.0.2 and later.</p>
+<h2 id="details">Details</h2>
+<p>Suppose a developer wants to allow users and admins to perform some risky operation, but they want to restrict what non-admins can do. To accomplish this, they accept a JSON blob from the user, parse it using <code>JSON5.parse</code>, confirm that the provided data does not set some sensitive keys, and then performs the risky operation using the validated data:</p>
+<pre><code class="language-js">const JSON5 = require(&#39;json5&#39;);
+
+const doSomethingDangerous = (props) =&gt; {
+  if (props.isAdmin) {
+    console.log(&#39;Doing dangerous thing as admin.&#39;);
+  } else {
+    console.log(&#39;Doing dangerous thing as user.&#39;);
+  }
+};
+
+const secCheckKeysSet = (obj, searchKeys) =&gt; {
+  let searchKeyFound = false;
+  Object.keys(obj).forEach((key) =&gt; {
+    if (searchKeys.indexOf(key) &gt; -1) {
+      searchKeyFound = true;
+    }
+  });
+  return searchKeyFound;
+};
+
+const props = JSON5.parse(&#39;{&quot;foo&quot;: &quot;bar&quot;}&#39;);
+if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
+  doSomethingDangerous(props); // &quot;Doing dangerous thing as user.&quot;
+} else {
+  throw new Error(&#39;Forbidden...&#39;);
+}
+</code></pre>
+<p>If the user attempts to set the <code>isAdmin</code> key, their request will be rejected:</p>
+<pre><code class="language-js">const props = JSON5.parse(&#39;{&quot;foo&quot;: &quot;bar&quot;, &quot;isAdmin&quot;: true}&#39;);
+if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
+  doSomethingDangerous(props);
+} else {
+  throw new Error(&#39;Forbidden...&#39;); // Error: Forbidden...
+}
+</code></pre>
+<p>However, users can instead set the <code>__proto__</code> key to <code>{&quot;isAdmin&quot;: true}</code>. <code>JSON5</code> will parse this key and will set the <code>isAdmin</code> key on the prototype of the returned object, allowing the user to bypass the security check and run their request as an admin:</p>
+<pre><code class="language-js">const props = JSON5.parse(&#39;{&quot;foo&quot;: &quot;bar&quot;, &quot;__proto__&quot;: {&quot;isAdmin&quot;: true}}&#39;);
+if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
+  doSomethingDangerous(props); // &quot;Doing dangerous thing as admin.&quot;
+} else {
+  throw new Error(&#39;Forbidden...&#39;);
+}
+</code></pre>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 2.2.2 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://github.com/json5/json5/security/advisories/GHSA-9c47-m6qq-7p4h">https://github.com/json5/json5/security/advisories/GHSA-9c47-m6qq-7p4h</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-46175">https://nvd.nist.gov/vuln/detail/CVE-2022-46175</a></li>
+<li><a href="https://github.com/json5/json5/issues/199">https://github.com/json5/json5/issues/199</a></li>
+<li><a href="https://github.com/json5/json5/issues/295">https://github.com/json5/json5/issues/295</a></li>
+<li><a href="https://github.com/json5/json5/pull/298">https://github.com/json5/json5/pull/298</a></li>
+<li><a href="https://github.com/advisories/GHSA-9c47-m6qq-7p4h">https://github.com/advisories/GHSA-9c47-m6qq-7p4h</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-4" type="checkbox">
+                            <h3><label for="vulnerability-reasons-4">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@angular-devkit/build-angular&gt;@babel/core&gt;json5</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;@babel/core&gt;json5</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-9c47-m6qq-7p4h" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            Prototype Pollution in JSON5 via Parse Method
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/json5" target="_blank">json5</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 2.2.0</li>
+                                    
+                                    <li>Published: 12/29/2022, 1:51:03 AM</li>
+                                    
+                                    <li>CWE-1321</li>
+                                    
+                                        <li>CVE-2022-46175</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &gt;=2.0.0 &lt;2.2.2</li>
+                                    <li>Patched: &gt;=2.2.2</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>The <code>parse</code> method of the JSON5 library before and including version <code>2.2.1</code> does not restrict parsing of keys named <code>__proto__</code>, allowing specially crafted strings to pollute the prototype of the resulting object.</p>
+<p>This vulnerability pollutes the prototype of the object returned by <code>JSON5.parse</code> and not the global Object prototype, which is the commonly understood definition of Prototype Pollution. However, polluting the prototype of a single object can have significant security impact for an application if the object is later used in trusted operations.</p>
+<h2 id="impact">Impact</h2>
+<p>This vulnerability could allow an attacker to set arbitrary and unexpected keys on the object returned from <code>JSON5.parse</code>. The actual impact will depend on how applications utilize the returned object and how they filter unwanted keys, but could include denial of service, cross-site scripting, elevation of privilege, and in extreme cases, remote code execution.</p>
+<h2 id="mitigation">Mitigation</h2>
+<p>This vulnerability is patched in json5 v2.2.2 and later. A patch has also been backported for json5 v1 in versions v1.0.2 and later.</p>
+<h2 id="details">Details</h2>
+<p>Suppose a developer wants to allow users and admins to perform some risky operation, but they want to restrict what non-admins can do. To accomplish this, they accept a JSON blob from the user, parse it using <code>JSON5.parse</code>, confirm that the provided data does not set some sensitive keys, and then performs the risky operation using the validated data:</p>
+<pre><code class="language-js">const JSON5 = require(&#39;json5&#39;);
+
+const doSomethingDangerous = (props) =&gt; {
+  if (props.isAdmin) {
+    console.log(&#39;Doing dangerous thing as admin.&#39;);
+  } else {
+    console.log(&#39;Doing dangerous thing as user.&#39;);
+  }
+};
+
+const secCheckKeysSet = (obj, searchKeys) =&gt; {
+  let searchKeyFound = false;
+  Object.keys(obj).forEach((key) =&gt; {
+    if (searchKeys.indexOf(key) &gt; -1) {
+      searchKeyFound = true;
+    }
+  });
+  return searchKeyFound;
+};
+
+const props = JSON5.parse(&#39;{&quot;foo&quot;: &quot;bar&quot;}&#39;);
+if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
+  doSomethingDangerous(props); // &quot;Doing dangerous thing as user.&quot;
+} else {
+  throw new Error(&#39;Forbidden...&#39;);
+}
+</code></pre>
+<p>If the user attempts to set the <code>isAdmin</code> key, their request will be rejected:</p>
+<pre><code class="language-js">const props = JSON5.parse(&#39;{&quot;foo&quot;: &quot;bar&quot;, &quot;isAdmin&quot;: true}&#39;);
+if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
+  doSomethingDangerous(props);
+} else {
+  throw new Error(&#39;Forbidden...&#39;); // Error: Forbidden...
+}
+</code></pre>
+<p>However, users can instead set the <code>__proto__</code> key to <code>{&quot;isAdmin&quot;: true}</code>. <code>JSON5</code> will parse this key and will set the <code>isAdmin</code> key on the prototype of the returned object, allowing the user to bypass the security check and run their request as an admin:</p>
+<pre><code class="language-js">const props = JSON5.parse(&#39;{&quot;foo&quot;: &quot;bar&quot;, &quot;__proto__&quot;: {&quot;isAdmin&quot;: true}}&#39;);
+if (!secCheckKeysSet(props, [&#39;isAdmin&#39;, &#39;isMod&#39;])) {
+  doSomethingDangerous(props); // &quot;Doing dangerous thing as admin.&quot;
+} else {
+  throw new Error(&#39;Forbidden...&#39;);
+}
+</code></pre>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 2.2.2 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://github.com/json5/json5/security/advisories/GHSA-9c47-m6qq-7p4h">https://github.com/json5/json5/security/advisories/GHSA-9c47-m6qq-7p4h</a></li>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-46175">https://nvd.nist.gov/vuln/detail/CVE-2022-46175</a></li>
+<li><a href="https://github.com/json5/json5/issues/199">https://github.com/json5/json5/issues/199</a></li>
+<li><a href="https://github.com/json5/json5/issues/295">https://github.com/json5/json5/issues/295</a></li>
+<li><a href="https://github.com/json5/json5/pull/298">https://github.com/json5/json5/pull/298</a></li>
+<li><a href="https://github.com/advisories/GHSA-9c47-m6qq-7p4h">https://github.com/advisories/GHSA-9c47-m6qq-7p4h</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-5" type="checkbox">
+                            <h3><label for="vulnerability-reasons-5">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@compodoc/compodoc&gt;json5</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>babel-loader&gt;loader-utils&gt;json5</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils&gt;json5</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@angular-builders/custom-webpack&gt;@angular-devkit/build-angular&gt;babel-loader&gt;loader-utils&gt;json5</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils&gt;json5</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils&gt;json5</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;babel-loader&gt;loader-utils&gt;json5</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/csf-tools&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-mdx&gt;@babel/core&gt;json5</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-9c47-m6qq-7p4h" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            Uncontrolled Resource Consumption in trim-newlines
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/trim-newlines" target="_blank">trim-newlines</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 1.0.0</li>
+                                    
+                                    <li>Published: 6/7/2021, 10:10:39 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2021-33623</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;3.0.1</li>
+                                    <li>Patched: &gt;=3.0.1</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>@rkesters/gnuplot is an easy to use node module to draw charts using gnuplot and ps2pdf. The trim-newlines package before 3.0.1 and 4.x before 4.0.1 for Node.js has an issue related to regular expression denial-of-service (ReDoS) for the .end() method.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 3.0.1 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-33623">https://nvd.nist.gov/vuln/detail/CVE-2021-33623</a></li>
+<li><a href="https://github.com/sindresorhus/trim-newlines/commit/25246c6ce5eea1c82d448998733a6302a4350d91">https://github.com/sindresorhus/trim-newlines/commit/25246c6ce5eea1c82d448998733a6302a4350d91</a></li>
+<li><a href="https://github.com/sindresorhus/trim-newlines/releases/tag/v4.0.1">https://github.com/sindresorhus/trim-newlines/releases/tag/v4.0.1</a></li>
+<li><a href="https://www.npmjs.com/package/trim-newlines">https://www.npmjs.com/package/trim-newlines</a></li>
+<li><a href="https://security.netapp.com/advisory/ntap-20210702-0007/">https://security.netapp.com/advisory/ntap-20210702-0007/</a></li>
+<li><a href="https://lists.debian.org/debian-lts-announce/2022/12/msg00033.html">https://lists.debian.org/debian-lts-announce/2022/12/msg00033.html</a></li>
+<li><a href="https://github.com/advisories/GHSA-7p7h-4mm5-852v">https://github.com/advisories/GHSA-7p7h-4mm5-852v</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-6" type="checkbox">
+                            <h3><label for="vulnerability-reasons-6">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;x-default-browser&gt;default-browser-id&gt;meow&gt;trim-newlines</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-7p7h-4mm5-852v" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            Regular Expression Denial of Service in trim
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/trim" target="_blank">trim</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 0.0.1</li>
+                                    
+                                    <li>Published: 5/10/2021, 6:44:22 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2020-7753</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;0.0.3</li>
+                                    <li>Patched: &gt;=0.0.3</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>All versions of package trim lower than 0.0.3 are vulnerable to Regular Expression Denial of Service (ReDoS) via trim().</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 0.0.3 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-7753">https://nvd.nist.gov/vuln/detail/CVE-2020-7753</a></li>
+<li><a href="https://github.com/component/trim/pull/8">https://github.com/component/trim/pull/8</a></li>
+<li><a href="https://github.com/component/trim/blob/master/index.js">https://github.com/component/trim/blob/master/index.js</a></li>
+<li><a href="https://github.com/component/trim/blob/master/index.js%23L6">https://github.com/component/trim/blob/master/index.js%23L6</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1022132">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1022132</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JS-TRIM-1017038">https://snyk.io/vuln/SNYK-JS-TRIM-1017038</a></li>
+<li><a href="https://lists.apache.org/thread.html/r10faad1ef9166d37a1a5c9142b1af7099b8ecdc5ad05c51b8ea993d9@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/r10faad1ef9166d37a1a5c9142b1af7099b8ecdc5ad05c51b8ea993d9@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread.html/r51ff3c2a4c7b8402f321eae7e624672cc2295c7bc8c12c8b871f6b0b@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/r51ff3c2a4c7b8402f321eae7e624672cc2295c7bc8c12c8b871f6b0b@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread.html/r75b8d0b88833d7d96afcdce3ead65e212572ead4e7a9f34d21040196@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/r75b8d0b88833d7d96afcdce3ead65e212572ead4e7a9f34d21040196@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread.html/rb8462df3b6484e778905c09cd49a8912e1a302659860017ebe36da03@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/rb8462df3b6484e778905c09cd49a8912e1a302659860017ebe36da03@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://lists.apache.org/thread.html/rcc7c2865a52b544a8e49386c6880e9b9ab29bfce1052b5569d09ee4a@%3Ccommits.airflow.apache.org%3E">https://lists.apache.org/thread.html/rcc7c2865a52b544a8e49386c6880e9b9ab29bfce1052b5569d09ee4a@%3Ccommits.airflow.apache.org%3E</a></li>
+<li><a href="https://github.com/advisories/GHSA-w5p7-h5w8-2hfq">https://github.com/advisories/GHSA-w5p7-h5w8-2hfq</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-7" type="checkbox">
+                            <h3><label for="vulnerability-reasons-7">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-docs&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-parse&gt;trim</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-docs&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-mdx&gt;remark-parse&gt;trim</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/csf-tools&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-parse&gt;trim</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/csf-tools&gt;@storybook/mdx1-csf&gt;@mdx-js/mdx&gt;remark-mdx&gt;remark-parse&gt;trim</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-w5p7-h5w8-2hfq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS)
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/loader-utils" target="_blank">loader-utils</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 1.2.3</li>
+                                    
+                                    <li>Published: 10/12/2022, 12:00:27 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2022-37599</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &gt;=1.0.0 &lt;1.4.2</li>
+                                    <li>Patched: &gt;=1.4.2</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>A regular expression denial of service (ReDoS) flaw was found in Function interpolateName in interpolateName.js in webpack loader-utils via the resourcePath variable in interpolateName.js. A badly or maliciously formed string could be used to send crafted requests that cause a system to crash or take a disproportional amount of time to process. This issue has been patched in versions 1.4.2, 2.0.4 and 3.2.1.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 1.4.2 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-37599">https://nvd.nist.gov/vuln/detail/CVE-2022-37599</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/211">https://github.com/webpack/loader-utils/issues/211</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L38</a></li>
+<li><a href="https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L83">https://github.com/webpack/loader-utils/blob/d9f4e23cf411d8556f8bac2d3bf05a6e0103b568/lib/interpolateName.js#L83</a></li>
+<li><a href="https://github.com/webpack/loader-utils/issues/216">https://github.com/webpack/loader-utils/issues/216</a></li>
+<li><a href="https://github.com/webpack/loader-utils/commit/36dc86617930a5cf18af51cf3f53d0ee284d2824">https://github.com/webpack/loader-utils/commit/36dc86617930a5cf18af51cf3f53d0ee284d2824</a></li>
+<li><a href="https://github.com/advisories/GHSA-hhq3-ff78-jv3g">https://github.com/advisories/GHSA-hhq3-ff78-jv3g</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-8" type="checkbox">
+                            <h3><label for="vulnerability-reasons-8">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>webpack-inject-plugin&gt;loader-utils</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-hhq3-ff78-jv3g" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-warning">high</span>
+                            glob-parent before 5.1.2 vulnerable to Regular Expression Denial of Service in enclosure regex
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/glob-parent" target="_blank">glob-parent</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 3.1.0</li>
+                                    
+                                    <li>Published: 6/7/2021, 9:56:34 PM</li>
+                                    
+                                    <li>CWE-400</li>
+                                    
+                                        <li>CVE-2020-28469</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;5.1.2</li>
+                                    <li>Patched: &gt;=5.1.2</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>This affects the package glob-parent before 5.1.2. The enclosure regex used to check for strings ending in enclosure containing path separator.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 5.1.2 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-28469">https://nvd.nist.gov/vuln/detail/CVE-2020-28469</a></li>
+<li><a href="https://github.com/gulpjs/glob-parent/pull/36">https://github.com/gulpjs/glob-parent/pull/36</a></li>
+<li><a href="https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9">https://github.com/gulpjs/glob-parent/blob/6ce8d11f2f1ed8e80a9526b1dc8cf3aa71f43474/index.js%23L9</a></li>
+<li><a href="https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2">https://github.com/gulpjs/glob-parent/releases/tag/v5.1.2</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBES128-1059093</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092">https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1059092</a></li>
+<li><a href="https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905">https://snyk.io/vuln/SNYK-JS-GLOBPARENT-1016905</a></li>
+<li><a href="https://www.oracle.com/security-alerts/cpujan2022.html">https://www.oracle.com/security-alerts/cpujan2022.html</a></li>
+<li><a href="https://github.com/advisories/GHSA-ww39-953v-wcq6">https://github.com/advisories/GHSA-ww39-953v-wcq6</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-9" type="checkbox">
+                            <h3><label for="vulnerability-reasons-9">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;glob-parent</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-ww39-953v-wcq6" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title">
+                            <span class="badge badge-primary">low</span>
+                            decode-uri-component vulnerable to Denial of Service (DoS)
+                        </h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Module:
+                                        <a href="https://npmjs.com/package/decode-uri-component" target="_blank">decode-uri-component</a>
+                                    </li>
+                                    
+                                        <li>Installed version: 0.2.0</li>
+                                    
+                                    <li>Published: 11/28/2022, 3:30:24 PM</li>
+                                    
+                                    <li>CWE-20</li>
+                                    
+                                        <li>CVE-2022-38900</li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Vulnerable: &lt;0.2.1</li>
+                                    <li>Patched: &gt;=0.2.1</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Overview</h3>
+                        <div class="card-text"><p>decode-uri-component 0.2.0 is vulnerable to Improper Input Validation resulting in DoS.</p>
+</div>
+
+                        
+                            <h3>Remediation</h3>
+                            <div class="card-text"><p>Upgrade to version 0.2.1 or later</p>
+</div>
+                        
+                        
+                            <h3>References</h3>
+                            <div class="card-text"><ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2022-38900">https://nvd.nist.gov/vuln/detail/CVE-2022-38900</a></li>
+<li><a href="https://github.com/SamVerschueren/decode-uri-component/issues/5">https://github.com/SamVerschueren/decode-uri-component/issues/5</a></li>
+<li><a href="https://github.com/sindresorhus/query-string/issues/345">https://github.com/sindresorhus/query-string/issues/345</a></li>
+<li><a href="https://github.com/SamVerschueren/decode-uri-component/commit/746ca5dcb6667c5d364e782d53c542830e4c10b9">https://github.com/SamVerschueren/decode-uri-component/commit/746ca5dcb6667c5d364e782d53c542830e4c10b9</a></li>
+<li><a href="https://github.com/SamVerschueren/decode-uri-component/releases/tag/v0.2.1">https://github.com/SamVerschueren/decode-uri-component/releases/tag/v0.2.1</a></li>
+<li><a href="https://github.com/advisories/GHSA-w573-4hg7-7wgq">https://github.com/advisories/GHSA-w573-4hg7-7wgq</a></li>
+</ul>
+</div>
+                        
+                        
+                            <input id="vulnerability-reasons-10" type="checkbox">
+                            <h3><label for="vulnerability-reasons-10">Reasons this module exists</label></h3>
+                            <div class="mb-3 collapsible-wrapper">
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;fork-ts-checker-webpack-plugin&gt;micromatch&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;fork-ts-checker-webpack-plugin&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;anymatch&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/addon-essentials&gt;@storybook/addon-controls&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;anymatch&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;anymatch&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;anymatch&gt;micromatch&gt;braces&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                                    <div class="card-text">
+                                        <code>@storybook/angular&gt;@storybook/core&gt;@storybook/core-server&gt;@storybook/builder-webpack4&gt;@storybook/core-common&gt;webpack&gt;watchpack&gt;watchpack-chokidar2&gt;chokidar&gt;anymatch&gt;micromatch&gt;extglob&gt;expand-brackets&gt;snapdragon&gt;source-map-resolve&gt;decode-uri-component</code>
+                                    </div>
+                                
+                            </div>
+                        
+
+                        <a href="https://github.com/advisories/GHSA-w573-4hg7-7wgq" class="btn btn-lg btn-primary" target="_blank">More about this vulnerability</a>
+                    </div>
+                </div>
+            </div>
+        
+        
+
+        <h6 class="col-md-12 mb-0 pb=3 text-right">Report generated at 1/13/2023, 6:53:44 PM</h6>
+    </div>
+</div>
+</body>
+
+</html>
