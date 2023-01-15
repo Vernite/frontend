@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">40.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/28</span>
+                <span class='fraction'>13/32</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/12</span>
+                <span class='fraction'>4/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.83% </span>
+                <span class="strong">44.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/24</span>
+                <span class='fraction'>13/29</span>
             </div>
         
             
@@ -176,7 +176,22 @@
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
 <a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -235,16 +250,31 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -299,7 +329,7 @@ import { IntegrationComponent } from '../../interfaces/integration-component.int
 import { Project } from '@dashboard/interfaces/project.interface';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe, faLock } from '@fortawesome/free-solid-svg-icons';
-import { map, of, switchMap } from 'rxjs';
+import { map, of, switchMap, shareReplay } from 'rxjs';
 import { Loader } from '@main/classes/loader/loader.class';
 import { startLoader, stopLoader } from './../../../../../_main/operators/loader.operator';
 &nbsp;
@@ -345,6 +375,10 @@ export class IntegrationGitHubComponent implements OnInit, IntegrationComponent 
     repository: new FormControl&lt;string&gt;(undefined, [requiredValidator()]),
   });
 &nbsp;
+  public gitHubAccounts$ = this.gitIntegrationService
+    .getConnectedGitHubAccounts()
+    .pipe(shareReplay(1));
+&nbsp;
   constructor(private gitIntegrationService: GitIntegrationService) {}
 &nbsp;
   ngOnInit() {
@@ -353,11 +387,22 @@ export class IntegrationGitHubComponent implements OnInit, IntegrationComponent 
     <span class="missing-if-branch" title="if path not taken" >I</span>if (this.project) {
 <span class="cstat-no" title="statement not covered" >      this.form.get('repository').setValue(this.project.gitHubIntegration);</span>
     }
+&nbsp;
+    this.gitIntegrationService.getGitHubIntegration();
   }
 &nbsp;
   /** Open GitHub integration in new tab */
-<span class="fstat-no" title="function not covered" >  connectToGithub(</span>) {
+<span class="fstat-no" title="function not covered" >  manageRepositories(</span>) {
 <span class="cstat-no" title="statement not covered" >    this.gitIntegrationService.startGitHubIntegration().subscribe(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.loadRepositories();</span>
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  connectGitHubAccount(</span>) {
+<span class="cstat-no" title="statement not covered" >    this.gitIntegrationService.connectGitHubAccount().subscribe(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.gitHubAccounts$ = this.gitIntegrationService</span>
+        .getConnectedGitHubAccounts()
+        .pipe(shareReplay(1));
 <span class="cstat-no" title="statement not covered" >      this.loadRepositories();</span>
     });
   }
@@ -409,7 +454,7 @@ export class IntegrationGitHubComponent implements OnInit, IntegrationComponent 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Jan 05 2023 18:04:07 GMT+0000 (Coordinated Universal Time)
+                at Sun Jan 15 2023 14:02:50 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.84% </span>
+                <span class="strong">41.17% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/19</span>
+                <span class='fraction'>7/17</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.22% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/9</span>
+                <span class='fraction'>2/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.29% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/17</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
@@ -134,10 +134,38 @@
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,22 +178,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,10 +201,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,6 +219,9 @@ import { AuthService } from '@auth/services/auth/auth.service';
 import { UserService } from '@auth/services/user/user.service';
 import { requiredValidator } from '@main/validators/required.validator';
 import { SnackbarService } from '@main/services/snackbar/snackbar.service';
+import { Router } from '@angular/router';
+import { notEmptyValidator } from '@main/validators/not-empty.validator';
+import { maxLengthValidator } from '@main/validators/max-length.validator';
 &nbsp;
 /**
  * Settings account page component
@@ -225,13 +236,18 @@ export class SettingsAccountPage implements OnInit {
     private userService: UserService,
     private authService: AuthService,
     private snackbarService: SnackbarService,
+    private router: Router,
   ) {}
 &nbsp;
   /** Form to edit account data */
   public form = new FormGroup({
     email: new FormControl('', requiredValidator()),
-    name: new FormControl('', requiredValidator()),
-    surname: new FormControl('', requiredValidator()),
+    name: new FormControl('', [requiredValidator(), notEmptyValidator(), maxLengthValidator(100)]),
+    surname: new FormControl('', [
+      requiredValidator(),
+      notEmptyValidator(),
+      maxLengthValidator(100),
+    ]),
     username: new FormControl('', requiredValidator()),
   });
 &nbsp;
@@ -255,15 +271,11 @@ export class SettingsAccountPage implements OnInit {
   }
 &nbsp;
   /**
-   * Reset password
+   * Change password
    * @TODO Add confirmation dialog
    */
-<span class="fstat-no" title="function not covered" >  resetPassword(</span>) {
-    const email = <span class="cstat-no" title="statement not covered" >this.form.get('email').value;</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    this.authService.resetPassword({ email }).subscribe(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      this.authService.logout().subscribe();</span>
-    });
+<span class="fstat-no" title="function not covered" >  changePassword(</span>) {
+<span class="cstat-no" title="statement not covered" >    this.authService.openChangePasswordDialog().subscribe();</span>
   }
 &nbsp;
   /**
@@ -271,8 +283,8 @@ export class SettingsAccountPage implements OnInit {
    * @TODO Add confirmation dialog
    */
 <span class="fstat-no" title="function not covered" >  deleteAccountMailCheck(</span>) {
-<span class="cstat-no" title="statement not covered" >    this.authService.deleteAccount().subscribe(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      this.authService.logout().subscribe();</span>
+<span class="cstat-no" title="statement not covered" >    this.authService.deleteAccountWithConfirmation().subscribe(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.router.navigate(['/']);</span>
     });
   }
 }
@@ -283,7 +295,7 @@ export class SettingsAccountPage implements OnInit {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Jan 05 2023 18:04:07 GMT+0000 (Coordinated Universal Time)
+                at Sun Jan 15 2023 14:02:50 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
