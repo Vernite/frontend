@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.35% </span>
+                <span class="strong">32.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/56</span>
+                <span class='fraction'>18/56</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.9% </span>
+                <span class="strong">12.5% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/31</span>
+                <span class='fraction'>4/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">35.29% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/51</span>
+                <span class='fraction'>18/51</span>
             </div>
         
             
@@ -369,7 +369,17 @@
 <a name='L304'></a><a href='#L304'>304</a>
 <a name='L305'></a><a href='#L305'>305</a>
 <a name='L306'></a><a href='#L306'>306</a>
-<a name='L307'></a><a href='#L307'>307</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -511,6 +521,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -555,17 +580,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -812,6 +832,21 @@ export class SlackIntegrationService extends BaseService&lt;
   }
 &nbsp;
   /**
+   * Get slack users by integration id
+   * @param slackId Slack integration id
+   * @returns Observable with users list
+   */
+  @Cache()
+  public <span class="fstat-no" title="function not covered" >getUsers(</span>slackId: number): Observable&lt;SlackUser[]&gt; {
+<span class="cstat-no" title="statement not covered" >    return this.apiService.get(`/user/integration/slack/${slackId}/user`).pipe(</span>
+      this.validate({
+        404: 'INTEGRATION_NOT_FOUND',
+        409: 'CONFLICT',
+      }),
+    );
+  }
+&nbsp;
+  /**
    * Get messages from slack channel
    * @param slackId Slack integration id
    * @param channelId Slack channel id
@@ -859,21 +894,16 @@ export class SlackIntegrationService extends BaseService&lt;
    * @returns list of slack channels joined with users
    */
   public <span class="fstat-no" title="function not covered" >getChannelsWithUsers(</span>slackId: number) {
-<span class="cstat-no" title="statement not covered" >    return this.getChannels(slackId).pipe(</span>
-      switchMap(<span class="fstat-no" title="function not covered" >(c</span>hannels) =&gt; {
-<span class="cstat-no" title="statement not covered" >        return forkJoin(</span>
-          channels.map(<span class="fstat-no" title="function not covered" >(c</span>hannel) =&gt; {
-<span class="cstat-no" title="statement not covered" >            <span class="missing-if-branch" title="if path not taken" >I</span>if (!channel.user) <span class="cstat-no" title="statement not covered" >return of(channel as SlackChannelWithUser);</span></span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >            return this.getUser(slackId, channel.user).pipe(</span>
-              map(<span class="fstat-no" title="function not covered" >(u</span>ser) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-                ...channel,
-                user,
-              })),
-            );
-          }),
-        );
-      }),
+<span class="cstat-no" title="statement not covered" >    return forkJoin({</span>
+      channels: this.getChannels(slackId),
+      users: this.getUsers(slackId),
+    }).pipe(
+      map(<span class="fstat-no" title="function not covered" >({</span> channels, users }) =&gt;
+<span class="cstat-no" title="statement not covered" >        channels.map(<span class="fstat-no" title="function not covered" >(c</span>hannel) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+          ...channel,
+          user: (channel.user &amp;&amp; users.find(<span class="fstat-no" title="function not covered" >(u</span>ser) =&gt; <span class="cstat-no" title="statement not covered" >user.id === channel.user)</span>) || null,
+        })),
+      ),
     );
   }
 &nbsp;
@@ -988,7 +1018,7 @@ export class SlackIntegrationService extends BaseService&lt;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Jan 14 2023 21:59:34 GMT+0000 (Coordinated Universal Time)
+                at Sat Jan 14 2023 23:57:19 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
