@@ -4046,6 +4046,7 @@ app-checkbox.ng-touched.ng-invalid .mat-checkbox-frame {
   width: 100px;
 }
 .markdown-preview {
+  white-space: pre-line;
   color: var(--color-text);
 }
 .markdown-preview h1 {
